@@ -1,0 +1,96 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
+  background: var(--bg-primary);
+}
+
+.hero-content {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.mask-container {
+  overflow: hidden;
+  display: block;
+}
+
+.hero-title {
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 1.05;
+  margin-bottom: 2rem;
+  color: var(--text-main);
+  font-weight: 400;
+}
+
+.hero-divider {
+  width: 1px;
+  height: 80px;
+  background: var(--text-main);
+  margin: 2rem 0;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin-bottom: 4rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.hero-actions {
+  width: 100%;
+  max-width: 450px;
+}
+
+.tracking-input-wrapper {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.5rem 0;
+  transition: border-color 0.3s ease;
+}
+
+.tracking-input-wrapper:focus-within {
+  border-bottom-color: var(--text-main);
+}
+
+.tracking-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  padding: 1rem 0;
+  font-size: 1rem;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+.tracking-input::placeholder {
+  color: #aaaaaa;
+}
+
+.btn-track {
+  background: transparent;
+  color: var(--text-main);
+  border: none;
+  padding: 0 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn-track:hover {
+  transform: translateX(5px);
+}

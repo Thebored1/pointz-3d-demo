@@ -1,0 +1,109 @@
+.tracker-section {
+  padding: 8rem 2rem;
+  background: var(--bg-primary);
+}
+
+.tracker-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.tracker-header h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.tracking-id {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.route-map {
+  position: relative;
+  margin-bottom: 5rem;
+  padding: 0 1rem;
+}
+
+.route-line {
+  height: 1px;
+  background: var(--border-color);
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.route-progress {
+  height: 1px;
+  background: var(--text-main);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.1s linear;
+}
+
+.route-indicator {
+  position: absolute;
+  top: -4px;
+  width: 9px;
+  height: 9px;
+  background: var(--text-main);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  transition: left 0.1s linear;
+}
+
+.route-nodes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.node {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 120px;
+}
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.node-city {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text-main);
+}
+
+.node-status {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.eta-container {
+  text-align: right;
+}
+
+.eta-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.eta-time {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--text-main);
+}

@@ -1,0 +1,129 @@
+.demo-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.canvas-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-back {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 100;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  background: var(--bg-primary);
+  cursor: pointer;
+}
+
+.scroll-instruction {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  animation: pulse 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Speed Lines (Act IV) - REMOVED OLD CSS */
+
+/* Cinematic HUD Elements */
+.hud-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.letterbox {
+  background: var(--bg-primary);
+  height: 0;
+  width: 100%;
+  transition: height 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.letterbox.bottom {
+  border-bottom: none;
+  border-top: 1px solid var(--border-color);
+}
+
+.hud-overlay.active .letterbox {
+  height: 10vh;
+}
+
+.hud-warning {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  text-align: center;
+}
+
+.hud-overlay.active .hud-warning {
+  animation: glitch-flash 0.2s 3, fade-in-stay 1s forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes glitch-flash {
+  0% { opacity: 0; transform: translate(-52%, -50%) skewX(10deg); filter: blur(2px); }
+  50% { opacity: 1; transform: translate(-48%, -50%) skewX(-10deg); filter: invert(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%); filter: none; }
+}
+
+@keyframes fade-in-stay {
+  to { opacity: 0.15; }
+}
+
+.hud-data {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: right;
+}
+
+.hud-overlay.active .hud-data {
+  opacity: 0.8;
+}
