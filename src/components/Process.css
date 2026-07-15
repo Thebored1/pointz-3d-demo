@@ -1,22 +1,22 @@
-.services-section {
+.process-section {
   position: relative;
   padding: 4rem 0 0;
   background: transparent;
 }
 
-.services-container {
+.process-container {
   position: relative;
   z-index: 1;
 }
 
-.services-header {
+.process-header {
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 0 2.5rem 2rem;
 }
 
-.services-title {
+.process-title {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 700;
@@ -24,67 +24,68 @@
   text-transform: uppercase;
 }
 
-.services-grid {
+.process-steps {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
-.service-card {
+.process-step {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
   padding: 2rem;
-  border-bottom: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
-  transition: background 0.3s ease;
-  cursor: pointer;
 }
 
-.service-card:nth-child(3n) {
+.process-step:last-child {
   border-right: none;
 }
 
-.service-card:hover {
-  background: rgba(200, 255, 0, 0.06);
-}
-
-.service-card .lucide {
-  color: var(--text-main);
+.step-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 0.25rem;
 }
 
-.service-id {
+.step-num {
   font-family: var(--font-mono);
   font-size: 0.65rem;
   letter-spacing: 0.1em;
   color: var(--text-muted);
 }
 
-.service-card h3 {
+.process-step .lucide {
+  color: var(--text-main);
+}
+
+.process-step h3 {
   font-family: var(--font-display);
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text-main);
 }
 
+.step-desc {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 @media (max-width: 768px) {
-  .services-section {
+  .process-section {
     padding: 3rem 0 0;
   }
 
-  .services-header {
+  .process-header {
     padding: 0 1.5rem 1.5rem;
   }
 
-  .services-grid {
+  .process-steps {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .service-card:nth-child(3n) {
-    border-right: 1px solid var(--border-color);
-  }
-
-  .service-card:nth-child(2n) {
+  .process-step:nth-child(2n) {
     border-right: none;
   }
 }
