@@ -40,6 +40,24 @@
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.mobile-layout {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.mobile-content {
+  width: 100%;
+  padding-top: 72px;
+}
+
+@media (min-width: 769px) {
+  .mobile-layout,
+  .mobile-content {
+    display: none;
+  }
+}
+
 .split-layout-container {
   position: relative;
   width: 100vw;

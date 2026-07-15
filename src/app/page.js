@@ -29,27 +29,53 @@ const ContentSections = () => (
 export default function Home() {
   const [hyperdrive, setHyperdrive] = useState(false);
   const [pages, setPages] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
   const measureRef = useRef(null);
-  const measured = useRef(false);
 
   useEffect(() => {
-    if (measured.current) return;
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
-    const tryMeasure = (attempt) => {
-      const el = measureRef.current;
-      if (!el) return;
+  useEffect(() => {
+    if (isMobile) return;
+
+    const el = measureRef.current;
+    if (!el) return;
+
+    const updatePages = () => {
       const h = el.scrollHeight;
-      if (h > 100) {
-        measured.current = true;
-        const vh = window.innerHeight;
-        setPages(Math.floor(h / vh));
-      } else if (attempt < 20) {
-        setTimeout(() => tryMeasure(attempt + 1), 100);
+      const vh = window.innerHeight;
+      if (h > 0 && vh > 0) {
+        setPages(h / vh);
       }
     };
 
-    setTimeout(() => tryMeasure(0), 100);
-  }, []);
+    const resizeObserver = new ResizeObserver(() => updatePages());
+    resizeObserver.observe(el);
+    window.addEventListener('resize', updatePages);
+
+    const timeout = setTimeout(updatePages, 100);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener('resize', updatePages);
+      clearTimeout(timeout);
+    };
+  }, [isMobile]);
+
+  if (isMobile) {
+    return (
+      <div className="mobile-layout">
+        <Navbar />
+        <div className="mobile-content">
+          <ContentSections />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="split-layout-container">
@@ -59,14 +85,15 @@ export default function Home() {
           position: 'fixed',
           top: 0,
           left: 0,
-          width: '50%',
-          maxWidth: '50vw',
+          width: '100vw',
           zIndex: -9999,
           pointerEvents: 'none',
           visibility: 'hidden',
         }}
       >
-        <ContentSections />
+        <div className="content-left">
+          <ContentSections />
+        </div>
       </div>
       <Navbar />
       <div className="canvas-bg-wrapper">
