@@ -40,30 +40,40 @@ export default function Home() {
   useEffect(() => {
     if (isMobile) return;
     
-    let ticking = false;
+    let targetTime = 0;
+    let currentTime = 0;
+    let animationFrameId;
+
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          if (videoRef.current && !isNaN(videoRef.current.duration)) {
-            const scrollTop = window.scrollY || document.documentElement.scrollTop;
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            if (maxScroll > 0) {
-              const scrollFraction = scrollTop / maxScroll;
-              // Add a slight easing or direct mapping
-              videoRef.current.currentTime = scrollFraction * videoRef.current.duration;
-            }
-          }
-          ticking = false;
-        });
-        ticking = true;
+      if (videoRef.current && !isNaN(videoRef.current.duration)) {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        if (maxScroll > 0) {
+          const scrollFraction = scrollTop / maxScroll;
+          targetTime = scrollFraction * videoRef.current.duration;
+        }
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    // Attempt initial sync
-    handleScroll();
+    const updateVideoTime = () => {
+      if (videoRef.current && !isNaN(videoRef.current.duration)) {
+        currentTime += (targetTime - currentTime) * 0.1; // Lerp factor
+        
+        if (Math.abs(targetTime - currentTime) > 0.01) {
+          videoRef.current.currentTime = currentTime;
+        }
+      }
+      animationFrameId = requestAnimationFrame(updateVideoTime);
+    };
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    updateVideoTime();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(animationFrameId);
+    };
   }, [isMobile]);
 
   if (isMobile) {
@@ -90,7 +100,7 @@ export default function Home() {
       <div className="video-right" style={{ position: 'fixed', right: 0, top: 0, width: '50vw', height: '100vh', zIndex: -1, background: '#0f0f0f' }}>
         <video 
           ref={videoRef}
-          src="/hero-video.mp4" 
+          src="/hero-video-smooth.mp4" 
           preload="metadata"
           muted 
           playsInline 
