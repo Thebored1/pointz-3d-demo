@@ -26,7 +26,7 @@ export default function Navbar() {
       >
         <div className="nav-container">
           <div className="nav-brand">
-            <img src="/assets/pz-logo.jpg" alt="Point Zero Road Lines" style={{ height: '50px', objectFit: 'contain' }} />
+            <img src="/logo.png" alt="Point Zero Road Lines" style={{ height: '50px', objectFit: 'contain' }} />
           </div>
           
           <div className="nav-links">
