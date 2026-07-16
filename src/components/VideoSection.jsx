@@ -23,7 +23,7 @@ export default function VideoSection() {
           transition={{ delay: 0.2 }}
         >
           <iframe 
-            src="https://www.youtube.com/embed/4aWGrLXJcCU?autoplay=1&mute=1&loop=1&playlist=4aWGrLXJcCU&controls=0&rel=0" 
+            src="https://www.youtube.com/embed/4aWGrLXJcCU" 
             title="Pointz Promo Video"
             frameBorder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

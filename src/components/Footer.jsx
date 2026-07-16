@@ -18,7 +18,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <img src="/assets/pointz-logo.png" alt="Point Zero Road Lines" style={{ height: '60px', objectFit: 'contain', marginBottom: '1rem', background: '#fff', padding: '10px', borderRadius: '4px' }} />
+              <img src="/assets/logo.png" alt="Point Zero Road Lines" style={{ height: '60px', objectFit: 'contain', marginBottom: '1rem', background: '#fff', padding: '10px', borderRadius: '4px' }} />
             </motion.div>
             <motion.p 
               className="footer-desc"
