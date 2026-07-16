@@ -9,19 +9,19 @@
   --c-light: #e8e8e8;
   --c-cream: #f5f3ef;
   --c-white: #fafaf8;
-  --c-lime: #c8ff00;
-  --c-lime-dim: rgba(200, 255, 0, 0.15);
-  --c-green: #0a2a1a;
+  --c-blue: #00b9f2;
+  --c-blue-dim: rgba(0, 185, 242, 0.15);
+  --c-navy: #0d1b2a;
 
   --bg-primary: var(--c-cream);
   --bg-secondary: var(--c-white);
   --bg-dark: var(--c-charcoal);
-  --text-main: var(--c-green);
+  --text-main: var(--c-navy);
   --text-muted: var(--c-gray);
   --text-inverse: var(--c-cream);
   --border-color: rgba(10, 10, 10, 0.1);
   --border-strong: rgba(10, 10, 10, 0.25);
-  --accent: var(--c-lime);
+  --accent: var(--c-blue);
 
   --font-display: 'Syne', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -61,8 +61,6 @@
 .split-layout-container {
   position: relative;
   width: 100vw;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .canvas-bg-wrapper {
@@ -139,8 +137,8 @@ button {
 }
 
 ::selection {
-  background: var(--c-lime);
-  color: var(--c-green);
+  background: var(--c-blue);
+  color: var(--c-white);
 }
 
 .text-accent {

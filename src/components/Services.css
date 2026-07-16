@@ -11,7 +11,7 @@
 
 .services-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   padding: 0 2.5rem 2rem;
 }
@@ -45,7 +45,7 @@
 }
 
 .service-card:hover {
-  background: rgba(200, 255, 0, 0.06);
+  background: var(--c-blue-dim);
 }
 
 .service-card .lucide {
@@ -67,15 +67,7 @@
   color: var(--text-main);
 }
 
-@media (max-width: 768px) {
-  .services-section {
-    padding: 3rem 0 0;
-  }
-
-  .services-header {
-    padding: 0 1.5rem 1.5rem;
-  }
-
+@media (max-width: 1400px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -86,5 +78,23 @@
 
   .service-card:nth-child(2n) {
     border-right: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 3rem 0 0;
+  }
+
+  .services-header {
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    border-right: none !important;
   }
 }

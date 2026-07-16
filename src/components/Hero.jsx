@@ -52,58 +52,57 @@ export default function Hero() {
         <div className="hero-label-row">
           <motion.div className="hero-label" variants={fadeUpVariants}>
             <span className="label-dot"></span>
-            Next-Generation Logistics
+            MISSISSAUGA · BOLTON · BRAMPTON
           </motion.div>
           <motion.div className="hero-version" variants={fadeUpVariants}>
-            v4.2.0
+            EST. 2012
           </motion.div>
         </div>
 
         <h1 className="hero-title">
           <div className="mask-container">
-            <motion.div variants={textRevealVariants}>Precision</motion.div>
+            <motion.div variants={textRevealVariants}>Flatbed & Moffett freight,</motion.div>
           </div>
           <div className="mask-container">
-            <motion.div variants={textRevealVariants} className="hero-title-accent">in Motion.</motion.div>
+            <motion.div variants={textRevealVariants} className="hero-title-accent">moved with precision.</motion.div>
           </div>
         </h1>
         
         <motion.div className="hero-divider" variants={lineVariants}></motion.div>
 
         <motion.p className="hero-subtitle" variants={fadeUpVariants}>
-          Elevating global supply chain management through meticulous execution 
-          and elegant logistics solutions.
+          Dedicated flatbed, Moffett piggyback and cross-dock service across the GTA and Ontario. Lean, safe and on schedule — that's what we do.
         </motion.p>
         
         <motion.div className="hero-actions" variants={fadeUpVariants}>
-          <div className="tracking-input-wrapper">
-            <span className="tracking-prefix">{'>'}</span>
-            <input 
-              type="text" 
-              placeholder="Enter tracking reference..." 
-              className="tracking-input" 
-            />
-            <button className="btn-track">
-              Track
+          <div className="hero-cta-group" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <button className="btn-track" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+              Request a quote
               <ArrowRight size={16} strokeWidth={2} />
+            </button>
+            <button 
+              style={{ background: 'transparent', color: 'var(--text-main)', border: '1px solid var(--border-strong)', padding: '0 1.5rem', height: '52px', fontWeight: 500, fontSize: '0.875rem', borderRadius: 'var(--radius-md)', cursor: 'pointer', transition: 'all 0.3s ease' }}
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Explore services
             </button>
           </div>
         </motion.div>
 
         <motion.div className="hero-stats" variants={fadeUpVariants}>
           <div className="hero-stat">
-            <span className="stat-value">42</span>
-            <span className="stat-label">Countries</span>
-          </div>
-          <div className="hero-stat-divider"></div>
-          <div className="hero-stat">
-            <span className="stat-value">99.9%</span>
-            <span className="stat-label">Uptime</span>
+            <span className="stat-value">3</span>
+            <span className="stat-label">Ontario Hubs</span>
           </div>
           <div className="hero-stat-divider"></div>
           <div className="hero-stat">
             <span className="stat-value">24/7</span>
-            <span className="stat-label">Operations</span>
+            <span className="stat-label">Live Dispatch</span>
+          </div>
+          <div className="hero-stat-divider"></div>
+          <div className="hero-stat">
+            <span className="stat-value">100%</span>
+            <span className="stat-label">Dedicated Fleet</span>
           </div>
         </motion.div>
 

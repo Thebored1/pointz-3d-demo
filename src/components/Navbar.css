@@ -6,26 +6,26 @@
   padding: 1.25rem 0;
   z-index: 100;
   transition: all 0.4s var(--ease-in-out);
-  background: rgba(245, 243, 239, 0.85);
-  backdrop-filter: blur(20px) saturate(1.2);
-  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  width: 100%;
 }
 
 .navbar.scrolled {
   padding: 0.875rem 0;
-  background: rgba(245, 243, 239, 0.85);
-  backdrop-filter: blur(20px) saturate(1.2);
-  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
 }
 
 .nav-container {
-  max-width: 1400px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2.5rem;
+  width: 100%;
 }
 
 .nav-brand {
@@ -61,6 +61,9 @@
 .nav-links {
   display: flex;
   gap: 2.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-link {
@@ -171,7 +174,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(245, 243, 239, 0.98);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
   z-index: 99;
   display: flex;
@@ -213,6 +216,12 @@
 
   .nav-container {
     padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 100vw;
   }
 }
 

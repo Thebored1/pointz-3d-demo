@@ -18,11 +18,10 @@ export default function CTA() {
           >
             <span className="section-number section-number--light">06</span>
             <h2 className="cta-title">
-              Need a Truck?
+              Need a truck?
             </h2>
             <p className="cta-desc">
-              Let us help you find ways to be lean and efficient. 
-              This is what we do.
+              Tell us your lane and load. We'll get back to you with a quote fast. Let us help you find ways to be lean and efficient.
             </p>
           </motion.div>
 

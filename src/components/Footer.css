@@ -139,6 +139,8 @@
   gap: 0.5rem;
   font-size: 0.8125rem;
   color: var(--c-cream);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .footer-bottom {
@@ -175,14 +177,19 @@
   color: var(--c-cream);
 }
 
+@media (max-width: 1400px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .footer-section {
     padding-top: 3rem;
   }
 
   .footer-main {
-    grid-template-columns: 1fr;
-    gap: 2rem;
     padding: 0 1.5rem 2rem;
   }
 

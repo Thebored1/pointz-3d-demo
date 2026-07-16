@@ -18,8 +18,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="footer-logo">POINT ZERO</h2>
-              <span className="footer-logo-tag">ROAD LINES</span>
+              <img src="/assets/pz-logo.jpg" alt="Point Zero Road Lines" style={{ height: '60px', objectFit: 'contain', marginBottom: '1rem', background: '#fff', padding: '10px', borderRadius: '4px' }} />
             </motion.div>
             <motion.p 
               className="footer-desc"
@@ -28,8 +27,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              Dedicated transportation company headquartered in Mississauga, Ontario. 
-              Quality, safety, and integrity.
+              A dedicated transportation company headquartered in Mississauga, Ontario, with additional sites in Bolton and Brampton. Quality, safety, and integrity in every load.
             </motion.p>
           </div>
           
@@ -43,10 +41,11 @@ export default function Footer() {
             <div className="link-group">
               <h4>Services</h4>
               <ul>
-                <li><a href="#">Dedicated Fleet</a></li>
-                <li><a href="#">Warehouse &amp; Cross-dock</a></li>
+                <li><a href="#">Flatbed Hauling</a></li>
+                <li><a href="#">Moffett &amp; Piggyback</a></li>
+                <li><a href="#">Cross-dock &amp; Warehousing</a></li>
                 <li><a href="#">Specialty Equipment</a></li>
-                <li><a href="#">24/7 Dispatch</a></li>
+                <li><a href="#">Dedicated Fleet</a></li>
               </ul>
             </div>
             
@@ -72,7 +71,7 @@ export default function Footer() {
             <div className="footer-contact-list">
               <span>+1-905-291-0325</span>
               <span>info@pointzeroroadlines.com</span>
-              <span>Mississauga, ON</span>
+              <span>1566 Bonhill Rd, Mississauga</span>
             </div>
           </motion.div>
         </div>

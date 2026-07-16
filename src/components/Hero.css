@@ -36,7 +36,7 @@
 .label-dot {
   width: 6px;
   height: 6px;
-  background: var(--c-lime);
+  background: var(--c-blue);
   border-radius: 50%;
   animation: pulse-glow 2s ease-in-out infinite;
 }
@@ -69,7 +69,7 @@
 }
 
 .hero-title-accent {
-  color: var(--c-green);
+  color: var(--c-blue);
   font-style: italic;
 }
 
@@ -112,7 +112,7 @@
 
 .tracking-prefix {
   font-family: var(--font-mono);
-  color: var(--c-lime);
+  color: var(--c-blue);
   font-weight: bold;
   padding-left: 1rem;
   font-size: 0.875rem;

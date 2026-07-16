@@ -13,7 +13,7 @@
   right: -200px;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(200, 255, 0, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 185, 242, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -42,8 +42,8 @@
 }
 
 .section-number--light {
-  background: rgba(200, 255, 0, 0.2);
-  color: var(--c-lime);
+  background: transparent;
+  color: var(--c-blue);
 }
 
 .cta-title {
@@ -72,8 +72,8 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: var(--c-lime);
-  color: var(--c-green);
+  background: var(--c-blue);
+  color: var(--c-white);
   border: none;
   padding: 1rem 2rem;
   font-weight: 600;
@@ -85,9 +85,9 @@
 }
 
 .cta-btn-primary:hover {
-  background: #d4ff33;
+  background: #00a4d6;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(200, 255, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 185, 242, 0.25);
 }
 
 .cta-btn-secondary {
@@ -112,10 +112,6 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2.5rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-lg);
 }
 
 .contact-item {
@@ -143,9 +139,11 @@
   font-size: 1rem;
   font-weight: 500;
   color: var(--c-cream);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
   .cta-container {
     grid-template-columns: 1fr;
     gap: 3rem;
