@@ -131,7 +131,7 @@ export default function AboutPage() {
 
           <div className="ap-masonry-grid">
             <motion.div className="ap-masonry-item ap-hide-mobile" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-              <img src="/images/WhatsApp%20Image%202026-07-25%20at%2014.28.09%20(1).jpeg" alt="Trucking 1" />
+              <img src="/images/truck-cab.jpg" alt="Trucking 1" />
             </motion.div>
             <motion.div className="ap-masonry-item" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
               <img src="/images/WhatsApp%20Image%202026-07-25%20at%2014.28.10.jpeg" alt="Logistics 2" />
