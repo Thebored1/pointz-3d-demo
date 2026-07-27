@@ -12,16 +12,18 @@ export default function Navbar() {
     <>
       <nav className="navbar">
         <div className="nav-container">
-          <Link href="/" className="nav-brand">
-            <img src="/assets/logo.png?v=3" alt="Point Zero Road Lines" style={{ height: '38px', objectFit: 'contain' }} />
-          </Link>
-          
-          <div className="nav-links">
-            <Link href="/" className="nav-link">Home</Link>
-            <Link href="/about" className="nav-link">About</Link>
-            <Link href="/services" className="nav-link">Services</Link>
-            <Link href="/career" className="nav-link">Career</Link>
-            <Link href="/contact-us" className="nav-link">Contact</Link>
+          <div className="nav-brand">
+            <Link href="/" className="nav-logo-link">
+              <img src="/assets/logo.png?v=3" alt="Point Zero Road Lines" className="nav-logo" />
+            </Link>
+            <span className="nav-divider"></span>
+            <div className="nav-links">
+              <Link href="/" className="nav-link">Home</Link>
+              <Link href="/about" className="nav-link">About</Link>
+              <Link href="/services" className="nav-link">Services</Link>
+              <Link href="/career" className="nav-link">Career</Link>
+              <Link href="/contact-us" className="nav-link">Contact</Link>
+            </div>
           </div>
           
           <div className="nav-actions">
