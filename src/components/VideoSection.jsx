@@ -7,7 +7,7 @@ export default function VideoSection() {
   return (
     <section className="video-section">
       <div className="video-container">
-        <div className="video-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '1.5rem', padding: '0 2.5rem 2rem' }}>
+        <div className="video-header">
           <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
             <motion.span className="section-number" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>02</motion.span>
             <motion.span style={{fontFamily: 'var(--font-mono)', fontSize: '0.75rem', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase'}} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>In Action</motion.span>

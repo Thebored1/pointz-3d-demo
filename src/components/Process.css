@@ -11,9 +11,16 @@
 
 .process-header {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 0 2.5rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .process-header {
+    padding: 0 1.5rem 1.5rem;
+  }
 }
 
 .process-title {

@@ -58,6 +58,20 @@
   }
 }
 
+.page-wrapper {
+  padding: clamp(4rem, 8vw, 8rem) clamp(4rem, 8vw, 8rem) 4rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 2rem 1.5rem 3rem;
+  }
+}
+
 .split-layout-container {
   position: relative;
   width: 100vw;

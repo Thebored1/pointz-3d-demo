@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
+import Link from 'next/link';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -25,15 +26,16 @@ export default function Navbar() {
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="nav-container">
-          <div className="nav-brand">
+          <Link href="/" className="nav-brand">
             <img src="/assets/logo.png?v=3" alt="Point Zero Road Lines" style={{ height: '38px', objectFit: 'contain' }} />
-          </div>
+          </Link>
           
           <div className="nav-links">
-            <a href="#services" className="nav-link">Services</a>
-            <a href="#about" className="nav-link">About</a>
-            <a href="#fleet" className="nav-link">Fleet</a>
-            <a href="#contact" className="nav-link">Contact</a>
+            <Link href="/" className="nav-link">Home</Link>
+            <Link href="/about" className="nav-link">About</Link>
+            <Link href="/services" className="nav-link">Services</Link>
+            <Link href="/career" className="nav-link">Career</Link>
+            <Link href="/contact-us" className="nav-link">Contact</Link>
           </div>
           
           <div className="nav-actions">
@@ -41,7 +43,7 @@ export default function Navbar() {
               <Phone size={14} />
               +1-905-291-0325
             </a>
-            <button className="btn-primary-nav">Need a Truck</button>
+            <Link href="/need-a-truck" className="btn-primary-nav">Need a Truck</Link>
           </div>
 
           <button 
@@ -64,13 +66,14 @@ export default function Navbar() {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="mobile-menu-inner">
-              <a href="#services" onClick={() => setMobileOpen(false)}>Services</a>
-              <a href="#about" onClick={() => setMobileOpen(false)}>About</a>
-              <a href="#fleet" onClick={() => setMobileOpen(false)}>Fleet</a>
-              <a href="#contact" onClick={() => setMobileOpen(false)}>Contact</a>
+              <Link href="/" onClick={() => setMobileOpen(false)}>Home</Link>
+              <Link href="/about" onClick={() => setMobileOpen(false)}>About</Link>
+              <Link href="/services" onClick={() => setMobileOpen(false)}>Services</Link>
+              <Link href="/career" onClick={() => setMobileOpen(false)}>Career</Link>
+              <Link href="/contact-us" onClick={() => setMobileOpen(false)}>Contact</Link>
               <div className="mobile-menu-actions">
                 <a href="tel:+19052910325" className="btn-ghost">+1-905-291-0325</a>
-                <button className="btn-primary-nav">Need a Truck</button>
+                <Link href="/need-a-truck" className="btn-primary-nav" onClick={() => setMobileOpen(false)}>Need a Truck</Link>
               </div>
             </div>
           </motion.div>
