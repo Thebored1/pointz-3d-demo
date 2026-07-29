@@ -232,7 +232,7 @@ export default function DarkTechPage() {
             </p>
           </motion.div>
           <motion.div className="dt-cta-actions" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}>
-            <a href="/quote" className="dt-btn dt-btn-primary">
+            <a href="/need-a-truck" className="dt-btn dt-btn-primary">
               INITIALIZE QUOTE <ArrowUpRight size={18} />
             </a>
             <a href="tel:+19052910325" className="dt-btn dt-btn-secondary">

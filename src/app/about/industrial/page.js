@@ -230,7 +230,7 @@ export default function IndustrialPage() {
             </p>
           </motion.div>
           <motion.div className="in-cta-actions" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}>
-            <a href="/quote" className="in-btn in-btn-primary">
+            <a href="/need-a-truck" className="in-btn in-btn-primary">
               REQUEST QUOTE <ArrowUpRight size={24} strokeWidth={3} />
             </a>
             <a href="tel:+19052910325" className="in-btn in-btn-secondary">

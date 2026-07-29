@@ -198,7 +198,7 @@ export default function EditorialPage() {
                 Send the details and you'll have a rate back the same business day — usually inside two hours.
               </p>
               <div className="ed-cta-actions">
-                <a href="/quote" className="ed-btn ed-btn-primary">
+                <a href="/need-a-truck" className="ed-btn ed-btn-primary">
                   Request a Quote
                 </a>
               </div>

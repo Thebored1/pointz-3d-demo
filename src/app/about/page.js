@@ -187,7 +187,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
           <motion.div className="pz-cta-actions" variants={slideRight} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={1}>
-            <a href="/quote" className="pz-btn pz-btn-primary">
+            <a href="/need-a-truck" className="pz-btn pz-btn-primary">
               Request a quote <ArrowUpRight size={18} />
             </a>
             <a href="tel:+19052910325" className="pz-btn pz-btn-secondary">

@@ -23,7 +23,7 @@ export default function WarehouseAndStoragePage() {
       titleLine1="CROSS-DOCK."
       titleAccent="CONSOLIDATE."
       description="Transload, consolidate and store across Mississauga, Bolton and Brampton with full chain-of-custody — so freight keeps moving when your dock can't."
-      heroImage="/images/truck-dock.webp"
+      heroImage="/images/warehouse-driver.webp"
       heroAlt="Warehouse dock"
       stats={[
         { value: '3', label: 'Ontario sites' },
