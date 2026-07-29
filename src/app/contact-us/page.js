@@ -2,137 +2,232 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import EditorialHero from '../../components/EditorialHero';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail } from 'lucide-react';
-import './ContactPage.css'; 
+import { fadeUp, fadeUpSoft, slideLeft, slideRight, viewportOnce } from '../../lib/motion';
+import './ContactPage.css';
+
+const locations = [
+  {
+    label: 'Primary HQ',
+    title: 'Mississauga Hub',
+    desc: <>1566 Bonhill Rd<br />Mississauga, ON<br />Headquarters & Core Dispatch</>,
+    icon: MapPin,
+  },
+  {
+    label: 'Storage Facility',
+    title: 'Bolton Warehouse',
+    desc: 'Cross-docking, consolidation, and mid-to-long term storage overflow operations.',
+    icon: MapPin,
+  },
+  {
+    label: 'Dedicated Hub',
+    title: 'Brampton Depot',
+    desc: 'Secondary terminal supporting regional distribution and dedicated fleet deployments.',
+    icon: MapPin,
+  },
+  {
+    label: 'Reach Out',
+    title: '+1-905-291-0325',
+    desc: (
+      <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
+        <Mail size={16} strokeWidth={1.5} /> dispatch@pointzeroroadlines.com
+      </p>
+    ),
+    icon: Phone,
+    highlight: true,
+  },
+];
+
+const formFields = [
+  { type: 'row', fields: [
+    { label: 'First Name', type: 'text', placeholder: 'John' },
+    { label: 'Last Name', type: 'text', placeholder: 'Doe' },
+  ]},
+  { type: 'single', label: 'Email Address', inputType: 'email', placeholder: 'john@company.com' },
+  { type: 'select', label: 'Subject / Department', options: ['General Inquiry', 'Request a Quote', 'Careers & Recruiting', 'Billing & Support', 'Sales / Dedicated Fleet'] },
+  { type: 'textarea', label: 'Message', placeholder: 'How can we assist you?' },
+];
 
 export default function ContactUsPage() {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (i = 0) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] },
-    }),
-  };
-
   return (
     <div style={{ backgroundColor: 'var(--bg-primary)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
 
       <main style={{ flex: 1, paddingTop: '100px' }}>
-        
-        {/* HERO SECTION */}
-        <section className="contact-hero-new">
-          <div className="contact-container">
-            <motion.div className="contact-hero-top" variants={fadeUp} initial="hidden" animate="visible" custom={0}>
-              <span className="contact-badge">CONTACT US</span>
-              <span className="contact-badge">24/7 SUPPORT</span>
-            </motion.div>
-            
-            <motion.h1 className="contact-hero-title" variants={fadeUp} initial="hidden" animate="visible" custom={1}>
-              TALK TO<br />
-              <span className="text-cyan italic">DISPATCH.</span>
-            </motion.h1>
-          </div>
-        </section>
+        <EditorialHero
+          sectionClass="contact-hero-new"
+          containerClass="contact-container"
+          topClass="contact-hero-top"
+          badgeClass="contact-badge"
+          titleClass="contact-hero-title"
+          badge="CONTACT US"
+          badgeAlt="24/7 SUPPORT"
+          titleLine1="TALK TO"
+          titleAccent="DISPATCH."
+          showImage={false}
+        />
 
-        {/* LAYOUT SECTION */}
         <section className="contact-container contact-body">
           <div className="contact-layout">
-            
-            {/* LEFT COLUMN: LOCATIONS & DIRECT CONTACT */}
-            <div className="contact-locations-col">
-              
-              <div className="contact-locations-header">
-                <h2>Direct Lines</h2>
-                <p>Call or email us anytime. Our dispatch and support teams are available 24/7 to handle your logistics needs.</p>
-              </div>
+            <motion.div
+              className="contact-locations-col"
+              variants={slideLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportOnce}
+            >
+              <motion.div
+                className="contact-locations-header"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportOnce}
+              >
+                <motion.h2 variants={fadeUp} custom={1}>Direct Lines</motion.h2>
+                <motion.p variants={fadeUp} custom={2}>
+                  Call or email us anytime. Our dispatch and support teams are available 24/7 to handle your logistics needs.
+                </motion.p>
+              </motion.div>
 
               <div className="contact-cards-wrap">
-                <div className="contact-location-card">
-                  <div className="loc-top">
-                    <span className="loc-label">Primary HQ</span>
-                    <MapPin size={18} strokeWidth={1.5} className="loc-icon" />
-                  </div>
-                  <h3>Mississauga Hub</h3>
-                  <p>1566 Bonhill Rd<br />Mississauga, ON<br />Headquarters & Core Dispatch</p>
-                </div>
-
-                <div className="contact-location-card">
-                  <div className="loc-top">
-                    <span className="loc-label">Storage Facility</span>
-                    <MapPin size={18} strokeWidth={1.5} className="loc-icon" />
-                  </div>
-                  <h3>Bolton Warehouse</h3>
-                  <p>Cross-docking, consolidation, and mid-to-long term storage overflow operations.</p>
-                </div>
-
-                <div className="contact-location-card">
-                  <div className="loc-top">
-                    <span className="loc-label">Dedicated Hub</span>
-                    <MapPin size={18} strokeWidth={1.5} className="loc-icon" />
-                  </div>
-                  <h3>Brampton Depot</h3>
-                  <p>Secondary terminal supporting regional distribution and dedicated fleet deployments.</p>
-                </div>
-
-                <div className="contact-location-card" style={{ backgroundColor: 'var(--c-blue-dim)' }}>
-                  <div className="loc-top">
-                    <span className="loc-label">Reach Out</span>
-                    <Phone size={18} strokeWidth={1.5} className="loc-icon" />
-                  </div>
-                  <h3>+1-905-291-0325</h3>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
-                    <Mail size={16} strokeWidth={1.5} /> dispatch@pointzeroroadlines.com
-                  </p>
-                </div>
+                {locations.map((loc, i) => {
+                  const Icon = loc.icon;
+                  return (
+                    <motion.div
+                      key={loc.title}
+                      className="contact-location-card"
+                      style={loc.highlight ? { backgroundColor: 'var(--c-blue-dim)' } : undefined}
+                      variants={fadeUpSoft}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={viewportOnce}
+                      custom={i}
+                    >
+                      <div className="loc-top">
+                        <span className="loc-label">{loc.label}</span>
+                        <Icon size={18} strokeWidth={1.5} className="loc-icon" />
+                      </div>
+                      <h3>{loc.title}</h3>
+                      {typeof loc.desc === 'string' ? <p>{loc.desc}</p> : loc.desc}
+                    </motion.div>
+                  );
+                })}
               </div>
-            </div>
+            </motion.div>
 
-            {/* RIGHT COLUMN: CONTACT FORM */}
-            <div className="contact-form-col">
-              <h2 className="contact-form-title">Send a message</h2>
+            <motion.div
+              className="contact-form-col"
+              variants={slideRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportOnce}
+              custom={1}
+            >
+              <motion.h2
+                className="contact-form-title"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportOnce}
+              >
+                Send a message
+              </motion.h2>
               <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-                <div className="contact-form-row">
-                  <div className="contact-input-group">
-                    <label>First Name</label>
-                    <input type="text" className="contact-input" placeholder="John" />
-                  </div>
-                  <div className="contact-input-group">
-                    <label>Last Name</label>
-                    <input type="text" className="contact-input" placeholder="Doe" />
-                  </div>
-                </div>
+                {formFields.map((field, i) => {
+                  if (field.type === 'row') {
+                    return (
+                      <motion.div
+                        key={field.fields[0].label}
+                        className="contact-form-row"
+                        variants={fadeUpSoft}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={viewportOnce}
+                        custom={i}
+                      >
+                        {field.fields.map((f) => (
+                          <div key={f.label} className="contact-input-group">
+                            <label>{f.label}</label>
+                            <input type={f.type} className="contact-input" placeholder={f.placeholder} />
+                          </div>
+                        ))}
+                      </motion.div>
+                    );
+                  }
 
-                <div className="contact-input-group">
-                  <label>Email Address</label>
-                  <input type="email" className="contact-input" placeholder="john@company.com" />
-                </div>
+                  if (field.type === 'select') {
+                    return (
+                      <motion.div
+                        key={field.label}
+                        className="contact-input-group"
+                        variants={fadeUpSoft}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={viewportOnce}
+                        custom={i}
+                      >
+                        <label>{field.label}</label>
+                        <select className="contact-input" style={{ appearance: 'none', background: 'transparent' }}>
+                          {field.options.map((opt) => (
+                            <option key={opt}>{opt}</option>
+                          ))}
+                        </select>
+                      </motion.div>
+                    );
+                  }
 
-                <div className="contact-input-group">
-                  <label>Subject / Department</label>
-                  <select className="contact-input" style={{ appearance: 'none', background: 'transparent' }}>
-                    <option>General Inquiry</option>
-                    <option>Request a Quote</option>
-                    <option>Careers & Recruiting</option>
-                    <option>Billing & Support</option>
-                    <option>Sales / Dedicated Fleet</option>
-                  </select>
-                </div>
+                  if (field.type === 'textarea') {
+                    return (
+                      <motion.div
+                        key={field.label}
+                        className="contact-input-group"
+                        variants={fadeUpSoft}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={viewportOnce}
+                        custom={i}
+                      >
+                        <label>{field.label}</label>
+                        <textarea className="contact-input contact-textarea" placeholder={field.placeholder} />
+                      </motion.div>
+                    );
+                  }
 
-                <div className="contact-input-group">
-                  <label>Message</label>
-                  <textarea className="contact-input contact-textarea" placeholder="How can we assist you?"></textarea>
-                </div>
+                  return (
+                    <motion.div
+                      key={field.label}
+                      className="contact-input-group"
+                      variants={fadeUpSoft}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={viewportOnce}
+                      custom={i}
+                    >
+                      <label>{field.label}</label>
+                      <input type={field.inputType} className="contact-input" placeholder={field.placeholder} />
+                    </motion.div>
+                  );
+                })}
 
-                <button type="submit" className="contact-submit">Submit Request</button>
+                <motion.button
+                  type="submit"
+                  className="contact-submit"
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={viewportOnce}
+                  custom={formFields.length}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Submit Request
+                </motion.button>
               </form>
-            </div>
-
+            </motion.div>
           </div>
         </section>
-
       </main>
       <Footer />
     </div>

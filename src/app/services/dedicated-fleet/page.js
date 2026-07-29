@@ -41,7 +41,7 @@ export default function DedicatedFleetPage() {
       }}
       gallery={[
         { src: '/images/gallery-3.webp', alt: 'Dedicated fleet lineup', span: 'main' },
-        { src: '/images/fleet-1.webp', alt: 'Truck on the road' },
+        { src: '/images/truck-loaded.webp', alt: 'Loaded flatbed on site' },
         { src: '/images/heavy_haul_truck.webp', alt: 'Heavy haul on the road' },
       ]}
       darkSection={{

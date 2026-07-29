@@ -3,20 +3,13 @@ import React from 'react';
 import Image from 'next/image';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import EditorialHero from '../../components/EditorialHero';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, ArrowUpRight, ArrowDown } from 'lucide-react';
+import { Phone, ArrowUpRight } from 'lucide-react';
+import { fadeUp, fadeUpSoft, fadeIn, slideLeft, slideRight, viewportOnce } from '../../lib/motion';
 import './AboutPage.css';
 
 export default function AboutPage() {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (i = 0) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] },
-    }),
-  };
-
   const marqueeItems = [
     "FLATBED FREIGHT", "MOFFETT PIGGYBACK", "CROSS-DOCK", "DEDICATED LANES", "SAME-DAY GTA", "HEAVY HAUL"
   ];
@@ -53,38 +46,16 @@ export default function AboutPage() {
     <div className="pz-about">
       <Navbar />
 
-      {/* HERO SECTION */}
-      <section className="pz-hero">
-        <div className="pz-container">
-          <motion.div className="pz-hero-top" variants={fadeUp} initial="hidden" animate="visible" custom={0}>
-            <span className="pz-badge">ABOUT POINT ZERO</span>
-            <span className="pz-badge">EST. 2012 • MISSISSAUGA</span>
-          </motion.div>
-          
-          <motion.h1 className="pz-hero-title" variants={fadeUp} initial="hidden" animate="visible" custom={1}>
-            BUILT BY DRIVERS,<br />
-            <span className="text-cyan italic">RUN LIKE CLOCKWORK.</span>
-          </motion.h1>
-
-          <motion.div className="pz-hero-bottom" variants={fadeUp} initial="hidden" animate="visible" custom={2}>
-            <p className="pz-hero-desc">
-              Point Zero Road Lines started with one flatbed and one promise:
-              show up when we said we would. Fourteen years later that promise
-              still runs the yard — twenty-six trucks, a dispatch desk that
-              answers on the second ring, and drivers who treat your freight like
-              it&apos;s theirs.
-            </p>
-            <div className="pz-scroll-indicator">
-              <span>SCROLL FOR THE STORY</span>
-              <div className="pz-scroll-icon"><ArrowDown size={14} /></div>
-            </div>
-          </motion.div>
-
-          <motion.div className="pz-hero-img-wrapper" variants={fadeUp} initial="hidden" animate="visible" custom={3}>
-            <Image src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=2000" alt="Fleet of trucks" className="pz-hero-img" fill sizes="(max-width: 768px) 100vw, 1400px" priority style={{ objectFit: 'cover' }} />
-          </motion.div>
-        </div>
-      </section>
+      <EditorialHero
+        badge="ABOUT POINT ZERO"
+        badgeAlt="EST. 2012 • MISSISSAUGA"
+        titleLine1="BUILT BY DRIVERS,"
+        titleAccent="RUN LIKE CLOCKWORK."
+        description="Point Zero Road Lines started with one flatbed and one promise: show up when we said we would. Fourteen years later that promise still runs the yard — twenty-six trucks, a dispatch desk that answers on the second ring, and drivers who treat your freight like it's theirs."
+        scrollLabel="SCROLL FOR THE STORY"
+        heroImage="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=2000"
+        heroAlt="Fleet of trucks"
+      />
 
       {/* MARQUEE */}
       <div className="pz-marquee-container">
@@ -101,23 +72,23 @@ export default function AboutPage() {
       {/* OUR STORY */}
       <section className="pz-story">
         <div className="pz-container">
-          <motion.div className="pz-story-header" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <motion.div className="pz-story-header" variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce}>
             <div className="pz-story-title-wrapper">
-              <p className="pz-section-label">OUR STORY</p>
-              <h2 className="pz-story-title">
+              <motion.p className="pz-section-label" variants={fadeIn} initial="hidden" whileInView="visible" viewport={viewportOnce}>OUR STORY</motion.p>
+              <motion.h2 className="pz-story-title" variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={1}>
                 FOURTEEN YEARS OF <span className="text-cyan italic">SHOWING UP.</span>
-              </h2>
+              </motion.h2>
             </div>
-            <p className="pz-story-desc">
+            <motion.p className="pz-story-desc" variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={2}>
               We grew the way freight companies should — one
               satisfied shipper at a time. No overpromising, no mystery
               surcharges, no trucks that leave the yard before the pre-trip&apos;s done.
-            </p>
+            </motion.p>
           </motion.div>
 
           <div className="pz-timeline">
             {storySteps.map((step, i) => (
-              <motion.div key={i} className="pz-timeline-step" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} custom={i}>
+              <motion.div key={i} className="pz-timeline-step" variants={fadeUpSoft} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={i}>
                 <div className="pz-timeline-year">{step.year}</div>
                 <div className="pz-timeline-content">
                   <h3>{step.title}</h3>
@@ -176,22 +147,22 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <motion.div className="pz-stats-grid" style={{ margin: "4rem 0 2rem", borderTop: "1px solid var(--border-color)", borderBottom: "1px solid var(--border-color)", padding: "3rem 0" }} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}>
+          <motion.div className="pz-stats-grid" style={{ margin: "4rem 0 2rem", borderTop: "1px solid var(--border-color)", borderBottom: "1px solid var(--border-color)", padding: "3rem 0" }} initial="hidden" whileInView="visible" viewport={viewportOnce}>
             {stats.map((stat, i) => (
-              <div key={i} className="pz-stat-card">
+              <motion.div key={i} className="pz-stat-card" variants={fadeUpSoft} custom={i}>
                 <div className="pz-stat-num">{stat.num}</div>
                 <h3 className="pz-stat-value">{stat.value}</h3>
                 <p className="pz-stat-label">{stat.label}</p>
                 <p className="pz-stat-desc">{stat.desc}</p>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
 
-          <motion.div className="pz-crew-badges" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}>
+          <motion.div className="pz-crew-badges" initial="hidden" whileInView="visible" viewport={viewportOnce}>
             {crewBadges.map((badge, i) => (
-              <span key={i} className="pz-crew-badge">
+              <motion.span key={i} className="pz-crew-badge" variants={fadeUpSoft} custom={i}>
                 <span className="pz-check">✓</span> {badge}
-              </span>
+              </motion.span>
             ))}
           </motion.div>
         </div>
@@ -204,7 +175,7 @@ export default function AboutPage() {
           <div className="pz-cta-overlay"></div>
         </div>
         <div className="pz-container pz-cta-inner">
-          <motion.div className="pz-cta-content" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <motion.div className="pz-cta-content" variants={slideLeft} initial="hidden" whileInView="visible" viewport={viewportOnce}>
             <span className="pz-badge-dark">READY WHEN YOU ARE</span>
             <h2 className="pz-cta-title">
               LET&apos;S MOVE YOUR<br/>
@@ -215,7 +186,7 @@ export default function AboutPage() {
               business day — usually inside two hours.
             </p>
           </motion.div>
-          <motion.div className="pz-cta-actions" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}>
+          <motion.div className="pz-cta-actions" variants={slideRight} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={1}>
             <a href="/quote" className="pz-btn pz-btn-primary">
               Request a quote <ArrowUpRight size={18} />
             </a>

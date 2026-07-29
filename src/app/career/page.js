@@ -1,10 +1,11 @@
 "use client";
 import React from 'react';
-import Image from 'next/image';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import EditorialHero from '../../components/EditorialHero';
 import { motion } from 'framer-motion';
 import { CheckCircle, DollarSign, Route, Truck } from 'lucide-react';
+import { fadeUp, fadeUpSoft, fadeIn, viewportOnce } from '../../lib/motion';
 import './CareerPage.css';
 import Link from 'next/link';
 
@@ -26,67 +27,62 @@ const marqueeItems = [
   "NOW HIRING AZ DRIVERS", "DEDICATED ROUTES", "TOP INDUSTRY PAY", "SAFETY FIRST"
 ];
 
-export default function CareerPage() {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (i = 0) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] },
-    }),
-  };
+const heroStats = [
+  { value: '$100K+', label: 'Earning Potential' },
+  { value: '100%', label: 'Dedicated Lanes' },
+  { value: '24/7', label: 'Dispatch Support' },
+  { value: 'HIRING', label: 'Immediate AZ Openings', highlight: true },
+];
 
+export default function CareerPage() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: 'var(--bg-primary)' }}>
       <Navbar />
 
       <main style={{ flex: 1, paddingTop: '100px' }}>
         
-        {/* HERO / INTRO SECTION */}
-        <section className="career-hero">
-          <div className="career-container">
-            <motion.div className="career-hero-top" variants={fadeUp} initial="hidden" animate="visible" custom={0}>
-              <span className="career-badge">CAREERS AT POINT ZERO</span>
-              <span className="career-badge">HIRING AZ DRIVERS</span>
-            </motion.div>
-            
-            <motion.h1 className="career-hero-title" variants={fadeUp} initial="hidden" animate="visible" custom={1}>
-              THE HARD MILES,<br />
-              <span className="text-cyan italic">REWARDED.</span>
-            </motion.h1>
-
-            <motion.div className="career-hero-bottom" variants={fadeUp} initial="hidden" animate="visible" custom={2}>
+        <EditorialHero
+          sectionClass="career-hero"
+          containerClass="career-container"
+          topClass="career-hero-top"
+          badgeClass="career-badge"
+          titleClass="career-hero-title"
+          bottomClass="career-hero-bottom"
+          imgWrapperClass="career-hero-img-wrapper"
+          imgClass="career-hero-img"
+          badge="CAREERS AT POINT ZERO"
+          badgeAlt="HIRING AZ DRIVERS"
+          titleLine1="THE HARD MILES,"
+          titleAccent="REWARDED."
+          heroImage="/images/career-hero.webp"
+          heroAlt="Point Zero fleet"
+          bottom={(
+            <>
               <div className="career-hero-desc">
                 <p>We are always looking for dedicated and experienced professionals to join our fleet. At Point Zero Road Lines, we understand that our drivers are the absolute backbone of our operation.</p>
                 <p style={{ marginTop: '1rem' }}>We are a dedicated team focused on quality, safety, and integrity. We treat our staff with the same respect and dignity that we offer our clients, ensuring a supportive and rewarding work environment.</p>
               </div>
-
-              {/* 2x2 STATS GRID */}
               <div className="career-hero-stats">
-                <div className="career-stat-box">
-                  <span className="stat-value">$100K+</span>
-                  <span className="stat-label">Earning Potential</span>
-                </div>
-                <div className="career-stat-box">
-                  <span className="stat-value">100%</span>
-                  <span className="stat-label">Dedicated Lanes</span>
-                </div>
-                <div className="career-stat-box">
-                  <span className="stat-value">24/7</span>
-                  <span className="stat-label">Dispatch Support</span>
-                </div>
-                <div className="career-stat-box stat-highlight">
-                  <span className="stat-value"><span className="pulse-dot"></span>HIRING</span>
-                  <span className="stat-label">Immediate AZ Openings</span>
-                </div>
+                {heroStats.map((stat, i) => (
+                  <motion.div
+                    key={stat.label}
+                    className={`career-stat-box${stat.highlight ? ' stat-highlight' : ''}`}
+                    variants={fadeUpSoft}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                    custom={i}
+                  >
+                    <span className="stat-value">
+                      {stat.highlight ? <><span className="pulse-dot" />{stat.value}</> : stat.value}
+                    </span>
+                    <span className="stat-label">{stat.label}</span>
+                  </motion.div>
+                ))}
               </div>
-            </motion.div>
-
-            <motion.div className="career-hero-img-wrapper" variants={fadeUp} initial="hidden" animate="visible" custom={3}>
-              <Image src="/images/career-hero.webp" alt="Point Zero fleet" className="career-hero-img" fill sizes="(max-width: 768px) 100vw, 1400px" priority style={{ objectFit: 'cover' }} />
-            </motion.div>
-          </div>
-        </section>
+            </>
+          )}
+        />
 
         {/* MARQUEE */}
         <div className="career-pg-marquee-container">
@@ -105,17 +101,17 @@ export default function CareerPage() {
           <div className="career-container">
             <div className="career-header" style={{ paddingBottom: '1rem' }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
-                <motion.span className="section-number" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0}>07</motion.span>
-                <motion.span style={{fontFamily: 'var(--font-mono)', fontSize: 'var(--fs-small)', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase'}} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}>Benefits</motion.span>
+                <motion.span className="section-number" variants={fadeIn} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={0}>07</motion.span>
+                <motion.span style={{fontFamily: 'var(--font-mono)', fontSize: 'var(--fs-small)', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase'}} variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={1}>Benefits</motion.span>
               </div>
-              <motion.h2 className="career-title" style={{ margin: 0 }} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}>Why drive with us?</motion.h2>
+              <motion.h2 className="career-title" style={{ margin: 0 }} variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={2}>Why drive with us?</motion.h2>
             </div>
             
             <div className="career-steps">
               {benefits.map((benefit, i) => {
                 const Icon = benefit.icon;
                 return (
-                  <motion.div key={i} className="career-step" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} custom={i}>
+                  <motion.div key={i} className="career-step" variants={fadeUpSoft} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={i}>
                     <div className="step-top">
                       <span className="step-num">0{i+1}</span>
                       <Icon size={18} strokeWidth={1.5} className="step-icon" />
@@ -138,15 +134,15 @@ export default function CareerPage() {
             <div className="career-requirements-content" style={{ position: 'relative', zIndex: 1 }}>
               <div className="career-header">
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
-                  <motion.span className="section-number" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0}>08</motion.span>
-                  <motion.span style={{fontFamily: 'var(--font-mono)', fontSize: 'var(--fs-small)', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase'}} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}>Requirements</motion.span>
+                  <motion.span className="section-number" variants={fadeIn} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={0}>08</motion.span>
+                  <motion.span style={{fontFamily: 'var(--font-mono)', fontSize: 'var(--fs-small)', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase'}} variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={1}>Requirements</motion.span>
                 </div>
-                <motion.h2 className="career-title" style={{ margin: 0 }} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}>What it takes.</motion.h2>
+                <motion.h2 className="career-title" style={{ margin: 0 }} variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={2}>What it takes.</motion.h2>
               </div>
               
               <div className="requirements-list">
                 {requirements.map((req, i) => (
-                  <motion.div key={i} className="req-item" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} custom={i}>
+                  <motion.div key={i} className="req-item" variants={fadeUpSoft} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={i}>
                     <CheckCircle size={18} strokeWidth={1.5} className="req-icon" />
                     <span className="req-text">{req}</span>
                   </motion.div>
@@ -163,19 +159,19 @@ export default function CareerPage() {
           <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0.15, backgroundImage: 'radial-gradient(circle at 50% -20%, var(--c-blue) 0%, transparent 70%)', zIndex: 0, pointerEvents: 'none' }}></div>
           
           <div style={{ position: 'relative', zIndex: 1, maxWidth: '800px', margin: '0 auto' }}>
-            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0}>
+            <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={0}>
               <span className="career-badge" style={{ color: 'var(--c-cream)', borderColor: 'rgba(255,255,255,0.2)', marginBottom: '1.5rem', display: 'inline-block' }}>JOIN THE FLEET</span>
             </motion.div>
             
-            <motion.h2 className="career-title" style={{ color: 'var(--c-cream)', marginBottom: '1.5rem' }} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}>
+            <motion.h2 className="career-title" style={{ color: 'var(--c-cream)', marginBottom: '1.5rem' }} variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={1}>
               READY TO <span className="text-cyan italic">DRIVE?</span>
             </motion.h2>
             
-            <motion.p style={{ color: 'var(--c-silver)', fontSize: 'var(--fs-body)', marginBottom: '3rem', lineHeight: 1.6 }} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}>
+            <motion.p style={{ color: 'var(--c-silver)', fontSize: 'var(--fs-body)', marginBottom: '3rem', lineHeight: 1.6 }} variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={2}>
               Join a fleet that values your time, prioritizes your safety, and rewards your hard work. We offer top industry pay, modern equipment, and dedicated routes.
             </motion.p>
             
-            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={3}>
+            <motion.div variants={fadeUpSoft} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={3}>
               <Link href="/contact-us">
                 <button className="btn-track-career" style={{ background: 'var(--c-cream)', color: 'var(--c-charcoal)', padding: '0 3rem', fontSize: 'var(--fs-body)' }}>
                   Submit Application

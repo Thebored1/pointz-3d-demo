@@ -26,6 +26,7 @@
   letter-spacing: -0.04em;
   text-transform: uppercase;
   text-align: center;
+  line-height: 1;
 }
 
 .nat-form-container {

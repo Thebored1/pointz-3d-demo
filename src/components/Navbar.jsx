@@ -142,11 +142,13 @@ export default function Navbar() {
               <Link href="/about" onClick={() => setMobileOpen(false)} className="mobile-nav-link">About</Link>
               <div className="mobile-dropdown-container">
                 <button 
-                  className="mobile-nav-link" 
-                  onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)} 
-                  style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer' }}
+                  type="button"
+                  className="mobile-nav-link mobile-nav-dropdown-trigger" 
+                  onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+                  aria-expanded={mobileDropdownOpen}
                 >
-                  Services <ChevronDown size={20} style={{ transform: mobileDropdownOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }} />
+                  Services
+                  <ChevronDown size={20} className={`mobile-dropdown-chevron ${mobileDropdownOpen ? 'open' : ''}`} />
                 </button>
                 <AnimatePresence>
                   {mobileDropdownOpen && (
