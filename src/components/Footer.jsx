@@ -20,6 +20,14 @@ export default function Footer() {
           
           <div className="footer-links-col">
             <div className="link-group">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="/services/specialty-equipment">Specialty Equipment</a></li>
+                <li><a href="/services/dedicated-fleet">Dedicated Fleet</a></li>
+                <li><a href="/services/warehouse-and-storage">Warehouse &amp; Storage</a></li>
+              </ul>
+            </div>
+            <div className="link-group">
               <h4>Company</h4>
               <ul>
                 <li><a href="/about">About Us</a></li>
