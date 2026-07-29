@@ -137,22 +137,51 @@
 .btn-track {
   background: var(--c-charcoal);
   color: var(--c-cream);
-  border: none;
+  border: 1px solid var(--c-charcoal);
   padding: 0 1.5rem;
   height: 44px;
+  font-family: inherit;
   font-weight: 500;
   font-size: var(--fs-small);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
   transition: all 0.3s var(--ease-out-expo);
   letter-spacing: 0.02em;
   width: auto;
+  border-radius: 0;
 }
 
 .btn-track:hover {
   background: var(--c-black);
+  border-color: var(--c-black);
+}
+
+.btn-track-outline {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-strong);
+  padding: 0 1.5rem;
+  height: 44px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: var(--fs-small);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out-expo);
+  letter-spacing: 0.02em;
+  width: auto;
+  border-radius: 0;
+}
+
+.btn-track-outline:hover {
+  border-color: var(--text-main);
+  background: rgba(13, 27, 42, 0.04);
 }
 
 .hero-stats {

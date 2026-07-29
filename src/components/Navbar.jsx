@@ -7,24 +7,9 @@ import Image from 'next/image';
 import './Navbar.css';
 
 const serviceLinks = [
-  {
-    href: '/services/specialty-equipment',
-    num: '01',
-    title: 'Specialty Equipment',
-    desc: 'Moffett, linen & custom configs',
-  },
-  {
-    href: '/services/dedicated-fleet',
-    num: '02',
-    title: 'Dedicated Fleet',
-    desc: 'Assigned trucks & drivers',
-  },
-  {
-    href: '/services/warehouse-and-storage',
-    num: '03',
-    title: 'Warehouse & Storage',
-    desc: 'Cross-dock & overflow',
-  },
+  { href: '/services/specialty-equipment', num: '01', title: 'Specialty Equipment', desc: 'Moffett, linen & custom configs' },
+  { href: '/services/dedicated-fleet', num: '02', title: 'Dedicated Fleet', desc: 'Assigned trucks & drivers' },
+  { href: '/services/warehouse-and-storage', num: '03', title: 'Warehouse & Storage', desc: 'Cross-dock & overflow' },
 ];
 
 export default function Navbar() {
@@ -77,9 +62,9 @@ export default function Navbar() {
             <div className="nav-links">
               <Link href="/" className="nav-link">Home</Link>
               <Link href="/about" className="nav-link">About</Link>
-              <div
-                className="nav-item-dropdown"
-                onMouseEnter={() => setDropdownOpen(true)}
+              <div 
+                className="nav-item-dropdown" 
+                onMouseEnter={() => setDropdownOpen(true)} 
                 onMouseLeave={() => setDropdownOpen(false)}
               >
                 <span className="nav-link" style={{ cursor: 'default', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
@@ -87,7 +72,7 @@ export default function Navbar() {
                 </span>
                 <AnimatePresence>
                   {dropdownOpen && (
-                    <motion.div
+                    <motion.div 
                       className="dropdown-menu"
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -97,17 +82,12 @@ export default function Navbar() {
                       <div className="dropdown-header">
                         <span>What we haul</span>
                       </div>
-                      {serviceLinks.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className="dropdown-link"
-                          onClick={() => setDropdownOpen(false)}
-                        >
-                          <span className="dropdown-link-num">{item.num}</span>
+                      {serviceLinks.map((s) => (
+                        <Link key={s.href} href={s.href} className="dropdown-link" onClick={() => setDropdownOpen(false)}>
+                          <span className="dropdown-link-num">{s.num}</span>
                           <span className="dropdown-link-copy">
-                            <span className="dropdown-link-title">{item.title}</span>
-                            <span className="dropdown-link-desc">{item.desc}</span>
+                            <span className="dropdown-link-title">{s.title}</span>
+                            <span className="dropdown-link-desc">{s.desc}</span>
                           </span>
                           <ArrowRight size={14} className="dropdown-link-arrow" />
                         </Link>
@@ -161,31 +141,24 @@ export default function Navbar() {
               <Link href="/" onClick={() => setMobileOpen(false)} className="mobile-nav-link">Home</Link>
               <Link href="/about" onClick={() => setMobileOpen(false)} className="mobile-nav-link">About</Link>
               <div className="mobile-dropdown-container">
-                <button
-                  className="mobile-nav-link"
-                  onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+                <button 
+                  className="mobile-nav-link" 
+                  onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)} 
                   style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer' }}
                 >
                   Services <ChevronDown size={20} style={{ transform: mobileDropdownOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }} />
                 </button>
                 <AnimatePresence>
                   {mobileDropdownOpen && (
-                    <motion.div
+                    <motion.div 
                       className="mobile-dropdown-menu"
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       style={{ overflow: 'hidden' }}
                     >
-                      {serviceLinks.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          onClick={() => setMobileOpen(false)}
-                          className="mobile-sub-link"
-                        >
-                          {item.title}
-                        </Link>
+                      {serviceLinks.map((s) => (
+                        <Link key={s.href} href={s.href} onClick={() => setMobileOpen(false)} className="mobile-sub-link">{s.title}</Link>
                       ))}
                     </motion.div>
                   )}

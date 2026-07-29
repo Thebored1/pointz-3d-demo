@@ -80,8 +80,8 @@ export default function Hero() {
               Request a quote
               <ArrowRight size={16} strokeWidth={2} />
             </button>
-            <button 
-              style={{ background: 'transparent', color: 'var(--text-main)', border: '1px solid var(--border-strong)', padding: '0 1.5rem', height: '52px', fontWeight: 500, fontSize: 'var(--fs-small)', borderRadius: 'var(--radius-md)', cursor: 'pointer', transition: 'all 0.3s ease' }}
+            <button
+              className="btn-track-outline"
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Explore services
