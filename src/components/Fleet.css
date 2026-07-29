@@ -7,6 +7,7 @@
 .fleet-container {
   position: relative;
   z-index: 1;
+  padding: 0 var(--page-gutter);
 }
 
 .fleet-header {
@@ -14,18 +15,18 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
-  padding: 0 2.5rem 2rem;
+  padding: 0 0 2rem;
 }
 
 @media (max-width: 768px) {
   .fleet-header {
-    padding: 0 1.5rem 1.5rem;
+    padding: 0 0 1.5rem;
   }
 }
 
 .fleet-title {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-size: var(--fs-heading);
   font-weight: 700;
   letter-spacing: -0.03em;
   text-transform: uppercase;
@@ -69,7 +70,7 @@
   }
 
   .fleet-header {
-    padding: 0 1.5rem 1.5rem;
+    padding: 0 0 1.5rem;
   }
 
   .fleet-specs {

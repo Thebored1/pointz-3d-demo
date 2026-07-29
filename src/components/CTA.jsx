@@ -36,9 +36,9 @@ export default function CTA() {
               Get a Quote
               <ArrowRight size={18} />
             </button>
-            <button className="cta-btn-secondary">
-              View Services
-            </button>
+            <a href="/contact-us" className="cta-btn-secondary">
+              Contact Us
+            </a>
           </motion.div>
         </div>
 

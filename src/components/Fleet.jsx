@@ -17,7 +17,7 @@ export default function Fleet() {
         <div className="fleet-header">
           <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
             <motion.span className="section-number" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>04</motion.span>
-            <motion.span style={{fontFamily: 'var(--font-mono)', fontSize: '0.75rem', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase'}} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Capability Spotlights</motion.span>
+            <motion.span style={{fontFamily: 'var(--font-mono)', fontSize: 'var(--fs-small)', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase'}} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Capability Spotlights</motion.span>
           </div>
           <motion.h2 className="fleet-title" style={{ margin: 0 }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>What we run</motion.h2>
         </div>
@@ -25,7 +25,7 @@ export default function Fleet() {
           {capabilities.map((s, i) => (
             <motion.div key={i} className="fleet-spec" style={{ flexDirection: 'column', alignItems: 'flex-start' }} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
               <span className="fleet-spec-label">{s.label}</span>
-              <span className="fleet-spec-value" style={{ fontSize: '0.875rem', lineHeight: 1.5, color: 'var(--text-muted)', textAlign: 'left', textTransform: 'none' }}>{s.value}</span>
+              <span className="fleet-spec-value" style={{ fontSize: 'var(--fs-small)', lineHeight: 1.5, color: 'var(--text-muted)', textAlign: 'left', textTransform: 'none' }}>{s.value}</span>
             </motion.div>
           ))}
         </div>

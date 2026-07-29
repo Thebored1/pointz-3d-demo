@@ -1,224 +1,244 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { motion } from 'framer-motion';
-import './AboutPage.css'; 
+import { MapPin, Phone, Mail, ArrowUpRight, ArrowDown } from 'lucide-react';
+import './AboutPage.css';
 
 export default function AboutPage() {
-  const textRevealVariants = {
-    hidden: { y: "110%", rotateX: -20 },
-    visible: { 
-      y: 0, 
-      rotateX: 0,
-      transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] }
-    }
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] },
+    }),
   };
 
+  const marqueeItems = [
+    "FLATBED FREIGHT", "MOFFETT PIGGYBACK", "CROSS-DOCK", "DEDICATED LANES", "SAME-DAY GTA", "HEAVY HAUL"
+  ];
+  
+  const stats = [
+    { num: '01', value: '26', label: 'Trucks in fleet', desc: 'Flatbed, step-deck & Moffett' },
+    { num: '02', value: '14 yrs', label: 'On Ontario roads', desc: 'Family run since 2012' },
+    { num: '03', value: '99.8%', label: 'On-time delivery', desc: 'Rolling 12-month avg' },
+    { num: '04', value: '2.1M', label: 'Safe km per year', desc: 'CVOR excellent rating' },
+  ];
+
+  const storySteps = [
+    { year: '2012', title: 'One truck, one lane', desc: 'Founded in a rented Bolton bay hauling steel between Hamilton and the GTA.' },
+    { year: '2016', title: 'Moffett piggyback added', desc: 'First truck-mounted forklifts put on the road so crews could unload anywhere on site.' },
+    { year: '2020', title: 'Mississauga cross-dock', desc: '18,000 sq ft facility opened, letting us stage, sort and reload same-day freight.' },
+    { year: '2026', title: '26 trucks, one standard', desc: 'Dedicated lanes across Ontario with the same dispatch team that started it all.' },
+  ];
+
+  const rules = [
+    { num: '01', title: 'On schedule, not on average', desc: 'Appointment windows are commitments. If a load is going to slip, you hear it from us first — not from your customer.' },
+    { num: '02', title: 'Safety before speed', desc: 'Full pre-trips, secured loads, CVOR-clean records. Every driver is trained on Moffett operation and load securement.' },
+    { num: '03', title: 'A real person on dispatch', desc: 'No ticket queues. Call the desk between 6am and 8pm and you get someone who knows exactly where your trailer is.' },
+    { num: '04', title: 'We know these roads', desc: 'The 401 at 4pm, the Bolton back routes, tight downtown sites. Local knowledge is why our loads land on time.' },
+  ];
+
+  const crewBadges = [
+    "CVOR Excellent rating", "FAST / PARS certified drivers",
+    "WSIB clearance on file", "SmartWay registered fleet", "Moffett-certified operators"
+  ];
+
+  const locations = ["MISSISSAUGA", "BOLTON", "BRAMPTON", "HAMILTON", "KITCHENER", "OTTAWA"];
+
   return (
-    <div style={{ backgroundColor: 'var(--bg-primary)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div className="pz-about">
       <Navbar />
 
-      {/* 1. Rounded Hero Banner (Image 1 Ref) - outside page-wrapper for full width */}
-      <motion.div className="ap-hero" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <img src="/images/fleet-hero.jpg" alt="Point Zero Fleet" />
-        <div className="ap-hero-overlay"></div>
-        <h1>About Us</h1>
-      </motion.div>
+      {/* HERO SECTION */}
+      <section className="pz-hero">
+        <div className="pz-container">
+          <motion.div className="pz-hero-top" variants={fadeUp} initial="hidden" animate="visible" custom={0}>
+            <span className="pz-badge">ABOUT POINT ZERO</span>
+            <span className="pz-badge">EST. 2012 • MISSISSAUGA</span>
+          </motion.div>
+          
+          <motion.h1 className="pz-hero-title" variants={fadeUp} initial="hidden" animate="visible" custom={1}>
+            BUILT BY DRIVERS,<br />
+            <span className="text-cyan italic">RUN LIKE CLOCKWORK.</span>
+          </motion.h1>
 
-      <main className="page-wrapper" style={{ position: 'relative', zIndex: 2, paddingBottom: 0 }}>
-
-        {/* 2. Core Idea & Bento Cards (Image 1 Ref) */}
-        <section className="ap-idea-section">
-          <div className="ap-badge">
-            <motion.div className="ap-badge-left" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-              <div className="ap-badge-dot"></div>
-              ABOUT US &middot; OUR STORY &middot; VALUES
-            </motion.div>
-            <motion.div className="ap-badge-right" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-              EST. 2012
-            </motion.div>
-          </div>
-
-          <motion.h2 
-            className="ap-idea-text"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={{
-              visible: { transition: { staggerChildren: 0.15 } }
-            }}
-          >
-            <div className="mask-container">
-              <motion.div variants={textRevealVariants}>
-                STRATEGIC PLANNING THAT FEELS CLEAR,
-              </motion.div>
+          <motion.div className="pz-hero-bottom" variants={fadeUp} initial="hidden" animate="visible" custom={2}>
+            <p className="pz-hero-desc">
+              Point Zero Road Lines started with one flatbed and one promise:
+              show up when we said we would. Fourteen years later that promise
+              still runs the yard — twenty-six trucks, a dispatch desk that
+              answers on the second ring, and drivers who treat your freight like
+              it&apos;s theirs.
+            </p>
+            <div className="pz-scroll-indicator">
+              <span>SCROLL FOR THE STORY</span>
+              <div className="pz-scroll-icon"><ArrowDown size={14} /></div>
             </div>
-            <div className="mask-container">
-              <motion.div variants={textRevealVariants} className="ap-idea-highlight">
-                NOT OVERWHELMING.
-              </motion.div>
-            </div>
-          </motion.h2>
+          </motion.div>
 
-          <motion.div className="ap-idea-divider" initial={{ opacity: 0, scaleX: 0 }} whileInView={{ opacity: 1, scaleX: 1 }} viewport={{ once: true }} style={{ originX: 0 }}></motion.div>
+          <motion.div className="pz-hero-img-wrapper" variants={fadeUp} initial="hidden" animate="visible" custom={3}>
+            <Image src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=2000" alt="Fleet of trucks" className="pz-hero-img" fill sizes="(max-width: 768px) 100vw, 1400px" priority style={{ objectFit: 'cover' }} />
+          </motion.div>
+        </div>
+      </section>
 
-          <motion.p className="ap-idea-subtext" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            Dedicated flatbed, Moffett piggyback and cross-dock service across the GTA and Ontario. Lean, safe and on schedule — that's what we do.
-          </motion.p>
-
-          <div style={{ display: 'flex', gap: '1rem', marginBottom: '4rem' }}>
-             <a href="/contact-us" className="ap-button-dark">Request a quote &rarr;</a>
-             <a href="/services" className="ap-button-light">Explore services</a>
-          </div>
-
-          <div className="ap-bento-grid">
-            <motion.div className="ap-bento-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-              <div className="ap-bento-number">01</div>
-              <h3>Respect & Dignity</h3>
-              <p>We believe in treating every single customer with the utmost respect and dignity, forming the baseline of our operations.</p>
-            </motion.div>
-            <motion.div className="ap-bento-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-              <div className="ap-bento-number">02</div>
-              <h3>Efficiency</h3>
-              <p>We grow through finding innovative ways to be the most efficient and cost-effective transport carrier in the industry.</p>
-            </motion.div>
-            <motion.div className="ap-bento-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
-              <div className="ap-bento-number">03</div>
-              <h3>Integrity</h3>
-              <p>We integrate honesty, integrity, and absolute business ethics into all aspects of our business functioning.</p>
-            </motion.div>
-          </div>
-
-          <div className="ap-split-timeline">
-            <div className="ap-timeline-sticky">
-              <motion.h2 className="ap-timeline-title" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-                Building a Better Way to Transport, One Milestone at a Time
-              </motion.h2>
-              <motion.p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-                From our first truck to serving hundreds of clients across the GTA, here's how Point Zero grew into a trusted solution.
-              </motion.p>
-            </div>
-            
-            <div className="ap-timeline">
-              <motion.div className="ap-timeline-item" initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-                <h4>Our Mission</h4>
-                <p>To build long term partnerships with our customer and clients and provide exceptional services by pursuing business goals through dedicated services and accurate planning.</p>
-              </motion.div>
-              <motion.div className="ap-timeline-item" initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-                <h4>Our Vision</h4>
-                <p>To provide quality services that exceed the expectations of our valued customers.</p>
-                <img src="/images/fleet.png" alt="Vision" style={{ width: '100%', borderRadius: 'var(--radius-sm)', marginTop: '1rem' }} />
-              </motion.div>
-              <motion.div className="ap-timeline-item" initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-                <h4>Our Purpose</h4>
-                <p>To be the leader in the transportation industry by providing cost efficient solutions which realize maximum results.</p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. Asymmetrical Masonry Grid (Image 2 Ref) */}
-        <section className="ap-masonry-section">
-          <div className="ap-masonry-header">
-            <motion.h2 className="ap-masonry-title" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              Experiences that reconnect with<br />the road and the community.
-            </motion.h2>
-            <motion.p className="ap-masonry-sub" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-              We are a dedicated transportation company headquartered in Mississauga, with two other sites located in Bolton and Brampton, ON.
-            </motion.p>
-          </div>
-
-          <div className="ap-masonry-grid">
-            <motion.div className="ap-masonry-item ap-hide-mobile" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-              <img src="/images/truck-cab.jpg" alt="Trucking 1" />
-            </motion.div>
-            <motion.div className="ap-masonry-item" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-              <img src="/images/WhatsApp%20Image%202026-07-25%20at%2014.28.10.jpeg" alt="Logistics 2" />
-            </motion.div>
-            <motion.div className="ap-masonry-item" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-              <img src="/images/WhatsApp%20Image%202026-07-25%20at%2014.28.07.jpeg" alt="Team 3" />
-            </motion.div>
-            <motion.div className="ap-masonry-item" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
-              <img src="/images/WhatsApp%20Image%202026-07-25%20at%2014.28.12.jpeg" alt="Operations 4" />
-            </motion.div>
-          </div>
-        </section>
-
-        {/* 4. By the Numbers & Timeline (Image 3 Ref) */}
-        <section className="ap-stats-section">
-          <div className="ap-stats-header">
-            <motion.h2 className="ap-masonry-title" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>Our Impact by the Numbers</motion.h2>
-            <motion.p className="ap-masonry-sub" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-              A diverse group of passionate professionals, bringing unique skills to drive innovation in every load we undertake.
-            </motion.p>
-          </div>
-
-          <div className="ap-stats-grid">
-            <motion.div className="ap-stat-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <div className="ap-stat-header-row">
-                <span className="ap-stat-number">01</span>
-                <svg className="ap-stat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  {/* Package/Box icon */}
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                </svg>
-              </div>
-              <h3>Quote</h3>
-              <p>Send us your lane and load. We respond fast with a straight answer.</p>
-            </motion.div>
-            
-            <motion.div className="ap-stat-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-              <div className="ap-stat-header-row">
-                <span className="ap-stat-number">02</span>
-                <svg className="ap-stat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  {/* Route/Dispatch icon */}
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                </svg>
-              </div>
-              <h3>Dispatch</h3>
-              <p>The right equipment and driver are assigned and routed for your job.</p>
-            </motion.div>
-            
-            <motion.div className="ap-stat-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-              <div className="ap-stat-header-row">
-                <span className="ap-stat-number">03</span>
-                <svg className="ap-stat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  {/* Bar chart/Transit icon */}
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <h3>In transit</h3>
-              <p>Secured, tarped and tracked. Our dispatcher stays on your load end to end.</p>
-            </motion.div>
-            
-            <motion.div className="ap-stat-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
-              <div className="ap-stat-header-row">
-                <span className="ap-stat-number">04</span>
-                <svg className="ap-stat-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  {/* Check circle/Delivered icon */}
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3>Delivered</h3>
-              <p>Offloaded where you need it — dock or curbside — with confirmation.</p>
-            </motion.div>
-          </div>
-
-        </section>
-
-        {/* 5. Final CTA Banner (Image 3 Ref) */}
-        {/* 5. Final CTA Banner (Image 3 Ref) */}
-        <motion.section className="ap-cta-banner" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <div className="ap-cta-badge">POINT ZERO</div>
-          <h2>Need a truck?</h2>
-          <p>Tell us your lane and load. We'll get back to you with a quote fast. Let us help you find ways to be lean and efficient.</p>
-          <a href="/contact-us" className="ap-cta-button-new">Get a Quote</a>
-        </motion.section>
-
-      </main>
-      <div style={{ paddingTop: '10rem', backgroundColor: 'var(--c-charcoal)', marginTop: '-10rem', position: 'relative', zIndex: 1 }}>
-        <Footer />
+      {/* MARQUEE */}
+      <div className="pz-marquee-container">
+        <div className="pz-marquee">
+          {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
+            <React.Fragment key={i}>
+              <span className="pz-marquee-item">{item}</span>
+              <span className="pz-marquee-dot">•</span>
+            </React.Fragment>
+          ))}
+        </div>
       </div>
+
+      {/* OUR STORY */}
+      <section className="pz-story">
+        <div className="pz-container">
+          <motion.div className="pz-story-header" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <div className="pz-story-title-wrapper">
+              <p className="pz-section-label">OUR STORY</p>
+              <h2 className="pz-story-title">
+                FOURTEEN YEARS OF <span className="text-cyan italic">SHOWING UP.</span>
+              </h2>
+            </div>
+            <p className="pz-story-desc">
+              We grew the way freight companies should — one
+              satisfied shipper at a time. No overpromising, no mystery
+              surcharges, no trucks that leave the yard before the pre-trip&apos;s done.
+            </p>
+          </motion.div>
+
+          <div className="pz-timeline">
+            {storySteps.map((step, i) => (
+              <motion.div key={i} className="pz-timeline-step" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} custom={i}>
+                <div className="pz-timeline-year">{step.year}</div>
+                <div className="pz-timeline-content">
+                  <h3>{step.title}</h3>
+                  <p>{step.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW WE OPERATE */}
+      <section className="pz-operate">
+        <div className="pz-container">
+          <motion.div className="pz-section-header-dark" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <p className="pz-section-label-dark">HOW WE OPERATE</p>
+            <div className="pz-operate-top">
+              <h2 className="pz-section-title-dark">
+                FOUR RULES WE <span className="text-cyan italic">DON&apos;T<br/>BEND.</span>
+              </h2>
+              <p className="pz-operate-desc">
+                They&apos;re not posters in the lunchroom. They&apos;re how loads
+                get planned, how drivers get hired and how we answer
+                the phone at 5am.
+              </p>
+            </div>
+          </motion.div>
+
+          <div className="pz-rules-list">
+            {rules.map((rule, i) => (
+              <motion.div key={i} className="pz-rule-row" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} custom={i}>
+                <div className="pz-rule-num">{rule.num}</div>
+                <h3 className="pz-rule-title">{rule.title}</h3>
+                <p className="pz-rule-desc">{rule.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* THE CREW */}
+      <section className="pz-crew">
+        <div className="pz-container">
+          <motion.div className="pz-section-header" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <p className="pz-section-label">THE CREW</p>
+            <h2 className="pz-section-title">
+              THIRTY-ONE PEOPLE<br/>
+              WHO <span className="text-cyan italic">LIKE THIS WORK.</span>
+            </h2>
+            <p className="pz-crew-desc">
+              Our average driver has been with us six years. That matters more
+              than any brochure: the same faces show up at your dock, learn
+              your site, and know which gate to use. Dispatch, safety and
+              maintenance all sit in the same Mississauga building — so
+              problems get solved in a hallway instead of an inbox.
+            </p>
+          </motion.div>
+
+          <motion.div className="pz-stats-grid" style={{ margin: "4rem 0 2rem", borderTop: "1px solid var(--border-color)", borderBottom: "1px solid var(--border-color)", padding: "3rem 0" }} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}>
+            {stats.map((stat, i) => (
+              <div key={i} className="pz-stat-card">
+                <div className="pz-stat-num">{stat.num}</div>
+                <h3 className="pz-stat-value">{stat.value}</h3>
+                <p className="pz-stat-label">{stat.label}</p>
+                <p className="pz-stat-desc">{stat.desc}</p>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.div className="pz-crew-badges" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}>
+            {crewBadges.map((badge, i) => (
+              <span key={i} className="pz-crew-badge">
+                <span className="pz-check">✓</span> {badge}
+              </span>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="pz-cta">
+        <div className="pz-cta-bg">
+          <Image src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=2000" alt="Truck on highway" fill sizes="100vw" style={{ objectFit: 'cover' }} />
+          <div className="pz-cta-overlay"></div>
+        </div>
+        <div className="pz-container pz-cta-inner">
+          <motion.div className="pz-cta-content" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <span className="pz-badge-dark">READY WHEN YOU ARE</span>
+            <h2 className="pz-cta-title">
+              LET&apos;S MOVE YOUR<br/>
+              <span className="text-cyan italic">NEXT LOAD.</span>
+            </h2>
+            <p className="pz-cta-desc">
+              Send the details and you&apos;ll have a rate back the same<br/>
+              business day — usually inside two hours.
+            </p>
+          </motion.div>
+          <motion.div className="pz-cta-actions" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1}>
+            <a href="/quote" className="pz-btn pz-btn-primary">
+              Request a quote <ArrowUpRight size={18} />
+            </a>
+            <a href="tel:+19052910325" className="pz-btn pz-btn-secondary">
+              <Phone size={18} /> Call dispatch
+            </a>
+          </motion.div>
+        </div>
+        
+        {/* FOOTER MARQUEE */}
+        <div className="pz-footer-marquee">
+          <div className="pz-marquee pz-marquee-huge">
+            {[...locations, ...locations, ...locations].map((loc, i) => (
+              <React.Fragment key={i}>
+                <span className="pz-marquee-item-huge">{loc}</span>
+                <span className="pz-marquee-dot-huge">•</span>
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      <Footer />
     </div>
   );
 }

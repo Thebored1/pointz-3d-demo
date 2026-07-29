@@ -2,7 +2,6 @@
 import React from 'react';
 import SplitLayout from '../components/SplitLayout';
 import Hero from '../components/Hero';
-import Services from '../components/Services';
 import VideoSection from '../components/VideoSection';
 import Process from '../components/Process';
 import About from '../components/About';
@@ -14,7 +13,6 @@ export default function Home() {
   return (
     <SplitLayout>
       <Hero />
-      <Services />
       <VideoSection />
       <Process />
       <About />

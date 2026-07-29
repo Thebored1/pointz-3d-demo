@@ -81,10 +81,10 @@ export default function Hero() {
               <ArrowRight size={16} strokeWidth={2} />
             </button>
             <button 
-              style={{ background: 'transparent', color: 'var(--text-main)', border: '1px solid var(--border-strong)', padding: '0 1.5rem', height: '52px', fontWeight: 500, fontSize: '0.875rem', borderRadius: 'var(--radius-md)', cursor: 'pointer', transition: 'all 0.3s ease' }}
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              style={{ background: 'transparent', color: 'var(--text-main)', border: '1px solid var(--border-strong)', padding: '0 1.5rem', height: '52px', fontWeight: 500, fontSize: 'var(--fs-small)', borderRadius: 'var(--radius-md)', cursor: 'pointer', transition: 'all 0.3s ease' }}
+              onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Explore services
+              How we work
             </button>
           </div>
         </motion.div>

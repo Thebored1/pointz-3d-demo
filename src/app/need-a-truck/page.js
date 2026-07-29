@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { motion } from 'framer-motion';
@@ -12,7 +13,7 @@ export default function NeedATruckPage() {
 
       {/* Hero Banner - outside page-wrapper for full width */}
       <motion.div className="nat-hero" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <img src="/images/WhatsApp%20Image%202026-07-25%20at%2014.28.06%20(2).jpeg" alt="Need a Truck Hero" />
+        <Image src="/images/need-truck-hero.webp" alt="Need a Truck Hero" fill sizes="100vw" priority style={{ objectFit: 'cover' }} />
         <div className="nat-hero-overlay"></div>
         <h1>Need A Truck?</h1>
       </motion.div>

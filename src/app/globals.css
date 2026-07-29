@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
   --c-black: #0a0a0a;
@@ -24,9 +24,18 @@
   --accent: var(--c-blue);
 
   --font-display: 'Syne', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-body: 'Manrope', sans-serif;
   --font-heading: 'Syne', sans-serif;
   --font-mono: 'Space Mono', Courier, monospace;
+
+  /* Type scale — use by role, not by feel */
+  --fs-hero: clamp(2.5rem, 5vw, 4.25rem);       /* page heroes only */
+  --fs-heading: clamp(1.75rem, 3.2vw, 2.75rem); /* section h2 */
+  --fs-title: clamp(1.125rem, 1.4vw, 1.35rem);  /* card / h3 titles */
+  --fs-body: 1.0625rem;                         /* body copy */
+  --fs-small: 0.75rem;                          /* labels, badges, nav */
+
+  --page-gutter: clamp(1.5rem, 4vw, 2.5rem);
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -59,7 +68,7 @@
 }
 
 .page-wrapper {
-  padding: clamp(4rem, 8vw, 8rem) clamp(4rem, 8vw, 8rem) 4rem;
+  padding: clamp(4rem, 8vw, 8rem) var(--page-gutter) 4rem;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -68,7 +77,7 @@
 
 @media (max-width: 768px) {
   .page-wrapper {
-    padding: 2rem 1.5rem 3rem;
+    padding: 2rem var(--page-gutter) 3rem;
   }
 }
 
@@ -158,6 +167,21 @@ button {
 .text-accent {
   color: var(--text-main);
   font-style: italic;
+}
+
+.text-cyan {
+  color: var(--c-blue);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.section-number {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.2em;
+  color: var(--c-blue);
 }
 
 @keyframes fadeIn {

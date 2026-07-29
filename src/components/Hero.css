@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   background: transparent;
-  padding: clamp(4rem, 8vw, 8rem) clamp(4rem, 8vw, 8rem) 4rem;
+  padding: clamp(4rem, 8vw, 8rem) var(--page-gutter) 4rem;
 }
 
 .hero-content {
@@ -59,7 +59,7 @@
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  font-size: var(--fs-hero);
   line-height: 1;
   letter-spacing: -0.03em;
   margin-bottom: 2rem;
@@ -82,7 +82,8 @@
 }
 
 .hero-subtitle {
-  font-size: 1.125rem;
+  font-size: var(--fs-body);
+  font-family: var(--font-body);
   color: var(--text-muted);
   max-width: 600px;
   font-weight: 400;
@@ -138,15 +139,16 @@
   color: var(--c-cream);
   border: none;
   padding: 0 1.5rem;
-  height: 52px;
+  height: 44px;
   font-weight: 500;
-  font-size: 0.875rem;
-  display: flex;
+  font-size: var(--fs-small);
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
   transition: all 0.3s var(--ease-out-expo);
   letter-spacing: 0.02em;
+  width: auto;
 }
 
 .btn-track:hover {
@@ -192,7 +194,7 @@
 .hero-scroll-indicator {
   position: absolute;
   bottom: 2rem;
-  left: 2.5rem;
+  left: var(--page-gutter);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -206,17 +208,17 @@
 
 @media (max-width: 1024px) {
   .hero {
-    padding: 7rem 2rem 3rem;
+    padding: 7rem var(--page-gutter) 3rem;
   }
 
   .hero-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: var(--fs-hero);
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding: 6rem 1.5rem 2.5rem;
+    padding: 6rem var(--page-gutter) 2.5rem;
     min-height: auto;
   }
 
@@ -225,7 +227,7 @@
   }
 
   .hero-title {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: var(--fs-hero);
     margin-bottom: 1.5rem;
   }
 

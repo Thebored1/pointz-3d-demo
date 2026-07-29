@@ -20,7 +20,7 @@ export default function SplitLayout({ children }) {
     
     const frameCount = 240;
     const currentFrame = index => (
-      `/assets/frames/frame_${index.toString().padStart(4, '0')}.jpg`
+      `/assets/frames/frame_${index.toString().padStart(4, '0')}.webp`
     );
 
     const images = [];

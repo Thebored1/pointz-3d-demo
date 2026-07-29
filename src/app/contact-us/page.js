@@ -3,88 +3,134 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { motion } from 'framer-motion';
+import { MapPin, Phone, Mail } from 'lucide-react';
 import './ContactPage.css'; 
 
 export default function ContactUsPage() {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] },
+    }),
+  };
+
   return (
     <div style={{ backgroundColor: 'var(--bg-primary)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
 
-      {/* Hero Banner - outside page-wrapper for full width */}
-      <motion.div className="contact-hero" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <img src="/assets/truck-side.jpg" alt="Contact Hero" />
-        <div className="contact-hero-overlay"></div>
-        <h1>Contact Us</h1>
-      </motion.div>
+      <main style={{ flex: 1, paddingTop: '100px' }}>
+        
+        {/* HERO SECTION */}
+        <section className="contact-hero-new">
+          <div className="contact-container">
+            <motion.div className="contact-hero-top" variants={fadeUp} initial="hidden" animate="visible" custom={0}>
+              <span className="contact-badge">CONTACT US</span>
+              <span className="contact-badge">24/7 SUPPORT</span>
+            </motion.div>
+            
+            <motion.h1 className="contact-hero-title" variants={fadeUp} initial="hidden" animate="visible" custom={1}>
+              TALK TO<br />
+              <span className="text-cyan italic">DISPATCH.</span>
+            </motion.h1>
+          </div>
+        </section>
 
-      <main className="page-wrapper">
+        {/* LAYOUT SECTION */}
+        <section className="contact-container contact-body">
+          <div className="contact-layout">
+            
+            {/* LEFT COLUMN: LOCATIONS & DIRECT CONTACT */}
+            <div className="contact-locations-col">
+              
+              <div className="contact-locations-header">
+                <h2>Direct Lines</h2>
+                <p>Call or email us anytime. Our dispatch and support teams are available 24/7 to handle your logistics needs.</p>
+              </div>
 
-        <section className="contact-layout">
-          
-          <motion.div className="contact-info-col" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <div className="contact-info-block">
-              <span className="contact-info-label">Get In Touch</span>
-              <h3>We're here to help.</h3>
-              <p>Whether you need a quote, want to join our fleet, or have a general inquiry, our team is ready to assist you 24/7.</p>
-              <p style={{ marginTop: '1rem', fontWeight: 'bold' }}>Phone: 905-291-0325</p>
-              <p>Email: dispatch@pointzeroroadlines.com</p>
+              <div className="contact-cards-wrap">
+                <div className="contact-location-card">
+                  <div className="loc-top">
+                    <span className="loc-label">Primary HQ</span>
+                    <MapPin size={18} strokeWidth={1.5} className="loc-icon" />
+                  </div>
+                  <h3>Mississauga Hub</h3>
+                  <p>1566 Bonhill Rd<br />Mississauga, ON<br />Headquarters & Core Dispatch</p>
+                </div>
+
+                <div className="contact-location-card">
+                  <div className="loc-top">
+                    <span className="loc-label">Storage Facility</span>
+                    <MapPin size={18} strokeWidth={1.5} className="loc-icon" />
+                  </div>
+                  <h3>Bolton Warehouse</h3>
+                  <p>Cross-docking, consolidation, and mid-to-long term storage overflow operations.</p>
+                </div>
+
+                <div className="contact-location-card">
+                  <div className="loc-top">
+                    <span className="loc-label">Dedicated Hub</span>
+                    <MapPin size={18} strokeWidth={1.5} className="loc-icon" />
+                  </div>
+                  <h3>Brampton Depot</h3>
+                  <p>Secondary terminal supporting regional distribution and dedicated fleet deployments.</p>
+                </div>
+
+                <div className="contact-location-card" style={{ backgroundColor: 'var(--c-blue-dim)' }}>
+                  <div className="loc-top">
+                    <span className="loc-label">Reach Out</span>
+                    <Phone size={18} strokeWidth={1.5} className="loc-icon" />
+                  </div>
+                  <h3>+1-905-291-0325</h3>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
+                    <Mail size={16} strokeWidth={1.5} /> dispatch@pointzeroroadlines.com
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="contact-locations">
-              <span className="contact-info-label">Our Sites</span>
-              <div className="contact-location-card">
-                <h4>Mississauga HQ</h4>
-                <p>Our primary headquarters serving the Greater Toronto Area (GTA) and orchestrating our 24/7 dispatch.</p>
-              </div>
-              <div className="contact-location-card">
-                <h4>Bolton Facility</h4>
-                <p>Strategic warehouse and storage site for cross-docking and specialized freight handling.</p>
-              </div>
-              <div className="contact-location-card">
-                <h4>Brampton Facility</h4>
-                <p>Additional dedicated fleet services hub supporting Southern Ontario routes.</p>
-              </div>
+            {/* RIGHT COLUMN: CONTACT FORM */}
+            <div className="contact-form-col">
+              <h2 className="contact-form-title">Send a message</h2>
+              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                <div className="contact-form-row">
+                  <div className="contact-input-group">
+                    <label>First Name</label>
+                    <input type="text" className="contact-input" placeholder="John" />
+                  </div>
+                  <div className="contact-input-group">
+                    <label>Last Name</label>
+                    <input type="text" className="contact-input" placeholder="Doe" />
+                  </div>
+                </div>
+
+                <div className="contact-input-group">
+                  <label>Email Address</label>
+                  <input type="email" className="contact-input" placeholder="john@company.com" />
+                </div>
+
+                <div className="contact-input-group">
+                  <label>Subject / Department</label>
+                  <select className="contact-input" style={{ appearance: 'none', background: 'transparent' }}>
+                    <option>General Inquiry</option>
+                    <option>Request a Quote</option>
+                    <option>Careers & Recruiting</option>
+                    <option>Billing & Support</option>
+                    <option>Sales / Dedicated Fleet</option>
+                  </select>
+                </div>
+
+                <div className="contact-input-group">
+                  <label>Message</label>
+                  <textarea className="contact-input contact-textarea" placeholder="How can we assist you?"></textarea>
+                </div>
+
+                <button type="submit" className="contact-submit">Submit Request</button>
+              </form>
             </div>
-          </motion.div>
 
-          <motion.div className="contact-form-container" initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <h2 className="contact-form-title">Send us a message</h2>
-            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-              <div className="contact-form-row">
-                <div className="contact-input-group">
-                  <label>First Name</label>
-                  <input type="text" className="contact-input" placeholder="John" />
-                </div>
-                <div className="contact-input-group">
-                  <label>Last Name</label>
-                  <input type="text" className="contact-input" placeholder="Doe" />
-                </div>
-              </div>
-
-              <div className="contact-input-group">
-                <label>Email Address</label>
-                <input type="email" className="contact-input" placeholder="john@company.com" />
-              </div>
-
-              <div className="contact-input-group">
-                <label>Subject</label>
-                <select className="contact-input">
-                  <option>General Inquiry</option>
-                  <option>Request a Quote</option>
-                  <option>Careers</option>
-                  <option>Billing & Support</option>
-                </select>
-              </div>
-
-              <div className="contact-input-group">
-                <label>Message</label>
-                <textarea className="contact-input contact-textarea" placeholder="How can we help you?"></textarea>
-              </div>
-
-              <button type="submit" className="contact-submit">Send Message</button>
-            </form>
-          </motion.div>
-
+          </div>
         </section>
 
       </main>

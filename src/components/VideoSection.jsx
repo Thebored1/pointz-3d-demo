@@ -10,9 +10,9 @@ export default function VideoSection() {
         <div className="video-header">
           <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
             <motion.span className="section-number" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>02</motion.span>
-            <motion.span style={{fontFamily: 'var(--font-mono)', fontSize: '0.75rem', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase'}} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>In Action</motion.span>
+            <motion.span style={{fontFamily: 'var(--font-mono)', fontSize: 'var(--fs-small)', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase'}} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>In Action</motion.span>
           </div>
-          <motion.h2 className="video-title" style={{ margin: 0, fontFamily: 'var(--font-display)', fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', fontWeight: 700, letterSpacing: '-0.03em', textTransform: 'uppercase' }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>Ready to Roll</motion.h2>
+          <motion.h2 className="video-title" style={{ margin: 0, fontFamily: 'var(--font-display)', fontSize: 'var(--fs-heading)', fontWeight: 700, letterSpacing: '-0.03em', textTransform: 'uppercase' }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>Ready to Roll</motion.h2>
         </div>
         
         <motion.div 

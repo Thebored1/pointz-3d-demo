@@ -13,12 +13,12 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="process-section">
+    <section id="process" className="process-section">
       <div className="process-container">
         <div className="process-header">
           <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
             <motion.span className="section-number" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>03</motion.span>
-            <motion.span style={{fontFamily: 'var(--font-mono)', fontSize: '0.75rem', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase'}} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>How It Works</motion.span>
+            <motion.span style={{fontFamily: 'var(--font-mono)', fontSize: 'var(--fs-small)', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase'}} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>How It Works</motion.span>
           </div>
           <motion.h2 className="process-title" style={{ margin: 0 }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>One call to delivered.</motion.h2>
         </div>
