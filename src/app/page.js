@@ -12,15 +12,17 @@ import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <SplitLayout>
-      <Hero />
-      <Services />
-      <VideoSection />
-      <Process />
-      <About />
-      <Fleet />
-      <CTA />
+    <>
+      <SplitLayout>
+        <Hero />
+        <Services />
+        <VideoSection />
+        <Process />
+        <About />
+        <Fleet />
+        <CTA />
+      </SplitLayout>
       <Footer />
-    </SplitLayout>
+    </>
   );
 }
