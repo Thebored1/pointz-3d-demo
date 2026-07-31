@@ -21,7 +21,7 @@ export default function CTA() {
               Need a truck?
             </h2>
             <p className="cta-desc">
-              Tell us your lane and load. We'll get back to you with a quote fast. Let us help you find ways to be lean and efficient.
+              Tell us your lane and load. We&rsquo;ll get back to you with a quote fast. Let us help you find ways to be lean and efficient.
             </p>
           </motion.div>
 

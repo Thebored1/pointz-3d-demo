@@ -71,7 +71,7 @@ export default function Hero() {
         <motion.div className="hero-divider" variants={lineVariants}></motion.div>
 
         <motion.p className="hero-subtitle" variants={fadeUpVariants}>
-          Dedicated flatbed, Moffett piggyback and cross-dock service across the GTA and Ontario. Lean, safe and on schedule — that's what we do.
+          Dedicated flatbed, Moffett piggyback and cross-dock service across the GTA and Ontario. Lean, safe and on schedule — that&rsquo;s what we do.
         </motion.p>
         
         <motion.div className="hero-actions" variants={fadeUpVariants}>

@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pointz Logistics
 
-## Getting Started
+Marketing site for Pointz Logistics — a flatbed, Moffett piggyback and cross-dock
+carrier operating across the GTA and Ontario.
 
-First, run the development server:
+Built with Next.js 16 (App Router), React 19 and plain CSS.
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Script | What it does |
+| --- | --- |
+| `npm run dev` | Dev server |
+| `npm run build` | Production build |
+| `npm start` | Serve the production build |
+| `npm run lint` | ESLint |
+| `npm run images:webp` | Convert `.jpg`/`.png` under `public/` to `.webp`. Pass `-- --frames` to include `public/assets/frames`. |
 
-## Learn More
+## Environment
 
-To learn more about Next.js, take a look at the following resources:
+| Variable | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Canonical origin used for OpenGraph URLs, `sitemap.xml` and `robots.txt`. Defaults to `https://pointzlogistics.ca`. |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/app/          Routes (App Router). Each route has a layout.js holding its metadata.
+src/components/   Shared components, each paired with its own .css file.
+src/lib/          site.js (SEO constants + route list), motion.js (shared framer-motion variants).
+public/assets/    Images. frames/ holds the 240-frame scroll sequence.
+```
 
-## Deploy on Vercel
+### Styling
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+There is no CSS framework. Design tokens — colours, type scale, spacing, easings —
+live in `src/app/globals.css` as custom properties. Use them by role
+(`--fs-heading`, `--text-muted`) rather than hardcoding values.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### The scroll sequence
+
+`src/components/SplitLayout.jsx` drives the home page's desktop layout: content
+scrolls on the left while a fixed `<canvas>` on the right scrubs through 240 webp
+frames tied to scroll position. Below 768px it falls back to a stacked layout and
+the frame loader never runs.
+
+To regenerate the frames, drop the source images into `public/assets/frames` and run
+`npm run images:webp -- --frames`.
+
+## Adding a route
+
+1. Create `src/app/<route>/page.js`.
+2. Add a sibling `layout.js` exporting `metadata` (title, description, canonical) —
+   the page components are client components and cannot export metadata themselves.
+3. Add the path to `ROUTES` in `src/lib/site.js` so it lands in the sitemap.
