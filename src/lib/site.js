@@ -1,8 +1,8 @@
 // Single source of truth for site-wide SEO values.
 // Set NEXT_PUBLIC_SITE_URL in the deployment environment to the real domain.
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://pointzlogistics.ca';
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://pointzeroroadlines.com';
 
-export const SITE_NAME = 'Pointz Logistics';
+export const SITE_NAME = 'Point Zero Road Lines';
 
 export const SITE_DESCRIPTION =
   'Dedicated flatbed, Moffett piggyback and cross-dock service across the GTA and Ontario. Lean, safe and on schedule.';

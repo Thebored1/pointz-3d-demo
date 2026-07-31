@@ -1,10 +1,10 @@
 export const metadata = {
   title: "Contact",
-  description: "Get in touch with Pointz Logistics for flatbed, Moffett and cross-dock freight across Ontario.",
+  description: "Get in touch with Point Zero Road Lines for flatbed, Moffett and cross-dock freight across Ontario.",
   alternates: { canonical: "/contact-us" },
   openGraph: {
     title: "Contact",
-    description: "Get in touch with Pointz Logistics for flatbed, Moffett and cross-dock freight across Ontario.",
+    description: "Get in touch with Point Zero Road Lines for flatbed, Moffett and cross-dock freight across Ontario.",
     url: "/contact-us",
   },
 };
