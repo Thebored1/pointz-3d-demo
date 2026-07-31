@@ -1,7 +1,7 @@
 import "./globals.css";
-import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site";
+import { SITE_URL, SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION } from "@/lib/site";
 
-const HOME_TITLE = `${SITE_NAME} — Flatbed & Moffett Freight in the GTA`;
+const HOME_TITLE = `${SITE_NAME} — ${SITE_TAGLINE}`;
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),

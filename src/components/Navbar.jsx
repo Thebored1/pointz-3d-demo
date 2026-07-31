@@ -7,9 +7,12 @@ import Image from 'next/image';
 import './Navbar.css';
 
 const serviceLinks = [
-  { href: '/services/specialty-equipment', num: '01', title: 'Specialty Equipment', desc: 'Moffett, linen & custom configs' },
+  { href: '/services/moffett-delivery', num: '01', title: 'Moffett Delivery', desc: 'Truck-mounted forklift, any site' },
   { href: '/services/dedicated-fleet', num: '02', title: 'Dedicated Fleet', desc: 'Assigned trucks & drivers' },
-  { href: '/services/warehouse-and-storage', num: '03', title: 'Warehouse & Storage', desc: 'Cross-dock & overflow' },
+  { href: '/services/construction-material-delivery', num: '03', title: 'Construction Material', desc: 'Lumber, drywall, steel & precast' },
+  { href: '/services/flatbed-transportation', num: '04', title: 'Flatbed Transportation', desc: 'Open deck & oversized freight' },
+  { href: '/services/warehouse-cross-dock', num: '05', title: 'Warehouse & Cross-Dock', desc: 'Staging, storage & consolidation' },
+  { href: '/services', num: '06', title: 'All Services', desc: 'See all twelve service lines' },
 ];
 
 export default function Navbar() {
@@ -96,7 +99,7 @@ export default function Navbar() {
                   )}
                 </AnimatePresence>
               </div>
-              <Link href="/career" className="nav-link">Career</Link>
+              <Link href="/faq" className="nav-link">FAQ</Link>
               <Link href="/contact-us" className="nav-link">Contact</Link>
             </div>
           </div>
@@ -106,8 +109,8 @@ export default function Navbar() {
               <Phone size={14} className="phone-icon" />
               <span>+1-905-291-0325</span>
             </a>
-            <Link href="/need-a-truck" className="btn-primary-nav">
-              Need a Truck
+            <Link href="/get-a-quote" className="btn-primary-nav">
+              Get a Quote
               <ArrowRight size={16} />
             </Link>
           </div>
@@ -166,15 +169,15 @@ export default function Navbar() {
                   )}
                 </AnimatePresence>
               </div>
-              <Link href="/career" onClick={() => setMobileOpen(false)} className="mobile-nav-link">Career</Link>
+              <Link href="/faq" onClick={() => setMobileOpen(false)} className="mobile-nav-link">FAQ</Link>
               <Link href="/contact-us" onClick={() => setMobileOpen(false)} className="mobile-nav-link">Contact</Link>
               <div className="mobile-menu-actions">
                 <a href="tel:+19052910325" className="btn-ghost-mobile">
                   <Phone size={18} />
                   +1-905-291-0325
                 </a>
-                <Link href="/need-a-truck" className="btn-primary-mobile" onClick={() => setMobileOpen(false)}>
-                  Need a Truck
+                <Link href="/get-a-quote" className="btn-primary-mobile" onClick={() => setMobileOpen(false)}>
+                  Get a Quote
                   <ArrowRight size={18} />
                 </Link>
               </div>

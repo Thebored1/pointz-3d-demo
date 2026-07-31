@@ -2,17 +2,17 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 const capabilities = [
-  { icon: 'Users', title: 'Assigned crews', desc: 'Vetted drivers locked to your account so every run feels familiar.' },
-  { icon: 'Truck', title: 'Company equipment', desc: 'Maintained flatbeds and Moffetts — not whoever shows up from a board.' },
-  { icon: 'Route', title: 'Fixed lanes', desc: 'Repeat GTA and Ontario corridors with capacity you can plan around.' },
-  { icon: 'Clock', title: '24/7 ownership', desc: 'One dispatcher stays on your freight from quote to delivery.' },
+  { icon: 'Users', title: 'Assigned crews', desc: 'The same drivers on your account long enough to know the sites and contacts.' },
+  { icon: 'Truck', title: 'Assigned equipment', desc: 'Company trucks, trailers and Moffetts reserved for you — not whoever is free.' },
+  { icon: 'Route', title: 'Your routes, planned in', desc: 'Volumes and service windows built into our planning up front.' },
+  { icon: 'Clock', title: 'Direct dispatch', desc: 'A dispatcher and account manager who own your freight — not a call centre.' },
 ];
 
 const highlights = [
-  { icon: 'CheckCircle', title: 'Assigned assets', desc: 'Company trucks and drivers reserved for your lanes.' },
-  { icon: 'CheckCircle', title: 'Predictable capacity', desc: 'Stable lanes with capacity you can plan around.' },
-  { icon: 'CheckCircle', title: 'Direct dispatch', desc: 'One desk owns the account from quote through delivery.' },
-  { icon: 'CheckCircle', title: 'Flexible equipment', desc: 'Flatbed, Moffett and specialty configs on the same program.' },
+  { icon: 'CheckCircle', title: 'Dedicated capacity', desc: 'Your freight is the priority on the account, not one of several competing for space.' },
+  { icon: 'CheckCircle', title: 'Moffett on the program', desc: 'Dedicated fleet with Moffett trucks, so site deliveries need no outside equipment.' },
+  { icon: 'CheckCircle', title: 'Scales with volume', desc: 'Capacity moves with you as volumes grow or shift seasonally.' },
+  { icon: 'CheckCircle', title: 'Building material runs', desc: 'Dedicated construction supply and building material delivery programs.' },
 ];
 
 export default function DedicatedFleetPage() {
@@ -22,20 +22,20 @@ export default function DedicatedFleetPage() {
       badgeAlt="DEDICATED FLEET"
       titleLine1="YOUR LANES."
       titleAccent="YOUR TRUCKS."
-      description="Company-owned trucks and vetted drivers assigned to your freight for consistent, accountable service across the GTA and Ontario — not a revolving door of brokers."
+      description="Spot-market trucking means your freight competes for space every time you book. A dedicated fleet removes that variable — trucks, trailers, Moffetts and drivers assigned to your business and planned around your schedule."
       heroImage="/images/fleet-hero.webp"
       heroAlt="Point Zero dedicated fleet"
       stats={[
+        { value: '2006', label: 'Moving freight since' },
         { value: '100%', label: 'Dedicated lanes' },
         { value: '24/7', label: 'Dispatch support' },
         { value: '3', label: 'Ontario hubs' },
-        { value: '2012', label: 'On the road' },
       ]}
       primarySection={{
         num: '01',
         label: 'Capabilities',
         title: 'What dedicated includes',
-        desc: 'Same equipment, same drivers, and a dispatcher who owns the load end to end — not a revolving door of brokers.',
+        desc: 'Dedicated fleet work has been the core of what we do since 2006. Same equipment, same drivers, and a dispatcher who owns the load end to end.',
         columns: 4,
         items: capabilities,
       }}
@@ -54,7 +54,7 @@ export default function DedicatedFleetPage() {
       cta={{
         titleLine1: 'NEED A',
         titleAccent: 'DEDICATED TEAM?',
-        desc: "Tell us your lanes and volume. We'll put the right trucks and drivers on them.",
+        desc: "Tell us your lanes and volume. We'll put the right trucks, Moffetts and drivers on them.",
       }}
     />
   );

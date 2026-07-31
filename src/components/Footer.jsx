@@ -16,7 +16,7 @@ export default function Footer() {
             <h2 className="footer-cta-title">Ready to move your freight?</h2>
             <p className="footer-cta-desc">Get a rate back the same business day.</p>
           </div>
-          <Link href="/need-a-truck" className="footer-cta-btn">
+          <Link href="/get-a-quote" className="footer-cta-btn">
             Get a Quote <ArrowUpRight size={20} />
           </Link>
         </div>
@@ -56,16 +56,21 @@ export default function Footer() {
             <div className="link-group">
               <h4>Services</h4>
               <ul>
-                <li><Link href="/services/specialty-equipment">Specialty Equipment</Link></li>
+                <li><Link href="/services/moffett-delivery">Moffett Delivery</Link></li>
                 <li><Link href="/services/dedicated-fleet">Dedicated Fleet</Link></li>
-                <li><Link href="/services/warehouse-and-storage">Warehouse &amp; Storage</Link></li>
+                <li><Link href="/services/construction-material-delivery">Construction Material</Link></li>
+                <li><Link href="/services/flatbed-transportation">Flatbed Transportation</Link></li>
+                <li><Link href="/services/warehouse-cross-dock">Warehouse &amp; Cross-Dock</Link></li>
+                <li><Link href="/services">All Services</Link></li>
               </ul>
             </div>
             <div className="link-group">
               <h4>Company</h4>
               <ul>
                 <li><Link href="/about">About Us</Link></li>
-                <li><Link href="/career">Career</Link></li>
+                <li><Link href="/service-areas">Service Areas</Link></li>
+                <li><Link href="/safety-compliance">Safety &amp; Compliance</Link></li>
+                <li><Link href="/faq">FAQ</Link></li>
                 <li><Link href="/contact-us">Contact</Link></li>
               </ul>
             </div>

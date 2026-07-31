@@ -1,10 +1,10 @@
 export const metadata = {
   title: "About",
-  description: "Ontario flatbed and Moffett carrier operating out of Mississauga, Bolton and Brampton since 2012.",
+  description: "Moffett delivery and specialized transportation across Ontario since 2006. Operating out of Mississauga, Bolton and Brampton.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About",
-    description: "Ontario flatbed and Moffett carrier operating out of Mississauga, Bolton and Brampton since 2012.",
+    description: "Moffett delivery and specialized transportation across Ontario since 2006. Operating out of Mississauga, Bolton and Brampton.",
     url: "/about",
   },
 };

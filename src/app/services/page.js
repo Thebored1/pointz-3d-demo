@@ -11,19 +11,19 @@ export default function ServicesPage() {
   return (
     <ServiceEditorialPage
       badge="SERVICES · OVERVIEW"
-      badgeAlt="EST. 2012 · MISSISSAUGA"
-      titleLine1="BUILT FOR THE LOADS"
-      titleAccent="OTHERS TURN DOWN."
-      description="Dedicated flatbed, Moffett piggyback and cross-dock service across the GTA and Ontario. We handle the loads others walk away from — lean, safe and on schedule."
+      badgeAlt="EST. 2006 · MISSISSAUGA"
+      titleLine1="MOFFETT DELIVERY"
+      titleAccent="AND EVERYTHING AROUND IT."
+      description="Since 2006, Point Zero Road Lines has built its service line around one principle: fewer vendors, more accountability. Moffett delivery, dedicated fleet capacity, flatbed, warehousing and dispatch that runs on your clock — one operation, not contractors stitched together."
       scrollLabel="SCROLL THE SERVICES"
-      heroImage="/images/fleet-hero.webp"
-      heroAlt="Point Zero fleet"
+      heroImage="/images/services-hero.webp"
+      heroAlt="Point Zero Road Lines fleet"
       stats={overviewStats}
       primarySection={{
         num: '01',
         label: 'What we offer',
-        title: 'Six ways we move your freight',
-        desc: 'Flatbed, Moffett, cross-dock, dedicated fleet and round-the-clock dispatch — every service runs on the same standard.',
+        title: 'Twelve ways we move your freight',
+        desc: 'Every service line runs on the same standard — and wherever a Moffett makes the delivery work better, it is already on the truck.',
         items: overviewServices,
       }}
       gallery={overviewGallery}
@@ -31,7 +31,7 @@ export default function ServicesPage() {
         num: '02',
         label: 'Capabilities',
         title: 'Fleet at a glance',
-        desc: 'From oversized flatbed loads to precision Moffett deliveries — maintained company equipment, CVOR-excellent.',
+        desc: 'Modern tractors, trailers, flatbeds and truck-mounted Moffett units, maintained on a regular inspection and service schedule.',
         items: overviewCapabilities.map((c) => ({
           icon: c.icon,
           title: c.label,
@@ -39,9 +39,9 @@ export default function ServicesPage() {
         })),
       }}
       cta={{
-        titleLine1: 'NEED A',
-        titleAccent: 'TRUCK?',
-        desc: "Tell us your lane and load. We'll get back to you with a straight answer — fast.",
+        titleLine1: 'NOT SURE WHICH',
+        titleAccent: 'SERVICE FITS?',
+        desc: "Tell us your lane and load. We'll help you work out which service fits — and get back to you with a straight answer, fast.",
       }}
     />
   );

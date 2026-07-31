@@ -55,23 +55,23 @@ export default function Hero() {
             MISSISSAUGA · BOLTON · BRAMPTON
           </motion.div>
           <motion.div className="hero-version" variants={fadeUpVariants}>
-            EST. 2012
+            EST. 2006
           </motion.div>
         </div>
 
         <h1 className="hero-title">
           <div className="mask-container">
-            <motion.div variants={textRevealVariants}>Flatbed & Moffett freight,</motion.div>
+            <motion.div variants={textRevealVariants}>Ontario&rsquo;s Moffett delivery &amp;</motion.div>
           </div>
           <div className="mask-container">
-            <motion.div variants={textRevealVariants} className="hero-title-accent">moved with precision.</motion.div>
+            <motion.div variants={textRevealVariants} className="hero-title-accent">specialized transportation experts.</motion.div>
           </div>
         </h1>
-        
+
         <motion.div className="hero-divider" variants={lineVariants}></motion.div>
 
         <motion.p className="hero-subtitle" variants={fadeUpVariants}>
-          Dedicated flatbed, Moffett piggyback and cross-dock service across the GTA and Ontario. Lean, safe and on schedule — that&rsquo;s what we do.
+          Truck-mounted Moffett forklifts that deliver straight to construction sites and locations with no loading dock — plus dedicated fleet, flatbed and warehousing across the GTA and Ontario. Moving freight since 2006.
         </motion.p>
         
         <motion.div className="hero-actions" variants={fadeUpVariants}>

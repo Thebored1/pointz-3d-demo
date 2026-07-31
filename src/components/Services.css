@@ -105,3 +105,20 @@
     border-right: none !important;
   }
 }
+
+.services-intro {
+  margin: 1rem 0 0;
+  font-size: var(--fs-small);
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.services-intro-link {
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.services-intro-link:hover {
+  text-decoration: underline;
+}

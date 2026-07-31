@@ -11,33 +11,33 @@ import './AboutPage.css';
 
 export default function AboutPage() {
   const marqueeItems = [
-    "FLATBED FREIGHT", "MOFFETT PIGGYBACK", "CROSS-DOCK", "DEDICATED LANES", "SAME-DAY GTA", "HEAVY HAUL"
+    "MOFFETT DELIVERY", "DEDICATED FLEET", "FLATBED FREIGHT", "CROSS-DOCK", "CONSTRUCTION LOGISTICS", "LAST MILE"
   ];
-  
+
   const stats = [
     { num: '01', value: '26', label: 'Trucks in fleet', desc: 'Flatbed, step-deck & Moffett' },
-    { num: '02', value: '14 yrs', label: 'On Ontario roads', desc: 'Family run since 2012' },
+    { num: '02', value: '20 yrs', label: 'On Ontario roads', desc: 'Moving freight since 2006' },
     { num: '03', value: '99.8%', label: 'On-time delivery', desc: 'Rolling 12-month avg' },
-    { num: '04', value: '2.1M', label: 'Safe km per year', desc: 'CVOR excellent rating' },
+    { num: '04', value: '3', label: 'Ontario hubs', desc: 'Mississauga, Bolton & Brampton' },
   ];
 
   const storySteps = [
-    { year: '2012', title: 'One truck, one lane', desc: 'Founded in a rented Bolton bay hauling steel between Hamilton and the GTA.' },
-    { year: '2016', title: 'Moffett piggyback added', desc: 'First truck-mounted forklifts put on the road so crews could unload anywhere on site.' },
-    { year: '2020', title: 'Mississauga cross-dock', desc: '18,000 sq ft facility opened, letting us stage, sort and reload same-day freight.' },
-    { year: '2026', title: '26 trucks, one standard', desc: 'Dedicated lanes across Ontario with the same dispatch team that started it all.' },
+    { year: '2006', title: 'One truck, one lane', desc: 'Founded hauling steel between Hamilton and the GTA, on the promise of showing up when we said we would.' },
+    { year: '2014', title: 'Moffett forklifts added', desc: 'First truck-mounted forklifts put on the road so crews could unload anywhere on site — no dock, no waiting.' },
+    { year: '2020', title: 'Mississauga cross-dock', desc: 'Warehouse and cross-dock space opened, letting us stage, sort and reload freight under the same roof as the trucks.' },
+    { year: '2026', title: 'Twelve service lines', desc: 'Moffett delivery, dedicated fleet, flatbed, warehousing and last mile — run by the same dispatch team that started it all.' },
   ];
 
   const rules = [
-    { num: '01', title: 'On schedule, not on average', desc: 'Appointment windows are commitments. If a load is going to slip, you hear it from us first — not from your customer.' },
-    { num: '02', title: 'Safety before speed', desc: 'Full pre-trips, secured loads, CVOR-clean records. Every driver is trained on Moffett operation and load securement.' },
-    { num: '03', title: 'A real person on dispatch', desc: 'No ticket queues. Call the desk between 6am and 8pm and you get someone who knows exactly where your trailer is.' },
-    { num: '04', title: 'We know these roads', desc: 'The 401 at 4pm, the Bolton back routes, tight downtown sites. Local knowledge is why our loads land on time.' },
+    { num: '01', title: 'Quality', desc: 'Held to a standard set by what the job requires, not the minimum a client would accept. That is what nearly two decades of repeat customers is built on.' },
+    { num: '02', title: 'Safety', desc: 'Every driver operates under Hours of Service, MTO and HTA regulations — non-negotiable, on every load. Equipment runs on a regular inspection and service schedule.' },
+    { num: '03', title: 'Integrity', desc: 'Clients and partners get a straight answer, including when the answer is that a timeline needs to move. You hear it from us first, not from your customer.' },
+    { num: '04', title: 'Innovation', desc: 'Investing in Moffett-equipped trucks, warehousing and tracking technology is how we deliver where others cannot — and how you can see your load move in real time.' },
   ];
 
   const crewBadges = [
-    "CVOR Excellent rating", "FAST / PARS certified drivers",
-    "WSIB clearance on file", "SmartWay registered fleet", "Moffett-certified operators"
+    "Moffett-equipped fleet", "Company-owned trucks",
+    "Bonded and insured", "24/7 dispatch", "Live truck tracking"
   ];
 
   const locations = ["MISSISSAUGA", "BOLTON", "BRAMPTON", "HAMILTON", "KITCHENER", "OTTAWA"];
@@ -48,10 +48,10 @@ export default function AboutPage() {
 
       <EditorialHero
         badge="ABOUT POINT ZERO"
-        badgeAlt="EST. 2012 • MISSISSAUGA"
-        titleLine1="BUILT BY DRIVERS,"
-        titleAccent="RUN LIKE CLOCKWORK."
-        description="Point Zero Road Lines started with one flatbed and one promise: show up when we said we would. Fourteen years later that promise still runs the yard — twenty-six trucks, a dispatch desk that answers on the second ring, and drivers who treat your freight like it's theirs."
+        badgeAlt="EST. 2006 • MISSISSAUGA"
+        titleLine1="BUILT ON RELIABILITY."
+        titleAccent="DRIVEN BY INNOVATION."
+        description="Since 2006, Point Zero Road Lines has helped businesses move freight safely, efficiently and on schedule. What began as a transportation company has grown into one of Ontario's trusted providers of Moffett delivery, dedicated fleet services, flatbed transportation, warehousing and specialized logistics."
         scrollLabel="SCROLL FOR THE STORY"
         heroImage="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=2000"
         heroAlt="Fleet of trucks"
@@ -76,13 +76,14 @@ export default function AboutPage() {
             <div className="pz-story-title-wrapper">
               <motion.p className="pz-section-label" variants={fadeIn} initial="hidden" whileInView="visible" viewport={viewportOnce}>OUR STORY</motion.p>
               <motion.h2 className="pz-story-title" variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={1}>
-                FOURTEEN YEARS OF <span className="text-cyan italic">SHOWING UP.</span>
+                MORE THAN <span className="text-cyan italic">MOVING FREIGHT.</span>
               </motion.h2>
             </div>
             <motion.p className="pz-story-desc" variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={2}>
-              We grew the way freight companies should — one
-              satisfied shipper at a time. No overpromising, no mystery
-              surcharges, no trucks that leave the yard before the pre-trip&apos;s done.
+              Transportation is about helping our customers succeed. Over nearly two
+              decades we have expanded to meet changing needs — investing in
+              Moffett-equipped trucks, flatbeds, dry vans, warehousing and dispatch
+              technology, so a complete solution comes from one trusted partner.
             </motion.p>
           </motion.div>
 
@@ -104,15 +105,15 @@ export default function AboutPage() {
       <section className="pz-operate">
         <div className="pz-container">
           <motion.div className="pz-section-header-dark" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <p className="pz-section-label-dark">HOW WE OPERATE</p>
+            <p className="pz-section-label-dark">WHAT DRIVES US</p>
             <div className="pz-operate-top">
               <h2 className="pz-section-title-dark">
-                FOUR RULES WE <span className="text-cyan italic">DON&apos;T<br/>BEND.</span>
+                FOUR THINGS WE <span className="text-cyan italic">DON&apos;T<br/>BEND ON.</span>
               </h2>
               <p className="pz-operate-desc">
-                They&apos;re not posters in the lunchroom. They&apos;re how loads
-                get planned, how drivers get hired and how we answer
-                the phone at 5am.
+                Our mission is simple: safe, reliable and innovative
+                transportation and Moffett delivery that keeps our
+                customers&apos; businesses moving.
               </p>
             </div>
           </motion.div>
@@ -133,17 +134,18 @@ export default function AboutPage() {
       <section className="pz-crew">
         <div className="pz-container">
           <motion.div className="pz-section-header" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <p className="pz-section-label">THE CREW</p>
+            <p className="pz-section-label">WHY CUSTOMERS CHOOSE US</p>
             <h2 className="pz-section-title">
-              THIRTY-ONE PEOPLE<br/>
-              WHO <span className="text-cyan italic">LIKE THIS WORK.</span>
+              OUR VISION IS TO BE<br/>
+              ONTARIO&apos;S <span className="text-cyan italic">MOST TRUSTED.</span>
             </h2>
             <p className="pz-crew-desc">
-              Our average driver has been with us six years. That matters more
-              than any brochure: the same faces show up at your dock, learn
-              your site, and know which gate to use. Dispatch, safety and
-              maintenance all sit in the same Mississauga building — so
-              problems get solved in a hallway instead of an inbox.
+              Nearly twenty years of transportation experience, specialized Moffett
+              expertise, and a modern fleet of tractors, trailers, flatbeds and
+              Moffett units. Dispatch, safety and maintenance all sit in the same
+              Mississauga building — so problems get solved in a hallway instead of
+              an inbox, and the latest tracking technology means you can see where
+              your truck is at any point.
             </p>
           </motion.div>
 
@@ -187,7 +189,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
           <motion.div className="pz-cta-actions" variants={slideRight} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={1}>
-            <a href="/need-a-truck" className="pz-btn pz-btn-primary">
+            <a href="/get-a-quote" className="pz-btn pz-btn-primary">
               Request a quote <ArrowUpRight size={18} />
             </a>
             <a href="tel:+19052910325" className="pz-btn pz-btn-secondary">

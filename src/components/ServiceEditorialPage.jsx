@@ -118,7 +118,7 @@ export default function ServiceEditorialPage({
         viewport={viewportOnce}
       >
         <div className="pz-container sv-ed-actions-inner">
-          <Link href="/need-a-truck" className="sv-ed-btn-dark">Request a quote →</Link>
+          <Link href="/get-a-quote" className="sv-ed-btn-dark">Request a quote →</Link>
           <Link href="/contact-us" className="sv-ed-btn-line">Contact us</Link>
         </div>
       </motion.div>
@@ -333,7 +333,7 @@ export default function ServiceEditorialPage({
             viewport={viewportOnce}
             custom={1}
           >
-            <Link href="/need-a-truck" className="pz-btn pz-btn-primary">
+            <Link href="/get-a-quote" className="pz-btn pz-btn-primary">
               Request a quote <ArrowUpRight size={18} />
             </Link>
             <Link href="/contact-us" className="pz-btn pz-btn-secondary">
