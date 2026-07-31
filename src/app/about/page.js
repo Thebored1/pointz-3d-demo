@@ -173,7 +173,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="pz-cta">
         <div className="pz-cta-bg">
-          <Image src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=2000" alt="Truck on highway" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'left top' }} />
+          <Image src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=2000" alt="Truck on highway" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'left center' }} />
           <div className="pz-cta-overlay"></div>
         </div>
         <div className="pz-container pz-cta-inner">

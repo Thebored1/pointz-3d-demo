@@ -208,7 +208,7 @@ export default function ServiceEditorialPage({
                     alt={img.alt}
                     fill
                     sizes="(max-width: 900px) 100vw, 50vw"
-                    style={{ objectFit: 'cover', objectPosition: img.objectPosition || 'left top' }}
+                    style={{ objectFit: 'cover', objectPosition: img.objectPosition || 'left center' }}
                   />
                 </motion.div>
               ))}
@@ -305,7 +305,7 @@ export default function ServiceEditorialPage({
             alt="Truck on highway"
             fill
             sizes="100vw"
-            style={{ objectFit: 'cover', objectPosition: 'left top' }}
+            style={{ objectFit: 'cover', objectPosition: 'left center' }}
           />
           <div className="pz-cta-overlay" />
         </div>

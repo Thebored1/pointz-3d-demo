@@ -1,8 +1,10 @@
 import "./globals.css";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site";
 
-// Home title tag, in the base-doc format but led with Moffett per the revamp.
-const HOME_TITLE = `${SITE_NAME} | Moffett Delivery & Dedicated Trucking, Mississauga ON`;
+// Home title tag. The PDF is the source of truth on positioning and calls to
+// drop "Dedicated Trucking" for the Moffett-forward tagline, so the title uses
+// the PDF wording; the base-doc "Mississauga ON" keyword tail is kept for SEO.
+const HOME_TITLE = `${SITE_NAME} | Moffett Delivery & Specialized Transportation, Mississauga ON`;
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),

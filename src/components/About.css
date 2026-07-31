@@ -47,7 +47,7 @@
 
 .about-image img {
   object-fit: cover;
-  object-position: left top;
+  object-position: left center;
 }
 
 .about-text {
@@ -104,7 +104,7 @@
 
 .about-footer-item img {
   object-fit: cover;
-  object-position: left top;
+  object-position: left center;
   transition: transform 0.6s var(--ease-out-expo);
 }
 

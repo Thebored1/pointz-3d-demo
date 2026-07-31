@@ -89,7 +89,7 @@ export default function EditorialHero({
                 fill
                 sizes="(max-width: 768px) 100vw, 1400px"
                 priority={priority}
-                style={{ objectFit: 'cover', objectPosition: 'left top' }}
+                style={{ objectFit: 'cover', objectPosition: 'left center' }}
               />
             </motion.div>
           ) : null}
