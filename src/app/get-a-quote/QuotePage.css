@@ -10,6 +10,7 @@
 }
 .nat-hero img {
   object-fit: cover;
+  object-position: left top;
 }
 .nat-hero-overlay {
   position: absolute;

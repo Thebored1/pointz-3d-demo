@@ -15,10 +15,10 @@ export default function AboutPage() {
   ];
 
   const stats = [
-    { num: '01', value: '26', label: 'Trucks in fleet', desc: 'Flatbed, step-deck & Moffett' },
-    { num: '02', value: '20 yrs', label: 'On Ontario roads', desc: 'Moving freight since 2006' },
-    { num: '03', value: '99.8%', label: 'On-time delivery', desc: 'Rolling 12-month avg' },
-    { num: '04', value: '3', label: 'Ontario hubs', desc: 'Mississauga, Bolton & Brampton' },
+    { num: '01', value: '20 yrs', label: 'On Ontario roads', desc: 'Moving freight since 2006' },
+    { num: '02', value: '3', label: 'Ontario hubs', desc: 'Mississauga, Bolton & Brampton' },
+    { num: '03', value: '12', label: 'Service lines', desc: 'Moffett, flatbed, warehousing & more' },
+    { num: '04', value: '24/7', label: 'Live dispatch', desc: 'Nights, weekends & holidays' },
   ];
 
   const storySteps = [
@@ -173,7 +173,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="pz-cta">
         <div className="pz-cta-bg">
-          <Image src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=2000" alt="Truck on highway" fill sizes="100vw" style={{ objectFit: 'cover' }} />
+          <Image src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=2000" alt="Truck on highway" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'left top' }} />
           <div className="pz-cta-overlay"></div>
         </div>
         <div className="pz-container pz-cta-inner">

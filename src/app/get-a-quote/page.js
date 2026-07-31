@@ -16,7 +16,7 @@ export default function GetAQuotePage() {
 
       <motion.div className="nat-hero" variants={heroContainer} initial="hidden" animate="visible">
         <motion.div variants={imageReveal} style={{ position: 'absolute', inset: 0 }}>
-          <Image src="/images/need-truck-hero.webp" alt="Point Zero Road Lines fleet" fill sizes="100vw" priority style={{ objectFit: 'cover' }} />
+          <Image src="/images/need-truck-hero.webp" alt="Point Zero Road Lines fleet" fill sizes="100vw" priority style={{ objectFit: 'cover', objectPosition: 'left top' }} />
         </motion.div>
         <div className="nat-hero-overlay" />
         <h1>

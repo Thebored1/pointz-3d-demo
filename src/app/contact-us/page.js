@@ -32,7 +32,7 @@ const locations = [
     title: '+1-905-291-0325',
     desc: (
       <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
-        <Mail size={16} strokeWidth={1.5} /> dispatch@pointzeroroadlines.com
+        <Mail size={16} strokeWidth={1.5} /> info@pointzeroroadlines.com
       </p>
     ),
     icon: Phone,
