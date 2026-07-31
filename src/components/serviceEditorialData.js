@@ -82,6 +82,33 @@ export const overviewServices = [
   { id: '12', icon: 'Layers', title: 'Building Material Distribution', href: '/services/building-material-distribution', desc: 'Distribution programs for suppliers moving material to sites and yards.' },
 ];
 
+// Curated cross-links for SEO and navigation. Keyed by service slug; each
+// lists closely related services. Resolved to {title, href} via getRelated().
+export const relatedServices = {
+  'moffett-delivery': ['construction-material-delivery', 'flatbed-transportation', 'last-mile-retail-delivery'],
+  'dedicated-fleet': ['manufacturing-consumer-goods', 'flatbed-transportation', 'warehouse-cross-dock'],
+  'flatbed-transportation': ['moffett-delivery', 'construction-material-delivery', 'dry-van-transportation'],
+  'dry-van-transportation': ['manufacturing-consumer-goods', 'flatbed-transportation', 'warehouse-cross-dock'],
+  'warehouse-cross-dock': ['dedicated-fleet', 'last-mile-retail-delivery', 'manufacturing-consumer-goods'],
+  'construction-material-delivery': ['moffett-delivery', 'flatbed-transportation', 'building-material-distribution'],
+  'healthcare-logistics': ['dry-van-transportation', 'dedicated-fleet', 'expedited-same-day'],
+  'manufacturing-consumer-goods': ['dry-van-transportation', 'dedicated-fleet', 'warehouse-cross-dock'],
+  'last-mile-retail-delivery': ['warehouse-cross-dock', 'moffett-delivery', 'expedited-same-day'],
+  'expedited-same-day': ['dedicated-fleet', 'healthcare-logistics', 'last-mile-retail-delivery'],
+  'cross-border-freight': ['flatbed-transportation', 'dry-van-transportation', 'manufacturing-consumer-goods'],
+  'building-material-distribution': ['construction-material-delivery', 'moffett-delivery', 'warehouse-cross-dock'],
+};
+
+export function getRelated(slug) {
+  const bySlug = Object.fromEntries(
+    overviewServices.map((s) => [s.href.replace('/services/', ''), s]),
+  );
+  return (relatedServices[slug] || [])
+    .map((k) => bySlug[k])
+    .filter(Boolean)
+    .map((s) => ({ title: s.title, href: s.href, desc: s.desc }));
+}
+
 export const overviewCapabilities = [
   { icon: 'Forklift', label: 'Moffett', value: 'Truck-mounted forklifts that travel with the load and unload without site equipment.' },
   { icon: 'Truck', label: 'Flatbed', value: '48ft, 53ft, step-decks and drop-decks. Ready for oversized and overweight loads.' },

@@ -34,7 +34,7 @@
 
 .fleet-specs {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
 }
 
 .fleet-spec {
@@ -73,9 +73,7 @@
     padding: 0 0 1.5rem;
   }
 
-  .fleet-specs {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  /* auto-fit already collapses fleet-specs to 1 column on narrow phones */
 
   .fleet-spec:nth-child(2n) {
     border-right: none;

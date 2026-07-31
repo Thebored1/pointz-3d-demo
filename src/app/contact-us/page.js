@@ -1,11 +1,12 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import EditorialHero from '../../components/EditorialHero';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { fadeUp, fadeUpSoft, slideLeft, slideRight, viewportOnce } from '../../lib/motion';
+import { submitContact } from '../actions/submit-contact';
 import './ContactPage.css';
 
 const locations = [
@@ -42,15 +43,35 @@ const locations = [
 
 const formFields = [
   { type: 'row', fields: [
-    { label: 'First Name', type: 'text', placeholder: 'John' },
-    { label: 'Last Name', type: 'text', placeholder: 'Doe' },
+    { label: 'First Name', type: 'text', name: 'first_name', placeholder: 'John' },
+    { label: 'Last Name', type: 'text', name: 'last_name', placeholder: 'Doe' },
   ]},
-  { type: 'single', label: 'Email Address', inputType: 'email', placeholder: 'john@company.com' },
-  { type: 'select', label: 'Subject / Department', options: ['General Inquiry', 'Request a Quote', 'Careers & Recruiting', 'Billing & Support', 'Sales / Dedicated Fleet'] },
-  { type: 'textarea', label: 'Message', placeholder: 'How can we assist you?' },
+  { type: 'row', fields: [
+    { label: 'Email Address', type: 'email', name: 'email', placeholder: 'john@company.com' },
+    { label: 'Phone Number', type: 'tel', name: 'phone', placeholder: '(905) 555-0123' },
+  ]},
+  { type: 'select', label: 'Subject / Department', name: 'subject', options: ['General Inquiry', 'Request a Quote', 'Billing & Support', 'Sales / Dedicated Fleet'] },
+  { type: 'textarea', label: 'Message', name: 'message', placeholder: 'How can we assist you?' },
 ];
 
 export default function ContactUsPage() {
+  const [status, setStatus] = useState('idle');
+  const [error, setError] = useState('');
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    setStatus('sending');
+    setError('');
+    const result = await submitContact(formData);
+    if (result.ok) {
+      setStatus('sent');
+      return;
+    }
+    setStatus('idle');
+    setError(result.error);
+  }
+
   return (
     <div style={{ backgroundColor: 'var(--bg-primary)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
@@ -134,7 +155,13 @@ export default function ContactUsPage() {
               >
                 Send a message
               </motion.h2>
-              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+              {status === 'sent' ? (
+                <motion.p className="contact-form-sent" variants={fadeUp} initial="hidden" animate="visible">
+                  Thanks — your message is with our team and we&rsquo;ll be in touch shortly.
+                  If it&rsquo;s urgent, call <a href="tel:+19052910325">(905) 291-0325</a> — dispatch is staffed 24/7.
+                </motion.p>
+              ) : (
+              <form className="contact-form" onSubmit={handleSubmit}>
                 {formFields.map((field, i) => {
                   if (field.type === 'row') {
                     return (
@@ -150,7 +177,7 @@ export default function ContactUsPage() {
                         {field.fields.map((f) => (
                           <div key={f.label} className="contact-input-group">
                             <label>{f.label}</label>
-                            <input type={f.type} className="contact-input" placeholder={f.placeholder} />
+                            <input type={f.type} name={f.name} required className="contact-input" placeholder={f.placeholder} />
                           </div>
                         ))}
                       </motion.div>
@@ -169,7 +196,7 @@ export default function ContactUsPage() {
                         custom={i}
                       >
                         <label>{field.label}</label>
-                        <select className="contact-input" style={{ appearance: 'none', background: 'transparent' }}>
+                        <select name={field.name} className="contact-input" style={{ appearance: 'none', background: 'transparent' }}>
                           {field.options.map((opt) => (
                             <option key={opt}>{opt}</option>
                           ))}
@@ -190,7 +217,7 @@ export default function ContactUsPage() {
                         custom={i}
                       >
                         <label>{field.label}</label>
-                        <textarea className="contact-input contact-textarea" placeholder={field.placeholder} />
+                        <textarea name={field.name} required className="contact-input contact-textarea" placeholder={field.placeholder} />
                       </motion.div>
                     );
                   }
@@ -206,25 +233,29 @@ export default function ContactUsPage() {
                       custom={i}
                     >
                       <label>{field.label}</label>
-                      <input type={field.inputType} className="contact-input" placeholder={field.placeholder} />
+                      <input type={field.inputType} name={field.name} required className="contact-input" placeholder={field.placeholder} />
                     </motion.div>
                   );
                 })}
 
+                {error ? <p className="contact-form-error" role="alert">{error}</p> : null}
+
                 <motion.button
                   type="submit"
                   className="contact-submit"
+                  disabled={status === 'sending'}
                   variants={fadeUp}
                   initial="hidden"
                   whileInView="visible"
                   viewport={viewportOnce}
                   custom={formFields.length}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  whileHover={status === 'sending' ? undefined : { scale: 1.02 }}
+                  whileTap={status === 'sending' ? undefined : { scale: 0.98 }}
                 >
-                  Submit Request
+                  {status === 'sending' ? 'Sending…' : 'Submit Request'}
                 </motion.button>
               </form>
+              )}
             </motion.div>
           </div>
         </section>

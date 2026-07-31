@@ -1,4 +1,3 @@
-"use client";
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 const capabilities = [
@@ -18,6 +17,7 @@ const highlights = [
 export default function DedicatedFleetPage() {
   return (
     <ServiceEditorialPage
+      relatedKey="dedicated-fleet"
       badge="SERVICES"
       badgeAlt="DEDICATED FLEET"
       titleLine1="YOUR LANES."

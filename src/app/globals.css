@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* Fonts are self-hosted via next/font in src/app/layout.js — no render-blocking
+   @import, and the unused Inter family has been dropped. The CSS variables
+   below point at the next/font-generated variables. */
 
 :root {
   --c-black: #0a0a0a;
@@ -23,10 +25,10 @@
   --border-strong: rgba(10, 10, 10, 0.25);
   --accent: var(--c-blue);
 
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'Manrope', sans-serif;
-  --font-heading: 'Syne', sans-serif;
-  --font-mono: 'Space Mono', Courier, monospace;
+  --font-display: var(--font-syne), sans-serif;
+  --font-body: var(--font-manrope), sans-serif;
+  --font-heading: var(--font-syne), sans-serif;
+  --font-mono: var(--font-space-mono), Courier, monospace;
 
   /* Type scale — use by role, not by feel */
   --fs-hero: clamp(2.5rem, 5vw, 4.25rem);       /* page heroes only */

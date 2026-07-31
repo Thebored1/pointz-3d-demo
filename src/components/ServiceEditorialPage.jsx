@@ -7,7 +7,7 @@ import { ArrowUpRight } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import EditorialHero from './EditorialHero';
-import { ServiceIcon, defaultSteps, defaultTrustBadges } from './serviceEditorialData';
+import { ServiceIcon, defaultSteps, defaultTrustBadges, getRelated } from './serviceEditorialData';
 import {
   fadeUp,
   fadeUpSoft,
@@ -85,8 +85,10 @@ export default function ServiceEditorialPage({
   processSection,
   steps = defaultSteps,
   cta,
+  relatedKey,
 }) {
   const trustBadges = darkSection.badges ?? defaultTrustBadges;
+  const related = relatedKey ? getRelated(relatedKey) : [];
   const process = {
     num: '03',
     label: 'How it works',
@@ -298,10 +300,40 @@ export default function ServiceEditorialPage({
         </section>
       </div>
 
+      {related.length ? (
+        <section className="sv-ed-related">
+          <div className="pz-container">
+            <SectionHeader
+              num="04"
+              label="Related services"
+              title="You might also need"
+            />
+            <div className="sv-ed-related-grid">
+              {related.map((r, i) => (
+                <motion.div
+                  key={r.href}
+                  variants={fadeUpSoft}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={viewportOnce}
+                  custom={i}
+                >
+                  <Link href={r.href} className="sv-ed-related-card">
+                    <h3>{r.title}</h3>
+                    <p>{r.desc}</p>
+                    <span className="sv-ed-card-link">Explore <ArrowUpRight size={14} /></span>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="pz-cta sv-ed-cta">
         <div className="pz-cta-bg">
           <Image
-            src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=2000"
+            src="/images/heavy_haul_truck.webp"
             alt="Truck on highway"
             fill
             sizes="100vw"

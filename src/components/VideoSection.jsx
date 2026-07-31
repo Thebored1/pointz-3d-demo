@@ -24,7 +24,7 @@ export default function VideoSection() {
         >
           <iframe 
             src="https://www.youtube.com/embed/4aWGrLXJcCU" 
-            title="Pointz Promo Video"
+            title="Point Zero Road Lines Promo Video"
             frameBorder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowFullScreen 

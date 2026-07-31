@@ -33,7 +33,7 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
 
 .service-card {
@@ -74,19 +74,8 @@
   color: var(--text-main);
 }
 
-@media (max-width: 1400px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .service-card:nth-child(3n) {
-    border-right: 1px solid var(--border-color);
-  }
-
-  .service-card:nth-child(2n) {
-    border-right: none;
-  }
-}
+/* Column count is governed by auto-fit (responds to the actual column width,
+   not the viewport), so no viewport-keyed column override here. */
 
 @media (max-width: 768px) {
   .services-section {

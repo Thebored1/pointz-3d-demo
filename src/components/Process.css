@@ -34,7 +34,7 @@
 
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .process-step {
@@ -80,15 +80,7 @@
   line-height: 1.5;
 }
 
-@media (max-width: 1400px) {
-  .process-steps {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .process-step:nth-child(2n) {
-    border-right: none;
-  }
-}
+/* Column count governed by auto-fit (responds to the column, not the viewport). */
 
 @media (max-width: 768px) {
   .process-section {

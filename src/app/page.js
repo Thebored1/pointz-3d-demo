@@ -1,4 +1,3 @@
-"use client";
 import React from 'react';
 import SplitLayout from '../components/SplitLayout';
 import Hero from '../components/Hero';

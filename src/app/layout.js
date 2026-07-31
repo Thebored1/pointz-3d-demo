@@ -1,10 +1,17 @@
 import "./globals.css";
+import { Syne, Manrope, Space_Mono } from "next/font/google";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site";
+
+// Self-hosted, preloaded, font-display: swap. Weights limited to what the CSS
+// actually uses. Inter was dropped — it was imported but never referenced.
+const syne = Syne({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--font-syne", display: "swap" });
+const manrope = Manrope({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800"], variable: "--font-manrope", display: "swap" });
+const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"], style: ["normal", "italic"], variable: "--font-space-mono", display: "swap" });
 
 // Home title tag. The PDF is the source of truth on positioning and calls to
 // drop "Dedicated Trucking" for the Moffett-forward tagline, so the title uses
 // the PDF wording; the base-doc "Mississauga ON" keyword tail is kept for SEO.
-const HOME_TITLE = `${SITE_NAME} | Moffett Delivery & Specialized Transportation, Mississauga ON`;
+const HOME_TITLE = `${SITE_NAME} | Moffett Delivery & Freight, Mississauga ON`;
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -63,7 +70,7 @@ const localBusinessSchema = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${syne.variable} ${manrope.variable} ${spaceMono.variable}`}>
       <body>
         <script
           type="application/ld+json"

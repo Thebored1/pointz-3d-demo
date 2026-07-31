@@ -1,4 +1,3 @@
-"use client";
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 const capabilities = [
@@ -18,6 +17,7 @@ const highlights = [
 export default function ManufacturingConsumerGoodsPage() {
   return (
     <ServiceEditorialPage
+      relatedKey="manufacturing-consumer-goods"
       badge="SERVICES"
       badgeAlt="MANUFACTURING & CONSUMER GOODS"
       titleLine1="PRODUCTION"

@@ -1,4 +1,3 @@
-"use client";
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 const capabilities = [
@@ -18,6 +17,7 @@ const applications = [
 export default function MoffettDeliveryPage() {
   return (
     <ServiceEditorialPage
+      relatedKey="moffett-delivery"
       badge="SERVICES"
       badgeAlt="MOFFETT DELIVERY"
       titleLine1="NO DOCK."

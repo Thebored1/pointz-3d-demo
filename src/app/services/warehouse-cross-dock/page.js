@@ -1,4 +1,3 @@
-"use client";
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 const capabilities = [
@@ -18,6 +17,7 @@ const highlights = [
 export default function WarehouseCrossDockPage() {
   return (
     <ServiceEditorialPage
+      relatedKey="warehouse-cross-dock"
       badge="SERVICES"
       badgeAlt="WAREHOUSE & CROSS-DOCK"
       titleLine1="STAGED HERE."

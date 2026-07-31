@@ -1,4 +1,3 @@
-"use client";
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 const capabilities = [
@@ -18,6 +17,7 @@ const highlights = [
 export default function BuildingMaterialDistributionPage() {
   return (
     <ServiceEditorialPage
+      relatedKey="building-material-distribution"
       badge="SERVICES"
       badgeAlt="BUILDING MATERIAL DISTRIBUTION"
       titleLine1="FROM THE YARD."

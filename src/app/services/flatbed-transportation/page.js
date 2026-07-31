@@ -1,4 +1,3 @@
-"use client";
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 const capabilities = [
@@ -18,6 +17,7 @@ const freight = [
 export default function FlatbedTransportationPage() {
   return (
     <ServiceEditorialPage
+      relatedKey="flatbed-transportation"
       badge="SERVICES"
       badgeAlt="FLATBED TRANSPORTATION"
       titleLine1="OPEN DECK."

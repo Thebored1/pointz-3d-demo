@@ -1,4 +1,3 @@
-"use client";
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 const capabilities = [
@@ -18,6 +17,7 @@ const highlights = [
 export default function LastMileRetailDeliveryPage() {
   return (
     <ServiceEditorialPage
+      relatedKey="last-mile-retail-delivery"
       badge="SERVICES"
       badgeAlt="LAST MILE & RETAIL DELIVERY"
       titleLine1="THE LAST MILE."

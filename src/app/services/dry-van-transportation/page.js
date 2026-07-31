@@ -1,4 +1,3 @@
-"use client";
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 const capabilities = [
@@ -18,6 +17,7 @@ const freight = [
 export default function DryVanTransportationPage() {
   return (
     <ServiceEditorialPage
+      relatedKey="dry-van-transportation"
       badge="SERVICES"
       badgeAlt="DRY VAN TRANSPORTATION"
       titleLine1="ENCLOSED."

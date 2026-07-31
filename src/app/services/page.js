@@ -1,4 +1,3 @@
-"use client";
 import ServiceEditorialPage from '../../components/ServiceEditorialPage';
 import {
   overviewServices,

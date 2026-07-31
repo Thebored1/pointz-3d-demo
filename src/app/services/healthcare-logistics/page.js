@@ -1,4 +1,3 @@
-"use client";
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 const capabilities = [
@@ -18,6 +17,7 @@ const segments = [
 export default function HealthcareLogisticsPage() {
   return (
     <ServiceEditorialPage
+      relatedKey="healthcare-logistics"
       badge="SERVICES"
       badgeAlt="HEALTHCARE LOGISTICS"
       titleLine1="TIGHT WINDOWS."

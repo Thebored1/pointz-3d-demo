@@ -1,4 +1,3 @@
-"use client";
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 const capabilities = [
@@ -18,6 +17,7 @@ const highlights = [
 export default function CrossBorderFreightPage() {
   return (
     <ServiceEditorialPage
+      relatedKey="cross-border-freight"
       badge="SERVICES"
       badgeAlt="CROSS-BORDER FREIGHT"
       titleLine1="ONTARIO."

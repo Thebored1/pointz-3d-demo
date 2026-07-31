@@ -1,7 +1,7 @@
 export const metadata = {
   // SEO title tag from the client's approved copy package. `absolute` bypasses
   // the root "%s | Point Zero Road Lines" template so it renders verbatim.
-  title: { absolute: "Contact Point Zero Road Lines | Request a Trucking Quote" },
+  title: { absolute: "Get a Freight Quote | Point Zero Road Lines Trucking" },
   description: "Get in touch with Point Zero Road Lines for Moffett delivery, dedicated fleet, flatbed or warehousing services. Request a quote or contact our Mississauga office.",
   alternates: { canonical: "/get-a-quote" },
   openGraph: {

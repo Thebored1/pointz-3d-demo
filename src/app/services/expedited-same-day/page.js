@@ -1,4 +1,3 @@
-"use client";
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 const capabilities = [
@@ -18,6 +17,7 @@ const scenarios = [
 export default function ExpeditedSameDayPage() {
   return (
     <ServiceEditorialPage
+      relatedKey="expedited-same-day"
       badge="SERVICES"
       badgeAlt="EXPEDITED & SAME DAY"
       titleLine1="TODAY."

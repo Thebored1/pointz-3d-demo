@@ -494,3 +494,51 @@
   }
   .sv-ed-step:last-child { border-bottom: none; }
 }
+
+/* Related services cross-links */
+.sv-ed-related {
+  padding: 4rem 0;
+  border-top: 1px solid var(--border-color);
+}
+.sv-ed-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.sv-ed-related-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  height: 100%;
+  padding: 1.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md, 8px);
+  background: var(--bg-secondary);
+  text-decoration: none;
+  color: var(--text-main);
+  transition: border-color 0.25s var(--ease-out-expo), transform 0.25s var(--ease-out-expo);
+}
+.sv-ed-related-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+.sv-ed-related-card h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--fs-title);
+  font-weight: 600;
+}
+.sv-ed-related-card p {
+  margin: 0;
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+/* Very narrow phones: stat pairs and related cards go single-column */
+@media (max-width: 400px) {
+  .sv-ed-stats-grid { grid-template-columns: 1fr; }
+  .sv-ed-related-grid { grid-template-columns: 1fr; }
+}
