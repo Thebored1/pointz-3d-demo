@@ -7,14 +7,14 @@ import { faqs } from './faqData';
 import './FaqPage.css';
 
 export const metadata = {
-  title: 'FAQ',
+  title: { absolute: 'Frequently Asked Questions | Point Zero Road Lines' },
   description:
-    'Answers on Moffett delivery, dedicated fleet, service areas, tracking, warehousing and cross-border freight at Point Zero Road Lines.',
+    "Answers to common questions about Point Zero Road Lines' trucking services, service area, equipment, live tracking and how to request a quote.",
   alternates: { canonical: '/faq' },
   openGraph: {
     title: 'FAQ',
     description:
-      'Answers on Moffett delivery, dedicated fleet, service areas, tracking, warehousing and cross-border freight.',
+      "Answers to common questions about Point Zero Road Lines' trucking services, service area, equipment, live tracking and how to request a quote.",
     url: '/faq',
   },
 };

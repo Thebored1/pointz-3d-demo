@@ -7,7 +7,7 @@ export const SITE_NAME = 'Point Zero Road Lines';
 export const SITE_TAGLINE = "Ontario's Moffett Delivery & Specialized Transportation Experts";
 
 export const SITE_DESCRIPTION =
-  'Moffett delivery, dedicated fleet, flatbed transportation and warehousing across the GTA and Ontario. Delivering to sites without a dock or forklift since 2006.';
+  'Point Zero Road Lines provides Moffett delivery, dedicated fleet, flatbed and warehousing with 24/7 dispatch across the GTA and Southern Ontario. Request a quote today.';
 
 // Every crawlable route. Used by sitemap.js.
 // Service pages carry the highest priority after the hub: they are the pages

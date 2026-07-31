@@ -1,10 +1,12 @@
 export const metadata = {
-  title: "Safety & Compliance",
-  description: "Hours of Service, MTO and HTA compliance, USDOT and MC authority, bonded and insured, with equipment on a regular inspection schedule.",
+  // SEO title tag from the client's approved copy package. `absolute` bypasses
+  // the root "%s | Point Zero Road Lines" template so it renders verbatim.
+  title: { absolute: "Safety & Compliance | Point Zero Road Lines Trucking" },
+  description: "Point Zero Road Lines is a bonded, DOT-registered carrier committed to Hours of Service, MTO and HTA compliance on every load. Learn about our safety standards.",
   alternates: { canonical: "/safety-compliance" },
   openGraph: {
     title: "Safety & Compliance",
-    description: "Hours of Service, MTO and HTA compliance, USDOT and MC authority, bonded and insured, with equipment on a regular inspection schedule.",
+    description: "Point Zero Road Lines is a bonded, DOT-registered carrier committed to Hours of Service, MTO and HTA compliance on every load. Learn about our safety standards.",
     url: "/safety-compliance",
   },
 };

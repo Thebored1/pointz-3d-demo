@@ -1,10 +1,12 @@
 export const metadata = {
-  title: "Cross Border Freight Ontario",
-  description: "Cross-border trucking between Ontario and the United States under our own USDOT and MC authority. Bonded and insured.",
+  // SEO title tag from the client's approved copy package. `absolute` bypasses
+  // the root "%s | Point Zero Road Lines" template so it renders verbatim.
+  title: { absolute: "Cross-Border Trucking: Ontario to the U.S. | Point Zero Road Lines" },
+  description: "Cross-border freight from Point Zero Road Lines between Ontario and the United States, under our own USDOT and MC authority. Bonded and insured.",
   alternates: { canonical: "/services/cross-border-freight" },
   openGraph: {
-    title: "Cross Border Freight Ontario",
-    description: "Cross-border trucking between Ontario and the United States under our own USDOT and MC authority. Bonded and insured.",
+    title: "Cross-Border Freight",
+    description: "Cross-border freight from Point Zero Road Lines between Ontario and the United States, under our own USDOT and MC authority. Bonded and insured.",
     url: "/services/cross-border-freight",
   },
 };

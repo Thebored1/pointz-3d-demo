@@ -1,10 +1,12 @@
 export const metadata = {
-  title: "Construction Material Delivery",
-  description: "Lumber, drywall, roofing and steel delivery to job sites across Ontario. Moffett-equipped trucks unload without site equipment.",
+  // SEO title tag from the client's approved copy package. `absolute` bypasses
+  // the root "%s | Point Zero Road Lines" template so it renders verbatim.
+  title: { absolute: "Construction Material Delivery & Hauling | Point Zero Road Lines" },
+  description: "On-time construction material delivery from Point Zero Road Lines, including flatbed and Moffett delivery direct to job sites across the GTA and Southern Ontario.",
   alternates: { canonical: "/services/construction-material-delivery" },
   openGraph: {
     title: "Construction Material Delivery",
-    description: "Lumber, drywall, roofing and steel delivery to job sites across Ontario. Moffett-equipped trucks unload without site equipment.",
+    description: "On-time construction material delivery from Point Zero Road Lines, including flatbed and Moffett delivery direct to job sites across the GTA and Southern Ontario.",
     url: "/services/construction-material-delivery",
   },
 };

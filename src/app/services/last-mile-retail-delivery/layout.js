@@ -1,10 +1,12 @@
 export const metadata = {
-  title: "Last Mile Delivery Ontario",
-  description: "Last mile and retail store delivery across Ontario, including scheduled routes and white glove material placement.",
+  // SEO title tag from the client's approved copy package. `absolute` bypasses
+  // the root "%s | Point Zero Road Lines" template so it renders verbatim.
+  title: { absolute: "Last Mile & Retail Delivery in the GTA | Point Zero Road Lines" },
+  description: "Scheduled last mile and retail store delivery from Point Zero Road Lines, including white glove material placement across the GTA and Southern Ontario.",
   alternates: { canonical: "/services/last-mile-retail-delivery" },
   openGraph: {
-    title: "Last Mile Delivery Ontario",
-    description: "Last mile and retail store delivery across Ontario, including scheduled routes and white glove material placement.",
+    title: "Last Mile & Retail Delivery",
+    description: "Scheduled last mile and retail store delivery from Point Zero Road Lines, including white glove material placement across the GTA and Southern Ontario.",
     url: "/services/last-mile-retail-delivery",
   },
 };

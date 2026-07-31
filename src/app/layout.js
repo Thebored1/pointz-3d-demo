@@ -1,7 +1,8 @@
 import "./globals.css";
-import { SITE_URL, SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION } from "@/lib/site";
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site";
 
-const HOME_TITLE = `${SITE_NAME} — ${SITE_TAGLINE}`;
+// Home title tag, in the base-doc format but led with Moffett per the revamp.
+const HOME_TITLE = `${SITE_NAME} | Moffett Delivery & Dedicated Trucking, Mississauga ON`;
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -27,10 +28,47 @@ export const metadata = {
   },
 };
 
+// LocalBusiness schema (base-doc technical-SEO note). Strengthens local search
+// and Google Business Profile relevance. Kept in sync with the footer's
+// address, phone and social links.
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "MovingCompany",
+  name: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  url: SITE_URL,
+  telephone: "+1-905-291-0325",
+  email: "info@pointzeroroadlines.com",
+  foundingDate: "2006",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1566 Bonhill Road",
+    addressLocality: "Mississauga",
+    addressRegion: "ON",
+    postalCode: "L5T 1C7",
+    addressCountry: "CA",
+  },
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Greater Toronto Area" },
+    { "@type": "AdministrativeArea", name: "Southern Ontario" },
+  ],
+  sameAs: [
+    "https://www.instagram.com/pointzeroroadlines/",
+    "https://www.facebook.com/pointzeroroadline/",
+    "https://www.youtube.com/@PointZeroRoadlines",
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

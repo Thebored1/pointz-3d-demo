@@ -1,14 +1,12 @@
-import { SITE_NAME } from "@/lib/site";
-
 export const metadata = {
-  // A bare string here would drop the root template for the nested service
-  // pages, so re-declare it alongside this segment's own title.
-  title: { default: "Services", template: `%s | ${SITE_NAME}` },
-  description: "Dedicated fleet, specialty equipment and warehousing and storage across the GTA and Ontario.",
+  // SEO title tag from the client's approved copy package. `absolute` bypasses
+  // the root "%s | Point Zero Road Lines" template so it renders verbatim.
+  title: { absolute: "Trucking & Logistics Services in the GTA | Point Zero Road Lines" },
+  description: "From Moffett delivery and dedicated fleet to flatbed, warehousing and 24/7 dispatch, explore the full range of services from Point Zero Road Lines.",
   alternates: { canonical: "/services" },
   openGraph: {
     title: "Services",
-    description: "Dedicated fleet, specialty equipment and warehousing and storage across the GTA and Ontario.",
+    description: "From Moffett delivery and dedicated fleet to flatbed, warehousing and 24/7 dispatch, explore the full range of services from Point Zero Road Lines.",
     url: "/services",
   },
 };

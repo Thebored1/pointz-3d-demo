@@ -1,10 +1,12 @@
 export const metadata = {
-  title: "Get a Quote",
-  description: "Request a freight quote from Point Zero Road Lines. Moffett delivery, dedicated fleet, flatbed and warehousing across the GTA and Ontario.",
+  // SEO title tag from the client's approved copy package. `absolute` bypasses
+  // the root "%s | Point Zero Road Lines" template so it renders verbatim.
+  title: { absolute: "Contact Point Zero Road Lines | Request a Trucking Quote" },
+  description: "Get in touch with Point Zero Road Lines for Moffett delivery, dedicated fleet, flatbed or warehousing services. Request a quote or contact our Mississauga office.",
   alternates: { canonical: "/get-a-quote" },
   openGraph: {
     title: "Get a Quote",
-    description: "Request a freight quote from Point Zero Road Lines. Moffett delivery, dedicated fleet, flatbed and warehousing across the GTA and Ontario.",
+    description: "Get in touch with Point Zero Road Lines for Moffett delivery, dedicated fleet, flatbed or warehousing services. Request a quote or contact our Mississauga office.",
     url: "/get-a-quote",
   },
 };

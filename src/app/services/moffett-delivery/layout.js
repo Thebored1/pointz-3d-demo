@@ -1,10 +1,12 @@
 export const metadata = {
-  title: "Moffett Delivery Ontario",
-  description: "Truck-mounted Moffett forklift delivery across Ontario and the GTA. Freight unloaded on arrival at sites with no loading dock or forklift.",
+  // SEO title tag from the client's approved copy package. `absolute` bypasses
+  // the root "%s | Point Zero Road Lines" template so it renders verbatim.
+  title: { absolute: "Moffett Delivery in Mississauga & the GTA | Point Zero Road Lines" },
+  description: "Truck-mounted Moffett forklift delivery from Point Zero Road Lines - freight unloaded on arrival at sites with no loading dock or forklift, across Ontario.",
   alternates: { canonical: "/services/moffett-delivery" },
   openGraph: {
-    title: "Moffett Delivery Ontario",
-    description: "Truck-mounted Moffett forklift delivery across Ontario and the GTA. Freight unloaded on arrival at sites with no loading dock or forklift.",
+    title: "Moffett Delivery",
+    description: "Truck-mounted Moffett forklift delivery from Point Zero Road Lines - freight unloaded on arrival at sites with no loading dock or forklift, across Ontario.",
     url: "/services/moffett-delivery",
   },
 };

@@ -1,10 +1,12 @@
 export const metadata = {
-  title: "Dry Van Transportation",
-  description: "Enclosed dry van capacity across the GTA and Southern Ontario for palletized, consumer goods and general freight. FTL and LTL.",
+  // SEO title tag from the client's approved copy package. `absolute` bypasses
+  // the root "%s | Point Zero Road Lines" template so it renders verbatim.
+  title: { absolute: "Dry Van Transportation Services | Point Zero Road Lines" },
+  description: "Enclosed dry van freight from Point Zero Road Lines - FTL and LTL capacity for palletized and general freight across the GTA and Southern Ontario.",
   alternates: { canonical: "/services/dry-van-transportation" },
   openGraph: {
     title: "Dry Van Transportation",
-    description: "Enclosed dry van capacity across the GTA and Southern Ontario for palletized, consumer goods and general freight. FTL and LTL.",
+    description: "Enclosed dry van freight from Point Zero Road Lines - FTL and LTL capacity for palletized and general freight across the GTA and Southern Ontario.",
     url: "/services/dry-van-transportation",
   },
 };
