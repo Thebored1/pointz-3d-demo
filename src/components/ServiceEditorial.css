@@ -542,3 +542,24 @@
   .sv-ed-stats-grid { grid-template-columns: 1fr; }
   .sv-ed-related-grid { grid-template-columns: 1fr; }
 }
+
+/* Single feature band (driver photo) — replaces the multi-cell gallery so the
+   two site photos never repeat on one page. Sized as a wide band. */
+.sv-ed-feature {
+  position: relative;
+  width: 100%;
+  height: clamp(300px, 40vw, 500px);
+  margin-top: 0.5rem;
+  border-radius: var(--radius-lg, 12px);
+  overflow: hidden;
+}
+
+/* CTA no longer carries a photo (kept the fleet shot to the hero only), so the
+   band is a solid brand-navy behind the existing overlay. */
+.sv-ed-cta .pz-cta-bg-solid {
+  background: var(--c-navy);
+}
+
+@media (max-width: 600px) {
+  .sv-ed-feature { height: clamp(220px, 60vw, 320px); }
+}

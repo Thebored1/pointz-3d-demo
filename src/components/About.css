@@ -92,13 +92,13 @@
 
 .about-footer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 0.5rem;
 }
 
 .about-footer-item {
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 21 / 9;
   position: relative;
 }
 

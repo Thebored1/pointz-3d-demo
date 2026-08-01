@@ -25,11 +25,8 @@ import './ServiceEditorial.css';
 // and gallery props are intentionally ignored so every page stays consistent.
 const HERO_IMAGE = '/images/fleet-hero.webp';
 const HERO_ALT = 'Point Zero Road Lines fleet lined up in the yard';
-const PAGE_GALLERY = [
-  { src: '/images/driver-cabin.webp', alt: 'Point Zero Road Lines driver in the cab', span: 'main' },
-  { src: '/images/fleet-hero.webp', alt: 'Point Zero Road Lines fleet' },
-  { src: '/images/driver-cabin.webp', alt: 'Point Zero Road Lines driver' },
-];
+const FEATURE_IMAGE = '/images/driver-cabin.webp';
+const FEATURE_ALT = 'A Point Zero Road Lines driver in the cab';
 
 function SectionHeader({ num, label, title, desc, dark }) {
   return (
@@ -200,31 +197,21 @@ export default function ServiceEditorialPage({
           </div>
         </section>
 
-        {PAGE_GALLERY.length ? (
-          <section className="sv-ed-gallery">
-            <div className="sv-ed-gallery-grid">
-              {PAGE_GALLERY.map((img, i) => (
-                <motion.div
-                  key={img.src}
-                  className={img.span === 'main' ? 'sv-ed-g-main' : 'sv-ed-g-cell'}
-                  variants={scaleIn}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={viewportOnce}
-                  custom={i}
-                >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    sizes="(max-width: 900px) 100vw, 50vw"
-                    style={{ objectFit: 'cover', objectPosition: img.objectPosition || 'left center' }}
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </section>
-        ) : null}
+        <motion.section
+          className="sv-ed-feature"
+          variants={scaleIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
+          <Image
+            src={FEATURE_IMAGE}
+            alt={FEATURE_ALT}
+            fill
+            sizes="(max-width: 900px) 100vw, 1200px"
+            style={{ objectFit: 'cover', objectPosition: 'left 35%' }}
+          />
+        </motion.section>
       </main>
 
       <section className="sv-ed-caps">
@@ -339,14 +326,7 @@ export default function ServiceEditorialPage({
       ) : null}
 
       <section className="pz-cta sv-ed-cta">
-        <div className="pz-cta-bg">
-          <Image
-            src="/images/fleet-hero.webp"
-            alt="Point Zero Road Lines fleet"
-            fill
-            sizes="100vw"
-            style={{ objectFit: 'cover', objectPosition: 'left center' }}
-          />
+        <div className="pz-cta-bg pz-cta-bg-solid">
           <div className="pz-cta-overlay" />
         </div>
         <div className="pz-container pz-cta-inner">
