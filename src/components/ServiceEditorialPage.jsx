@@ -111,6 +111,7 @@ export default function ServiceEditorialPage({
         scrollLabel={scrollLabel}
         heroImage={imageSet.hero.src}
         heroAlt={imageSet.hero.alt}
+        heroPosition={imageSet.hero.pos}
       />
 
       <motion.div
@@ -211,7 +212,7 @@ export default function ServiceEditorialPage({
                     alt={image.alt}
                     fill
                     sizes="(max-width: 900px) 100vw, 50vw"
-                    style={{ objectFit: 'cover', objectPosition: image.objectPosition || 'center' }}
+                    style={{ objectFit: 'cover', objectPosition: image.pos || 'center' }}
                   />
                 </motion.div>
               ))}
@@ -338,7 +339,7 @@ export default function ServiceEditorialPage({
             alt={imageSet.cta.alt}
             fill
             sizes="100vw"
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            style={{ objectFit: 'cover', objectPosition: imageSet.cta.pos || 'center' }}
           />
           <div className="pz-cta-overlay" />
         </div>

@@ -21,6 +21,7 @@ export default function EditorialHero({
   scrollLabel,
   heroImage,
   heroAlt,
+  heroPosition = 'center',
   bottom,
   showDivider = true,
   showImage = true,
@@ -89,7 +90,7 @@ export default function EditorialHero({
                 fill
                 sizes="(max-width: 768px) 100vw, 1400px"
                 priority={priority}
-                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                style={{ objectFit: 'cover', objectPosition: heroPosition }}
               />
             </motion.div>
           ) : null}

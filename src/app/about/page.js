@@ -54,7 +54,8 @@ export default function AboutPage() {
         description="Since 2006, Point Zero Road Lines has helped businesses move freight safely, efficiently and on schedule. What began as a transportation company has grown into one of Ontario's trusted providers of Moffett delivery, dedicated fleet services, flatbed transportation, warehousing and specialized logistics."
         scrollLabel="SCROLL FOR THE STORY"
         heroImage="/images/fleet-hero.webp"
-        heroAlt="Fleet of trucks"
+        heroAlt="Point Zero Road Lines fleet lined up in the yard"
+        heroPosition="50% 58%"
       />
 
       {/* MARQUEE */}
@@ -173,7 +174,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="pz-cta">
         <div className="pz-cta-bg">
-          <Image src="/images/driver-cabin.webp" alt="Point Zero Road Lines driver" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'left center' }} />
+          <Image src="/images/driver-cabin.webp" alt="Point Zero Road Lines driver" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: '30% 42%' }} />
           <div className="pz-cta-overlay"></div>
         </div>
         <div className="pz-container pz-cta-inner">

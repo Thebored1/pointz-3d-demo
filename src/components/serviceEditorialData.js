@@ -136,7 +136,39 @@ const ALT = {
   'urban-flatbed': 'A Point Zero Road Lines flatbed on a city street',
   'specialty-kenworth': 'A Point Zero Road Lines specialty flatbed tractor',
 };
-const img = (slug, span) => ({ src: `/images/${slug}.webp`, alt: ALT[slug] || 'Point Zero Road Lines', ...(span ? { span } : {}) });
+// Per-image focal point (object-position). Tuned to each photo's subject so it
+// stays in frame across the different slot aspect ratios (hero ~2:1, gallery
+// main ~1.4:1, gallery cell ~2:1, CTA ~2.26:1). Most shots have sky on top, so
+// the truck sits below centre — hence the y values above 50%.
+const POS = {
+  'fleet-hero': '50% 58%',
+  'fleet-side': '38% 48%',
+  'fleet-trailers': '55% 64%',
+  'fleet-yard': '32% 48%',
+  'fleet-lineup2': '50% 54%',
+  'fleet-lineup3': '50% 54%',
+  'driver-cabin': '30% 42%',
+  'flatbed-loaded': '48% 60%',
+  'flatbed-lumber': '38% 52%',
+  'flatbed-lumber2': '52% 46%',
+  'flatbed-lumber3': '45% 50%',
+  'flatbed-street': '40% 54%',
+  'flatbed-road': '38% 52%',
+  'moffett-flatbed': '42% 56%',
+  'crane-load': '44% 56%',
+  'warehouse-interior': '60% 56%',
+  'night-flatbed': '42% 52%',
+  'highway-trailer': '45% 54%',
+  'urban-cab': '30% 48%',
+  'urban-winter': '46% 56%',
+  'urban-flatbed': '40% 56%',
+};
+const img = (slug, span) => ({
+  src: `/images/${slug}.webp`,
+  alt: ALT[slug] || 'Point Zero Road Lines',
+  pos: POS[slug] || 'center',
+  ...(span ? { span } : {}),
+});
 
 export const DEFAULT_IMAGE_SET = {
   hero: img('fleet-hero'),

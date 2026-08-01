@@ -17,7 +17,7 @@ export default function About() {
         </div>
         <div className="about-content">
           <motion.div className="about-image" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
-            <Image src="/images/driver-cabin.webp" alt="Point Zero Road Lines driver in the cab" fill sizes="(max-width: 768px) 100vw, 55vw" style={{ objectFit: 'cover', objectPosition: 'left center' }} />
+            <Image src="/images/driver-cabin.webp" alt="Point Zero Road Lines driver in the cab" fill sizes="(max-width: 768px) 100vw, 55vw" style={{ objectFit: 'cover', objectPosition: '30% 42%' }} />
           </motion.div>
           <motion.div className="about-text" initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
             <p>Point Zero Road Lines is a dedicated transportation company headquartered in Mississauga, Ontario, with sites in Bolton and Brampton. We&apos;re a tight team focused on quality, safety and integrity.</p>
@@ -36,7 +36,7 @@ export default function About() {
         </div>
         <div className="about-footer">
           <motion.div className="about-footer-item" initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-            <Image src="/images/fleet-hero.webp" alt="Point Zero Road Lines fleet lineup" fill sizes="(max-width: 768px) 100vw, 900px" style={{ objectFit: 'cover', objectPosition: 'left center' }} />
+            <Image src="/images/fleet-hero.webp" alt="Point Zero Road Lines fleet lineup" fill sizes="(max-width: 768px) 100vw, 900px" style={{ objectFit: 'cover', objectPosition: '50% 58%' }} />
           </motion.div>
         </div>
       </div>
