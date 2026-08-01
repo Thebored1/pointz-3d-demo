@@ -125,7 +125,10 @@
 
 .pz-hero-img-wrapper {
   width: 100%;
-  height: 600px;
+  aspect-ratio: 21 / 9;
+  min-height: 320px;
+  max-height: 560px;
+  height: auto;
   border-radius: var(--radius-lg);
   overflow: hidden;
   position: relative;
@@ -575,7 +578,9 @@
 
 @media (max-width: 768px) {
   .pz-hero-img-wrapper {
-    height: 360px;
+    aspect-ratio: 16 / 10;
+    min-height: 240px;
+    height: auto;
   }
 
   .pz-timeline,
