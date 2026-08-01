@@ -7,7 +7,7 @@ import { ArrowUpRight } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import EditorialHero from './EditorialHero';
-import { ServiceIcon, defaultSteps, defaultTrustBadges, getRelated } from './serviceEditorialData';
+import { ServiceIcon, defaultSteps, defaultTrustBadges, getRelated, getImageSet } from './serviceEditorialData';
 import {
   fadeUp,
   fadeUpSoft,
@@ -20,13 +20,8 @@ import {
 import '../app/about/AboutPage.css';
 import './ServiceEditorial.css';
 
-// The site standardizes on the two real company photos everywhere: the fleet
-// lineup for heroes, and the fleet + driver for the gallery. Per-page heroImage
-// and gallery props are intentionally ignored so every page stays consistent.
-const HERO_IMAGE = '/images/fleet-hero.webp';
-const HERO_ALT = 'Point Zero Road Lines fleet lined up in the yard';
-const FEATURE_IMAGE = '/images/driver-cabin.webp';
-const FEATURE_ALT = 'A Point Zero Road Lines driver in the cab';
+// Imagery per page comes from getImageSet(relatedKey) so each service has its
+// own hero, gallery and CTA photo. Per-page heroImage/gallery props are ignored.
 
 function SectionHeader({ num, label, title, desc, dark }) {
   return (
@@ -94,6 +89,7 @@ export default function ServiceEditorialPage({
 }) {
   const trustBadges = darkSection.badges ?? defaultTrustBadges;
   const related = relatedKey ? getRelated(relatedKey) : [];
+  const imageSet = getImageSet(relatedKey);
   const process = {
     num: '03',
     label: 'How it works',
@@ -113,8 +109,8 @@ export default function ServiceEditorialPage({
         titleAccent={titleAccent}
         description={description}
         scrollLabel={scrollLabel}
-        heroImage={HERO_IMAGE}
-        heroAlt={HERO_ALT}
+        heroImage={imageSet.hero.src}
+        heroAlt={imageSet.hero.alt}
       />
 
       <motion.div
@@ -197,21 +193,31 @@ export default function ServiceEditorialPage({
           </div>
         </section>
 
-        <motion.section
-          className="sv-ed-feature"
-          variants={scaleIn}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-        >
-          <Image
-            src={FEATURE_IMAGE}
-            alt={FEATURE_ALT}
-            fill
-            sizes="(max-width: 900px) 100vw, 1200px"
-            style={{ objectFit: 'cover', objectPosition: 'left 35%' }}
-          />
-        </motion.section>
+        {imageSet.gallery?.length ? (
+          <section className="sv-ed-gallery">
+            <div className="sv-ed-gallery-grid">
+              {imageSet.gallery.map((image, i) => (
+                <motion.div
+                  key={image.src}
+                  className={image.span === 'main' ? 'sv-ed-g-main' : 'sv-ed-g-cell'}
+                  variants={scaleIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={viewportOnce}
+                  custom={i}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 50vw"
+                    style={{ objectFit: 'cover', objectPosition: image.objectPosition || 'center' }}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </section>
+        ) : null}
       </main>
 
       <section className="sv-ed-caps">
@@ -326,7 +332,14 @@ export default function ServiceEditorialPage({
       ) : null}
 
       <section className="pz-cta sv-ed-cta">
-        <div className="pz-cta-bg pz-cta-bg-solid">
+        <div className="pz-cta-bg">
+          <Image
+            src={imageSet.cta.src}
+            alt={imageSet.cta.alt}
+            fill
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'left center' }}
+          />
           <div className="pz-cta-overlay" />
         </div>
         <div className="pz-container pz-cta-inner">

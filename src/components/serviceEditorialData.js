@@ -109,6 +109,63 @@ export function getRelated(slug) {
     .map((s) => ({ title: s.title, href: s.href, desc: s.desc }));
 }
 
+// Real Point Zero photos, assigned per page so each service has its own
+// imagery instead of repeating one shot. Keyed by page slug; ServiceEditorialPage
+// looks up the set and falls back to DEFAULT_IMAGE_SET for anything unlisted.
+const ALT = {
+  'fleet-hero': 'Point Zero Road Lines fleet lined up in the yard',
+  'fleet-side': 'Point Zero Road Lines day cab and trailers',
+  'fleet-trailers': 'Point Zero Road Lines tractors and trailers',
+  'fleet-yard': 'Point Zero Road Lines fleet parked in the yard',
+  'fleet-lineup2': 'Point Zero Road Lines fleet lineup',
+  'fleet-lineup3': 'Point Zero Road Lines trucks lined up',
+  'driver-cabin': 'A Point Zero Road Lines driver in the cab',
+  'flatbed-loaded': 'A loaded Point Zero Road Lines flatbed in the yard',
+  'flatbed-lumber': 'A Point Zero Road Lines flatbed loaded with lumber',
+  'flatbed-lumber2': 'Building materials on a Point Zero Road Lines flatbed',
+  'flatbed-lumber3': 'Lumber loaded on a Point Zero Road Lines flatbed',
+  'flatbed-street': 'A loaded Point Zero Road Lines flatbed on the road',
+  'flatbed-road': 'A Point Zero Road Lines flatbed on the highway',
+  'moffett-flatbed': 'A Point Zero Road Lines flatbed with a truck-mounted Moffett',
+  'crane-load': 'Loading a Point Zero Road Lines truck on site',
+  'warehouse-interior': 'Point Zero Road Lines flatbeds inside the warehouse',
+  'night-flatbed': 'A Point Zero Road Lines flatbed loaded for a night run',
+  'highway-trailer': 'A Point Zero Road Lines trailer on the highway',
+  'urban-cab': 'A Point Zero Road Lines truck in downtown Toronto',
+  'urban-winter': 'A Point Zero Road Lines truck downtown in winter',
+  'urban-flatbed': 'A Point Zero Road Lines flatbed on a city street',
+  'specialty-kenworth': 'A Point Zero Road Lines specialty flatbed tractor',
+};
+const img = (slug, span) => ({ src: `/images/${slug}.webp`, alt: ALT[slug] || 'Point Zero Road Lines', ...(span ? { span } : {}) });
+
+export const DEFAULT_IMAGE_SET = {
+  hero: img('fleet-hero'),
+  gallery: [img('fleet-lineup2', 'main'), img('driver-cabin'), img('flatbed-loaded')],
+  cta: img('fleet-hero'),
+};
+
+export const IMAGE_SETS = {
+  services: { hero: img('fleet-hero'), gallery: [img('fleet-lineup2', 'main'), img('warehouse-interior'), img('flatbed-loaded')], cta: img('fleet-lineup3') },
+  'moffett-delivery': { hero: img('moffett-flatbed'), gallery: [img('flatbed-loaded', 'main'), img('crane-load'), img('driver-cabin')], cta: img('fleet-hero') },
+  'dedicated-fleet': { hero: img('fleet-hero'), gallery: [img('fleet-side', 'main'), img('fleet-trailers'), img('fleet-lineup2')], cta: img('fleet-lineup3') },
+  'flatbed-transportation': { hero: img('flatbed-loaded'), gallery: [img('flatbed-street', 'main'), img('flatbed-lumber'), img('highway-trailer')], cta: img('flatbed-road') },
+  'dry-van-transportation': { hero: img('fleet-trailers'), gallery: [img('fleet-yard', 'main'), img('fleet-side'), img('highway-trailer')], cta: img('fleet-lineup2') },
+  'warehouse-cross-dock': { hero: img('warehouse-interior'), gallery: [img('flatbed-loaded', 'main'), img('fleet-yard'), img('night-flatbed')], cta: img('fleet-hero') },
+  'construction-material-delivery': { hero: img('flatbed-lumber'), gallery: [img('flatbed-loaded', 'main'), img('flatbed-lumber2'), img('flatbed-lumber3')], cta: img('crane-load') },
+  'healthcare-logistics': { hero: img('fleet-side'), gallery: [img('fleet-trailers', 'main'), img('fleet-yard'), img('urban-cab')], cta: img('fleet-hero') },
+  'manufacturing-consumer-goods': { hero: img('fleet-lineup2'), gallery: [img('fleet-trailers', 'main'), img('fleet-yard'), img('highway-trailer')], cta: img('fleet-hero') },
+  'last-mile-retail-delivery': { hero: img('urban-flatbed'), gallery: [img('urban-cab', 'main'), img('urban-winter'), img('flatbed-street')], cta: img('fleet-hero') },
+  'expedited-same-day': { hero: img('night-flatbed'), gallery: [img('highway-trailer', 'main'), img('moffett-flatbed'), img('fleet-lineup3')], cta: img('fleet-hero') },
+  'cross-border-freight': { hero: img('highway-trailer'), gallery: [img('urban-winter', 'main'), img('fleet-side'), img('flatbed-road')], cta: img('fleet-hero') },
+  'building-material-distribution': { hero: img('flatbed-lumber2'), gallery: [img('flatbed-lumber', 'main'), img('flatbed-loaded'), img('flatbed-lumber3')], cta: img('crane-load') },
+  'service-areas': { hero: img('fleet-lineup3'), gallery: [img('fleet-yard', 'main'), img('urban-cab'), img('highway-trailer')], cta: img('fleet-hero') },
+  'safety-compliance': { hero: img('fleet-side'), gallery: [img('driver-cabin', 'main'), img('fleet-lineup2'), img('warehouse-interior')], cta: img('fleet-hero') },
+};
+
+export function getImageSet(key) {
+  return IMAGE_SETS[key] || DEFAULT_IMAGE_SET;
+}
+
 export const overviewCapabilities = [
   { icon: 'Forklift', label: 'Moffett', value: 'Truck-mounted forklifts that travel with the load and unload without site equipment.' },
   { icon: 'Truck', label: 'Flatbed', value: '48ft, 53ft, step-decks and drop-decks. Ready for oversized and overweight loads.' },

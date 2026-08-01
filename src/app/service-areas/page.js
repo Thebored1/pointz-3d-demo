@@ -23,6 +23,7 @@ const reach = [
 export default function ServiceAreasPage() {
   return (
     <ServiceEditorialPage
+      relatedKey="service-areas"
       badge="SERVICE AREAS"
       badgeAlt="GTA · SOUTHERN ONTARIO"
       titleLine1="CLOSE TO THE LANES"

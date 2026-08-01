@@ -9,6 +9,7 @@ import {
 export default function ServicesPage() {
   return (
     <ServiceEditorialPage
+      relatedKey="services"
       badge="SERVICES · OVERVIEW"
       badgeAlt="EST. 2006 · MISSISSAUGA"
       titleLine1="MOFFETT DELIVERY"

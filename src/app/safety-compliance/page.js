@@ -17,6 +17,7 @@ const drivers = [
 export default function SafetyCompliancePage() {
   return (
     <ServiceEditorialPage
+      relatedKey="safety-compliance"
       badge="SAFETY & COMPLIANCE"
       badgeAlt="EVERY LOAD, EVERY TIME"
       titleLine1="NOT A POLICY BINDER."
