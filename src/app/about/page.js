@@ -173,7 +173,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="pz-cta">
         <div className="pz-cta-bg">
-          <Image src="/images/heavy_haul_truck.webp" alt="Truck on highway" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'left center' }} />
+          <Image src="/images/driver-cabin.webp" alt="Point Zero Road Lines driver" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'left center' }} />
           <div className="pz-cta-overlay"></div>
         </div>
         <div className="pz-container pz-cta-inner">

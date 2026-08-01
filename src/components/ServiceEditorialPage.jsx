@@ -20,6 +20,17 @@ import {
 import '../app/about/AboutPage.css';
 import './ServiceEditorial.css';
 
+// The site standardizes on the two real company photos everywhere: the fleet
+// lineup for heroes, and the fleet + driver for the gallery. Per-page heroImage
+// and gallery props are intentionally ignored so every page stays consistent.
+const HERO_IMAGE = '/images/fleet-hero.webp';
+const HERO_ALT = 'Point Zero Road Lines fleet lined up in the yard';
+const PAGE_GALLERY = [
+  { src: '/images/driver-cabin.webp', alt: 'Point Zero Road Lines driver in the cab', span: 'main' },
+  { src: '/images/fleet-hero.webp', alt: 'Point Zero Road Lines fleet' },
+  { src: '/images/driver-cabin.webp', alt: 'Point Zero Road Lines driver' },
+];
+
 function SectionHeader({ num, label, title, desc, dark }) {
   return (
     <div className={`sv-ed-header${dark ? ' sv-ed-header-dark' : ''}`}>
@@ -76,11 +87,8 @@ export default function ServiceEditorialPage({
   titleAccent,
   description,
   scrollLabel = 'SCROLL FOR DETAILS',
-  heroImage,
-  heroAlt,
   stats,
   primarySection,
-  gallery,
   darkSection,
   processSection,
   steps = defaultSteps,
@@ -108,8 +116,8 @@ export default function ServiceEditorialPage({
         titleAccent={titleAccent}
         description={description}
         scrollLabel={scrollLabel}
-        heroImage={heroImage}
-        heroAlt={heroAlt}
+        heroImage={HERO_IMAGE}
+        heroAlt={HERO_ALT}
       />
 
       <motion.div
@@ -192,10 +200,10 @@ export default function ServiceEditorialPage({
           </div>
         </section>
 
-        {gallery?.length ? (
+        {PAGE_GALLERY.length ? (
           <section className="sv-ed-gallery">
             <div className="sv-ed-gallery-grid">
-              {gallery.map((img, i) => (
+              {PAGE_GALLERY.map((img, i) => (
                 <motion.div
                   key={img.src}
                   className={img.span === 'main' ? 'sv-ed-g-main' : 'sv-ed-g-cell'}
@@ -333,8 +341,8 @@ export default function ServiceEditorialPage({
       <section className="pz-cta sv-ed-cta">
         <div className="pz-cta-bg">
           <Image
-            src="/images/heavy_haul_truck.webp"
-            alt="Truck on highway"
+            src="/images/fleet-hero.webp"
+            alt="Point Zero Road Lines fleet"
             fill
             sizes="100vw"
             style={{ objectFit: 'cover', objectPosition: 'left center' }}
