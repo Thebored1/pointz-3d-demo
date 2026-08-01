@@ -338,7 +338,7 @@ export default function ServiceEditorialPage({
             alt={imageSet.cta.alt}
             fill
             sizes="100vw"
-            style={{ objectFit: 'cover', objectPosition: 'left center' }}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
           />
           <div className="pz-cta-overlay" />
         </div>
