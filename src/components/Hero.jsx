@@ -52,10 +52,10 @@ export default function Hero() {
         <div className="hero-label-row">
           <motion.div className="hero-label" variants={fadeUpVariants}>
             <span className="label-dot"></span>
-            MISSISSAUGA · BOLTON · BRAMPTON
+            MISSISSAUGA HQ · SERVING GTA &amp; SOUTHERN ONTARIO
           </motion.div>
           <motion.div className="hero-version" variants={fadeUpVariants}>
-            EST. 2006
+            EST. 2006 · USDOT 3983391
           </motion.div>
         </div>
 
@@ -71,28 +71,25 @@ export default function Hero() {
         <motion.div className="hero-divider" variants={lineVariants}></motion.div>
 
         <motion.p className="hero-subtitle" variants={fadeUpVariants}>
-          Truck-mounted Moffett forklifts that deliver straight to construction sites and locations with no loading dock — plus dedicated fleet, flatbed and warehousing across the GTA and Ontario. Moving freight since 2006.
+          Since 2006, Point Zero Road Lines has run dedicated fleet, flatbed &amp; Moffett delivery, and warehousing for businesses across the Greater Toronto Area and Southern Ontario. Healthcare, manufacturing, consumer goods, construction — when a site has no loading dock and no forklift, or the schedule simply can’t slip, we’re the carrier on the account.
         </motion.p>
         
         <motion.div className="hero-actions" variants={fadeUpVariants}>
           <div className="hero-cta-group" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <button className="btn-track" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-              Request a quote
+            <a href="/get-a-quote" className="btn-track">
+              Get a Quote
               <ArrowRight size={16} strokeWidth={2} />
-            </button>
-            <button
-              className="btn-track-outline"
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Explore services
-            </button>
+            </a>
+            <a href="/services" className="btn-track-outline">
+              View Our Services
+            </a>
           </div>
         </motion.div>
 
         <motion.div className="hero-stats" variants={fadeUpVariants}>
           <div className="hero-stat">
-            <span className="stat-value">3</span>
-            <span className="stat-label">Ontario Hubs</span>
+            <span className="stat-value">2006</span>
+            <span className="stat-label">Operating Since</span>
           </div>
           <div className="hero-stat-divider"></div>
           <div className="hero-stat">
@@ -102,7 +99,7 @@ export default function Hero() {
           <div className="hero-stat-divider"></div>
           <div className="hero-stat">
             <span className="stat-value">100%</span>
-            <span className="stat-label">Dedicated Fleet</span>
+            <span className="stat-label">Dedicated Capacity</span>
           </div>
         </motion.div>
 

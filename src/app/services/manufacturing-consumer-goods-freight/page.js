@@ -1,8 +1,8 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Manufacturing & Consumer Goods Freight in Ontario | Point Zero Road Lines',
-  description: 'Dedicated FTL and LTL freight transportation for Ontario manufacturers, industrial plants, and consumer goods distributors. 24/7 dispatch · Est. 2006.',
+  title: 'Manufacturing & Retail Freight GTA | Point Zero Road Lines',
+  description: 'LTL and FTL freight for manufacturers, distributors, and retailers across the GTA & Southern Ontario, planned around your production schedule.',
 };
 
 const capabilities = [
@@ -13,16 +13,18 @@ const capabilities = [
 ];
 
 const applications = [
-  { icon: 'CheckCircle', title: 'Automotive Parts & Assemblies', desc: 'Time-critical plant runs feeding automotive manufacturing corridors in Southern Ontario.' },
-  { icon: 'CheckCircle', title: 'Packaging Materials & Cartons', desc: 'High-cube dry van freight hauling corrugated cartons, film, and commercial packaging.' },
-  { icon: 'CheckCircle', title: 'Industrial Machinery & Tooling', desc: 'Open-deck and roll-tite flatbed hauling for heavy production machinery.' },
+  { icon: 'CheckCircle', title: 'Automotive Parts & Assemblies', desc: 'Time-critical plant runs feeding Tier-1 and Tier-2 automotive manufacturing corridors in Southern Ontario.' },
+  { icon: 'CheckCircle', title: 'Packaging Materials & Cartons', desc: 'High-cube dry van freight hauling corrugated cartons, film, bottles, and commercial packaging.' },
+  { icon: 'CheckCircle', title: 'Industrial Machinery & Tooling', desc: 'Open-deck and roll-tite flatbed hauling for heavy production machinery and equipment.' },
   { icon: 'CheckCircle', title: 'Consumer Packaged Goods (CPG)', desc: 'Consistent palletized freight delivery to retail distribution hubs and fulfillment centres.' },
+  { icon: 'CheckCircle', title: 'Plastics, Resins & Metal Goods', desc: 'Safe transport of raw raw materials and finished fabrications between plants and processors.' },
+  { icon: 'CheckCircle', title: 'Cross-Border Supply Chain Lanes', desc: 'Seamless transport connecting Ontario industrial hubs to Great Lakes manufacturing corridors.' },
 ];
 
-export default function ManufacturingConsumerGoodsPage() {
+export default function ManufacturingConsumerGoodsFreightPage() {
   return (
     <ServiceEditorialPage
-      relatedKey="manufacturing-consumer-goods"
+      relatedKey="manufacturing-consumer-goods-freight"
       badge="SERVICES · MANUFACTURING & CPG"
       badgeAlt="EST. 2006 · MISSISSAUGA HQ"
       titleLine1="MANUFACTURING & CONSUMER GOODS."

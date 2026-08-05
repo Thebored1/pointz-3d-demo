@@ -15,29 +15,29 @@ export default function AboutPage() {
   ];
 
   const stats = [
-    { num: '01', value: '20 yrs', label: 'On Ontario roads', desc: 'Moving freight since 2006' },
-    { num: '02', value: '3', label: 'Ontario hubs', desc: 'Mississauga, Bolton & Brampton' },
-    { num: '03', value: '12', label: 'Service lines', desc: 'Moffett, flatbed, warehousing & more' },
-    { num: '04', value: '24/7', label: 'Live dispatch', desc: 'Nights, weekends & holidays' },
+    { num: '01', value: '2006', label: 'Year founded', desc: 'Operating across Ontario since 2006' },
+    { num: '02', value: '24/7', label: 'Live dispatch', desc: 'Nights, weekends & holidays' },
+    { num: '03', value: '1566', label: 'Bonhill Rd, Mississauga', desc: 'Headquarters terminal & cross-dock' },
+    { num: '04', value: 'DOT/MC', label: 'Authority registered', desc: 'USDOT 3983391 · MC 1492151' },
   ];
 
   const storySteps = [
-    { year: '2006', title: 'One truck, one lane', desc: 'Founded hauling steel between Hamilton and the GTA, on the promise of showing up when we said we would.' },
-    { year: '2014', title: 'Moffett forklifts added', desc: 'First truck-mounted forklifts put on the road so crews could unload anywhere on site — no dock, no waiting.' },
-    { year: '2020', title: 'Mississauga cross-dock', desc: 'Warehouse and cross-dock space opened, letting us stage, sort and reload freight under the same roof as the trucks.' },
-    { year: '2026', title: 'Twelve service lines', desc: 'Moffett delivery, dedicated fleet, flatbed, warehousing and last mile — run by the same dispatch team that started it all.' },
+    { year: '2006', title: 'Founded with one clear promise', desc: 'Began as a focused transportation carrier serving businesses in the Greater Toronto Area with dedicated capacity.' },
+    { year: '2014', title: 'Moffett forklifts added to fleet', desc: 'First truck-mounted forklifts deployed so crews could unload anywhere on site — dock or no dock.' },
+    { year: '2020', title: 'Mississauga terminal & cross-dock', desc: 'Warehouse and cross-dock space opened at 1566 Bonhill Road, consolidating staging and transportation under one roof.' },
+    { year: '2026', title: 'Comprehensive Ontario logistics', desc: 'Moffett delivery, dedicated fleet, flatbed, warehousing, healthcare linen, and 24/7 dispatch.' },
   ];
 
   const rules = [
-    { num: '01', title: 'Quality', desc: 'Held to a standard set by what the job requires, not the minimum a client would accept. That is what nearly two decades of repeat customers is built on.' },
-    { num: '02', title: 'Safety', desc: 'Every driver operates under Hours of Service, MTO and HTA regulations — non-negotiable, on every load. Equipment runs on a regular inspection and service schedule.' },
-    { num: '03', title: 'Integrity', desc: 'Clients and partners get a straight answer, including when the answer is that a timeline needs to move. You hear it from us first, not from your customer.' },
-    { num: '04', title: 'Innovation', desc: 'Investing in Moffett-equipped trucks, warehousing and tracking technology is how we deliver where others cannot — and how you can see your load move in real time.' },
+    { num: '01', title: 'Quality', desc: 'Every shipment is handled with the care and attention of a dedicated carrier, not a spot-market broker.' },
+    { num: '02', title: 'Safety', desc: 'Full compliance with MTO, HTA, and U.S. DOT Hours of Service regulations across every single load.' },
+    { num: '03', title: 'Integrity', desc: 'Transparent pricing, honest communication, and no surprises on the invoice. You hear updates from us first.' },
+    { num: '04', title: '24/7 Availability', desc: 'Live dispatch around the clock — because supply chains and manufacturing plants do not run nine-to-five.' },
   ];
 
   const crewBadges = [
     "Moffett-equipped fleet", "Company-owned trucks",
-    "Bonded and insured", "24/7 dispatch", "Live truck tracking"
+    "Licensed & Insured", "USDOT 3983391 · MC 1492151", "24/7 live dispatch"
   ];
 
   const locations = ["MISSISSAUGA", "BOLTON", "BRAMPTON", "HAMILTON", "KITCHENER", "OTTAWA"];
@@ -47,11 +47,11 @@ export default function AboutPage() {
       <Navbar />
 
       <EditorialHero
-        badge="ABOUT POINT ZERO"
-        badgeAlt="EST. 2006 • MISSISSAUGA"
-        titleLine1="BUILT ON RELIABILITY."
-        titleAccent="DRIVEN BY INNOVATION."
-        description="Since 2006, Point Zero Road Lines has helped businesses move freight safely, efficiently and on schedule. What began as a transportation company has grown into one of Ontario's trusted providers of Moffett delivery, dedicated fleet services, flatbed transportation, warehousing and specialized logistics."
+        badge="ABOUT POINT ZERO ROAD LINES"
+        badgeAlt="EST. 2006 • MISSISSAUGA HQ"
+        titleLine1="DEDICATED TO THE ROAD."
+        titleAccent="BUILT ON RELIABILITY."
+        description="Since 2006, Point Zero Road Lines has helped businesses move freight safely, efficiently, and on schedule. What began as a dedicated carrier has grown into one of Ontario's trusted providers of Moffett delivery, dedicated fleet services, flatbed transportation, warehousing, and 24/7 dispatch."
         scrollLabel="SCROLL FOR THE STORY"
         heroImage="/images/about-fleet-lineup.webp"
         heroAlt="Point Zero Road Lines fleet lined up under a blue sky"

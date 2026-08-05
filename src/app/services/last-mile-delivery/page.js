@@ -1,13 +1,13 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Last Mile & Retail Delivery in Ontario | Point Zero Road Lines',
-  description: 'Specialized last-mile freight and retail store delivery across Ontario. Moffett offload, liftgates, and scheduled delivery windows.',
+  title: 'Last Mile Delivery GTA & Southern Ontario | Point Zero',
+  description: 'Final-leg delivery to construction sites, retail locations, and residential addresses across the GTA & Southern Ontario. Get a free quote.',
 };
 
 const capabilities = [
   { icon: 'Forklift', title: 'Truck-Mounted Moffett Offload', desc: 'Direct offloading on gravel, pavement, or dirt with all-terrain forklifts — zero receiver equipment needed.' },
-  { icon: 'Route', title: 'Restricted-Access Maneuvering', desc: 'Equipment configured to navigate tight urban corridors, suburban residential subdivisions, and restricted gates.' },
+  { icon: 'Route', title: 'Restricted-Access Maneuvering', desc: 'Equipment configured to navigate tight urban corridors, suburban residential subdivisions, and restricted construction gates.' },
   { icon: 'Package', title: 'Point-of-Use Placement', desc: 'Freight spotted inside garage bays, staging pads, or job-site perimeters rather than dumped at the curb.' },
   { icon: 'Clock', title: 'Appointment & ETA Precision', desc: 'Precise delivery windows, call-ahead driver contact, and real-time dispatch updates for receiving crews.' },
 ];
@@ -17,12 +17,14 @@ const applications = [
   { icon: 'CheckCircle', title: 'Retail Fixtures & Store Displays', desc: 'Scheduled mall and retail plaza store deliveries with inside placement and liftgate support.' },
   { icon: 'CheckCircle', title: 'Subdivisions & Townhouse Sites', desc: 'Navigating active, high-density residential construction sites without blocking other trade vehicles.' },
   { icon: 'CheckCircle', title: 'Commercial HVAC & Mechanicals', desc: 'Large crated rooftop units and mechanical skids placed safely on grade.' },
+  { icon: 'CheckCircle', title: 'Solar & Renewable Infrastructure', desc: 'Pallets of solar panels, racking systems, and inverters delivered to rural or commercial installation sites.' },
+  { icon: 'CheckCircle', title: 'Architectural Windows & Doors', desc: 'Careful transport and placement of high-value crated fenestration packages.' },
 ];
 
-export default function LastMileRetailDeliveryPage() {
+export default function LastMileDeliveryPage() {
   return (
     <ServiceEditorialPage
-      relatedKey="last-mile-retail-delivery"
+      relatedKey="last-mile-delivery"
       badge="SERVICES · LAST MILE"
       badgeAlt="EST. 2006 · MISSISSAUGA HQ"
       titleLine1="LAST MILE FREIGHT DELIVERY."

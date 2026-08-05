@@ -1,12 +1,12 @@
 export const metadata = {
   // SEO title tag from the client's approved copy package. `absolute` bypasses
   // the root "%s | Point Zero Road Lines" template so it renders verbatim.
-  title: { absolute: "Trucking & Logistics Services in the GTA | Point Zero Road Lines" },
-  description: "From Moffett delivery and dedicated fleet to flatbed, warehousing and 24/7 dispatch, explore the full range of services from Point Zero Road Lines.",
+  title: { absolute: "Trucking, Moffett Delivery & Logistics | Point Zero Road Lines" },
+  description: "Dedicated fleet, flatbed & Moffett transport, warehousing, expedited freight, and last mile delivery across the GTA & Southern Ontario.",
   alternates: { canonical: "/services" },
   openGraph: {
-    title: "Services",
-    description: "From Moffett delivery and dedicated fleet to flatbed, warehousing and 24/7 dispatch, explore the full range of services from Point Zero Road Lines.",
+    title: "Trucking, Moffett Delivery & Logistics | Point Zero Road Lines",
+    description: "Dedicated fleet, flatbed & Moffett transport, warehousing, expedited freight, and last mile delivery across the GTA & Southern Ontario.",
     url: "/services",
   },
 };

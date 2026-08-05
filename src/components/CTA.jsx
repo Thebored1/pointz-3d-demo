@@ -18,10 +18,10 @@ export default function CTA() {
           >
             <span className="section-number section-number--light">06</span>
             <h2 className="cta-title">
-              Need a truck?
+              Get a carrier that plans around your schedule, not the other way around.
             </h2>
             <p className="cta-desc">
-              Tell us your lane and load. We&rsquo;ll get back to you with a quote fast. Let us help you find ways to be lean and efficient.
+              Request a free freight quote or reach our dispatch team directly. Operating since 2006 · USDOT 3983391 · MC 1492151.
             </p>
           </motion.div>
 
@@ -32,12 +32,12 @@ export default function CTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <button className="cta-btn-primary">
-              Get a Quote
+            <a href="/get-a-quote" className="cta-btn-primary">
+              Request a Quote
               <ArrowRight size={18} />
-            </button>
-            <a href="/contact-us" className="cta-btn-secondary">
-              Contact Us
+            </a>
+            <a href="tel:+19052910325" className="cta-btn-secondary">
+              Call (905) 291-0325
             </a>
           </motion.div>
         </div>
@@ -52,8 +52,8 @@ export default function CTA() {
           <div className="contact-item">
             <Phone size={18} strokeWidth={1.5} />
             <div className="contact-info">
-              <span className="contact-label">Call Us</span>
-              <span className="contact-value">+1-905-291-0325</span>
+              <span className="contact-label">24/7 Dispatch</span>
+              <span className="contact-value">(905) 291-0325</span>
             </div>
           </div>
           <div className="contact-item">
@@ -66,8 +66,8 @@ export default function CTA() {
           <div className="contact-item">
             <MapPin size={18} strokeWidth={1.5} />
             <div className="contact-info">
-              <span className="contact-label">Headquarters</span>
-              <span className="contact-value">Mississauga, ON</span>
+              <span className="contact-label">Mississauga HQ</span>
+              <span className="contact-value">1566 Bonhill Rd, Mississauga</span>
             </div>
           </div>
         </motion.div>

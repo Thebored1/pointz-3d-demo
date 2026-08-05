@@ -56,47 +56,50 @@ export const defaultSteps = [
   { num: '04', icon: 'CheckCircle', title: 'Delivered', desc: 'Placed where you need it — dock, curbside or job site — with confirmation.' },
 ];
 
-// Capability claims only. Certification badges were removed at the client's
-// request; do not add CVOR, FAST, PARS, C-TPAT or similar back without written
-// confirmation that the credential is current.
+// Capability & authority claims matching August 2026 plan.
 export const defaultTrustBadges = [
   'Moffett-equipped fleet',
   'Company-owned trucks',
-  'Bonded and insured',
-  '24/7 dispatch',
-  'Live truck tracking',
+  'Licensed & Insured',
+  'USDOT 3983391 · MC 1492151',
+  '24/7 live dispatch',
 ];
 
 export const overviewServices = [
-  { id: '01', icon: 'Forklift', title: 'Moffett Delivery', href: '/services/moffett-delivery', desc: 'Truck-mounted forklift delivery to any site — no dock, no on-site forklift, no waiting.' },
-  { id: '02', icon: 'Users', title: 'Dedicated Fleet', href: '/services/dedicated-fleet', desc: 'Trucks, trailers and drivers assigned to your account and planned around your schedule.' },
-  { id: '03', icon: 'Truck', title: 'Flatbed Transportation', href: '/services/flatbed-transportation', desc: 'Open-deck capacity for steel, lumber, machinery and oversized freight — secured and tarped to spec.' },
-  { id: '04', icon: 'Package', title: 'Dry Van Transportation', href: '/services/dry-van-transportation', desc: 'Enclosed, weather-protected capacity for palletized and general freight.' },
-  { id: '05', icon: 'Warehouse', title: 'Warehouse & Cross-Dock', href: '/services/warehouse-cross-dock', desc: 'Staging, consolidation and storage under the same roof as the trucks.' },
-  { id: '06', icon: 'Hammer', title: 'Construction Material Delivery', href: '/services/construction-material-delivery', desc: 'Lumber, drywall, roofing, steel and precast placed where the job site actually needs it.' },
-  { id: '07', icon: 'HeartPulse', title: 'Healthcare Logistics', href: '/services/healthcare-logistics', desc: 'Scheduled linen and textile runs built around facility turnaround windows.' },
-  { id: '08', icon: 'Factory', title: 'Manufacturing & Consumer Goods', href: '/services/manufacturing-consumer-goods', desc: 'FTL and LTL capacity that moves with your production and distribution schedule.' },
-  { id: '09', icon: 'Store', title: 'Last Mile & Retail Delivery', href: '/services/last-mile-retail-delivery', desc: 'Scheduled route and store-level delivery, including white glove placement.' },
-  { id: '10', icon: 'Timer', title: 'Expedited & Same Day', href: '/services/expedited-same-day', desc: 'Direct, time-critical runs when the load has to be there today.' },
-  { id: '11', icon: 'Globe', title: 'Cross-Border Freight', href: '/services/cross-border-freight', desc: 'Ontario to the United States under our own USDOT and MC authority.' },
-  { id: '12', icon: 'Layers', title: 'Building Material Distribution', href: '/services/building-material-distribution', desc: 'Distribution programs for suppliers moving material to sites and yards.' },
+  { id: '01', icon: 'Forklift', title: 'Flatbed & Moffett Transport', href: '/services/flatbed-moffett-transport', desc: 'Truck-mounted forklifts that unload on arrival — no dock, no on-site equipment required.' },
+  { id: '02', icon: 'Users', title: 'Dedicated Fleet Services', href: '/services/dedicated-fleet-services', desc: 'Trucks, trailers, Moffett units, and drivers assigned to your account, planned around your schedule.' },
+  { id: '03', icon: 'Warehouse', title: 'Warehouse & Cross-Dock Storage', href: '/services/warehouse-cross-dock-storage', desc: 'Secure, centrally located space to stage, consolidate, or store freight between transportation legs.' },
+  { id: '04', icon: 'HeartPulse', title: 'Healthcare Linen & Textile Logistics', href: '/services/healthcare-linen-logistics', desc: 'Scheduling and handling built around the turnaround windows healthcare and linen operations run on.' },
+  { id: '05', icon: 'Factory', title: 'Manufacturing & Consumer Goods', href: '/services/manufacturing-consumer-goods-freight', desc: 'LTL and FTL capacity that moves with your production and distribution schedule.' },
+  { id: '06', icon: 'Hammer', title: 'Construction Material Hauling', href: '/services/construction-material-hauling', desc: 'Materials delivered where a job site actually needs them, dock or no dock.' },
+  { id: '07', icon: 'Timer', title: 'Expedited & Same-Day Freight', href: '/services/expedited-same-day-freight', desc: 'Hot shot delivery when a shipment can’t wait for a standard schedule.' },
+  { id: '08', icon: 'Store', title: 'Last Mile Delivery', href: '/services/last-mile-delivery', desc: 'Final-leg delivery to the exact point of need — construction sites, retail and residential.' },
+  { id: '09', icon: 'Clock', title: '24/7 Dispatch & Weekend Delivery', href: '/services/24-7-after-hours-weekend-dispatch', desc: 'A live dispatcher on the line nights, weekends, and holidays — not a voicemail box.' },
 ];
 
-// Curated cross-links for SEO and navigation. Keyed by service slug; each
-// lists closely related services. Resolved to {title, href} via getRelated().
+// Curated cross-links for SEO and navigation. Keyed by service slug.
 export const relatedServices = {
-  'moffett-delivery': ['construction-material-delivery', 'flatbed-transportation', 'last-mile-retail-delivery'],
-  'dedicated-fleet': ['manufacturing-consumer-goods', 'flatbed-transportation', 'warehouse-cross-dock'],
-  'flatbed-transportation': ['moffett-delivery', 'construction-material-delivery', 'dry-van-transportation'],
-  'dry-van-transportation': ['manufacturing-consumer-goods', 'flatbed-transportation', 'warehouse-cross-dock'],
-  'warehouse-cross-dock': ['dedicated-fleet', 'last-mile-retail-delivery', 'manufacturing-consumer-goods'],
-  'construction-material-delivery': ['moffett-delivery', 'flatbed-transportation', 'building-material-distribution'],
-  'healthcare-logistics': ['dry-van-transportation', 'dedicated-fleet', 'expedited-same-day'],
-  'manufacturing-consumer-goods': ['dry-van-transportation', 'dedicated-fleet', 'warehouse-cross-dock'],
-  'last-mile-retail-delivery': ['warehouse-cross-dock', 'moffett-delivery', 'expedited-same-day'],
-  'expedited-same-day': ['dedicated-fleet', 'healthcare-logistics', 'last-mile-retail-delivery'],
-  'cross-border-freight': ['flatbed-transportation', 'dry-van-transportation', 'manufacturing-consumer-goods'],
-  'building-material-distribution': ['construction-material-delivery', 'moffett-delivery', 'warehouse-cross-dock'],
+  'flatbed-moffett-transport': ['construction-material-hauling', 'dedicated-fleet-services', 'last-mile-delivery'],
+  'moffett-delivery': ['construction-material-hauling', 'flatbed-moffett-transport', 'last-mile-delivery'],
+  'dedicated-fleet-services': ['manufacturing-consumer-goods-freight', 'flatbed-moffett-transport', 'warehouse-cross-dock-storage'],
+  'dedicated-fleet': ['manufacturing-consumer-goods-freight', 'flatbed-moffett-transport', 'warehouse-cross-dock-storage'],
+  'warehouse-cross-dock-storage': ['dedicated-fleet-services', 'last-mile-delivery', 'manufacturing-consumer-goods-freight'],
+  'warehouse-cross-dock': ['dedicated-fleet-services', 'last-mile-delivery', 'manufacturing-consumer-goods-freight'],
+  'healthcare-linen-logistics': ['dedicated-fleet-services', 'expedited-same-day-freight', '24-7-after-hours-weekend-dispatch'],
+  'healthcare-logistics': ['dedicated-fleet-services', 'expedited-same-day-freight', '24-7-after-hours-weekend-dispatch'],
+  'manufacturing-consumer-goods-freight': ['dedicated-fleet-services', 'warehouse-cross-dock-storage', 'flatbed-moffett-transport'],
+  'manufacturing-consumer-goods': ['dedicated-fleet-services', 'warehouse-cross-dock-storage', 'flatbed-moffett-transport'],
+  'construction-material-hauling': ['flatbed-moffett-transport', 'dedicated-fleet-services', 'last-mile-delivery'],
+  'construction-material-delivery': ['flatbed-moffett-transport', 'dedicated-fleet-services', 'last-mile-delivery'],
+  'expedited-same-day-freight': ['dedicated-fleet-services', 'healthcare-linen-logistics', '24-7-after-hours-weekend-dispatch'],
+  'expedited-same-day': ['dedicated-fleet-services', 'healthcare-linen-logistics', '24-7-after-hours-weekend-dispatch'],
+  'last-mile-delivery': ['warehouse-cross-dock-storage', 'flatbed-moffett-transport', 'expedited-same-day-freight'],
+  'last-mile-retail-delivery': ['warehouse-cross-dock-storage', 'flatbed-moffett-transport', 'expedited-same-day-freight'],
+  '24-7-after-hours-weekend-dispatch': ['expedited-same-day-freight', 'dedicated-fleet-services', 'healthcare-linen-logistics'],
+  'flatbed-transportation': ['flatbed-moffett-transport', 'construction-material-hauling', 'dedicated-fleet-services'],
+  'dry-van-transportation': ['manufacturing-consumer-goods-freight', 'dedicated-fleet-services', 'warehouse-cross-dock-storage'],
+  'building-material-distribution': ['construction-material-hauling', 'flatbed-moffett-transport', 'warehouse-cross-dock-storage'],
+  'cross-border-freight': ['flatbed-moffett-transport', 'dedicated-fleet-services', 'expedited-same-day-freight'],
 };
 
 export function getRelated(slug) {
@@ -232,10 +235,20 @@ export const IMAGE_SETS = {
     gallery: [img('truck-loaded', 'main'), img('moffett-yard-front'), img('home-driver-cabin')],
     cta: img('about-fleet-yard'),
   },
+  'flatbed-moffett-transport': {
+    hero: img('moffett-yard-front'),
+    gallery: [img('moffett-yard-rear', 'main'), img('moffett-unloading-forklift'), img('moffett-construction-unload')],
+    cta: img('moffett-yard-front'),
+  },
   'moffett-delivery': {
     hero: img('moffett-yard-front'),
     gallery: [img('moffett-yard-rear', 'main'), img('moffett-unloading-forklift'), img('moffett-construction-unload')],
     cta: img('moffett-yard-front'),
+  },
+  'dedicated-fleet-services': {
+    hero: img('dedicated-fleet-rows'),
+    gallery: [img('dedicated-fleet-terminal', 'main'), img('dedicated-fleet-highway'), img('dedicated-fleet-blue')],
+    cta: img('dedicated-fleet-rows'),
   },
   'dedicated-fleet': {
     hero: img('dedicated-fleet-rows'),
@@ -252,10 +265,20 @@ export const IMAGE_SETS = {
     gallery: [img('dedicated-fleet-highway', 'main'), img('warehouse-crossdock-facility'), img('highway-trailer')],
     cta: img('dedicated-fleet-terminal'),
   },
+  'warehouse-cross-dock-storage': {
+    hero: img('warehouse-crossdock-docks'),
+    gallery: [img('warehouse-crossdock-facility', 'main'), img('warehouse-crossdock-staging'), img('warehouse-crossdock-fleet1')],
+    cta: img('warehouse-crossdock-fleet2'),
+  },
   'warehouse-cross-dock': {
     hero: img('warehouse-crossdock-docks'),
     gallery: [img('warehouse-crossdock-facility', 'main'), img('warehouse-crossdock-staging'), img('warehouse-crossdock-fleet1')],
     cta: img('warehouse-crossdock-fleet2'),
+  },
+  'construction-material-hauling': {
+    hero: img('construction-blue-hero'),
+    gallery: [img('construction-delivery-site', 'main'), img('construction-materials-crane'), img('construction-site-unload')],
+    cta: img('construction-delivery-site'),
   },
   'construction-material-delivery': {
     hero: img('construction-blue-hero'),
@@ -267,9 +290,19 @@ export const IMAGE_SETS = {
     gallery: [img('construction-site-unload', 'main'), img('construction-materials-crane'), img('flatbed-construction-haul')],
     cta: img('construction-blue-hero'),
   },
+  'healthcare-linen-logistics': {
+    hero: img('dedicated-fleet-blue'),
+    gallery: [img('dedicated-fleet-terminal', 'main'), img('warehouse-crossdock-staging'), img('home-fleet-manager')],
+    cta: img('dedicated-fleet-rows'),
+  },
   'healthcare-logistics': {
     hero: img('dedicated-fleet-blue'),
     gallery: [img('dedicated-fleet-terminal', 'main'), img('warehouse-crossdock-staging'), img('home-fleet-manager')],
+    cta: img('dedicated-fleet-rows'),
+  },
+  'manufacturing-consumer-goods-freight': {
+    hero: img('warehouse-crossdock-facility'),
+    gallery: [img('warehouse-crossdock-docks', 'main'), img('warehouse-crossdock-fleet1'), img('flatbed-construction-haul')],
     cta: img('dedicated-fleet-rows'),
   },
   'manufacturing-consumer-goods': {
@@ -277,15 +310,35 @@ export const IMAGE_SETS = {
     gallery: [img('warehouse-crossdock-docks', 'main'), img('warehouse-crossdock-fleet1'), img('flatbed-construction-haul')],
     cta: img('dedicated-fleet-rows'),
   },
+  'last-mile-delivery': {
+    hero: img('moffett-yard-rear'),
+    gallery: [img('moffett-unloading-forklift', 'main'), img('warehouse-crossdock-docks'), img('moffett-construction-unload')],
+    cta: img('moffett-yard-front'),
+  },
   'last-mile-retail-delivery': {
     hero: img('moffett-yard-rear'),
     gallery: [img('moffett-unloading-forklift', 'main'), img('warehouse-crossdock-docks'), img('moffett-construction-unload')],
     cta: img('moffett-yard-front'),
   },
+  'expedited-same-day-freight': {
+    hero: img('flatbed-highway-ad'),
+    gallery: [img('dedicated-fleet-highway', 'main'), img('moffett-yard-front'), img('warehouse-crossdock-docks')],
+    cta: img('dedicated-fleet-rows'),
+  },
   'expedited-same-day': {
     hero: img('flatbed-highway-ad'),
     gallery: [img('dedicated-fleet-highway', 'main'), img('moffett-yard-front'), img('warehouse-crossdock-docks')],
     cta: img('dedicated-fleet-rows'),
+  },
+  '24-7-after-hours-weekend-dispatch': {
+    hero: img('dedicated-fleet-highway'),
+    gallery: [img('home-fleet-manager', 'main'), img('home-driver-cabin'), img('dedicated-fleet-rows')],
+    cta: img('about-fleet-lineup'),
+  },
+  'fleet-and-equipment': {
+    hero: img('about-fleet-lineup'),
+    gallery: [img('moffett-yard-rear', 'main'), img('flatbed-highway-ad'), img('warehouse-crossdock-facility')],
+    cta: img('about-fleet-yard'),
   },
   'cross-border-freight': {
     hero: img('dedicated-fleet-highway'),
@@ -316,14 +369,14 @@ export const overviewCapabilities = [
 ];
 
 export const overviewStats = [
-  { value: '2006', label: 'Moving freight since' },
-  { value: '24/7', label: 'Dispatch coverage' },
-  { value: '3', label: 'Ontario hubs' },
-  { value: '12', label: 'Service lines' },
+  { value: '2006', label: 'Operating Since' },
+  { value: '24/7', label: 'Live Dispatch Coverage' },
+  { value: '1566', label: 'Bonhill Rd, Mississauga HQ' },
+  { value: 'USDOT/MC', label: 'Registered Carrier Authority' },
 ];
 
 export const overviewGallery = [
-  { src: '/images/gallery-3.webp', alt: 'Fleet lineup', span: 'main' },
-  { src: '/images/fleet-1.webp', alt: 'On the road' },
-  { src: '/images/truck-dock.webp', alt: 'Dock delivery' },
+  { src: '/images/moffett-yard-rear.webp', alt: 'Moffett-equipped flatbed in logistics yard', span: 'main' },
+  { src: '/images/dedicated-fleet-highway.webp', alt: 'Commercial transport truck on highway' },
+  { src: '/images/warehouse-crossdock-docks.webp', alt: 'Mississauga central cross-dock terminal' },
 ];

@@ -87,7 +87,7 @@ export default function ServiceEditorialPage({
   cta,
   relatedKey,
 }) {
-  const trustBadges = darkSection.badges ?? defaultTrustBadges;
+  const trustBadges = darkSection?.badges ?? defaultTrustBadges;
   const related = relatedKey ? getRelated(relatedKey) : [];
   const imageSet = getImageSet(relatedKey);
   const process = {
@@ -221,55 +221,59 @@ export default function ServiceEditorialPage({
         ) : null}
       </main>
 
-      <section className="sv-ed-caps">
-        <div className="sv-ed-caps-inner">
-          <SectionHeader
-            num={darkSection.num}
-            label={darkSection.label}
-            title={darkSection.title}
-            desc={darkSection.desc}
-            dark
-          />
-          <div className="sv-ed-caps-grid">
-            {darkSection.items.map((item, i) => (
-              <motion.div
-                key={item.title}
-                className="sv-ed-cap-card"
-                variants={fadeUpSoft}
-                initial="hidden"
-                whileInView="visible"
-                viewport={viewportOnce}
-                custom={i}
-              >
-                <ServiceIcon name={item.icon} size={20} strokeWidth={1.5} />
-                <span className="sv-ed-cap-label">{item.title}</span>
-                <span className="sv-ed-cap-desc">{item.desc}</span>
-              </motion.div>
-            ))}
+      {darkSection ? (
+        <section className="sv-ed-caps">
+          <div className="sv-ed-caps-inner">
+            <SectionHeader
+              num={darkSection.num}
+              label={darkSection.label}
+              title={darkSection.title}
+              desc={darkSection.desc}
+              dark
+            />
+            {darkSection.items ? (
+              <div className="sv-ed-caps-grid">
+                {darkSection.items.map((item, i) => (
+                  <motion.div
+                    key={item.title}
+                    className="sv-ed-cap-card"
+                    variants={fadeUpSoft}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                    custom={i}
+                  >
+                    <ServiceIcon name={item.icon} size={20} strokeWidth={1.5} />
+                    <span className="sv-ed-cap-label">{item.title}</span>
+                    <span className="sv-ed-cap-desc">{item.desc}</span>
+                  </motion.div>
+                ))}
+              </div>
+            ) : null}
+            <motion.div
+              className="sv-ed-badges"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportOnce}
+            >
+              {trustBadges.map((badgeLabel, i) => (
+                <motion.span
+                  key={badgeLabel}
+                  className="sv-ed-badge"
+                  variants={fadeUpSoft}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={viewportOnce}
+                  custom={i}
+                >
+                  <span className="sv-ed-check">✓</span> {badgeLabel}
+                </motion.span>
+              ))}
+            </motion.div>
           </div>
-          <motion.div
-            className="sv-ed-badges"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOnce}
-          >
-            {trustBadges.map((badgeLabel, i) => (
-              <motion.span
-                key={badgeLabel}
-                className="sv-ed-badge"
-                variants={fadeUpSoft}
-                initial="hidden"
-                whileInView="visible"
-                viewport={viewportOnce}
-                custom={i}
-              >
-                <span className="sv-ed-check">✓</span> {badgeLabel}
-              </motion.span>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       <div className="sv-ed-main">
         <section className="sv-ed-process">

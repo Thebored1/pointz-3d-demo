@@ -1,60 +1,65 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
+export const metadata = {
+  title: 'Building Material Distribution & Job Site Delivery | Point Zero Road Lines',
+  description: 'Supplier-to-site building material distribution across Ontario. Moffett offload, lumber staging, cross-docking, and scheduled builder routes.',
+};
+
 const capabilities = [
-  { icon: 'Layers', title: 'Yard to site', desc: 'Distribution programs moving product from supplier yards out to job sites.' },
-  { icon: 'Forklift', title: 'Moffett unloading', desc: 'Every drop unloads itself, whether the destination is a yard or a build.' },
-  { icon: 'Warehouse', title: 'Staged inventory', desc: 'Product held in our warehouse and released against the delivery schedule.' },
-  { icon: 'Route', title: 'Recurring programs', desc: 'Standing routes for suppliers with predictable weekly volume.' },
+  { icon: 'Layers', title: 'Supplier Yard to Job Site', desc: 'Seamless distribution programs moving lumber, drywall, and structural supplies from mills to active builds.' },
+  { icon: 'Forklift', title: 'Moffett Rough-Terrain Offloading', desc: 'Every drop unloads itself onto mud, gravel, or unfinished driveways with zero site equipment needed.' },
+  { icon: 'Warehouse', title: 'Staged Cross-Dock Inventory', desc: 'Materials staged at our Mississauga terminal and released strictly against subcontractor schedules.' },
+  { icon: 'Route', title: 'Dedicated Builder Programs', desc: 'Predictable scheduled runs for manufacturers and distributors expanding delivery reach without buying trucks.' },
 ];
 
 const highlights = [
-  { icon: 'CheckCircle', title: 'Commercial construction logistics', desc: 'Coordinated material flow for larger commercial builds.' },
-  { icon: 'CheckCircle', title: 'Supplier distribution', desc: 'Building material suppliers extending their delivery reach without buying trucks.' },
-  { icon: 'CheckCircle', title: 'Consolidated loads', desc: 'Multiple orders combined into a single run to control delivery cost.' },
-  { icon: 'CheckCircle', title: 'Residential and commercial', desc: 'The same program serving home builds and commercial job sites.' },
+  { icon: 'CheckCircle', title: 'Commercial Construction Logistics', desc: 'Coordinated delivery sequences for multi-phase commercial and institutional developments.' },
+  { icon: 'CheckCircle', title: 'Supplier & Distributor Expansion', desc: 'Building supply dealers scaling regional sales with our turnkey dedicated fleet.' },
+  { icon: 'CheckCircle', title: 'Consolidated Site Drops', desc: 'Multiple customer orders combined into one optimized route to minimize freight costs.' },
+  { icon: 'CheckCircle', title: 'Residential Subdivision Drops', desc: 'Precision delivery of roof trusses, insulation, and framing packages into tight residential lots.' },
 ];
 
 export default function BuildingMaterialDistributionPage() {
   return (
     <ServiceEditorialPage
       relatedKey="building-material-distribution"
-      badge="SERVICES"
-      badgeAlt="BUILDING MATERIAL DISTRIBUTION"
+      badge="SERVICES · DISTRIBUTION"
+      badgeAlt="EST. 2006 · MISSISSAUGA HQ"
       titleLine1="FROM THE YARD."
-      titleAccent="TO THE BUILD."
-      description="Distribution programs for building material suppliers — warehousing, consolidation and Moffett-equipped delivery that extends your reach without you having to run a fleet of your own."
-      heroImage="/images/warehouse-driver.webp"
-      heroAlt="Building material distribution"
+      titleAccent="TO THE ACTIVE BUILD."
+      description="Distribution programs for building material manufacturers and suppliers — warehousing, consolidation, and Moffett-equipped delivery that extends your customer reach without having to manage a private fleet."
+      heroImage="/images/construction-blue-hero.webp"
+      heroAlt="Point Zero Road Lines building material distribution transport"
       stats={[
-        { value: '2006', label: 'Moving freight since' },
-        { value: '3', label: 'Ontario hubs' },
-        { value: '24/7', label: 'Dispatch support' },
-        { value: '0', label: 'Site equipment needed' },
+        { value: '2006', label: 'Operating Since' },
+        { value: '100%', label: 'Self-Unloading' },
+        { value: '24/7', label: 'Dispatch Support' },
+        { value: '0', label: 'Site Equipment Needed' },
       ]}
       primarySection={{
         num: '01',
         label: 'Capabilities',
-        title: 'How distribution runs',
-        desc: 'Warehousing and transportation under one operation, so product can be staged, consolidated and delivered without a hand-off in the middle.',
+        title: 'How our distribution program runs',
+        desc: 'Warehousing, cross-docking, and Moffett transportation managed under one roof at 1566 Bonhill Rd in Mississauga.',
         columns: 4,
         items: capabilities,
       }}
       gallery={[
-        { src: '/images/truck-loaded.webp', alt: 'Material loaded for distribution', span: 'main' },
-        { src: '/images/truck-dock.webp', alt: 'Loading at the yard' },
-        { src: '/images/gallery-2.webp', alt: 'Distribution operations' },
+        { src: '/images/construction-delivery-site.webp', alt: 'Material delivered to job site', span: 'main' },
+        { src: '/images/construction-materials-crane.webp', alt: 'Crane loading building materials' },
+        { src: '/images/flatbed-construction-haul.webp', alt: 'Flatbed hauling construction goods' },
       ]}
       darkSection={{
         num: '02',
-        label: 'Who it serves',
-        title: 'Distribution programs',
-        desc: 'Suppliers and contractors who need material moved to sites and yards on a repeatable schedule.',
+        label: 'Who We Serve',
+        title: 'Distribution programs tailored to your supply chain',
+        desc: 'Suppliers, distributors, and general contractors who need materials moved to job sites on a dependable, repeatable schedule.',
         items: highlights,
       }}
       cta={{
-        titleLine1: 'EXTEND YOUR',
-        titleAccent: 'DELIVERY REACH.',
-        desc: 'Tell us your volumes and delivery area. We will build the distribution program around them.',
+        titleLine1: 'EXTEND YOUR MATERIAL',
+        titleAccent: 'DELIVERY REACH ACROSS ONTARIO.',
+        desc: 'Tell us your volume, lane requirements, and customer drop points. We will engineer a dedicated distribution program.',
       }}
     />
   );

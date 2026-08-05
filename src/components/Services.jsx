@@ -2,16 +2,16 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Truck, Warehouse, Users, Forklift, Hammer, Store } from 'lucide-react';
+import { Forklift, Users, Warehouse, HeartPulse, Timer, Clock } from 'lucide-react';
 import './Services.css';
 
 const services = [
-  { id: '01', title: 'Moffett Delivery', icon: Forklift, href: '/services/moffett-delivery', desc: 'Truck-mounted forklift delivery to any site — no dock, no on-site forklift, no waiting.' },
-  { id: '02', title: 'Dedicated Fleet', icon: Users, href: '/services/dedicated-fleet', desc: 'Company-owned trucks and vetted drivers assigned to your lanes for consistent service.' },
-  { id: '03', title: 'Construction Material', icon: Hammer, href: '/services/construction-material-delivery', desc: 'Lumber, drywall, roofing and steel placed where the job site actually needs it.' },
-  { id: '04', title: 'Flatbed Transportation', icon: Truck, href: '/services/flatbed-transportation', desc: 'Open-deck transport for steel, lumber, machinery and oversized freight.' },
-  { id: '05', title: 'Warehouse & Cross-Dock', icon: Warehouse, href: '/services/warehouse-cross-dock', desc: 'Stage, consolidate and store across Mississauga, Bolton and Brampton.' },
-  { id: '06', title: 'Last Mile & Retail', icon: Store, href: '/services/last-mile-retail-delivery', desc: 'Scheduled route and store-level delivery, including white glove placement.' },
+  { id: '01', title: 'Flatbed & Moffett Transport', icon: Forklift, href: '/services/flatbed-moffett-transport', desc: 'Truck-mounted forklifts that unload on arrival — no dock, no on-site equipment required.' },
+  { id: '02', title: 'Dedicated Fleet Services', icon: Users, href: '/services/dedicated-fleet-services', desc: 'Trucks, trailers, Moffett units, and drivers assigned to your account, planned around your schedule.' },
+  { id: '03', title: 'Warehouse & Cross-Dock Storage', icon: Warehouse, href: '/services/warehouse-cross-dock-storage', desc: 'Secure, centrally located space to stage, consolidate, or store freight between transportation legs.' },
+  { id: '04', title: 'Healthcare Linen & Textile Logistics', icon: HeartPulse, href: '/services/healthcare-linen-logistics', desc: 'Scheduling and handling built around the turnaround windows healthcare and linen operations run on.' },
+  { id: '05', title: 'Expedited & Same-Day Freight', icon: Timer, href: '/services/expedited-same-day-freight', desc: 'Hot shot delivery when a shipment can’t wait for a standard schedule.' },
+  { id: '06', title: '24/7 Dispatch & Weekend Delivery', icon: Clock, href: '/services/24-7-after-hours-weekend-dispatch', desc: 'A dispatcher on the line nights, weekends, and holidays — not a voicemail box.' },
 ];
 
 export default function Services() {
@@ -25,7 +25,7 @@ export default function Services() {
           </div>
           <motion.h2 className="services-title" style={{ margin: 0 }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>Built for the loads<br/>others turn down.</motion.h2>
           <motion.p className="services-intro" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
-            Six of our twelve service lines. <Link href="/services" className="services-intro-link">See all services →</Link>
+            Explore our specialized capabilities. <Link href="/services" className="services-intro-link">See all services →</Link>
           </motion.p>
         </div>
         <div className="services-grid">

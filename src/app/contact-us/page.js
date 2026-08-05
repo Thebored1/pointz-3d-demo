@@ -11,26 +11,26 @@ import './ContactPage.css';
 
 const locations = [
   {
-    label: 'Primary HQ',
-    title: 'Mississauga Hub',
-    desc: <>1566 Bonhill Rd<br />Mississauga, ON<br />Headquarters & Core Dispatch</>,
+    label: 'Headquarters & Terminal',
+    title: 'Mississauga Facility',
+    desc: <>1566 Bonhill Road<br />Mississauga, ON L5T 1C7<br />HQ, Terminal & Cross-Dock Facility</>,
     icon: MapPin,
   },
   {
-    label: 'Storage Facility',
-    title: 'Bolton Warehouse',
-    desc: 'Cross-docking, consolidation, and mid-to-long term storage overflow operations.',
+    label: 'Live Dispatch',
+    title: '24/7 Operations',
+    desc: 'Round-the-clock live dispatch, overnight linehaul coordination, and emergency hot shot support.',
+    icon: Phone,
+  },
+  {
+    label: 'Registered Authorities',
+    title: 'Domestic & Cross-Border',
+    desc: 'USDOT 3983391 · MC 1492151 · CVOR Licensed & Fully Commercially Insured.',
     icon: MapPin,
   },
   {
-    label: 'Dedicated Hub',
-    title: 'Brampton Depot',
-    desc: 'Secondary terminal supporting regional distribution and dedicated fleet deployments.',
-    icon: MapPin,
-  },
-  {
-    label: 'Reach Out',
-    title: '+1-905-291-0325',
+    label: 'Direct Contact',
+    title: '(905) 291-0325',
     desc: (
       <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
         <Mail size={16} strokeWidth={1.5} /> info@pointzeroroadlines.com

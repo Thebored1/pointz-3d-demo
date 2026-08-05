@@ -1,17 +1,24 @@
 import ServiceEditorialPage from '../../components/ServiceEditorialPage';
 
-const standards = [
-  { icon: 'Shield', title: 'Regulatory compliance', desc: 'Every driver operates under Hours of Service, MTO and Highway Traffic Act requirements.' },
-  { icon: 'Globe', title: 'DOT-registered carrier', desc: 'Active motor carrier under our own USDOT and MC authority, domestic and cross-border.' },
-  { icon: 'CheckCircle', title: 'Bonded and insured', desc: 'Covered to move freight across Canada and into the United States.' },
-  { icon: 'Wrench', title: 'Equipment standards', desc: 'Trucks, trailers, flatbeds and Moffett units on a regular inspection and service schedule.' },
+export const metadata = {
+  title: 'Safety & Compliance | Point Zero Road Lines — Licensed & Insured',
+  description: 'Point Zero Road Lines operates under Hours of Service, MTO & HTA compliance as a USDOT/MC-registered, licensed and insured carrier. USDOT 3983391.',
+};
+
+const compliancePillars = [
+  { icon: 'Shield', title: 'Regulatory Authority & Licensing', desc: 'Registered CVOR, USDOT 3983391, and MC 1492151 authorities. Fully insured with comprehensive commercial cargo and liability coverage.' },
+  { icon: 'Users', title: 'Driver Screening & Certification', desc: 'Rigorous abstract verification, drug/alcohol screening, and mandatory Moffett rough-terrain and load securement certification.' },
+  { icon: 'Wrench', title: 'Preventive Fleet Maintenance', desc: 'Routine mechanical service, brake checks, and safety inspections executed in-house at our Mississauga terminal.' },
+  { icon: 'Clock', title: 'ELD & Hours of Service (HOS)', desc: 'Certified Electronic Logging Devices on all tractors to ensure strict compliance with Canadian and U.S. driver rest regulations.' },
 ];
 
-const drivers = [
-  { icon: 'CheckCircle', title: 'Verified licensing', desc: 'Valid, verified licensing for every driver on the road.' },
-  { icon: 'CheckCircle', title: 'Hours of Service monitoring', desc: 'Ongoing monitoring of HOS compliance, not an annual audit.' },
-  { icon: 'CheckCircle', title: 'Moffett training', desc: 'Training specific to specialized equipment, including Moffett operation.' },
-  { icon: 'CheckCircle', title: 'Tracking and visibility', desc: 'Live truck location supports both safety oversight and delivery accuracy.' },
+const safetyProtocols = [
+  { icon: 'CheckCircle', title: 'Daily Electronic DVIR Inspections', desc: 'Mandatory pre-trip and post-trip commercial vehicle inspections completed electronically before wheels roll.' },
+  { icon: 'CheckCircle', title: 'Certified Load Securement', desc: 'Chains, heavy-duty ratchet straps, corner protectors, and edge guards matched to MTO and DOT cargo standards.' },
+  { icon: 'CheckCircle', title: 'Job-Site Safety Compliance', desc: 'Full PPE, high-visibility apparel, site hazard awareness, and strict adherence to constructor safety protocols on active sites.' },
+  { icon: 'CheckCircle', title: 'Speed & Telematics Monitoring', desc: 'Real-time engine diagnostics and satellite tracking to encourage safe driving behavior and route efficiency.' },
+  { icon: 'CheckCircle', title: 'Zero Spill & Environmental Care', desc: 'Trained response procedures and spill kits carried on board to protect natural and municipal environments.' },
+  { icon: 'CheckCircle', title: 'Continuous Driver Training', desc: 'Regular safety briefings on winter driving, tight maneuverability, fatigue management, and defensive operations.' },
 ];
 
 export default function SafetyCompliancePage() {
@@ -19,43 +26,42 @@ export default function SafetyCompliancePage() {
     <ServiceEditorialPage
       relatedKey="safety-compliance"
       badge="SAFETY & COMPLIANCE"
-      badgeAlt="EVERY LOAD, EVERY TIME"
-      titleLine1="NOT A POLICY BINDER."
-      titleAccent="A STANDARD."
-      description="Safety is the standard every driver, dispatcher and piece of equipment is measured against before a load ever leaves the yard — because equipment failure and cut corners are the most preventable causes of delay."
-      scrollLabel="SCROLL FOR STANDARDS"
-      heroImage="/images/safety-vest.webp"
-      heroAlt="Safety equipment and compliance"
+      badgeAlt="USDOT 3983391 · MC 1492151"
+      titleLine1="SAFETY FIRST."
+      titleAccent="IN EVERY MILE, ON EVERY SITE."
+      description="At Point Zero Road Lines, safety is a core operating principle. We maintain rigorous compliance with Ontario Ministry of Transportation (MTO), Highway Traffic Act (HTA), and U.S. Department of Transportation (USDOT) standards across every load."
+      heroImage="/images/home-driver-cabin.webp"
+      heroAlt="Professional Point Zero Road Lines driver in cabin"
       stats={[
-        { value: '2006', label: 'Moving freight since' },
-        { value: '100%', label: 'HOS compliance' },
-        { value: '24/7', label: 'Dispatch oversight' },
-        { value: '3', label: 'Ontario hubs' },
+        { value: 'USDOT', label: '3983391 Registered' },
+        { value: 'MC', label: '1492151 Authority' },
+        { value: '100%', label: 'ELD Compliant' },
+        { value: 'Daily', label: 'DVIR Inspections' },
       ]}
       primarySection={{
         num: '01',
-        label: 'Compliance',
-        title: 'What we operate under',
-        desc: 'The regulatory footing behind every load we move, in Ontario and across the border.',
+        label: 'Compliance Pillars',
+        title: 'How we maintain industry-leading safety standards',
+        desc: 'From hiring and training professional drivers to proactive equipment maintenance and real-time electronic oversight, safety is engineered into every process.',
         columns: 4,
-        items: standards,
+        items: compliancePillars,
       }}
       gallery={[
-        { src: '/images/driver-cabin.webp', alt: 'Driver in cab', span: 'main' },
-        { src: '/images/truck-cab.webp', alt: 'Tractor unit' },
-        { src: '/images/gallery-2.webp', alt: 'Fleet maintenance' },
+        { src: '/images/home-fleet-manager.webp', alt: 'Safety and compliance oversight', span: 'main' },
+        { src: '/images/dedicated-fleet-rows.webp', alt: 'Fleet maintenance inspection' },
+        { src: '/images/about-fleet-lineup.webp', alt: 'Clean commercial fleet' },
       ]}
       darkSection={{
         num: '02',
-        label: 'Driver standards',
-        title: 'Who is behind the wheel',
-        desc: 'A safety-first culture reinforced from dispatch through delivery, on every load.',
-        items: drivers,
+        label: 'Safety Standards',
+        title: 'Protocols followed on every single shipment',
+        desc: 'Our daily commitment to protecting our drivers, your cargo, and the motoring public on Ontario highways.',
+        items: safetyProtocols,
       }}
       cta={{
-        titleLine1: 'QUESTIONS ON',
-        titleAccent: 'COMPLIANCE?',
-        desc: 'Ask us directly. We will give you a straight answer on authority, insurance and how we run our equipment.',
+        titleLine1: 'HAVE QUESTIONS ABOUT OUR',
+        titleAccent: 'SAFETY RECORD OR COMPLIANCE?',
+        desc: 'Contact our safety department for carrier packets, certificate of insurance (COI), and compliance documentation.',
       }}
     />
   );

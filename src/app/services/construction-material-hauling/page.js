@@ -1,8 +1,8 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Construction Material Delivery in Ontario | Point Zero Road Lines',
-  description: 'Job-site delivery of lumber, drywall, roofing, steel, and heavy building supplies with truck-mounted Moffett offloading. No site crane required.',
+  title: 'Construction Material Delivery Toronto & GTA | Point Zero',
+  description: 'Lumber, brick, roofing, drywall, steel & precast delivery to GTA job sites — Moffett-equipped for sites without a dock. Get a quote.',
 };
 
 const capabilities = [
@@ -17,12 +17,14 @@ const applications = [
   { icon: 'CheckCircle', title: 'Drywall, Sheathing & Insulation', desc: 'Weather-protected skids placed at direct entryways for efficient interior boarding.' },
   { icon: 'CheckCircle', title: 'Roofing Materials & Shingles', desc: 'Bundles of asphalt shingles, modified bitumen rolls, and metal roofing staged for hoisting.' },
   { icon: 'CheckCircle', title: 'Precast Concrete & Masonry', desc: 'Pallets of brick, stone, concrete steps, and block placed safely along building perimeter lines.' },
+  { icon: 'CheckCircle', title: 'Structural Steel & Rebar', desc: 'Heavy open-deck transport secured to MTO/DOT standards and unloaded with precision.' },
+  { icon: 'CheckCircle', title: 'Commercial Glazing & Windows', desc: 'Crated glass units and architectural metal delivered with cushioned, stable transport.' },
 ];
 
-export default function ConstructionMaterialDeliveryPage() {
+export default function ConstructionMaterialHaulingPage() {
   return (
     <ServiceEditorialPage
-      relatedKey="construction-material-delivery"
+      relatedKey="construction-material-hauling"
       badge="SERVICES · CONSTRUCTION HAULING"
       badgeAlt="EST. 2006 · MISSISSAUGA HQ"
       titleLine1="CONSTRUCTION MATERIAL HAULING."

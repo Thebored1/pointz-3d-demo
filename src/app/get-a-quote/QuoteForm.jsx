@@ -5,18 +5,15 @@ import { fadeUp, fadeUpSoft, viewportOnce } from '../../lib/motion';
 import { submitQuote } from '../actions/submit-quote';
 
 const SERVICES = [
-  'Moffett Delivery',
-  'Dedicated Fleet',
-  'Flatbed Transportation',
-  'Dry Van Transportation',
-  'Warehouse & Cross-Dock',
-  'Construction Material Delivery',
-  'Healthcare Logistics',
-  'Manufacturing & Consumer Goods',
-  'Last Mile & Retail Delivery',
-  'Expedited & Same Day',
-  'Cross-Border Freight',
-  'Building Material Distribution',
+  'Flatbed & Moffett Transport',
+  'Dedicated Fleet Services',
+  'Warehouse & Cross-Dock Storage',
+  'Healthcare Linen & Textile Logistics',
+  'Manufacturing & Consumer Goods Freight',
+  'Construction Material Hauling',
+  'Expedited & Same-Day Freight',
+  'Last Mile Delivery',
+  '24/7 After-Hours & Weekend Dispatch',
   'Not sure — need guidance',
 ];
 

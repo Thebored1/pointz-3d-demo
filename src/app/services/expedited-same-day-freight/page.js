@@ -1,8 +1,8 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Expedited & Same-Day Freight in Ontario | Point Zero Road Lines',
-  description: 'Emergency hot shot and same-day freight delivery across the GTA and Ontario. Immediate truck dispatch, live tracking, and direct door-to-door transit.',
+  title: 'Hot Shot & Expedited Trucking Ontario | Point Zero Road Lines',
+  description: "Same-day and next-day hot shot freight across Ontario and the GTA when a shipment can't wait. Request an urgent quote.",
 };
 
 const capabilities = [
@@ -17,12 +17,14 @@ const applications = [
   { icon: 'CheckCircle', title: 'Job-Site Material Shortages', desc: 'Emergency same-day delivery of trusses, steel, fasteners, or drywall preventing construction crew downtime.' },
   { icon: 'CheckCircle', title: 'Healthcare & Hospital Surges', desc: 'Urgent linen, laundry cart, and medical supply replenishment during unforeseen healthcare demand spikes.' },
   { icon: 'CheckCircle', title: 'Commercial Equipment Breakdowns', desc: 'Direct transit for heavy replacement motors, pumps, electrical gear, and mechanical components.' },
+  { icon: 'CheckCircle', title: 'Critical Cross-Border Hot Shots', desc: 'Expedited transport between Ontario and U.S. border points with accelerated customs coordination.' },
+  { icon: 'CheckCircle', title: 'Retail Stock-Out Prevention', desc: 'Rapid same-day transfers from central distribution hubs to retail locations for high-demand promotions.' },
 ];
 
-export default function ExpeditedSameDayPage() {
+export default function ExpeditedSameDayFreightPage() {
   return (
     <ServiceEditorialPage
-      relatedKey="expedited-same-day"
+      relatedKey="expedited-same-day-freight"
       badge="SERVICES · EXPEDITED FREIGHT"
       badgeAlt="EST. 2006 · MISSISSAUGA HQ"
       titleLine1="EXPEDITED & SAME-DAY FREIGHT."

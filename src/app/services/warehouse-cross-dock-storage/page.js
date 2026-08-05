@@ -1,8 +1,8 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Warehouse & Cross-Dock in Mississauga | Point Zero Road Lines',
-  description: 'Centrally located warehousing and cross-docking at 1566 Bonhill Rd, Mississauga. Short and long-term storage, pallet staging, and fast trailer transfers.',
+  title: 'Cross-Dock & Warehousing Mississauga & GTA | Point Zero',
+  description: 'Cross-dock, warehousing, and freight consolidation in Mississauga & the GTA — one coordinated operation, not a separate storage vendor.',
 };
 
 const capabilities = [
@@ -17,12 +17,14 @@ const applications = [
   { icon: 'CheckCircle', title: 'Construction Material Staging', desc: 'Materials staged indoors and loaded onto Moffett flatbeds for early morning job-site drops.' },
   { icon: 'CheckCircle', title: 'Healthcare Linen Staging', desc: 'Cart staging, sorting, and turnaround management in a clean, controlled environment.' },
   { icon: 'CheckCircle', title: 'Retail & Consumer Overflow', desc: 'Buffer inventory and seasonal stock holding close to major GTA 400-series transport corridors.' },
+  { icon: 'CheckCircle', title: 'Emergency Load Rework', desc: 'Re-palletizing, shrink-wrapping, and load shifting corrections for shifted or rejected freight.' },
+  { icon: 'CheckCircle', title: 'LTL to FTL Consolidation', desc: 'Staging smaller vendor consignments into unified truckloads for regional delivery.' },
 ];
 
-export default function WarehouseCrossDockPage() {
+export default function WarehouseCrossDockStoragePage() {
   return (
     <ServiceEditorialPage
-      relatedKey="warehouse-cross-dock"
+      relatedKey="warehouse-cross-dock-storage"
       badge="SERVICES · WAREHOUSE & CROSS-DOCK"
       badgeAlt="1566 BONHILL RD · MISSISSAUGA HQ"
       titleLine1="CENTRAL WAREHOUSE & CROSS-DOCK FACILITY."

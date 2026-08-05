@@ -34,7 +34,7 @@ export default function Footer() {
               />
             </Link>
             <p className="footer-desc">
-              A dedicated transportation company headquartered in Mississauga, Ontario, with additional sites in Bolton and Brampton. Quality, safety, and integrity in every load.
+              A dedicated transportation company headquartered in Mississauga, Ontario, serving the GTA and Southern Ontario since 2006. USDOT 3983391 · MC 1492151 · Licensed &amp; Insured.
             </p>
             <div className="footer-socials">
               <a href="https://www.instagram.com/pointzeroroadlines/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -56,11 +56,12 @@ export default function Footer() {
             <div className="link-group">
               <h4>Services</h4>
               <ul>
-                <li><Link href="/services/moffett-delivery">Moffett Delivery</Link></li>
-                <li><Link href="/services/dedicated-fleet">Dedicated Fleet</Link></li>
-                <li><Link href="/services/construction-material-delivery">Construction Material</Link></li>
-                <li><Link href="/services/flatbed-transportation">Flatbed Transportation</Link></li>
-                <li><Link href="/services/warehouse-cross-dock">Warehouse &amp; Cross-Dock</Link></li>
+                <li><Link href="/services/flatbed-moffett-transport">Flatbed &amp; Moffett Transport</Link></li>
+                <li><Link href="/services/dedicated-fleet-services">Dedicated Fleet Services</Link></li>
+                <li><Link href="/services/warehouse-cross-dock-storage">Warehouse &amp; Cross-Dock</Link></li>
+                <li><Link href="/services/construction-material-hauling">Construction Material Hauling</Link></li>
+                <li><Link href="/services/expedited-same-day-freight">Expedited &amp; Same-Day Freight</Link></li>
+                <li><Link href="/services/healthcare-linen-logistics">Healthcare Linen Logistics</Link></li>
                 <li><Link href="/services">All Services</Link></li>
               </ul>
             </div>
@@ -68,21 +69,27 @@ export default function Footer() {
               <h4>Company</h4>
               <ul>
                 <li><Link href="/about">About Us</Link></li>
+                <li><Link href="/fleet-and-equipment">Fleet &amp; Equipment</Link></li>
                 <li><Link href="/service-areas">Service Areas</Link></li>
                 <li><Link href="/safety-compliance">Safety &amp; Compliance</Link></li>
                 <li><Link href="/faq">FAQ</Link></li>
-                <li><Link href="/contact-us">Contact</Link></li>
+                <li><Link href="/contact">Contact</Link></li>
               </ul>
             </div>
           </div>
           
           <div className="footer-contact-col">
-            <h4>Contact</h4>
+            <h4>Mississauga HQ</h4>
             <div className="footer-contact-list">
-              <a href="tel:+19052910325" className="contact-link">+1 (905) 291-0325</a>
-              <a href="tel:+16476801300" className="contact-link">+1 (647) 680-1300</a>
+              <a href="tel:+19052910325" className="contact-link">(905) 291-0325</a>
               <a href="mailto:info@pointzeroroadlines.com" className="contact-link">info@pointzeroroadlines.com</a>
-              <span>1566 Bonhill Rd, Mississauga</span>
+              <span>1566 Bonhill Road, Mississauga, ON L5T 1C7</span>
+              <span style={{ fontSize: '0.8125rem', opacity: 0.8, marginTop: '0.25rem' }}>
+                24/7 Dispatch • Weekend Pick-up &amp; Delivery
+              </span>
+              <span style={{ fontSize: '0.75rem', opacity: 0.65, marginTop: '0.5rem', lineHeight: '1.4' }}>
+                Serving Mississauga, Brampton, Toronto, Vaughan, Caledon, Bolton, Burlington, Richmond Hill, Markham &amp; Southern Ontario
+              </span>
             </div>
           </div>
         </div>

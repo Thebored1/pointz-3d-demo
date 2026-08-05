@@ -1,28 +1,30 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Dedicated Fleet Services in Ontario | Point Zero Road Lines',
-  description: 'Dedicated trucks, trailers, and drivers assigned to your account. Predictable capacity and custom scheduling across Ontario and cross-border.',
+  title: 'Dedicated Fleet Trucking Ontario & GTA | Point Zero Road Lines',
+  description: 'Dedicated trucks, Moffett units, and drivers assigned to your account across Ontario & the GTA — predictable capacity, planned around your schedule.',
 };
 
 const capabilities = [
-  { icon: 'Users', title: 'Assigned Drivers & Equipment', desc: 'Consistent, vetted drivers and company-owned equipment assigned directly to your lanes.' },
-  { icon: 'Shield', title: 'Guaranteed Capacity', desc: 'Locked-in trucks and trailers dedicated solely to your freight, eliminating spot-market volatility.' },
-  { icon: 'Route', title: 'Custom Routes & Schedules', desc: 'Multi-stop daily routes and scheduled distribution planned around your operation.' },
-  { icon: 'Wrench', title: 'Complete Fleet Administration', desc: 'We handle maintenance, fuel, insurance, regulatory compliance (MTO/DOT), and safety oversight.' },
+  { icon: 'Users', title: 'Assigned Drivers & Equipment', desc: 'Consistent, vetted drivers and equipment who know your facilities, dock staff, and delivery expectations.' },
+  { icon: 'Shield', title: 'Guaranteed Capacity', desc: 'Locked-in trucks and trailers dedicated solely to your freight, eliminating spot-market volatility and capacity pinches.' },
+  { icon: 'Route', title: 'Custom Routes & Schedules', desc: 'Multi-stop daily routes, scheduled inter-plant transfers, and distribution planned around your plant hours.' },
+  { icon: 'Wrench', title: 'Complete Fleet Administration', desc: 'We handle maintenance, fuel, insurance, regulatory compliance (MTO/DOT), and safety oversight from Mississauga.' },
 ];
 
 const applications = [
   { icon: 'CheckCircle', title: 'Healthcare & Commercial Linen', desc: 'Scheduled clean/soiled linen facility loops running on precise turnaround windows.' },
-  { icon: 'CheckCircle', title: 'Manufacturing & Industrial Goods', desc: 'Daily raw material replenishment and finished goods distribution.' },
-  { icon: 'CheckCircle', title: 'Building Material Distribution', desc: 'Dedicated flatbeds and Moffett units staged daily at supply yards.' },
-  { icon: 'CheckCircle', title: 'Retail Distribution & Restocking', desc: 'Predictable scheduled store deliveries with offloading support.' },
+  { icon: 'CheckCircle', title: 'Manufacturing & Industrial Goods', desc: 'Daily raw material replenishment and finished goods distribution between plants and warehouses.' },
+  { icon: 'CheckCircle', title: 'Building Material Distribution', desc: 'Dedicated flatbeds and Moffett units staged daily at supply yards for job-site drops.' },
+  { icon: 'CheckCircle', title: 'Retail Distribution & Restocking', desc: 'Predictable scheduled store deliveries with liftgate and offloading support.' },
+  { icon: 'CheckCircle', title: 'Consumer Packaged Goods', desc: 'Dry van runs serving distribution centres and retail hubs throughout Ontario.' },
+  { icon: 'CheckCircle', title: 'Cross-Border Supply Chains', desc: 'Dedicated lanes connecting Ontario manufacturing hubs with Michigan, New York, Ohio, and beyond.' },
 ];
 
-export default function DedicatedFleetPage() {
+export default function DedicatedFleetServicesPage() {
   return (
     <ServiceEditorialPage
-      relatedKey="dedicated-fleet"
+      relatedKey="dedicated-fleet-services"
       badge="SERVICES · DEDICATED FLEET"
       badgeAlt="EST. 2006 · MISSISSAUGA HQ"
       titleLine1="YOUR DEDICATED FLEET."

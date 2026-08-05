@@ -1,8 +1,8 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Healthcare Linen Logistics in Ontario | Point Zero Road Lines',
-  description: 'Specialized healthcare linen and commercial laundry logistics. Sanitized handling, rolling cart transport, and 24/7 dispatch across Ontario.',
+  title: 'Healthcare Linen & Textile Transport Ontario | Point Zero',
+  description: 'Dedicated linen and textile transport for healthcare and hospitality across the GTA & Southern Ontario, built around tight turnaround windows.',
 };
 
 const capabilities = [
@@ -17,12 +17,14 @@ const applications = [
   { icon: 'CheckCircle', title: 'Long-Term Care & Senior Living', desc: 'Dependable, timed deliveries ensuring resident bedding and care textiles are always stocked.' },
   { icon: 'CheckCircle', title: 'Commercial Laundry Processing', desc: 'High-volume inter-facility hauling between processing plants and regional distribution hubs.' },
   { icon: 'CheckCircle', title: 'Hospitality & Luxury Hotels', desc: 'Bulk hotel textile rotations and scheduled guest linen replenishment across the Greater Toronto Area.' },
+  { icon: 'CheckCircle', title: 'Industrial Workwear & Uniforms', desc: 'Scheduled pickup and drop routes for specialized manufacturing and trade garment processors.' },
+  { icon: 'CheckCircle', title: 'Emergency Expedited Linen Drops', desc: 'Immediate hot shot runs when hospital or facility surges exceed planned linen inventory.' },
 ];
 
-export default function HealthcareLogisticsPage() {
+export default function HealthcareLinenLogisticsPage() {
   return (
     <ServiceEditorialPage
-      relatedKey="healthcare-logistics"
+      relatedKey="healthcare-linen-logistics"
       badge="SERVICES · HEALTHCARE LINEN"
       badgeAlt="EST. 2006 · MISSISSAUGA HQ"
       titleLine1="HEALTHCARE LINEN & TEXTILE LOGISTICS."

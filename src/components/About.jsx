@@ -20,16 +20,16 @@ export default function About() {
             <Image src="/images/home-driver-cabin.webp" alt="Point Zero Road Lines driver in the cab" fill sizes="(max-width: 768px) 100vw, 55vw" style={{ objectFit: 'cover', objectPosition: '50% 40%' }} />
           </motion.div>
           <motion.div className="about-text" initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-            <p>Point Zero Road Lines is a dedicated transportation company headquartered in Mississauga, Ontario, with sites in Bolton and Brampton. We&apos;re a tight team focused on quality, safety and integrity.</p>
-            <p>We partner with our clients to bring the best value and a real strategic partnership across every load we move.</p>
+            <p>Point Zero Road Lines is a DOT-registered carrier headquartered in Mississauga, serving the GTA and Southern Ontario. Since 2006, we’ve built our business around dedicated capacity rather than spot-market trucking — your freight isn’t sharing a truck with five other shippers’ priorities.</p>
+            <p>Our truck-mounted Moffett forklifts let us deliver directly to construction sites, commercial projects, and residential addresses with no loading dock and no forklift waiting. That’s paired with a flatbed fleet, warehouse and cross-dock space, and a dispatch team reachable 24/7.</p>
             <div className="about-stats">
               <div className="about-stat">
                 <span className="about-stat-value">Mississauga</span>
-                <span className="about-stat-label">HQ</span>
+                <span className="about-stat-label">Headquarters</span>
               </div>
               <div className="about-stat">
-                <span className="about-stat-value">3 Sites</span>
-                <span className="about-stat-label">Ontario</span>
+                <span className="about-stat-value">Since 2006</span>
+                <span className="about-stat-label">DOT-Registered</span>
               </div>
             </div>
           </motion.div>

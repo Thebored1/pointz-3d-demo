@@ -6,7 +6,7 @@ export const faqs = [
   },
   {
     q: 'What areas does Point Zero Road Lines service?',
-    a: 'We are headquartered in Mississauga, Ontario, with additional locations in Bolton and Brampton. We primarily serve the Greater Toronto Area and Southern Ontario, with cross-border trucking available into the United States.',
+    a: "We're headquartered in Mississauga, Ontario, with local access across the Greater Toronto Area and Southern Ontario — including Brampton, Toronto, Vaughan, Caledon, Bolton, Burlington, Richmond Hill, and Markham — plus cross-border trucking into the United States.",
   },
   {
     q: 'Can I track my delivery?',
@@ -30,7 +30,7 @@ export const faqs = [
   },
   {
     q: 'Is Point Zero Road Lines licensed and insured?',
-    a: 'Yes. We are a bonded, DOT-registered carrier operating under our own USDOT and MC authority, and we are insured for both domestic and cross-border freight.',
+    a: 'Yes — we operate under USDOT 3983391 and MC 1492151 authority, and are licensed and insured for both domestic and cross-border freight.',
   },
   {
     q: 'Do you handle oversized or non-standard freight?',
@@ -39,5 +39,9 @@ export const faqs = [
   {
     q: 'How do I get a quote?',
     a: 'Use the Get a Quote form, or call dispatch directly. Include your pickup and delivery locations, freight type and preferred timeline, and our team will respond promptly.',
+  },
+  {
+    q: 'How quickly can you respond to a same-day or urgent delivery request?',
+    a: 'Through our Expedited & Same-Day Freight service, we can often accommodate urgent GTA routes with enough lead time — call or request a quote with your timeline for a direct answer.',
   },
 ];

@@ -6,32 +6,37 @@ import {
   overviewGallery,
 } from '../../components/serviceEditorialData';
 
+export const metadata = {
+  title: 'Trucking, Moffett Delivery & Logistics | Point Zero Road Lines',
+  description: 'Dedicated fleet, flatbed & Moffett transport, warehousing, expedited freight, and last mile delivery across the GTA & Southern Ontario.',
+};
+
 export default function ServicesPage() {
   return (
     <ServiceEditorialPage
       relatedKey="services"
       badge="SERVICES · OVERVIEW"
-      badgeAlt="EST. 2006 · MISSISSAUGA"
-      titleLine1="MOFFETT DELIVERY"
-      titleAccent="AND EVERYTHING AROUND IT."
-      description="Since 2006, Point Zero Road Lines has built its service line around one principle: fewer vendors, more accountability. Moffett delivery, dedicated fleet capacity, flatbed, warehousing and dispatch that runs on your clock — one operation, not contractors stitched together."
+      badgeAlt="EST. 2006 · MISSISSAUGA HQ"
+      titleLine1="SPECIALIZED FREIGHT SERVICES"
+      titleAccent="BUILT AROUND YOUR OPERATION."
+      description="Point Zero Road Lines provides dedicated transportation, specialized flatbed and Moffett delivery, warehousing, and logistics services across the Greater Toronto Area and Southern Ontario. Every service is backed by company-owned equipment, professional drivers, and 24/7 live dispatch."
       scrollLabel="SCROLL THE SERVICES"
-      heroImage="/images/services-hero.webp"
+      heroImage="/images/about-fleet-lineup.webp"
       heroAlt="Point Zero Road Lines fleet"
       stats={overviewStats}
       primarySection={{
         num: '01',
         label: 'What we offer',
-        title: 'Twelve ways we move your freight',
-        desc: 'Every service line runs on the same standard — and wherever a Moffett makes the delivery work better, it is already on the truck.',
+        title: 'Our Specialized Service Lines',
+        desc: 'From job sites with zero unloading equipment to time-sensitive manufacturing and healthcare routes, we provide dedicated capacity and specialized gear.',
         items: overviewServices,
       }}
       gallery={overviewGallery}
       darkSection={{
         num: '02',
         label: 'Capabilities',
-        title: 'Fleet at a glance',
-        desc: 'Modern tractors, trailers, flatbeds and truck-mounted Moffett units, maintained on a regular inspection and service schedule.',
+        title: 'Fleet & Equipment at a glance',
+        desc: 'Modern tractors, 48ft/53ft flatbeds, roll-tite trailers, dry vans, and truck-mounted Moffett units maintained to the highest safety standards.',
         items: overviewCapabilities.map((c) => ({
           icon: c.icon,
           title: c.label,
@@ -41,7 +46,7 @@ export default function ServicesPage() {
       cta={{
         titleLine1: 'NOT SURE WHICH',
         titleAccent: 'SERVICE FITS?',
-        desc: "Tell us your lane and load. We'll help you work out which service fits — and get back to you with a straight answer, fast.",
+        desc: "Tell us your lane and load. We'll help you work out which service fits — and get back to you with a straight answer and fast quote.",
       }}
     />
   );

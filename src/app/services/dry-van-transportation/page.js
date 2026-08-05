@@ -1,60 +1,65 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
+export const metadata = {
+  title: 'Dry Van Transportation in Ontario | Point Zero Road Lines',
+  description: 'Clean, enclosed 53ft dry van transportation across Ontario and cross-border. FTL & scheduled LTL freight with 24/7 dispatch and real-time tracking.',
+};
+
 const capabilities = [
-  { icon: 'Package', title: 'Enclosed and dry', desc: 'Freight protected from weather and road spray from pickup to delivery.' },
-  { icon: 'Layers', title: 'FTL and LTL', desc: 'Full loads, or shared space when the shipment does not fill a trailer.' },
-  { icon: 'Route', title: 'Scheduled runs', desc: 'Recurring plant, warehouse and distribution centre routes.' },
-  { icon: 'Navigation', title: 'Tracked in transit', desc: 'Live truck location, so you know where the load is without calling.' },
+  { icon: 'Package', title: 'Enclosed & Weather-Tight', desc: 'Freight protected from weather, moisture, and road spray from pickup to delivery.' },
+  { icon: 'Layers', title: 'FTL & Scheduled LTL', desc: 'Full truckloads, or scheduled space when your shipment does not fill a 53ft trailer.' },
+  { icon: 'Route', title: 'Scheduled Plant Runs', desc: 'Recurring plant, warehouse, and retail distribution centre routes.' },
+  { icon: 'Navigation', title: 'Real-Time Telematics', desc: 'Live GPS tracking and milestone notifications from departure to touchdown.' },
 ];
 
 const freight = [
-  { icon: 'CheckCircle', title: 'Palletized goods', desc: 'Standard skids moving between plants, warehouses and distribution points.' },
-  { icon: 'CheckCircle', title: 'Consumer goods', desc: 'Packaged product bound for retail distribution and store networks.' },
-  { icon: 'CheckCircle', title: 'Textiles and linen', desc: 'Enclosed transport for hygiene-sensitive and textile freight.' },
-  { icon: 'CheckCircle', title: 'General freight', desc: 'Anything that needs to stay dry, secure and on schedule.' },
+  { icon: 'CheckCircle', title: 'Palletized Goods', desc: 'Standard skids moving between manufacturing plants, warehouses, and distribution points.' },
+  { icon: 'CheckCircle', title: 'Consumer Packaged Goods', desc: 'Packaged product bound for tier-1 retail distribution and store networks.' },
+  { icon: 'CheckCircle', title: 'Healthcare Textiles & Linen', desc: 'Clean, sanitized enclosed transport for hygiene-sensitive freight and laundry carts.' },
+  { icon: 'CheckCircle', title: 'General Commercial Freight', desc: 'Secure, temperature-neutral cargo moving across the GTA and Southern Ontario.' },
 ];
 
 export default function DryVanTransportationPage() {
   return (
     <ServiceEditorialPage
       relatedKey="dry-van-transportation"
-      badge="SERVICES"
-      badgeAlt="DRY VAN TRANSPORTATION"
+      badge="SERVICES · DRY VAN"
+      badgeAlt="EST. 2006 · MISSISSAUGA HQ"
       titleLine1="ENCLOSED."
       titleAccent="ON SCHEDULE."
-      description="Dry van capacity for palletized and general freight that needs to arrive dry, secure and on time — full truckload or shared space, across the GTA and Southern Ontario."
-      heroImage="/images/fleet-1.webp"
-      heroAlt="Dry van trailer on the road"
+      description="Dry van capacity for palletized and general freight that needs to arrive clean, secure, and on time — full truckload or scheduled LTL, across the GTA and Southern Ontario."
+      heroImage="/images/dedicated-fleet-rows.webp"
+      heroAlt="Point Zero Road Lines dry van transport fleet"
       stats={[
-        { value: '2006', label: 'Moving freight since' },
-        { value: 'FTL', label: 'and LTL capacity' },
-        { value: '24/7', label: 'Dispatch support' },
-        { value: '3', label: 'Ontario hubs' },
+        { value: '2006', label: 'Operating Since' },
+        { value: '53ft', label: 'High-Cube Dry Vans' },
+        { value: '24/7', label: 'Live Dispatch' },
+        { value: 'GTA & ON', label: 'Core Coverage' },
       ]}
       primarySection={{
         num: '01',
         label: 'Capabilities',
-        title: 'What dry van covers',
-        desc: 'Enclosed trailers running the same lanes as the rest of our fleet, with the same dispatch team behind them.',
+        title: 'What dry van freight covers',
+        desc: 'Clean 53ft air-ride trailers running daily lanes across Ontario, backed by 24/7 dispatchers in Mississauga.',
         columns: 4,
         items: capabilities,
       }}
       gallery={[
-        { src: '/images/fleet-hero.webp', alt: 'Fleet lineup', span: 'main' },
-        { src: '/images/truck-dock.webp', alt: 'Loading at the dock' },
-        { src: '/images/truck-cab.webp', alt: 'Tractor unit' },
+        { src: '/images/dedicated-fleet-highway.webp', alt: 'Dry van on highway', span: 'main' },
+        { src: '/images/warehouse-crossdock-facility.webp', alt: 'Warehouse cross-dock facility' },
+        { src: '/images/dedicated-fleet-terminal.webp', alt: 'Terminal yard' },
       ]}
       darkSection={{
         num: '02',
-        label: 'What we carry',
-        title: 'Freight for enclosed transport',
-        desc: 'When the load does not need a Moffett or an open deck, it moves in a van — same schedule discipline either way.',
+        label: 'What We Carry',
+        title: 'Freight suited for enclosed transport',
+        desc: 'When cargo does not require flatbed or Moffett equipment, it moves in our dry vans with the same rigorous schedule discipline.',
         items: freight,
       }}
       cta={{
-        titleLine1: 'NEED VAN',
+        titleLine1: 'NEED ENCLOSED DRY VAN',
         titleAccent: 'CAPACITY?',
-        desc: 'Tell us the lane and the volume. We will quote full truckload or LTL, whichever fits the shipment.',
+        desc: 'Tell us the lane, weight, and volume. We will quote full truckload or LTL with fast same-day response.',
       }}
     />
   );
