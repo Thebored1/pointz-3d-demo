@@ -291,3 +291,15 @@
   color: var(--text-main);
 }
 .contact-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.contact-map-wrap {
+  padding-bottom: 5rem;
+}
+.contact-map {
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md, 8px);
+}
+.contact-map iframe {
+  display: block;
+}

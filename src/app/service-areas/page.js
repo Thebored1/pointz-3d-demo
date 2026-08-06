@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 const serviceRegions = [
-  { icon: 'MapPin', title: 'Greater Toronto Area (GTA)', desc: 'Mississauga (HQ), Brampton, Bolton, Toronto, Vaughan, Markham, Oakville, Burlington, and Milton. Daily Moffett delivery, dedicated fleet loops, and cross-docking.' },
+  { icon: 'MapPin', title: 'Greater Toronto Area (GTA)', desc: 'Mississauga (HQ), Brampton, Bolton, Toronto, Vaughan, Markham, Oakville, Burlington, Milton, Caledon, and Richmond Hill. Daily Moffett delivery, dedicated fleet loops, and cross-docking.' },
   { icon: 'Route', title: 'Golden Horseshoe & SW Ontario', desc: 'Hamilton, Kitchener-Waterloo, Cambridge, Guelph, Brantford, London, and Windsor. Manufacturing JIT supply, automotive corridors, and building supplies.' },
   { icon: 'Navigation', title: 'Eastern Ontario & Ottawa', desc: 'Oshawa, Belleville, Kingston, Cornwall, and Ottawa. Dedicated linehauls, retail distribution, and scheduled commercial linen routes.' },
   { icon: 'Globe', title: 'Cross-Border USA Freight', desc: 'USDOT 3983391 · MC 1492151 authority connecting Ontario manufacturing hubs to Michigan, New York, Ohio, and Pennsylvania.' },

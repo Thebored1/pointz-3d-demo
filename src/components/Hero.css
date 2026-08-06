@@ -237,7 +237,7 @@
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .hero {
     padding: 7rem var(--page-gutter) 3rem;
   }

@@ -19,6 +19,8 @@ import {
   Globe,
   Layers,
   Forklift,
+  Briefcase,
+  Zap,
 } from 'lucide-react';
 
 export const serviceIconMap = {
@@ -42,6 +44,8 @@ export const serviceIconMap = {
   Globe,
   Layers,
   Forklift,
+  Briefcase,
+  Zap,
 };
 
 export function ServiceIcon({ name, ...props }) {

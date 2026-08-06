@@ -11,12 +11,12 @@ const frameSrc = index =>
   `/assets/frames/frame_${index.toString().padStart(4, '0')}.webp`;
 
 export default function SplitLayout({ children }) {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(null);
   const canvasRef = useRef(null);
   const imagesRef = useRef([]);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    const checkMobile = () => setIsMobile(window.innerWidth < 1200);
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
@@ -125,6 +125,10 @@ export default function SplitLayout({ children }) {
       cancelAnimationFrame(animationFrameId);
     };
   }, [isMobile]);
+
+  if (isMobile === null) {
+    return <div className="mobile-layout"><Navbar /><div className="mobile-content">{children}</div></div>;
+  }
 
   if (isMobile) {
     return (

@@ -31,7 +31,7 @@
   --font-mono: var(--font-space-mono), Courier, monospace;
 
   /* Type scale — use by role, not by feel */
-  --fs-hero: clamp(2.5rem, 5vw, 3.5rem);       /* page heroes only */
+  --fs-hero: clamp(2.25rem, 3.5vw, 2.75rem);       /* page heroes only */
   --fs-heading: clamp(1.75rem, 3.2vw, 2.75rem); /* section h2 */
   --fs-title: clamp(1.125rem, 1.4vw, 1.35rem);  /* card / h3 titles */
   --fs-body: 1.0625rem;                         /* body copy */
@@ -62,7 +62,7 @@
   padding-top: 72px;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1200px) {
   .mobile-layout,
   .mobile-content {
     display: none;
@@ -106,18 +106,9 @@
   overflow-x: hidden;
 }
 
-@media (max-width: 1024px) {
-  .content-left {
-    width: 55%;
-    max-width: 55vw;
-  }
-}
-
 @media (max-width: 768px) {
-  .content-left {
-    width: 100%;
-    max-width: 100vw;
-    border-right: none;
+  .page-wrapper {
+    padding: 2rem var(--page-gutter) 3rem;
   }
 }
 

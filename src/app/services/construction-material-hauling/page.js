@@ -19,6 +19,8 @@ const applications = [
   { icon: 'CheckCircle', title: 'Precast Concrete & Masonry', desc: 'Pallets of brick, stone, concrete steps, and block placed safely along building perimeter lines.' },
   { icon: 'CheckCircle', title: 'Structural Steel & Rebar', desc: 'Heavy open-deck transport secured to MTO/DOT standards and unloaded with precision.' },
   { icon: 'CheckCircle', title: 'Commercial Glazing & Windows', desc: 'Crated glass units and architectural metal delivered with cushioned, stable transport.' },
+  { icon: 'CheckCircle', title: 'Landscape Products & Interlock', desc: 'Sod, aggregate, pavers, and interlock blocks delivered and spotted on site, dock or no dock.' },
+  { icon: 'CheckCircle', title: 'HVAC Equipment', desc: 'RTUs, chillers, and mechanical equipment delivered on schedule with Moffett offloading.' },
 ];
 
 export default function ConstructionMaterialHaulingPage() {

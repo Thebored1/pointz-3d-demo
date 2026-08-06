@@ -84,6 +84,7 @@ export default function ServiceEditorialPage({
   darkSection,
   processSection,
   steps = defaultSteps,
+  faqSection,
   cta,
   relatedKey,
 }) {
@@ -305,6 +306,35 @@ export default function ServiceEditorialPage({
           </div>
         </section>
       </div>
+
+      {faqSection ? (
+        <section className="sv-ed-faq">
+          <div className="pz-container">
+            <SectionHeader
+              num={faqSection.num}
+              label={faqSection.label}
+              title={faqSection.title}
+              desc={faqSection.desc}
+            />
+            <div className="sv-ed-faq-list">
+              {faqSection.items.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  className="sv-ed-faq-item"
+                  variants={fadeUpSoft}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={viewportOnce}
+                  custom={i}
+                >
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {related.length ? (
         <section className="sv-ed-related">

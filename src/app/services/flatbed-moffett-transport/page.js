@@ -58,6 +58,16 @@ export default function FlatbedMoffettTransportPage() {
         desc: 'From high-density residential subdivisions to active civil infrastructure projects across Ontario and cross-border lanes.',
         items: applications,
       }}
+      faqSection={{
+        num: '03',
+        label: 'FAQ',
+        title: 'Moffett delivery questions, answered',
+        desc: 'The two most common questions shippers ask before their first Moffett delivery.',
+        items: [
+          { title: "What's the maximum weight your Moffett units can lift?", desc: 'Capacity depends on load dimensions — share your freight details when requesting a quote and we\u2019ll confirm.' },
+          { title: 'Can you deliver to a site with no paved access?', desc: 'Yes — this is one of the most common reasons clients choose Moffett delivery over a standard carrier.' },
+        ],
+      }}
       cta={{
         titleLine1: 'HAVE A DELIVERY SITE',
         titleAccent: 'WITH NO UNLOADING GEAR?',
