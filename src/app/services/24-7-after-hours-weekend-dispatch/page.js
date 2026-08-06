@@ -34,7 +34,7 @@ export default function AfterHoursDispatchPage() {
       heroAlt="Point Zero Road Lines transport truck operating at night"
       stats={[
         { value: '24/7/365', label: 'Live Human Dispatch' },
-        { value: '0', label: 'Voicemail Black Holes' },
+        { value: '100%', label: 'Live Human Answer' },
         { value: 'Weekend', label: 'Full Fleet Operations' },
         { value: 'Overnight', label: 'Linehaul Coverage' },
       ]}

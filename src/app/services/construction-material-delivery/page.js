@@ -31,7 +31,7 @@ export default function ConstructionMaterialDeliveryPage() {
       heroImage="/images/construction-blue-hero.webp"
       heroAlt="Point Zero Road Lines delivering building materials on site"
       stats={[
-        { value: '0', label: 'Site Crane / Dock Needed' },
+        { value: '100%', label: 'Self-Unloading Delivery' },
         { value: '2006', label: 'Operating Since' },
         { value: '48-53ft', label: 'Flatbed & Step-Deck' },
         { value: 'All-Terrain', label: 'Moffett Offloading' },

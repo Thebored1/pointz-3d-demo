@@ -33,7 +33,7 @@ export default function FlatbedMoffettTransportPage() {
       heroImage="/images/moffett-yard-front.webp"
       heroAlt="Point Zero Road Lines Moffett flatbed truck ready for delivery"
       stats={[
-        { value: '0', label: 'Site Equipment Needed' },
+        { value: '100%', label: 'Self-Unloading Fleet' },
         { value: '2006', label: 'Operating Since' },
         { value: '24/7', label: 'Live Dispatch' },
         { value: '48-53ft', label: 'Flatbed & Step-Deck' },

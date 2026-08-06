@@ -34,7 +34,7 @@ export default function BuildingMaterialDistributionPage() {
         { value: '2006', label: 'Operating Since' },
         { value: '100%', label: 'Self-Unloading' },
         { value: '24/7', label: 'Dispatch Support' },
-        { value: '0', label: 'Site Equipment Needed' },
+        { value: 'GTA & ON', label: 'Daily Builder Routes' },
       ]}
       primarySection={{
         num: '01',
