@@ -24,7 +24,7 @@ export default function VideoSection() {
         >
           <video 
             src="/point-zero-promo.mp4" 
-            poster="/images/moffett-yard-front.webp"
+            poster="/images/about-fleet-yard.webp"
             controls
             playsInline
             preload="metadata"
