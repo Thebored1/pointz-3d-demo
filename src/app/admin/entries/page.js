@@ -2,10 +2,9 @@ import Link from 'next/link';
 import { requireAdmin } from '../../../lib/admin';
 import { getSupabaseAdmin } from '../../../lib/supabase';
 import { adminLogout } from '../actions';
+import EntryList from './EntryList';
 import '../admin.css';
 
-// Read-only by design: this page and its helpers only ever SELECT. There is no
-// edit, delete, or export action anywhere in the admin panel.
 const FIELDS = [
   { key: 'created_at', label: 'Received' },
   { key: 'name', label: 'Name' },
@@ -19,18 +18,6 @@ const FIELDS = [
   { key: 'timeline', label: 'Timeline' },
   { key: 'details', label: 'Details' },
 ];
-
-function formatCell(row, { key }) {
-  const value = row[key];
-  if (value === null || value === undefined || value === '') return '—';
-  if (key === 'created_at') {
-    return new Date(value).toLocaleString('en-CA', {
-      dateStyle: 'medium',
-      timeStyle: 'short',
-    });
-  }
-  return value;
-}
 
 export default async function AdminEntriesPage() {
   await requireAdmin();
@@ -59,8 +46,8 @@ export default async function AdminEntriesPage() {
       <main className="admin-main">
         <h1 className="admin-title">Quote &amp; contact requests</h1>
         <p className="admin-sub">
-          Submissions from the get-a-quote and contact forms land in the same
-          table — contact messages are tagged with &ldquo;Contact:&rdquo; in the Service column.
+          Submissions from the get-a-quote and contact forms. Contact messages
+          are tagged with &ldquo;Contact:&rdquo;.
         </p>
 
         <div className="admin-stats">
@@ -68,13 +55,11 @@ export default async function AdminEntriesPage() {
             <div className="admin-stat-value">
               {error ? '—' : rows.length}
             </div>
-            <div className="admin-stat-label">Showing</div>
+            <div className="admin-stat-label">Total</div>
           </div>
           {error ? (
             <div className="admin-stat">
-              <div className="admin-stat-value" style={{ color: '#8a1f1f' }}>
-                Error
-              </div>
+              <div className="admin-stat-value" style={{ color: '#8a1f1f' }}>Error</div>
               <div className="admin-stat-label">Loading failed</div>
             </div>
           ) : null}
@@ -90,39 +75,8 @@ export default async function AdminEntriesPage() {
             Could not load entries ({error.message}). Check the Supabase
             connection and try again.
           </div>
-        ) : rows.length === 0 ? (
-          <div className="admin-table-wrap">
-            <div className="admin-empty">
-              <strong>No submissions yet</strong>
-              Quote and contact requests will appear here as they come in.
-            </div>
-          </div>
         ) : (
-          <div className="admin-table-wrap">
-            <table className="admin-table">
-              <thead>
-                <tr>
-                  {FIELDS.map((f) => (
-                    <th key={f.key}>{f.label}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((row) => (
-                  <tr key={row.id}>
-                    {FIELDS.map((f) => (
-                      <td
-                        key={f.key}
-                        className={f.key === 'details' ? 'cell-details' : undefined}
-                      >
-                        {formatCell(row, f)}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <EntryList rows={rows} />
         )}
       </main>
     </div>
