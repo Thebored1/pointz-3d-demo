@@ -31,7 +31,7 @@
   --font-mono: var(--font-space-mono), Courier, monospace;
 
   /* Type scale — use by role, not by feel */
-  --fs-hero: clamp(2.5rem, 5vw, 4.25rem);       /* page heroes only */
+  --fs-hero: clamp(2.5rem, 5vw, 3.5rem);       /* page heroes only */
   --fs-heading: clamp(1.75rem, 3.2vw, 2.75rem); /* section h2 */
   --fs-title: clamp(1.125rem, 1.4vw, 1.35rem);  /* card / h3 titles */
   --fs-body: 1.0625rem;                         /* body copy */

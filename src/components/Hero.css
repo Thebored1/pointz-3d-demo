@@ -66,6 +66,8 @@
   color: var(--text-main);
   font-weight: 700;
   text-transform: uppercase;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-title-accent {
