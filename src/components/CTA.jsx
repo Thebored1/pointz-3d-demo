@@ -21,7 +21,7 @@ export default function CTA() {
               Get a carrier that plans around your schedule, not the other way around.
             </h2>
             <p className="cta-desc">
-              Request a free freight quote or reach our dispatch team directly. Operating since 2006 · USDOT 3983391 · MC 1492151.
+              Request a free freight quote or reach our dispatch team directly. Operating since 2006 · CVOR 158-303-152 · MC 1492151.
             </p>
           </motion.div>
 

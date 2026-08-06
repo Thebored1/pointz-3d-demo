@@ -34,7 +34,7 @@ export default function Footer() {
               />
             </Link>
             <p className="footer-desc">
-              A dedicated transportation company headquartered in Mississauga, Ontario, serving the GTA and Southern Ontario since 2006. USDOT 3983391 · MC 1492151 · Licensed &amp; Insured.
+              A dedicated transportation company headquartered in Mississauga, Ontario, serving the GTA and Southern Ontario since 2006. CVOR 158-303-152 · MC 1492151 · Licensed &amp; Insured.
             </p>
             <div className="footer-socials">
               <a href="https://www.instagram.com/pointzeroroadlines/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">

@@ -8,7 +8,7 @@ const reasons = [
   { label: 'Dedicated Capacity', value: 'Assigned trucks, Moffett units, and drivers — never competing for shared spot-market space.' },
   { label: 'Integrated Warehousing', value: 'Warehouse and cross-dock access in Mississauga under the same operation as our fleet.' },
   { label: '24/7 Dispatch & Weekends', value: 'Round-the-clock live dispatch and weekend delivery as standard, not an afterthought.' },
-  { label: 'Licensed & Insured Carrier', value: 'Operating since 2006 under USDOT 3983391 · MC 1492151 for domestic and cross-border freight.' },
+  { label: 'Licensed & Insured Carrier', value: 'Operating since 2006 under CVOR 158-303-152 · MC 1492151 for domestic and cross-border freight.' },
   { label: 'Strict Safety & Compliance', value: 'Drivers held to Hours of Service, MTO, and HTA compliance standards on every single load.' },
 ];
 

@@ -55,7 +55,7 @@ export default function Hero() {
             MISSISSAUGA HQ · SERVING GTA &amp; SOUTHERN ONTARIO
           </motion.div>
           <motion.div className="hero-version" variants={fadeUpVariants}>
-            EST. 2006 · USDOT 3983391
+            EST. 2006 · CVOR 158-303-152
           </motion.div>
         </div>
 
