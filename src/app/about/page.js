@@ -23,7 +23,7 @@ export default function AboutPage() {
 
   const storySteps = [
     { year: '2006', title: 'Founded with one clear promise', desc: 'Began as a focused transportation carrier serving businesses in the Greater Toronto Area with dedicated capacity.' },
-    { year: '2014', title: 'Moffett forklifts added to fleet', desc: 'First truck-mounted forklifts deployed so crews could unload anywhere on site — dock or no dock.' },
+    { year: '2012', title: 'Moffett forklifts added to fleet', desc: 'First truck-mounted forklifts deployed so crews could unload anywhere on site — dock or no dock.' },
     { year: '2020', title: 'Mississauga terminal & cross-dock', desc: 'Warehouse and cross-dock space opened at 1566 Bonhill Road, consolidating staging and transportation under one roof.' },
     { year: '2026', title: 'Comprehensive Ontario logistics', desc: 'Moffett delivery, dedicated fleet, flatbed, warehousing, healthcare linen, and 24/7 dispatch.' },
   ];
