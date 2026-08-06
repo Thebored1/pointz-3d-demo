@@ -22,14 +22,17 @@ export default function VideoSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <iframe 
-            src="https://www.youtube.com/embed/4aWGrLXJcCU" 
-            title="Point Zero Road Lines Promo Video"
-            frameBorder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen 
+          <video 
+            src="/point-zero-promo.mp4" 
+            poster="/images/moffett-yard-front.webp"
+            controls
+            playsInline
+            preload="metadata"
             className="promo-video"
-          ></iframe>
+          >
+            <source src="/point-zero-promo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </motion.div>
       </div>
     </section>

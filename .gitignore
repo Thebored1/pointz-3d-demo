@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw large uploads (>100MB)
+public/images/new2kimages/*.mp4
