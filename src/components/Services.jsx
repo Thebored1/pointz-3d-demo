@@ -34,10 +34,12 @@ export default function Services() {
             return (
               <Link key={i} href={s.href} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <motion.div className="service-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
-                  <Icon size={20} strokeWidth={1.5} />
-                  <span className="service-id">{s.id}</span>
+                  <div className="service-card-top">
+                    <span className="service-id">{s.id}</span>
+                    <Icon size={18} strokeWidth={1.5} className="service-icon" />
+                  </div>
                   <h3>{s.title}</h3>
-                  <p style={{fontSize: 'var(--fs-small)', lineHeight: 1.6, color: 'var(--text-muted)', margin: 0}}>{s.desc}</p>
+                  <p className="service-desc">{s.desc}</p>
                 </motion.div>
               </Link>
             );
