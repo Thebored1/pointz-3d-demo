@@ -19,6 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
@@ -41,15 +42,10 @@
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
-.hero-version {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  color: var(--accent, #00b4d8);
-  padding: 0.4rem 1rem;
-  border: 1px solid var(--accent, #00b4d8);
-  border-radius: var(--radius-sm);
-  font-weight: 600;
+.hero-seal-wrapper {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .mask-container {

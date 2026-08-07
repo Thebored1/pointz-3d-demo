@@ -64,6 +64,11 @@
   color: var(--text-muted);
 }
 
+.about-milestone-box {
+  margin: 0.5rem 0;
+  display: flex;
+}
+
 .about-stats {
   display: flex;
   gap: 2.5rem;

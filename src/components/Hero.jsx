@@ -2,6 +2,7 @@
 import React from 'react';
 import { ArrowRight, ArrowDownRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import MilestoneSeal from './MilestoneSeal';
 import './Hero.css';
 
 export default function Hero() {
@@ -54,8 +55,8 @@ export default function Hero() {
             <span className="label-dot"></span>
             MISSISSAUGA HQ · SERVING GTA &amp; ONTARIO
           </motion.div>
-          <motion.div className="hero-version" variants={fadeUpVariants}>
-            EST. 2006
+          <motion.div className="hero-seal-wrapper" variants={fadeUpVariants}>
+            <MilestoneSeal variant="seal" size="md" />
           </motion.div>
         </div>
 
@@ -88,8 +89,8 @@ export default function Hero() {
 
         <motion.div className="hero-stats" variants={fadeUpVariants}>
           <div className="hero-stat">
-            <span className="stat-value">2006</span>
-            <span className="stat-label">Operating Since</span>
+            <span className="stat-value">EST. 2006</span>
+            <span className="stat-label">20 Years of Service</span>
           </div>
           <div className="hero-stat-divider"></div>
           <div className="hero-stat">

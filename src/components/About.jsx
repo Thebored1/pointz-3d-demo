@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import MilestoneSeal from './MilestoneSeal';
 import './About.css';
 
 export default function About() {
@@ -22,14 +23,19 @@ export default function About() {
           <motion.div className="about-text" initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
             <p>Point Zero Road Lines is a DOT-registered carrier headquartered in Mississauga, serving the GTA and Ontario. Since 2006, we’ve built our business around dedicated capacity rather than spot-market trucking — your freight isn’t sharing a truck with five other shippers’ priorities.</p>
             <p>Our truck-mounted Moffett forklifts let us deliver directly to construction sites, commercial projects, and residential addresses with no loading dock and no forklift waiting. That’s paired with a flatbed fleet, warehouse and cross-dock space, and a dispatch team reachable 24/7.</p>
+            
+            <div className="about-milestone-box">
+              <MilestoneSeal variant="emblem" size="md" />
+            </div>
+
             <div className="about-stats">
               <div className="about-stat">
                 <span className="about-stat-value">Mississauga</span>
                 <span className="about-stat-label">Headquarters</span>
               </div>
               <div className="about-stat">
-                <span className="about-stat-value">Since 2006</span>
-                <span className="about-stat-label">DOT-Registered</span>
+                <span className="about-stat-value">Est. 2006</span>
+                <span className="about-stat-label">20 Years of Service</span>
               </div>
             </div>
           </motion.div>
