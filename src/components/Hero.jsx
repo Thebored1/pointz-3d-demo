@@ -53,7 +53,11 @@ export default function Hero() {
         <div className="hero-label-row">
           <motion.div className="hero-label" variants={fadeUpVariants}>
             <span className="label-dot"></span>
-            MISSISSAUGA HQ · SERVING GTA &amp; ONTARIO
+            <span className="hero-label-text">
+              <span className="label-hq">MISSISSAUGA HQ</span>
+              <span className="label-sep">·</span>
+              <span className="label-serving">SERVING GTA &amp; ONTARIO</span>
+            </span>
           </motion.div>
           <motion.div className="hero-seal-wrapper" variants={fadeUpVariants}>
             <MilestoneSeal variant="seal" size="md" />
