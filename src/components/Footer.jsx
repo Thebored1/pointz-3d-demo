@@ -82,7 +82,7 @@ export default function Footer() {
             <h4>Mississauga HQ</h4>
             <div className="footer-contact-list">
               <a href="tel:+19052910325" className="contact-link">(905) 291-0325</a>
-              <a href="mailto:info@pointzeroroadlines.com" className="contact-link">info@pointzeroroadlines.com</a>
+              <a href="mailto:info@pzrls.com" className="contact-link">info@pzrls.com</a>
               <span>1566 Bonhill Road, Mississauga, ON L5T 1C7</span>
               <span style={{ fontSize: '0.8125rem', opacity: 0.8, marginTop: '0.25rem' }}>
                 24/7 Dispatch • Weekend Pick-up &amp; Delivery

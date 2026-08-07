@@ -18,7 +18,7 @@ export const CONTACT_INFO = {
   country: 'CA',
   phone: '(905) 291-0325',
   phoneRaw: '+19052910325',
-  email: 'info@pointzeroroadlines.com',
+  email: 'info@pzrls.com',
   hours: '24/7 dispatch • Weekend pick-up & delivery available',
   usdot: 'USDOT 3983391',
   mc: 'MC 1492151',

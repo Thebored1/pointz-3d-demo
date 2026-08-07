@@ -60,7 +60,7 @@ export default function CTA() {
             <Mail size={18} strokeWidth={1.5} />
             <div className="contact-info">
               <span className="contact-label">Email</span>
-              <span className="contact-value">info@pointzeroroadlines.com</span>
+              <span className="contact-value">info@pzrls.com</span>
             </div>
           </div>
           <div className="contact-item">

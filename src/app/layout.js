@@ -74,7 +74,7 @@ const localBusinessSchema = {
       description: SITE_DESCRIPTION,
       url: SITE_URL,
       telephone: "+1-905-291-0325",
-      email: "info@pointzeroroadlines.com",
+      email: "info@pzrls.com",
       parentOrganization: { "@id": `${SITE_URL}/#organization` },
       address: {
         "@type": "PostalAddress",

@@ -33,7 +33,8 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
 }
 
 .service-card {
@@ -45,10 +46,15 @@
   border-right: 1px solid var(--border-color);
   transition: background 0.3s ease;
   cursor: pointer;
+  height: 100%;
 }
 
 .service-card:nth-child(3n) {
   border-right: none;
+}
+
+.service-card:nth-child(n+4) {
+  border-bottom: none;
 }
 
 .service-card:hover {
@@ -88,6 +94,7 @@
 
   .services-grid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 
   .service-card {
