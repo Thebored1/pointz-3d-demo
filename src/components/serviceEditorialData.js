@@ -234,6 +234,11 @@ export const DEFAULT_IMAGE_SET = {
 };
 
 export const IMAGE_SETS = {
+  about: {
+    hero: img('about-hero'),
+    gallery: [img('about-fleet-yard', 'main'), img('home-driver-cabin'), img('home-fleet-manager')],
+    cta: img('about-fleet-lineup'),
+  },
   services: {
     hero: img('about-fleet-lineup'),
     gallery: [img('truck-loaded', 'main'), img('warehouse-crossdock-fleet2'), img('home-driver-cabin')],
