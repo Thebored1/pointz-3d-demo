@@ -59,7 +59,7 @@ export default function FAQPage() {
           items: faqItems,
         }}
         gallery={[
-          { src: '/images/moffett-yard-front.webp', alt: 'Moffett flatbed truck', span: 'main' },
+          { src: '/images/warehouse-crossdock-fleet2.webp', alt: 'Moffett flatbed truck', span: 'main' },
           { src: '/images/warehouse-crossdock-facility.webp', alt: 'Mississauga terminal facility' },
           { src: '/images/dedicated-fleet-highway.webp', alt: 'Highway freight transport' },
         ]}

@@ -48,7 +48,7 @@ export default function ExpeditedSameDayFreightPage() {
       }}
       gallery={[
         { src: '/images/dedicated-fleet-highway.webp', alt: 'Expedited transport truck on highway', span: 'main' },
-        { src: '/images/moffett-yard-front.webp', alt: 'Fast yard staging' },
+        { src: '/images/warehouse-crossdock-fleet2.webp', alt: 'Fast yard staging' },
         { src: '/images/warehouse-crossdock-docks.webp', alt: 'Immediate dock transfers' },
       ]}
       darkSection={{

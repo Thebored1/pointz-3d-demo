@@ -229,40 +229,40 @@ const img = (slug, span) => ({
 
 export const DEFAULT_IMAGE_SET = {
   hero: img('about-fleet-lineup'),
-  gallery: [img('truck-loaded', 'main'), img('moffett-yard-front'), img('home-driver-cabin')],
+  gallery: [img('truck-loaded', 'main'), img('warehouse-crossdock-fleet2'), img('home-driver-cabin')],
   cta: img('about-fleet-yard'),
 };
 
 export const IMAGE_SETS = {
   services: {
     hero: img('about-fleet-lineup'),
-    gallery: [img('truck-loaded', 'main'), img('moffett-yard-front'), img('home-driver-cabin')],
+    gallery: [img('truck-loaded', 'main'), img('warehouse-crossdock-fleet2'), img('home-driver-cabin')],
     cta: img('about-fleet-yard'),
   },
   'flatbed-moffett-transport': {
-    hero: img('moffett-yard-front'),
-    gallery: [img('moffett-yard-rear', 'main'), img('moffett-unloading-forklift'), img('moffett-construction-unload')],
-    cta: img('moffett-yard-front'),
+    hero: img('warehouse-crossdock-fleet2'),
+    gallery: [img('construction-delivery-site', 'main'), img('warehouse-crossdock-docks'), img('home-driver-cabin')],
+    cta: img('flatbed-construction-haul'),
   },
   'moffett-delivery': {
-    hero: img('moffett-yard-front'),
-    gallery: [img('moffett-yard-rear', 'main'), img('moffett-unloading-forklift'), img('moffett-construction-unload')],
-    cta: img('moffett-yard-front'),
+    hero: img('moffett-construction-unload'),
+    gallery: [img('moffett-yard-rear', 'main'), img('moffett-unloading-forklift'), img('warehouse-crossdock-fleet2')],
+    cta: img('flatbed-highway-ad'),
   },
   'dedicated-fleet-services': {
     hero: img('dedicated-fleet-rows'),
     gallery: [img('dedicated-fleet-terminal', 'main'), img('dedicated-fleet-highway'), img('dedicated-fleet-blue')],
-    cta: img('dedicated-fleet-rows'),
+    cta: img('about-fleet-lineup'),
   },
   'dedicated-fleet': {
     hero: img('dedicated-fleet-rows'),
     gallery: [img('dedicated-fleet-terminal', 'main'), img('dedicated-fleet-highway'), img('dedicated-fleet-blue')],
-    cta: img('dedicated-fleet-rows'),
+    cta: img('about-fleet-lineup'),
   },
   'flatbed-transportation': {
     hero: img('flatbed-highway-ad'),
     gallery: [img('flatbed-construction-haul', 'main'), img('flatbed-blue-transport'), img('flatbed-road')],
-    cta: img('flatbed-construction-haul'),
+    cta: img('about-fleet-lineup'),
   },
   'dry-van-transportation': {
     hero: img('dedicated-fleet-rows'),
@@ -282,12 +282,12 @@ export const IMAGE_SETS = {
   'construction-material-hauling': {
     hero: img('construction-blue-hero'),
     gallery: [img('construction-delivery-site', 'main'), img('construction-materials-crane'), img('construction-site-unload')],
-    cta: img('construction-delivery-site'),
+    cta: img('about-fleet-lineup'),
   },
   'construction-material-delivery': {
     hero: img('construction-blue-hero'),
     gallery: [img('construction-delivery-site', 'main'), img('construction-materials-crane'), img('construction-site-unload')],
-    cta: img('construction-delivery-site'),
+    cta: img('about-fleet-lineup'),
   },
   'building-material-distribution': {
     hero: img('construction-delivery-site'),
@@ -315,23 +315,23 @@ export const IMAGE_SETS = {
     cta: img('dedicated-fleet-rows'),
   },
   'last-mile-delivery': {
-    hero: img('moffett-yard-rear'),
+    hero: img('flatbed-construction-haul'),
     gallery: [img('moffett-unloading-forklift', 'main'), img('warehouse-crossdock-docks'), img('moffett-construction-unload')],
-    cta: img('moffett-yard-front'),
+    cta: img('warehouse-crossdock-fleet2'),
   },
   'last-mile-retail-delivery': {
     hero: img('moffett-yard-rear'),
     gallery: [img('moffett-unloading-forklift', 'main'), img('warehouse-crossdock-docks'), img('moffett-construction-unload')],
-    cta: img('moffett-yard-front'),
+    cta: img('warehouse-crossdock-fleet2'),
   },
   'expedited-same-day-freight': {
     hero: img('flatbed-highway-ad'),
-    gallery: [img('dedicated-fleet-highway', 'main'), img('moffett-yard-front'), img('warehouse-crossdock-docks')],
+    gallery: [img('dedicated-fleet-highway', 'main'), img('warehouse-crossdock-fleet2'), img('warehouse-crossdock-docks')],
     cta: img('dedicated-fleet-rows'),
   },
   'expedited-same-day': {
     hero: img('flatbed-highway-ad'),
-    gallery: [img('dedicated-fleet-highway', 'main'), img('moffett-yard-front'), img('warehouse-crossdock-docks')],
+    gallery: [img('dedicated-fleet-highway', 'main'), img('warehouse-crossdock-fleet2'), img('warehouse-crossdock-docks')],
     cta: img('dedicated-fleet-rows'),
   },
   '24-7-after-hours-weekend-dispatch': {
@@ -352,11 +352,11 @@ export const IMAGE_SETS = {
   'service-areas': {
     hero: img('about-fleet-lineup'),
     gallery: [img('about-fleet-yard', 'main'), img('dedicated-fleet-highway'), img('flatbed-highway-ad')],
-    cta: img('about-fleet-lineup'),
+    cta: img('dedicated-fleet-rows'),
   },
   'safety-compliance': {
     hero: img('home-fleet-manager'),
-    gallery: [img('home-driver-cabin', 'main'), img('moffett-yard-front'), img('dedicated-fleet-rows')],
+    gallery: [img('home-driver-cabin', 'main'), img('warehouse-crossdock-fleet2'), img('dedicated-fleet-rows')],
     cta: img('about-fleet-lineup'),
   },
 };

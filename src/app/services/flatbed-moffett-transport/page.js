@@ -30,7 +30,7 @@ export default function FlatbedMoffettTransportPage() {
       titleLine1="TRUCK-MOUNTED MOFFETT DELIVERY."
       titleAccent="NO DOCK. NO FORKLIFT. NO PROBLEM."
       description="Point Zero Road Lines pairs 48ft and 53ft flatbeds, step decks, and roll-tite trailers with truck-mounted Moffett forklifts that ride on the rear and unload directly at the job site, yard, or residential address. No waiting for on-site equipment, no offloading delays."
-      heroImage="/images/moffett-yard-front.webp"
+      heroImage="/images/warehouse-crossdock-fleet2.webp"
       heroAlt="Point Zero Road Lines Moffett flatbed truck ready for delivery"
       stats={[
         { value: '100%', label: 'Self-Unloading Fleet' },

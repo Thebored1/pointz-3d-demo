@@ -28,7 +28,7 @@ export default function MoffettDeliveryPage() {
       titleLine1="TRUCK-MOUNTED MOFFETT."
       titleAccent="NO DOCK. NO PROBLEM."
       description="Our truck-mounted Moffett forklifts travel with the load and unload on arrival — so freight reaches construction sites, commercial projects, and residential addresses that have no loading dock and no forklift waiting."
-      heroImage="/images/moffett-yard-front.webp"
+      heroImage="/images/warehouse-crossdock-fleet2.webp"
       heroAlt="Point Zero Road Lines Moffett flatbed truck ready for delivery"
       stats={[
         { value: '2006', label: 'Operating Since' },
