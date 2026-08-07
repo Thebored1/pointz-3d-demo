@@ -29,7 +29,7 @@ export default function BlogPage() {
       titleLine1="FREIGHT INSIGHTS."
       titleAccent="PRACTICAL LOGISTICS GUIDES."
       description="Read actionable articles, operational best practices, and equipment guides written by our transportation specialists in Mississauga."
-      heroImage="/images/fleet-hero.webp"
+      heroImage="/images/about-fleet-lineup.webp"
       heroAlt="Point Zero Road Lines fleet ready for transport"
       stats={[
         { value: '2006', label: 'Industry Experience Since' },

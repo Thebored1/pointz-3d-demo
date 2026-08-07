@@ -42,7 +42,7 @@ export default function FAQPage() {
         titleLine1="COMMON QUESTIONS."
         titleAccent="STRAIGHT ANSWERS."
         description="Learn how Point Zero Road Lines handles specialized Moffett delivery, dedicated fleet operations, warehousing, expedited transport, and 24/7 dispatch across Ontario."
-        heroImage="/images/fleet-hero.webp"
+        heroImage="/images/about-fleet-lineup.webp"
         heroAlt="Point Zero Road Lines fleet lined up"
         stats={[
           { value: '2006', label: 'Operating Since' },

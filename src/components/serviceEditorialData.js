@@ -228,7 +228,7 @@ const img = (slug, span) => ({
 });
 
 export const DEFAULT_IMAGE_SET = {
-  hero: img('services-hero'),
+  hero: img('about-fleet-lineup'),
   gallery: [img('truck-loaded', 'main'), img('warehouse-crossdock-fleet2'), img('home-driver-cabin')],
   cta: img('about-fleet-yard'),
 };
@@ -240,7 +240,7 @@ export const IMAGE_SETS = {
     cta: img('about-fleet-yard'),
   },
   services: {
-    hero: img('services-hero'),
+    hero: img('about-fleet-lineup'),
     gallery: [img('truck-loaded', 'main'), img('warehouse-crossdock-fleet2'), img('home-driver-cabin')],
     cta: img('about-fleet-yard'),
   },
