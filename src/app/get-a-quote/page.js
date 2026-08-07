@@ -39,7 +39,7 @@ export default function GetAQuotePage() {
         titleAccent="DIRECT, TRANSPARENT RATES."
         description="Tell us your lane, freight type, and schedule. Our Mississauga dispatch team provides direct, transparent rates across Ontario with zero hidden fees and no spot-broker runarounds."
         scrollLabel="SCROLL TO QUOTE FORM"
-        heroImage="/images/about-fleet-lineup.webp"
+        heroImage="/images/fleet-lineup.webp"
         heroAlt="Point Zero Road Lines fleet lineup in Ontario"
         heroPosition="center"
       />

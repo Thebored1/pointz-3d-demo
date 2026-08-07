@@ -143,6 +143,7 @@ const ALT = {
   'truck-loaded': 'A loaded Point Zero Road Lines flatbed truck in the yard',
   'specialty-kenworth': 'A Point Zero Road Lines specialty flatbed tractor',
   // New page-wise photography
+  'fleet-lineup': 'Point Zero Road Lines fleet lined up under a clear blue sky',
   'about-fleet-lineup': 'Point Zero Road Lines fleet lined up under a clear blue sky',
   'about-fleet-yard': 'Point Zero Road Lines fleet parked at the terminal yard',
   'home-fleet-manager': 'Point Zero Road Lines fleet manager inspecting transport trucks',
@@ -195,6 +196,7 @@ const POS = {
   'urban-winter': '46% 56%',
   'urban-flatbed': '40% 56%',
   // New page-wise focal points
+  'fleet-lineup': '50% 55%',
   'about-fleet-lineup': '50% 55%',
   'about-fleet-yard': '50% 50%',
   'home-fleet-manager': '50% 52%',
@@ -228,7 +230,7 @@ const img = (slug, span) => ({
 });
 
 export const DEFAULT_IMAGE_SET = {
-  hero: img('about-fleet-lineup'),
+  hero: img('fleet-lineup'),
   gallery: [img('truck-loaded', 'main'), img('warehouse-crossdock-fleet2'), img('home-driver-cabin')],
   cta: img('about-fleet-yard'),
 };
@@ -240,7 +242,7 @@ export const IMAGE_SETS = {
     cta: img('about-fleet-yard'),
   },
   services: {
-    hero: img('about-fleet-lineup'),
+    hero: img('fleet-lineup'),
     gallery: [img('truck-loaded', 'main'), img('warehouse-crossdock-fleet2'), img('home-driver-cabin')],
     cta: img('about-fleet-yard'),
   },
