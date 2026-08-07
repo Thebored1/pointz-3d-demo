@@ -13,8 +13,10 @@
   opacity: 0.85;
 }
 
+.hero-title,
 .pz-hero-title,
 .contact-hero-title,
+.faq-title,
 .svp-detail-title {
   font-family: var(--font-display);
   font-size: var(--fs-hero);
@@ -28,33 +30,43 @@
 }
 
 @media (max-width: 1200px) {
+  .hero-title,
   .pz-hero-title,
   .contact-hero-title,
+  .faq-title,
   .svp-detail-title {
     font-size: clamp(1.85rem, 3.5vw, 2.5rem);
   }
 }
 
 @media (max-width: 900px) {
+  .hero-title,
   .pz-hero-title,
   .contact-hero-title,
+  .faq-title,
   .svp-detail-title {
     font-size: clamp(1.75rem, 4.5vw, 2.35rem);
+    margin-bottom: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
+  .hero-title,
   .pz-hero-title,
   .contact-hero-title,
+  .faq-title,
   .svp-detail-title {
     font-size: clamp(1.65rem, 5.8vw, 2.2rem);
     line-height: 1.08;
+    margin-bottom: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
+  .hero-title,
   .pz-hero-title,
   .contact-hero-title,
+  .faq-title,
   .svp-detail-title {
     font-size: clamp(1.45rem, 6.4vw, 1.85rem);
     line-height: 1.1;
