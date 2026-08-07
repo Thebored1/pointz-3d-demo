@@ -31,9 +31,9 @@
   --font-mono: var(--font-space-mono), Courier, monospace;
 
   /* Type scale — fluid responsive across all viewports */
-  --fs-hero: clamp(1.35rem, 3.2vw, 2.75rem);       /* page heroes only */
-  --fs-heading: clamp(1.2rem, 2.8vw, 2.5rem);       /* section h2 */
-  --fs-title: clamp(1rem, 1.4vw, 1.35rem);          /* card / h3 titles */
+  --fs-hero: clamp(1.85rem, 3.2vw, 2.75rem);       /* page heroes only */
+  --fs-heading: clamp(1.5rem, 2.8vw, 2.5rem);       /* section h2 */
+  --fs-title: clamp(1.05rem, 1.4vw, 1.35rem);       /* card / h3 titles */
   --fs-body: 1.0625rem;                         /* body copy */
   --fs-small: 0.75rem;                          /* labels, badges, nav */
 
