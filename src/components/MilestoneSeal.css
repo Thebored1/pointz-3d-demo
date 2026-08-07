@@ -1,48 +1,45 @@
 /* ==========================================================================
-   Milestone Seal & 2006 Anniversary Badge Component Styles
+   Clean Modern Milestone Seal & 2006 Badge (Plain Clean Fonts)
    ========================================================================== */
 
-/* Circular Rotating Seal */
-.milestone-seal-container {
+/* Plain typography font stack */
+.milestone-clean-seal,
+.milestone-badge-pill,
+.milestone-clean-card {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  user-select: none;
+}
+
+/* --------------------------------------------------------------------------
+   1. Circular Seal (Clean Swiss / Minimalist Stamp)
+   -------------------------------------------------------------------------- */
+.milestone-clean-seal {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  user-select: none;
+  cursor: default;
 }
 
-.milestone-seal-container.milestone-sm {
+.milestone-clean-seal.milestone-sm {
   width: 90px;
   height: 90px;
 }
 
-.milestone-seal-container.milestone-md {
-  width: 120px;
-  height: 120px;
+.milestone-clean-seal.milestone-md {
+  width: 116px;
+  height: 116px;
 }
 
-.milestone-seal-container.milestone-lg {
-  width: 150px;
-  height: 150px;
+.milestone-clean-seal.milestone-lg {
+  width: 140px;
+  height: 140px;
 }
 
-.milestone-seal-glow {
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 185, 242, 0.22) 0%, rgba(0, 185, 242, 0) 70%);
-  pointer-events: none;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  opacity: 0.7;
-}
-
-.milestone-seal-container:hover .milestone-seal-glow {
-  opacity: 1;
-  transform: scale(1.15);
-}
-
-.milestone-seal-body {
+.clean-seal-ring {
   position: relative;
   width: 100%;
   height: 100%;
@@ -50,22 +47,24 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(13, 27, 42, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-.seal-rotating-svg {
+.clean-seal-svg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  animation: seal-spin 22s linear infinite;
+  animation: clean-seal-rotate 28s linear infinite;
   transform-origin: center center;
 }
 
-.milestone-seal-container:hover .seal-rotating-svg {
+.milestone-clean-seal:hover .clean-seal-svg {
   animation-play-state: paused;
 }
 
-@keyframes seal-spin {
+@keyframes clean-seal-rotate {
   from {
     transform: rotate(0deg);
   }
@@ -74,231 +73,171 @@
   }
 }
 
-.seal-text-perimeter {
-  font-family: var(--font-mono, monospace);
+.clean-seal-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 8.5px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  fill: var(--text-main, #0d1b2a);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  fill: #0d1b2a;
   text-transform: uppercase;
 }
 
-.seal-core {
+.clean-seal-center {
   position: relative;
-  width: 62%;
-  height: 62%;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 2;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(0, 185, 242, 0.2);
-}
-
-.seal-core-bg {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 248, 255, 0.95) 100%);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 185, 242, 0.35);
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.8), 0 2px 8px rgba(0, 78, 146, 0.1);
-}
-
-.seal-center-content {
-  position: relative;
-  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  line-height: 1;
+  line-height: 1.1;
+  pointer-events: none;
 }
 
-.seal-established {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.55rem;
-  letter-spacing: 0.15em;
-  color: var(--text-muted, #6b6b6b);
-  font-weight: 700;
-  margin-bottom: 1px;
-}
-
-.seal-year {
-  font-family: var(--font-display, sans-serif);
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  background: linear-gradient(135deg, #00d4ff 0%, #0077b6 50%, #0d1b2a 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.clean-seal-est {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #6b6b6b;
+  text-transform: uppercase;
   margin-bottom: 2px;
 }
 
-.seal-pill-badge {
-  display: inline-flex;
-  align-items: center;
-  background: linear-gradient(135deg, #00b9f2 0%, #0052cc 100%);
-  padding: 1px 5px;
-  border-radius: 999px;
-  box-shadow: 0 1px 3px rgba(0, 185, 242, 0.3);
-}
-
-.seal-pill-text {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.5rem;
+.clean-seal-year {
+  font-size: 1.35rem;
   font-weight: 800;
-  color: #ffffff;
-  letter-spacing: 0.08em;
-}
-
-/* Sizing variations for Seal */
-.milestone-sm .seal-year { font-size: 0.95rem; }
-.milestone-sm .seal-text-perimeter { font-size: 7.5px; }
-
-.milestone-lg .seal-year { font-size: 1.45rem; }
-.milestone-lg .seal-established { font-size: 0.65rem; }
-.milestone-lg .seal-pill-text { font-size: 0.6rem; }
-.milestone-lg .seal-text-perimeter { font-size: 9.5px; }
-
-
-/* ==========================================================================
-   Horizontal 20 Years Emblem Variant (Inspired by the Reference Image)
-   ========================================================================== */
-.milestone-emblem {
-  display: inline-flex;
-  align-items: center;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 249, 255, 0.9) 100%);
-  border: 1px solid rgba(0, 185, 242, 0.28);
-  border-radius: 12px;
-  padding: 0.65rem 1.1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 185, 242, 0.1);
-  transition: all 0.3s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
-}
-
-.milestone-emblem:hover {
-  border-color: rgba(0, 185, 242, 0.55);
-  box-shadow: 0 8px 28px rgba(0, 185, 242, 0.14), 0 2px 8px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
-}
-
-.emblem-logo-group {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-}
-
-.emblem-number-wrapper {
-  width: 85px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.emblem-svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.emblem-svg-brand {
-  font-family: var(--font-display, sans-serif);
-  font-size: 7.5px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-}
-
-.emblem-svg-sub {
-  font-family: var(--font-mono, monospace);
-  font-size: 7px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-}
-
-.emblem-divider {
-  width: 1px;
-  height: 38px;
-  background: linear-gradient(to bottom, transparent, rgba(0, 185, 242, 0.4), rgba(13, 27, 42, 0.2), transparent);
-}
-
-.emblem-text-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  line-height: 1.1;
-}
-
-.emblem-headline {
-  display: flex;
-  align-items: baseline;
-  gap: 0.25rem;
-}
-
-.emblem-num {
-  font-family: var(--font-display, sans-serif);
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #0077b6;
+  color: #0d1b2a;
   letter-spacing: -0.02em;
+  line-height: 1;
 }
 
-.emblem-label {
-  font-family: var(--font-display, sans-serif);
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--text-main, #0d1b2a);
-  letter-spacing: 0.04em;
-}
-
-.emblem-script {
-  font-family: var(--font-body, sans-serif);
-  font-size: 0.75rem;
-  font-style: italic;
-  font-weight: 600;
-  color: #0055aa;
-  margin-top: -1px;
-}
-
-.emblem-tagline {
-  font-family: var(--font-mono, monospace);
+.clean-seal-years {
   font-size: 0.58rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--text-muted, #6b6b6b);
+  letter-spacing: 0.14em;
+  color: #0088cc;
+  text-transform: uppercase;
   margin-top: 3px;
 }
 
-/* Sizing variations for Emblem */
-.milestone-emblem.milestone-sm {
-  padding: 0.4rem 0.75rem;
+/* Sm variations */
+.milestone-sm .clean-seal-year {
+  font-size: 1.1rem;
 }
-.milestone-emblem.milestone-sm .emblem-number-wrapper {
-  width: 68px;
-  height: 42px;
+.milestone-sm .clean-seal-est,
+.milestone-sm .clean-seal-years {
+  font-size: 0.5rem;
 }
-.milestone-emblem.milestone-sm .emblem-num {
-  font-size: 1.05rem;
+
+/* --------------------------------------------------------------------------
+   2. Horizontal Clean Card Badge (Clean plain fonts)
+   -------------------------------------------------------------------------- */
+.milestone-clean-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: #ffffff;
+  border: 1px solid rgba(13, 27, 42, 0.12);
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  box-shadow: 0 2px 10px rgba(13, 27, 42, 0.04);
+  transition: border-color 0.25s ease, transform 0.25s ease;
 }
-.milestone-emblem.milestone-sm .emblem-label {
-  font-size: 0.75rem;
+
+.milestone-clean-card:hover {
+  border-color: #00b9f2;
+  transform: translateY(-1px);
 }
-.milestone-emblem.milestone-sm .emblem-script {
-  font-size: 0.65rem;
+
+.clean-card-left {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.clean-card-est {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #6b6b6b;
+  text-transform: uppercase;
+}
+
+.clean-card-year {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0d1b2a;
+  letter-spacing: -0.02em;
+}
+
+.clean-card-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(13, 27, 42, 0.12);
+}
+
+.clean-card-right {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.clean-card-title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #0088cc;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.clean-card-sub {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: #6b6b6b;
+}
+
+/* --------------------------------------------------------------------------
+   3. Minimalist Pill Badge
+   -------------------------------------------------------------------------- */
+.milestone-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  background: rgba(13, 27, 42, 0.04);
+  border: 1px solid rgba(13, 27, 42, 0.12);
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+.badge-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00b9f2;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.badge-bold {
+  font-weight: 800;
+  color: #0d1b2a;
+  letter-spacing: 0.06em;
+}
+
+.badge-sep {
+  color: rgba(13, 27, 42, 0.25);
+}
+
+.badge-sub {
+  font-weight: 600;
+  color: #6b6b6b;
+  letter-spacing: 0.08em;
 }
 
 @media (max-width: 640px) {
-  .milestone-seal-container.milestone-md {
-    width: 100px;
-    height: 100px;
-  }
-  .milestone-emblem {
-    padding: 0.5rem 0.8rem;
-  }
-  .emblem-number-wrapper {
-    width: 70px;
-    height: 44px;
+  .milestone-clean-seal.milestone-md {
+    width: 96px;
+    height: 96px;
   }
 }
