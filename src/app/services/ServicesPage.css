@@ -10,11 +10,14 @@
   font-family: var(--font-display);
   font-size: var(--fs-hero);
   font-weight: 700;
-  line-height: 0.95;
+  line-height: 1.05;
   text-transform: uppercase;
   letter-spacing: -0.03em;
   color: var(--text-main);
   margin: 0 0 1.5rem;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 .svp-detail-title .text-cyan {

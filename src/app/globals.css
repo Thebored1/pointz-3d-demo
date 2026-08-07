@@ -51,6 +51,24 @@
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Global Headings: Prevent mid-word breaking and maintain clean line wraps across all pages */
+h1, h2, h3, h4, h5, h6,
+.pz-hero-title,
+.contact-hero-title,
+.faq-title,
+.svp-detail-title,
+.hero-title,
+.quote-info-title,
+.quote-form-title,
+.services-title,
+.about-title,
+.fleet-title,
+.process-title {
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
 .mobile-layout {
   width: 100vw;
   min-height: 100vh;

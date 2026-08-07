@@ -33,6 +33,9 @@
   line-height: 1.05;
   text-transform: uppercase;
   color: var(--text-main);
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 .faq-intro {
