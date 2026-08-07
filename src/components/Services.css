@@ -151,7 +151,10 @@
   .service-card {
     border-right: none !important;
     border-bottom: 1px solid var(--border-color);
-    padding: 1.5rem 0;
+    /* Full-bleed hover: background spans edge-to-edge, text stays aligned */
+    margin-left: calc(-1 * var(--page-gutter));
+    margin-right: calc(-1 * var(--page-gutter));
+    padding: 1.5rem var(--page-gutter);
   }
 
   .services-grid > a:last-child .service-card,
@@ -168,7 +171,10 @@
   .service-card {
     border-right: none !important;
     border-bottom: 1px solid var(--border-color);
-    padding: 1.5rem 0;
+    /* Full-bleed hover: background spans edge-to-edge, text stays aligned */
+    margin-left: calc(-1 * var(--page-gutter));
+    margin-right: calc(-1 * var(--page-gutter));
+    padding: 1.5rem var(--page-gutter);
   }
 
   .services-grid > a:last-child .service-card,

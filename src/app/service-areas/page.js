@@ -1,10 +1,7 @@
 import ServiceEditorialPage from '../../components/ServiceEditorialPage';
 
-export const metadata = {
-  title: 'Freight & Trucking Service Areas | GTA & Ontario',
-  description: 'Point Zero Road Lines serves Mississauga, Brampton, Toronto, Vaughan, Caledon, Burlington & across Ontario, with cross-border trucking to the U.S.',
-};
-
+// Metadata lives in ./layout.js (absolute title + canonical + OpenGraph) to
+// avoid a doubled "| Point Zero Road Lines" from the root title template.
 const serviceRegions = [
   { icon: 'MapPin', title: 'Greater Toronto Area (GTA)', desc: 'Mississauga (HQ), Brampton, Bolton, Toronto, Vaughan, Markham, Oakville, Burlington, Milton, Caledon, and Richmond Hill. Daily Moffett delivery, dedicated fleet loops, and cross-docking.' },
   { icon: 'Route', title: 'Golden Horseshoe & SW Ontario', desc: 'Hamilton, Kitchener-Waterloo, Cambridge, Guelph, Brantford, London, and Windsor. Manufacturing JIT supply, automotive corridors, and building supplies.' },

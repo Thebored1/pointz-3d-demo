@@ -6,11 +6,8 @@ import {
   overviewGallery,
 } from '../../components/serviceEditorialData';
 
-export const metadata = {
-  title: 'Trucking, Moffett Delivery & Logistics | Point Zero Road Lines',
-  description: 'Dedicated fleet, flatbed & Moffett transport, warehousing, expedited freight, and last mile delivery across the GTA & Ontario.',
-};
-
+// Metadata lives in ./layout.js (absolute title + canonical + OpenGraph) to
+// avoid a doubled "| Point Zero Road Lines" from the root title template.
 export default function ServicesPage() {
   return (
     <ServiceEditorialPage
@@ -36,7 +33,7 @@ export default function ServicesPage() {
         num: '02',
         label: 'Capabilities',
         title: 'Fleet & Equipment at a glance',
-        desc: 'Modern tractors, 48ft/53ft flatbeds, roll-tite trailers, dry vans, and truck-mounted Moffett units maintained to the highest safety standards.',
+        desc: 'Modern tractors, 36ft, 40ft, 48ft and 53ft flatbeds, roll-tite trailers, dry vans, and truck-mounted Moffett units maintained to the highest safety standards.',
         items: overviewCapabilities.map((c) => ({
           icon: c.icon,
           title: c.label,

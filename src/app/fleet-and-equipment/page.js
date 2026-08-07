@@ -7,7 +7,7 @@ export const metadata = {
 
 const fleetSpecs = [
   { icon: 'Forklift', title: 'Truck-Mounted Moffett Forklifts', desc: 'All-wheel drive rough-terrain capability. Mounts to trailer rear in under 2 minutes to unload heavy materials independently.' },
-  { icon: 'Truck', title: '48ft & 53ft Flatbeds and Step-Decks', desc: 'Open-deck capacity with step-deck options for tall machinery, construction framing, structural steel, and oversized loads.' },
+  { icon: 'Truck', title: '36ft, 40ft, 48ft & 53ft Flatbeds and Step-Decks', desc: 'Open-deck capacity with step-deck options for tall machinery, construction framing, structural steel, and oversized loads.' },
   { icon: 'Layers', title: 'Roll-Tite & Curtain-Side Trailers', desc: 'Retractable tarp systems offering quick side-loading with 100% weather-tight protection for sensitive cargo.' },
   { icon: 'Package', title: '53ft Air-Ride Dry Vans', desc: 'Clean, high-cube enclosed trailers equipped with e-track systems for secure CPG, industrial freight, and linen carts.' },
 ];
@@ -35,7 +35,7 @@ export default function FleetAndEquipmentPage() {
       stats={[
         { value: '100%', label: 'Company-Owned Fleet' },
         { value: 'Moffett', label: 'All-Terrain Forklifts' },
-        { value: '48-53ft', label: 'Flatbed & Step-Deck' },
+        { value: '36-53ft', label: 'Flatbed & Step-Deck' },
         { value: '24/7', label: 'Fleet Dispatch' },
       ]}
       primarySection={{

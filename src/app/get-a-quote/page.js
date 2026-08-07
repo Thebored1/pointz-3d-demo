@@ -18,7 +18,7 @@ const quoteHighlights = [
   {
     icon: Truck,
     title: 'Company-Owned Fleet',
-    desc: 'Moffett truck-mounted forklifts, 48-53ft flatbeds, step-decks, and dry vans ready to roll.',
+    desc: 'Moffett truck-mounted forklifts, 36ft, 40ft, 48ft and 53ft flatbeds, step-decks, and dry vans ready to roll.',
   },
   {
     icon: ShieldCheck,

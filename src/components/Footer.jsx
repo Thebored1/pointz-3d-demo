@@ -73,6 +73,7 @@ export default function Footer() {
                 <li><Link href="/service-areas">Service Areas</Link></li>
                 <li><Link href="/safety-compliance">Safety &amp; Compliance</Link></li>
                 <li><Link href="/faq">FAQ</Link></li>
+                <li><Link href="/blog">Blog</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
               </ul>
             </div>
@@ -88,7 +89,7 @@ export default function Footer() {
                 24/7 Dispatch • Weekend Pick-up &amp; Delivery
               </span>
               <span style={{ fontSize: '0.75rem', opacity: 0.65, marginTop: '0.5rem', lineHeight: '1.4' }}>
-                Serving Mississauga, Brampton, Toronto, Vaughan, Caledon, Bolton, Burlington, Richmond Hill, Markham &amp; Ontario
+                Serving Mississauga, Brampton, Toronto, Vaughan, Caledon, Bolton, Burlington, Richmond Hill, Markham &amp; Ontario | Moffett &amp; Flatbed Services Available
               </span>
             </div>
           </div>

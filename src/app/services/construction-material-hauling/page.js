@@ -37,7 +37,7 @@ export default function ConstructionMaterialHaulingPage() {
       stats={[
         { value: '100%', label: 'Self-Unloading Delivery' },
         { value: '2006', label: 'Operating Since' },
-        { value: '48-53ft', label: 'Flatbed & Step-Deck' },
+        { value: '36-53ft', label: 'Flatbed & Step-Deck' },
         { value: 'All-Terrain', label: 'Moffett Offloading' },
       ]}
       primarySection={{

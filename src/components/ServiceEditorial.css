@@ -522,8 +522,24 @@
   .sv-ed-grid-4,
   .sv-ed-caps-grid,
   .sv-ed-steps { grid-template-columns: 1fr; }
+  .sv-ed-grid,
+  .sv-ed-grid-4 { border-left: none; border-top: none; }
+  .sv-ed-grid > *:first-child .sv-ed-card,
+  .sv-ed-grid > *:first-child .sv-ed-card-static,
+  .sv-ed-grid-4 > *:first-child .sv-ed-card,
+  .sv-ed-grid-4 > *:first-child .sv-ed-card-static {
+    border-top: 1px solid rgba(13, 27, 42, 0.12);
+  }
   .sv-ed-grid > * .sv-ed-card,
-  .sv-ed-grid > * .sv-ed-card-static { border-right: none !important; }
+  .sv-ed-grid > * .sv-ed-card-static {
+    border-right: none !important;
+    border-left: none;
+    /* Full-bleed hover: background spans edge-to-edge, text stays aligned */
+    margin-left: calc(-1 * var(--page-gutter));
+    margin-right: calc(-1 * var(--page-gutter));
+    padding-left: calc(2rem + var(--page-gutter));
+    padding-right: calc(2rem + var(--page-gutter));
+  }
   .sv-ed-card-link { opacity: 1; transform: none; }
   .sv-ed-step,
   .sv-ed-step:nth-child(odd) {

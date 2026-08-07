@@ -2,11 +2,11 @@ import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
   title: 'Flatbed Transportation Services in Ontario | Point Zero Road Lines',
-  description: '48ft & 53ft flatbed and step-deck transportation across Ontario. Tarping, Moffett offloading, and dedicated open-deck freight capacity.',
+  description: '36ft, 40ft, 48ft & 53ft flatbed and step-deck transportation across Ontario. Tarping, Moffett offloading, and dedicated open-deck freight capacity.',
 };
 
 const capabilities = [
-  { icon: 'Truck', title: 'Open-Deck & Step-Deck Fleet', desc: '48ft and 53ft flatbeds, step-decks, and roll-tite trailers for oversized, high-cube, and heavy industrial freight.' },
+  { icon: 'Truck', title: 'Open-Deck & Step-Deck Fleet', desc: '36ft, 40ft, 48ft and 53ft flatbeds, step-decks, and roll-tite trailers for oversized, high-cube, and heavy industrial freight.' },
   { icon: 'Forklift', title: 'Moffett-Equipped Capability', desc: 'Flatbeds carrying truck-mounted forklifts so your freight unloads immediately upon job-site arrival.' },
   { icon: 'Shield', title: 'Certified Load Securement', desc: 'All shipments secured with heavy-duty chains, ratchet straps, corner protectors, and 8ft drop tarps.' },
   { icon: 'MapPin', title: 'Site-Ready Deliveries', desc: 'Direct delivery into active construction zones, industrial yards, and restricted access facilities.' },
@@ -32,7 +32,7 @@ export default function FlatbedTransportationPage() {
       heroAlt="Point Zero Road Lines flatbed trailer on highway"
       stats={[
         { value: '2006', label: 'Operating Since' },
-        { value: '48-53ft', label: 'Deck Lengths' },
+        { value: '36-53ft', label: 'Deck Lengths' },
         { value: '24/7', label: 'Live Dispatch' },
         { value: 'All-Terrain', label: 'Moffett Offload' },
       ]}

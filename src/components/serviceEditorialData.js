@@ -144,6 +144,7 @@ const ALT = {
   'specialty-kenworth': 'A Point Zero Road Lines specialty flatbed tractor',
   // New page-wise photography
   'fleet-lineup': 'Point Zero Road Lines fleet lined up under a clear blue sky',
+  'services-hero': 'Point Zero Road Lines fleet lined up under a clear blue sky',
   'about-fleet-lineup': 'Point Zero Road Lines fleet lined up under a clear blue sky',
   'about-fleet-yard': 'Point Zero Road Lines fleet parked at the terminal yard',
   'home-fleet-manager': 'Point Zero Road Lines fleet manager inspecting transport trucks',
@@ -152,6 +153,8 @@ const ALT = {
   'moffett-yard-front': 'Point Zero Road Lines Moffett flatbed truck ready for delivery',
   'moffett-unloading-forklift': 'Truck-mounted forklift unloading palletized freight on site',
   'moffett-construction-unload': 'Point Zero Road Lines Moffett delivery at construction site',
+  'moffett-logistics-yard': 'Point Zero Road Lines Moffett-equipped truck in the logistics yard',
+  'truck-side': 'Point Zero Road Lines truck side profile on the road',
   'dedicated-fleet-rows': 'Point Zero Road Lines dedicated fleet lined up in parallel rows',
   'dedicated-fleet-terminal': 'Point Zero Road Lines dedicated carrier fleet at terminal',
   'dedicated-fleet-highway': 'Point Zero Road Lines truck traveling on open highway',
@@ -197,12 +200,15 @@ const POS = {
   'urban-flatbed': '40% 56%',
   // New page-wise focal points
   'fleet-lineup': '50% 55%',
+  'services-hero': '50% 55%',
   'about-fleet-lineup': '50% 55%',
   'about-fleet-yard': '50% 50%',
   'home-fleet-manager': '50% 52%',
   'home-driver-cabin': '50% 40%',
   'moffett-yard-rear': '50% 55%',
   'moffett-yard-front': '50% 52%',
+  'moffett-logistics-yard': '50% 55%',
+  'truck-side': '50% 50%',
   'moffett-unloading-forklift': '50% 50%',
   'moffett-construction-unload': '50% 50%',
   'dedicated-fleet-rows': '50% 54%',
@@ -242,14 +248,14 @@ export const IMAGE_SETS = {
     cta: img('about-fleet-yard'),
   },
   services: {
-    hero: img('fleet-lineup'),
+    hero: img('services-hero'),
     gallery: [img('truck-loaded', 'main'), img('warehouse-crossdock-fleet2'), img('home-driver-cabin')],
     cta: img('about-fleet-yard'),
   },
   'flatbed-moffett-transport': {
-    hero: img('warehouse-crossdock-fleet2'),
-    gallery: [img('construction-delivery-site', 'main'), img('warehouse-crossdock-docks'), img('home-driver-cabin')],
-    cta: img('flatbed-construction-haul'),
+    hero: img('moffett-logistics-yard'),
+    gallery: [img('construction-site-unload', 'main'), img('flatbed-road'), img('truck-side')],
+    cta: img('moffett-logistics-yard'),
   },
   'moffett-delivery': {
     hero: img('moffett-construction-unload'),
@@ -302,7 +308,7 @@ export const IMAGE_SETS = {
     cta: img('construction-blue-hero'),
   },
   'healthcare-linen-logistics': {
-    hero: img('dedicated-fleet-blue'),
+    hero: img('moffett-yard-rear'),
     gallery: [img('dedicated-fleet-terminal', 'main'), img('warehouse-crossdock-staging'), img('home-fleet-manager')],
     cta: img('dedicated-fleet-rows'),
   },
@@ -374,7 +380,7 @@ export function getImageSet(key) {
 
 export const overviewCapabilities = [
   { icon: 'Forklift', label: 'Moffett', value: 'Truck-mounted forklifts that travel with the load and unload without site equipment.' },
-  { icon: 'Truck', label: 'Flatbed', value: '48ft, 53ft, step-decks and drop-decks. Ready for oversized and overweight loads.' },
+  { icon: 'Truck', label: 'Flatbed', value: '36ft, 40ft, 48ft, 53ft, step-decks and drop-decks. Ready for oversized and overweight loads.' },
   { icon: 'Warehouse', label: 'Cross-dock', value: 'Inbound to outbound transfers that keep freight moving instead of sitting.' },
   { icon: 'Navigation', label: 'Tracking', value: 'Live truck location, so you know where the load is without calling to ask.' },
 ];
