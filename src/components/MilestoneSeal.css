@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Clean Modern Milestone Seal & 2006 Badge (Plain Clean Fonts)
+   Clean Modern Milestone Seal & 2006 Badge (Plain Clean Fonts & Fully Responsive)
    ========================================================================== */
 
 /* Plain typography font stack */
@@ -11,6 +11,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-rendering: geometricPrecision;
   user-select: none;
+  box-sizing: border-box;
 }
 
 /* --------------------------------------------------------------------------
@@ -22,21 +23,22 @@
   align-items: center;
   justify-content: center;
   cursor: default;
+  flex-shrink: 0;
 }
 
 .milestone-clean-seal.milestone-sm {
-  width: 90px;
-  height: 90px;
+  width: clamp(72px, 12vw, 90px);
+  height: clamp(72px, 12vw, 90px);
 }
 
 .milestone-clean-seal.milestone-md {
-  width: 116px;
-  height: 116px;
+  width: clamp(84px, 14vw, 116px);
+  height: clamp(84px, 14vw, 116px);
 }
 
 .milestone-clean-seal.milestone-lg {
-  width: 140px;
-  height: 140px;
+  width: clamp(100px, 18vw, 140px);
+  height: clamp(100px, 18vw, 140px);
 }
 
 .clean-seal-ring {
@@ -95,7 +97,7 @@
 }
 
 .clean-seal-est {
-  font-size: 0.625rem;
+  font-size: clamp(0.5rem, 1vw, 0.625rem);
   font-weight: 600;
   letter-spacing: 0.14em;
   color: #6b6b6b;
@@ -104,7 +106,7 @@
 }
 
 .clean-seal-year {
-  font-size: 1.35rem;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
   font-weight: 800;
   color: #0d1b2a;
   letter-spacing: -0.02em;
@@ -112,21 +114,12 @@
 }
 
 .clean-seal-years {
-  font-size: 0.58rem;
+  font-size: clamp(0.48rem, 0.9vw, 0.58rem);
   font-weight: 700;
   letter-spacing: 0.14em;
   color: #0088cc;
   text-transform: uppercase;
   margin-top: 3px;
-}
-
-/* Sm variations */
-.milestone-sm .clean-seal-year {
-  font-size: 1.1rem;
-}
-.milestone-sm .clean-seal-est,
-.milestone-sm .clean-seal-years {
-  font-size: 0.5rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -142,6 +135,7 @@
   padding: 0.55rem 1rem;
   box-shadow: 0 2px 10px rgba(13, 27, 42, 0.04);
   transition: border-color 0.25s ease, transform 0.25s ease;
+  max-width: 100%;
 }
 
 .milestone-clean-card:hover {
@@ -174,6 +168,7 @@
   width: 1px;
   height: 28px;
   background: rgba(13, 27, 42, 0.12);
+  flex-shrink: 0;
 }
 
 .clean-card-right {
@@ -217,6 +212,7 @@
   border-radius: 50%;
   background: #00b9f2;
   animation: pulse-glow 2s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
 .badge-bold {
@@ -235,9 +231,18 @@
   letter-spacing: 0.08em;
 }
 
-@media (max-width: 640px) {
-  .milestone-clean-seal.milestone-md {
-    width: 96px;
-    height: 96px;
+@media (max-width: 480px) {
+  .milestone-clean-card {
+    gap: 0.65rem;
+    padding: 0.45rem 0.75rem;
+  }
+  .clean-card-year {
+    font-size: 1.1rem;
+  }
+  .clean-card-title {
+    font-size: 0.72rem;
+  }
+  .clean-card-sub {
+    font-size: 0.62rem;
   }
 }
