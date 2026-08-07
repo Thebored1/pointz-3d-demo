@@ -43,12 +43,13 @@
 
 .hero-version {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-  padding: 0.25rem 0.75rem;
-  border: 1px solid var(--border-color);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--accent, #00b4d8);
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--accent, #00b4d8);
   border-radius: var(--radius-sm);
+  font-weight: 600;
 }
 
 .mask-container {

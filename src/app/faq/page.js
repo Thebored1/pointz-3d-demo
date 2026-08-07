@@ -50,12 +50,11 @@ export default function FAQPage() {
           { value: '2 hrs', label: 'Average Quote Turn' },
           { value: '100%', label: 'Dedicated Focus' },
         ]}
-        primarySection={{
+        faqSection={{
           num: '01',
           label: 'Frequently Asked Questions',
           title: 'Everything you need to know about our service',
           desc: 'Clear, straightforward answers to the most common questions our shippers and logistics partners ask.',
-          columns: 2,
           items: faqItems,
         }}
         gallery={[

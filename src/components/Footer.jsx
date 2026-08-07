@@ -88,7 +88,7 @@ export default function Footer() {
                 24/7 Dispatch • Weekend Pick-up &amp; Delivery
               </span>
               <span style={{ fontSize: '0.75rem', opacity: 0.65, marginTop: '0.5rem', lineHeight: '1.4' }}>
-                Serving Mississauga, Brampton, Toronto, Vaughan, Caledon, Bolton, Burlington, Richmond Hill, Markham &amp; Southern Ontario
+                Serving Mississauga, Brampton, Toronto, Vaughan, Caledon, Bolton, Burlington, Richmond Hill, Markham &amp; Ontario
               </span>
             </div>
           </div>

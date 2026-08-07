@@ -1,9 +1,9 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ChevronDown } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import EditorialHero from './EditorialHero';
@@ -69,6 +69,48 @@ function SectionHeader({ num, label, title, desc, dark }) {
         </motion.p>
       ) : null}
     </div>
+  );
+}
+
+function FaqAccordion({ faqSection }) {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  return (
+    <section className="sv-ed-faq">
+      <div className="pz-container">
+        <SectionHeader
+          num={faqSection.num}
+          label={faqSection.label}
+          title={faqSection.title}
+          desc={faqSection.desc}
+        />
+        <div className="sv-ed-faq-list">
+          {faqSection.items.map((item, i) => (
+            <motion.div
+              key={item.title}
+              className={`sv-ed-faq-item${openIndex === i ? ' sv-ed-faq-item--open' : ''}`}
+              variants={fadeUpSoft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportOnce}
+              custom={i}
+            >
+              <button
+                className="sv-ed-faq-trigger"
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                aria-expanded={openIndex === i}
+              >
+                <h3>{item.title}</h3>
+                <ChevronDown className="sv-ed-faq-chevron" size={20} />
+              </button>
+              <div className="sv-ed-faq-answer">
+                <p>{item.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -150,6 +192,7 @@ export default function ServiceEditorialPage({
       </section>
 
       <main className="sv-ed-main">
+        {primarySection ? (
         <section className="sv-ed-primary">
           <SectionHeader
             num={primarySection.num}
@@ -194,6 +237,7 @@ export default function ServiceEditorialPage({
             })}
           </div>
         </section>
+        ) : null}
 
         {imageSet.gallery?.length ? (
           <section className="sv-ed-gallery">
@@ -308,32 +352,7 @@ export default function ServiceEditorialPage({
       </div>
 
       {faqSection ? (
-        <section className="sv-ed-faq">
-          <div className="pz-container">
-            <SectionHeader
-              num={faqSection.num}
-              label={faqSection.label}
-              title={faqSection.title}
-              desc={faqSection.desc}
-            />
-            <div className="sv-ed-faq-list">
-              {faqSection.items.map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  className="sv-ed-faq-item"
-                  variants={fadeUpSoft}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={viewportOnce}
-                  custom={i}
-                >
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FaqAccordion faqSection={faqSection} />
       ) : null}
 
       {related.length ? (
