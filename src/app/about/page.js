@@ -54,8 +54,9 @@ export default function AboutPage() {
         description="Since 2006, Point Zero Road Lines has helped businesses move freight safely, efficiently, and on schedule. What began as a dedicated carrier has grown into one of Ontario's trusted providers of Moffett delivery, dedicated fleet services, flatbed transportation, warehousing, and 24/7 dispatch."
         scrollLabel="SCROLL FOR THE STORY"
         heroImage="/images/about-hero.webp"
-        heroAlt="Point Zero Road Lines fleet lined up under a blue sky"
-        heroPosition="50% 55%"
+        heroAlt="Point Zero Road Lines 20 Years Milestone celebration"
+        heroPosition="center"
+        objectFit="contain"
       />
 
       {/* MARQUEE */}
