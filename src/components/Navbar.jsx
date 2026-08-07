@@ -151,7 +151,7 @@ export default function Navbar() {
                   onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
                   aria-expanded={mobileDropdownOpen}
                 >
-                  Services
+                  SERVICES
                   <ChevronDown size={20} className={`mobile-dropdown-chevron ${mobileDropdownOpen ? 'open' : ''}`} />
                 </button>
                 <AnimatePresence>
