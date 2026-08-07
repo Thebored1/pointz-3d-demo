@@ -39,12 +39,12 @@ export const CONTACT_INFO = {
   ],
 };
 
-// Full list of crawlable routes for sitemap.js
+// Canonical crawlable routes for sitemap.js (all legacy/alias routes redirect via next.config.mjs)
 export const ROUTES = [
   { path: '/', priority: 1.0 },
   { path: '/about', priority: 0.8 },
   { path: '/services', priority: 0.9 },
-  // Final Service Slugs
+  // Core Service Slugs
   { path: '/services/flatbed-moffett-transport', priority: 0.95 },
   { path: '/services/dedicated-fleet-services', priority: 0.9 },
   { path: '/services/warehouse-cross-dock-storage', priority: 0.9 },
@@ -62,18 +62,5 @@ export const ROUTES = [
   { path: '/blog', priority: 0.75 },
   { path: '/contact', priority: 0.85 },
   { path: '/get-a-quote', priority: 0.9 },
-  // Legacy / Alias Routes
-  { path: '/services/moffett-delivery', priority: 0.8 },
-  { path: '/services/dedicated-fleet', priority: 0.8 },
-  { path: '/services/flatbed-transportation', priority: 0.8 },
-  { path: '/services/dry-van-transportation', priority: 0.7 },
-  { path: '/services/warehouse-cross-dock', priority: 0.8 },
-  { path: '/services/construction-material-delivery', priority: 0.8 },
-  { path: '/services/healthcare-logistics', priority: 0.7 },
-  { path: '/services/manufacturing-consumer-goods', priority: 0.7 },
-  { path: '/services/last-mile-retail-delivery', priority: 0.7 },
-  { path: '/services/expedited-same-day', priority: 0.7 },
-  { path: '/services/cross-border-freight', priority: 0.7 },
-  { path: '/services/building-material-distribution', priority: 0.7 },
-  { path: '/contact-us', priority: 0.7 },
 ];
+

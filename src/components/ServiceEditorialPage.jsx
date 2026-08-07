@@ -166,7 +166,7 @@ export default function ServiceEditorialPage({
       >
         <div className="pz-container sv-ed-actions-inner">
           <Link href="/get-a-quote" className="sv-ed-btn-dark">Request a quote →</Link>
-          <Link href="/contact-us" className="sv-ed-btn-line">Contact us</Link>
+          <Link href="/contact" className="sv-ed-btn-line">Contact us</Link>
         </div>
       </motion.div>
 
@@ -423,7 +423,7 @@ export default function ServiceEditorialPage({
             <Link href="/get-a-quote" className="pz-btn pz-btn-primary">
               Request a quote <ArrowUpRight size={18} />
             </Link>
-            <Link href="/contact-us" className="pz-btn pz-btn-secondary">
+            <Link href="/contact" className="pz-btn pz-btn-secondary">
               Contact dispatch
             </Link>
           </motion.div>
