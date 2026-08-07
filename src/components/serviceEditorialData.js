@@ -228,7 +228,7 @@ const img = (slug, span) => ({
 });
 
 export const DEFAULT_IMAGE_SET = {
-  hero: img('about-fleet-lineup'),
+  hero: img('services-hero'),
   gallery: [img('truck-loaded', 'main'), img('warehouse-crossdock-fleet2'), img('home-driver-cabin')],
   cta: img('about-fleet-yard'),
 };
@@ -237,10 +237,10 @@ export const IMAGE_SETS = {
   about: {
     hero: img('about-hero'),
     gallery: [img('about-fleet-yard', 'main'), img('home-driver-cabin'), img('home-fleet-manager')],
-    cta: img('about-fleet-lineup'),
+    cta: img('about-fleet-yard'),
   },
   services: {
-    hero: img('about-fleet-lineup'),
+    hero: img('services-hero'),
     gallery: [img('truck-loaded', 'main'), img('warehouse-crossdock-fleet2'), img('home-driver-cabin')],
     cta: img('about-fleet-yard'),
   },
@@ -257,17 +257,17 @@ export const IMAGE_SETS = {
   'dedicated-fleet-services': {
     hero: img('dedicated-fleet-rows'),
     gallery: [img('dedicated-fleet-terminal', 'main'), img('dedicated-fleet-highway'), img('dedicated-fleet-blue')],
-    cta: img('about-fleet-lineup'),
+    cta: img('about-fleet-yard'),
   },
   'dedicated-fleet': {
     hero: img('dedicated-fleet-rows'),
     gallery: [img('dedicated-fleet-terminal', 'main'), img('dedicated-fleet-highway'), img('dedicated-fleet-blue')],
-    cta: img('about-fleet-lineup'),
+    cta: img('about-fleet-yard'),
   },
   'flatbed-transportation': {
     hero: img('flatbed-highway-ad'),
     gallery: [img('flatbed-construction-haul', 'main'), img('flatbed-blue-transport'), img('flatbed-road')],
-    cta: img('about-fleet-lineup'),
+    cta: img('about-fleet-yard'),
   },
   'dry-van-transportation': {
     hero: img('dedicated-fleet-rows'),
@@ -287,12 +287,12 @@ export const IMAGE_SETS = {
   'construction-material-hauling': {
     hero: img('construction-blue-hero'),
     gallery: [img('construction-delivery-site', 'main'), img('construction-materials-crane'), img('construction-site-unload')],
-    cta: img('about-fleet-lineup'),
+    cta: img('about-fleet-yard'),
   },
   'construction-material-delivery': {
     hero: img('construction-blue-hero'),
     gallery: [img('construction-delivery-site', 'main'), img('construction-materials-crane'), img('construction-site-unload')],
-    cta: img('about-fleet-lineup'),
+    cta: img('about-fleet-yard'),
   },
   'building-material-distribution': {
     hero: img('construction-delivery-site'),
@@ -342,10 +342,10 @@ export const IMAGE_SETS = {
   '24-7-after-hours-weekend-dispatch': {
     hero: img('dedicated-fleet-highway'),
     gallery: [img('home-fleet-manager', 'main'), img('home-driver-cabin'), img('dedicated-fleet-rows')],
-    cta: img('about-fleet-lineup'),
+    cta: img('about-fleet-yard'),
   },
   'fleet-and-equipment': {
-    hero: img('about-fleet-lineup'),
+    hero: img('fleet-hero'),
     gallery: [img('moffett-yard-rear', 'main'), img('flatbed-highway-ad'), img('warehouse-crossdock-facility')],
     cta: img('about-fleet-yard'),
   },
@@ -355,14 +355,14 @@ export const IMAGE_SETS = {
     cta: img('dedicated-fleet-rows'),
   },
   'service-areas': {
-    hero: img('about-fleet-lineup'),
+    hero: img('fleet-hero'),
     gallery: [img('about-fleet-yard', 'main'), img('dedicated-fleet-highway'), img('flatbed-highway-ad')],
     cta: img('dedicated-fleet-rows'),
   },
   'safety-compliance': {
     hero: img('home-fleet-manager'),
     gallery: [img('home-driver-cabin', 'main'), img('warehouse-crossdock-fleet2'), img('dedicated-fleet-rows')],
-    cta: img('about-fleet-lineup'),
+    cta: img('about-fleet-yard'),
   },
 };
 

@@ -49,7 +49,7 @@ export default function SafetyCompliancePage() {
       gallery={[
         { src: '/images/home-fleet-manager.webp', alt: 'Safety and compliance oversight', span: 'main' },
         { src: '/images/dedicated-fleet-rows.webp', alt: 'Fleet maintenance inspection' },
-        { src: '/images/about-fleet-lineup.webp', alt: 'Clean commercial fleet' },
+        { src: '/images/fleet-hero.webp', alt: 'Clean commercial fleet' },
       ]}
       darkSection={{
         num: '02',

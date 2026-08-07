@@ -30,7 +30,7 @@ export default function FleetAndEquipmentPage() {
       titleLine1="COMPANY-OWNED EQUIPMENT."
       titleAccent="BUILT FOR SPECIALIZED LOGISTICS."
       description="At Point Zero Road Lines, equipment reliability is non-negotiable. Our fleet of modern tractors, flatbeds, dry vans, and truck-mounted Moffett forklifts is company-owned and maintained to the highest safety and mechanical standards in our Mississauga facility."
-      heroImage="/images/about-fleet-lineup.webp"
+      heroImage="/images/fleet-hero.webp"
       heroAlt="Point Zero Road Lines fleet lined up"
       stats={[
         { value: '100%', label: 'Company-Owned Fleet' },

@@ -47,7 +47,7 @@ export default function ServiceAreasPage() {
         items: serviceRegions,
       }}
       gallery={[
-        { src: '/images/about-fleet-lineup.webp', alt: 'Fleet ready for regional dispatch', span: 'main' },
+        { src: '/images/fleet-hero.webp', alt: 'Fleet ready for regional dispatch', span: 'main' },
         { src: '/images/warehouse-crossdock-fleet2.webp', alt: 'Moffett flatbed preparing for trip' },
         { src: '/images/warehouse-crossdock-docks.webp', alt: 'Mississauga central freight terminal' },
       ]}

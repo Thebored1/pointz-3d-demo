@@ -21,7 +21,7 @@ export default function ServicesPage() {
       titleAccent="BUILT AROUND YOUR OPERATION."
       description="Point Zero Road Lines provides dedicated transportation, specialized flatbed and Moffett delivery, warehousing, and logistics services across the Greater Toronto Area and Ontario. Every service is backed by company-owned equipment, professional drivers, and 24/7 live dispatch."
       scrollLabel="SCROLL THE SERVICES"
-      heroImage="/images/about-fleet-lineup.webp"
+      heroImage="/images/services-hero.webp"
       heroAlt="Point Zero Road Lines fleet"
       stats={overviewStats}
       primarySection={{
