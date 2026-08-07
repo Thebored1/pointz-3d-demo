@@ -56,6 +56,7 @@ export default function AboutPage() {
         heroImage="/images/about-hero.webp"
         heroAlt="Point Zero Road Lines 20 Years Milestone celebration"
         heroPosition="center"
+        imgWrapperClass="pz-hero-img-wrapper pz-about-hero-frame"
         objectFit="contain"
       />
 

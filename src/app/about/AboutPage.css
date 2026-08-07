@@ -152,8 +152,8 @@
   }
 }
 
-/* About Page Specific: Show full celebration image without cropping */
-.pz-about .pz-hero-img-wrapper {
+/* About Page ONLY: Dedicated uncropped milestone frame */
+.pz-about-hero-frame {
   aspect-ratio: 16 / 9;
   min-height: 280px;
   max-height: 560px;
@@ -164,13 +164,13 @@
   padding: clamp(1rem, 2.5vw, 2rem);
 }
 
-.pz-about .pz-hero-img {
+.pz-about-hero-frame .pz-hero-img {
   object-fit: contain !important;
   object-position: center;
 }
 
 @media (max-width: 768px) {
-  .pz-about .pz-hero-img-wrapper {
+  .pz-about-hero-frame {
     aspect-ratio: 16 / 10;
     min-height: 200px;
     padding: 0.75rem;
