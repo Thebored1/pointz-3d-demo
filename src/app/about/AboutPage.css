@@ -128,31 +128,27 @@
 
 .pz-hero-img-wrapper {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  min-height: 280px;
+  aspect-ratio: 21 / 9;
+  min-height: 320px;
   max-height: 560px;
   height: auto;
   border-radius: var(--radius-lg);
   overflow: hidden;
   position: relative;
-  background-color: #ffffff;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-  padding: clamp(1rem, 2.5vw, 2rem);
 }
 
 .pz-hero-img {
   width: 100%;
   height: 100%;
-  object-fit: contain !important;
+  object-fit: cover;
   object-position: center;
 }
 
 @media (max-width: 768px) {
   .pz-hero-img-wrapper {
     aspect-ratio: 16 / 10;
-    min-height: 200px;
-    padding: 0.75rem;
+    min-height: 240px;
+    height: auto;
   }
 }
 
