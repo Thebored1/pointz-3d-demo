@@ -308,7 +308,7 @@ export const IMAGE_SETS = {
     cta: img('construction-blue-hero'),
   },
   'healthcare-linen-logistics': {
-    hero: img('moffett-yard-rear'),
+    hero: img('warehouse-crossdock-fleet2'),
     gallery: [img('dedicated-fleet-terminal', 'main'), img('warehouse-crossdock-staging'), img('home-fleet-manager')],
     cta: img('dedicated-fleet-rows'),
   },
