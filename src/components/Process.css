@@ -8,6 +8,7 @@
   position: relative;
   z-index: 1;
   padding: 0 var(--page-gutter);
+  container-type: inline-size;
 }
 
 .process-header {
@@ -16,12 +17,6 @@
   align-items: flex-start;
   gap: 1.5rem;
   padding: 0 0 2rem;
-}
-
-@media (max-width: 768px) {
-  .process-header {
-    padding: 0 0 1.5rem;
-  }
 }
 
 .process-title {
@@ -34,7 +29,7 @@
 
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .process-step {
@@ -43,6 +38,7 @@
   gap: 0.5rem;
   padding: 2rem;
   border-right: 1px solid var(--border-color);
+  border-bottom: none;
 }
 
 .process-step:last-child {
@@ -80,7 +76,61 @@
   line-height: 1.5;
 }
 
-/* Column count governed by auto-fit (responds to the column, not the viewport). */
+/* Container queries: seamlessly toggle between 4-col (1x4) and 2x2 */
+@container (max-width: 820px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-step {
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .process-step:nth-child(2n) {
+    border-right: none;
+  }
+
+  .process-step:nth-child(n+3) {
+    border-bottom: none;
+  }
+}
+
+@container (max-width: 480px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .process-step {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 1rem;
+  }
+
+  .process-step:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Standard media query fallbacks */
+@media (max-width: 1450px) and (min-width: 1200px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-step {
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .process-step:nth-child(2n) {
+    border-right: none;
+  }
+
+  .process-step:nth-child(n+3) {
+    border-bottom: none;
+  }
+}
 
 @media (max-width: 768px) {
   .process-section {
@@ -92,14 +142,33 @@
   }
 
   .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-step {
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .process-step:nth-child(2n) {
+    border-right: none;
+  }
+
+  .process-step:nth-child(n+3) {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-steps {
     grid-template-columns: 1fr;
   }
 
   .process-step {
-    border-right: none;
+    border-right: none !important;
     border-bottom: 1px solid var(--border-color);
   }
-  
+
   .process-step:last-child {
     border-bottom: none;
   }

@@ -49,10 +49,12 @@
   height: 100%;
 }
 
+.services-grid > a:nth-child(3n) .service-card,
 .service-card:nth-child(3n) {
   border-right: none;
 }
 
+.services-grid > a:nth-child(n+4) .service-card,
 .service-card:nth-child(n+4) {
   border-bottom: none;
 }
@@ -99,6 +101,12 @@
 
   .service-card {
     border-right: none !important;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .services-grid > a:last-child .service-card,
+  .service-card:last-child {
+    border-bottom: none;
   }
 }
 

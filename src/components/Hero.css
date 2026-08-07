@@ -240,7 +240,9 @@
 
 @media (max-width: 1200px) {
   .hero {
-    padding: 7rem var(--page-gutter) 3rem;
+    min-height: auto;
+    justify-content: flex-start;
+    padding: 3.5rem var(--page-gutter) 3.5rem;
   }
 
   .hero-title {
@@ -250,8 +252,9 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 6rem var(--page-gutter) 2.5rem;
+    padding: 2.75rem var(--page-gutter) 3rem;
     min-height: auto;
+    justify-content: flex-start;
   }
 
   .hero-label-row {
@@ -272,9 +275,14 @@
     margin-bottom: 2rem;
   }
 
+  .hero-actions {
+    margin-bottom: 2.25rem;
+  }
+
   .hero-stats {
     flex-wrap: wrap;
     gap: 1.5rem;
+    padding-top: 1.75rem;
   }
 
   .hero-stat-divider {

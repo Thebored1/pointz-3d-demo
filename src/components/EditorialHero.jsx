@@ -38,6 +38,7 @@ export default function EditorialHero({
   imgWrapperClass = 'pz-hero-img-wrapper',
   imgClass = 'pz-hero-img',
   accentClass = 'text-cyan italic',
+  objectFit = 'cover',
 }) {
   return (
     <section className={sectionClass}>
@@ -90,7 +91,7 @@ export default function EditorialHero({
                 fill
                 sizes="(max-width: 768px) 100vw, 1400px"
                 priority={priority}
-                style={{ objectFit: 'cover', objectPosition: heroPosition }}
+                style={{ objectFit, objectPosition: heroPosition }}
               />
             </motion.div>
           ) : null}
