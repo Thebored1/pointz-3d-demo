@@ -8,7 +8,7 @@ import {
 
 export const metadata = {
   title: 'Trucking, Moffett Delivery & Logistics | Point Zero Road Lines',
-  description: 'Dedicated fleet, flatbed & Moffett transport, warehousing, expedited freight, and last mile delivery across the GTA & Southern Ontario.',
+  description: 'Dedicated fleet, flatbed & Moffett transport, warehousing, expedited freight, and last mile delivery across the GTA & Ontario.',
 };
 
 export default function ServicesPage() {
@@ -19,7 +19,7 @@ export default function ServicesPage() {
       badgeAlt="EST. 2006 · MISSISSAUGA HQ"
       titleLine1="SPECIALIZED FREIGHT SERVICES"
       titleAccent="BUILT AROUND YOUR OPERATION."
-      description="Point Zero Road Lines provides dedicated transportation, specialized flatbed and Moffett delivery, warehousing, and logistics services across the Greater Toronto Area and Southern Ontario. Every service is backed by company-owned equipment, professional drivers, and 24/7 live dispatch."
+      description="Point Zero Road Lines provides dedicated transportation, specialized flatbed and Moffett delivery, warehousing, and logistics services across the Greater Toronto Area and Ontario. Every service is backed by company-owned equipment, professional drivers, and 24/7 live dispatch."
       scrollLabel="SCROLL THE SERVICES"
       heroImage="/images/about-fleet-lineup.webp"
       heroAlt="Point Zero Road Lines fleet"

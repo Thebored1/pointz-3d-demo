@@ -40,7 +40,7 @@ export default function FlatbedTransportationPage() {
         num: '01',
         label: 'Capabilities',
         title: 'What our flatbed fleet delivers',
-        desc: 'Open-deck transport across the GTA and Southern Ontario, tailored to your exact load specifications and safety requirements.',
+        desc: 'Open-deck transport across the GTA and Ontario, tailored to your exact load specifications and safety requirements.',
         columns: 4,
         items: capabilities,
       }}

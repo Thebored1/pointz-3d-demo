@@ -16,7 +16,7 @@ const freight = [
   { icon: 'CheckCircle', title: 'Palletized Goods', desc: 'Standard skids moving between manufacturing plants, warehouses, and distribution points.' },
   { icon: 'CheckCircle', title: 'Consumer Packaged Goods', desc: 'Packaged product bound for tier-1 retail distribution and store networks.' },
   { icon: 'CheckCircle', title: 'Healthcare Textiles & Linen', desc: 'Clean, sanitized enclosed transport for hygiene-sensitive freight and laundry carts.' },
-  { icon: 'CheckCircle', title: 'General Commercial Freight', desc: 'Secure, temperature-neutral cargo moving across the GTA and Southern Ontario.' },
+  { icon: 'CheckCircle', title: 'General Commercial Freight', desc: 'Secure, temperature-neutral cargo moving across the GTA and Ontario.' },
 ];
 
 export default function DryVanTransportationPage() {
@@ -27,7 +27,7 @@ export default function DryVanTransportationPage() {
       badgeAlt="EST. 2006 · MISSISSAUGA HQ"
       titleLine1="ENCLOSED."
       titleAccent="ON SCHEDULE."
-      description="Dry van capacity for palletized and general freight that needs to arrive clean, secure, and on time — full truckload or scheduled LTL, across the GTA and Southern Ontario."
+      description="Dry van capacity for palletized and general freight that needs to arrive clean, secure, and on time — full truckload or scheduled LTL, across the GTA and Ontario."
       heroImage="/images/dedicated-fleet-rows.webp"
       heroAlt="Point Zero Road Lines dry van transport fleet"
       stats={[

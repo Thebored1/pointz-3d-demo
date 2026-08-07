@@ -7,7 +7,7 @@ export const SITE_LEGAL_NAME = 'Point Zero Road Lines';
 export const SITE_TAGLINE = "Ontario's Moffett Delivery & Specialized Transportation Experts";
 
 export const SITE_DESCRIPTION =
-  'Dedicated fleet, flatbed & Moffett delivery, warehousing, and 24/7 dispatch across the GTA & Southern Ontario since 2006. Get a free quote.';
+  'Dedicated fleet, flatbed & Moffett delivery, warehousing, and 24/7 dispatch across the GTA & Ontario since 2006. Get a free quote.';
 
 export const CONTACT_INFO = {
   address: '1566 Bonhill Road, Mississauga, ON L5T 1C7',
@@ -35,7 +35,7 @@ export const CONTACT_INFO = {
     'Richmond Hill',
     'Markham',
     'Greater Toronto Area',
-    'Southern Ontario',
+    'Ontario',
   ],
 };
 

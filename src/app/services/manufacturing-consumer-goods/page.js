@@ -13,7 +13,7 @@ const capabilities = [
 ];
 
 const applications = [
-  { icon: 'CheckCircle', title: 'Automotive Parts & Assemblies', desc: 'Time-critical plant runs feeding automotive manufacturing corridors in Southern Ontario.' },
+  { icon: 'CheckCircle', title: 'Automotive Parts & Assemblies', desc: 'Time-critical plant runs feeding automotive manufacturing corridors in Ontario.' },
   { icon: 'CheckCircle', title: 'Packaging Materials & Cartons', desc: 'High-cube dry van freight hauling corrugated cartons, film, and commercial packaging.' },
   { icon: 'CheckCircle', title: 'Industrial Machinery & Tooling', desc: 'Open-deck and roll-tite flatbed hauling for heavy production machinery.' },
   { icon: 'CheckCircle', title: 'Consumer Packaged Goods (CPG)', desc: 'Consistent palletized freight delivery to retail distribution hubs and fulfillment centres.' },

@@ -52,7 +52,7 @@ export default function Hero() {
         <div className="hero-label-row">
           <motion.div className="hero-label" variants={fadeUpVariants}>
             <span className="label-dot"></span>
-            MISSISSAUGA HQ · SERVING GTA &amp; SOUTHERN ONTARIO
+            MISSISSAUGA HQ · SERVING GTA &amp; ONTARIO
           </motion.div>
           <motion.div className="hero-version" variants={fadeUpVariants}>
             EST. 2006
@@ -71,7 +71,7 @@ export default function Hero() {
         <motion.div className="hero-divider" variants={lineVariants}></motion.div>
 
         <motion.p className="hero-subtitle" variants={fadeUpVariants}>
-          Since 2006, Point Zero Road Lines has run dedicated fleet, flatbed &amp; Moffett delivery, and warehousing for businesses across the Greater Toronto Area and Southern Ontario. Healthcare, manufacturing, consumer goods, construction — when a site has no loading dock and no forklift, or the schedule simply can’t slip, we’re the carrier on the account.
+          Since 2006, Point Zero Road Lines has run dedicated fleet, flatbed &amp; Moffett delivery, and warehousing for businesses across the Greater Toronto Area and Ontario. Healthcare, manufacturing, consumer goods, construction — when a site has no loading dock and no forklift, or the schedule simply can’t slip, we’re the carrier on the account.
         </motion.p>
         
         <motion.div className="hero-actions" variants={fadeUpVariants}>

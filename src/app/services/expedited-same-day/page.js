@@ -53,7 +53,7 @@ export default function ExpeditedSameDayPage() {
         num: '02',
         label: 'Emergency Scenarios',
         title: 'When shippers call Point Zero hot shot',
-        desc: 'From industrial machinery emergencies to healthcare surges across Southern Ontario.',
+        desc: 'From industrial machinery emergencies to healthcare surges across Ontario.',
         items: applications,
       }}
       cta={{

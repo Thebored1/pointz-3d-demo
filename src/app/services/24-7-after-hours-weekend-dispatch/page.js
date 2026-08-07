@@ -2,7 +2,7 @@ import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
   title: '24/7 Dispatch & Weekend Freight Delivery GTA | Point Zero',
-  description: 'Round-the-clock dispatch and weekend delivery across the GTA & Southern Ontario. A live dispatcher, not a voicemail box.',
+  description: 'Round-the-clock dispatch and weekend delivery across the GTA & Ontario. A live dispatcher, not a voicemail box.',
 };
 
 const capabilities = [

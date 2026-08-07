@@ -1,8 +1,8 @@
 import ServiceEditorialPage from '../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Freight & Trucking Service Areas | GTA & Southern Ontario',
-  description: 'Point Zero Road Lines serves Mississauga, Brampton, Toronto, Vaughan, Caledon, Burlington & across Southern Ontario, with cross-border trucking to the U.S.',
+  title: 'Freight & Trucking Service Areas | GTA & Ontario',
+  description: 'Point Zero Road Lines serves Mississauga, Brampton, Toronto, Vaughan, Caledon, Burlington & across Ontario, with cross-border trucking to the U.S.',
 };
 
 const serviceRegions = [

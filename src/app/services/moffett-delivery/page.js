@@ -2,7 +2,7 @@ import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
   title: 'Moffett Delivery Services in Ontario | Point Zero Road Lines',
-  description: 'Truck-mounted Moffett delivery across the GTA and Southern Ontario. No dock or site forklift required. Professional drivers and 24/7 dispatch.',
+  description: 'Truck-mounted Moffett delivery across the GTA and Ontario. No dock or site forklift required. Professional drivers and 24/7 dispatch.',
 };
 
 const capabilities = [

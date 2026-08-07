@@ -6,7 +6,7 @@ export const faqs = [
   },
   {
     q: 'What areas does Point Zero Road Lines service?',
-    a: "We're headquartered in Mississauga, Ontario, with local access across the Greater Toronto Area and Southern Ontario — including Brampton, Toronto, Vaughan, Caledon, Bolton, Burlington, Richmond Hill, and Markham — plus cross-border trucking into the United States.",
+    a: "We're headquartered in Mississauga, Ontario, with local access across the Greater Toronto Area and Ontario — including Brampton, Toronto, Vaughan, Caledon, Bolton, Burlington, Richmond Hill, and Markham — plus cross-border trucking into the United States.",
   },
   {
     q: 'Can I track my delivery?',
@@ -26,7 +26,7 @@ export const faqs = [
   },
   {
     q: 'What industries do you specialize in?',
-    a: 'We have particular expertise in construction and building materials, healthcare and linen operations, manufacturing, and consumer goods and retail, alongside general freight across the GTA and Southern Ontario.',
+    a: 'We have particular expertise in construction and building materials, healthcare and linen operations, manufacturing, and consumer goods and retail, alongside general freight across the GTA and Ontario.',
   },
   {
     q: 'Is Point Zero Road Lines licensed and insured?',

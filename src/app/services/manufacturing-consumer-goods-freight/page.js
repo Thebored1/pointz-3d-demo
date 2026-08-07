@@ -2,7 +2,7 @@ import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
   title: 'Manufacturing & Retail Freight GTA | Point Zero Road Lines',
-  description: 'LTL and FTL freight for manufacturers, distributors, and retailers across the GTA & Southern Ontario, planned around your production schedule.',
+  description: 'LTL and FTL freight for manufacturers, distributors, and retailers across the GTA & Ontario, planned around your production schedule.',
 };
 
 const capabilities = [
@@ -13,7 +13,7 @@ const capabilities = [
 ];
 
 const applications = [
-  { icon: 'CheckCircle', title: 'Automotive Parts & Assemblies', desc: 'Time-critical plant runs feeding Tier-1 and Tier-2 automotive manufacturing corridors in Southern Ontario.' },
+  { icon: 'CheckCircle', title: 'Automotive Parts & Assemblies', desc: 'Time-critical plant runs feeding Tier-1 and Tier-2 automotive manufacturing corridors in Ontario.' },
   { icon: 'CheckCircle', title: 'Packaging Materials & Cartons', desc: 'High-cube dry van freight hauling corrugated cartons, film, bottles, and commercial packaging.' },
   { icon: 'CheckCircle', title: 'Industrial Machinery & Tooling', desc: 'Open-deck and roll-tite flatbed hauling for heavy production machinery and equipment.' },
   { icon: 'CheckCircle', title: 'Consumer Packaged Goods (CPG)', desc: 'Consistent palletized freight delivery to retail distribution hubs and fulfillment centres.' },

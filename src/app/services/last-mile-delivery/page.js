@@ -1,8 +1,8 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Last Mile Delivery GTA & Southern Ontario | Point Zero',
-  description: 'Final-leg delivery to construction sites, retail locations, and residential addresses across the GTA & Southern Ontario. Get a free quote.',
+  title: 'Last Mile Delivery GTA & Ontario | Point Zero',
+  description: 'Final-leg delivery to construction sites, retail locations, and residential addresses across the GTA & Ontario. Get a free quote.',
 };
 
 const capabilities = [

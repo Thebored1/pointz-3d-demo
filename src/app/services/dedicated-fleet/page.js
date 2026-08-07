@@ -53,7 +53,7 @@ export default function DedicatedFleetPage() {
         num: '02',
         label: 'Industries Served',
         title: 'Who relies on Point Zero dedicated fleet',
-        desc: 'From daily medical linen exchanges to high-volume manufacturing lines and distributor yards across Southern Ontario.',
+        desc: 'From daily medical linen exchanges to high-volume manufacturing lines and distributor yards across Ontario.',
         items: applications,
       }}
       cta={{

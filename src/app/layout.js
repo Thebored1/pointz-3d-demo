@@ -95,7 +95,7 @@ const localBusinessSchema = {
         { "@type": "City", name: "Richmond Hill" },
         { "@type": "City", name: "Markham" },
         { "@type": "AdministrativeArea", name: "Greater Toronto Area" },
-        { "@type": "AdministrativeArea", name: "Southern Ontario" },
+        { "@type": "AdministrativeArea", name: "Ontario" },
       ],
       openingHoursSpecification: [
         {
