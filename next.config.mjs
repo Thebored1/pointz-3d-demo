@@ -123,6 +123,74 @@ const nextConfig = {
         permanent: true,
       },
 
+      // Removed pages (old site) -> Closest relevant canonical route
+      {
+        source: '/career',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/careers',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/need-a-truck',
+        destination: '/get-a-quote',
+        permanent: true,
+      },
+      {
+        source: '/services/specialty-equipment',
+        destination: '/fleet-and-equipment',
+        permanent: true,
+      },
+      {
+        source: '/services/warehouse-and-storage',
+        destination: '/services/warehouse-cross-dock-storage',
+        permanent: true,
+      },
+      {
+        source: '/demo',
+        destination: '/',
+        permanent: true,
+      },
+      // Deleted design-experiment / preview / variation routes -> Canonical
+      {
+        source: '/about/dark-tech',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/about/editorial',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/about/industrial',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/services/preview',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/services/preview/:path*',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/services/variations',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/services/variations/:path*',
+        destination: '/services',
+        permanent: true,
+      },
+
       // Core page aliases -> Canonical routes
       {
         source: '/contact-us',
