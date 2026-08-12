@@ -19,7 +19,30 @@ export const metadata = {
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-CA': '/',
+      'en-US': '/',
+      'x-default': '/',
+    },
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
@@ -27,18 +50,35 @@ export const metadata = {
     url: "/",
     title: HOME_TITLE,
     description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: `${SITE_URL}/images/fleet-lineup.webp`,
+        width: 1200,
+        height: 630,
+        alt: "Point Zero Road Lines Dedicated Fleet & Moffett Delivery",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: HOME_TITLE,
     description: SITE_DESCRIPTION,
+    images: [`${SITE_URL}/images/fleet-lineup.webp`],
   },
 };
 
-// Organization & LocalBusiness schema (single location at Mississauga HQ, Section 23)
+// Organization & LocalBusiness schema (single location at Mississauga HQ)
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      inLanguage: "en-CA",
+    },
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
@@ -67,7 +107,7 @@ const localBusinessSchema = {
       ],
     },
     {
-      "@type": "MovingCompany",
+      "@type": ["LocalBusiness", "LogisticsService"],
       "@id": `${SITE_URL}/#localbusiness`,
       name: SITE_NAME,
       legalName: SITE_LEGAL_NAME,
@@ -75,6 +115,23 @@ const localBusinessSchema = {
       url: SITE_URL,
       telephone: "+1-905-291-0325",
       email: "info@pzrls.com",
+      priceRange: "$$",
+      currenciesAccepted: "CAD, USD",
+      paymentAccepted: "Invoice, Credit Card, Direct Deposit, Electronic Transfer",
+      knowsAbout: [
+        "Moffett Delivery Services",
+        "Flatbed Freight Transportation",
+        "Dedicated Fleet Logistics",
+        "Cross-Dock Warehousing",
+        "Healthcare Linen Logistics",
+        "Construction Material Hauling",
+        "Expedited Same-Day Freight"
+      ],
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 43.6493,
+        longitude: -79.6482,
+      },
       parentOrganization: { "@id": `${SITE_URL}/#organization` },
       address: {
         "@type": "PostalAddress",
@@ -113,6 +170,36 @@ const localBusinessSchema = {
           closes: "23:59",
         },
       ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Logistics and Freight Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Flatbed & Moffett Transport",
+              description: "Truck-mounted forklift delivery — no loading dock or site crane required."
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Dedicated Fleet Services",
+              description: "Customized dedicated capacity and routing for commercial accounts."
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Warehouse & Cross-Dock Storage",
+              description: "Trailer-to-trailer cross-docking and pallet staging in Mississauga."
+            }
+          }
+        ]
+      }
     },
   ],
 };

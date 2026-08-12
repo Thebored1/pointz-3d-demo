@@ -73,7 +73,6 @@ export default function Footer() {
                 <li><Link href="/service-areas">Service Areas</Link></li>
                 <li><Link href="/safety-compliance">Safety &amp; Compliance</Link></li>
                 <li><Link href="/faq">FAQ</Link></li>
-                <li><Link href="/blog">Blog</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
               </ul>
             </div>
@@ -103,8 +102,8 @@ export default function Footer() {
             <span>All rights reserved</span>
           </div>
           <div className="footer-bottom-right">
-            <Link href="#">Privacy Policy</Link>
-            <Link href="#">Terms of Service</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/terms-of-service">Terms of Service</Link>
           </div>
         </div>
 

@@ -1,10 +1,17 @@
 export const metadata = {
-  title: { absolute: "Get a Freight Quote — GTA & Ontario | Point Zero" },
-  description: "Request a free freight quote from Point Zero Road Lines. Dedicated fleet, flatbed & Moffett delivery, and more. Quotes typically returned within 24 hours.",
-  alternates: { canonical: "/contact" },
+  title: { absolute: "Contact Us — 24/7 Dispatch & Operations | Point Zero Road Lines" },
+  description: "Contact Point Zero Road Lines in Mississauga, ON. Direct phone (905) 291-0325, 24/7 live dispatch, email, and facility location.",
+  alternates: {
+    canonical: "/contact",
+    languages: {
+      'en-CA': '/contact',
+      'en-US': '/contact',
+      'x-default': '/contact',
+    },
+  },
   openGraph: {
-    title: "Get a Freight Quote — GTA & Ontario | Point Zero",
-    description: "Request a free freight quote from Point Zero Road Lines. Dedicated fleet, flatbed & Moffett delivery, and more. Quotes typically returned within 24 hours.",
+    title: "Contact Us — 24/7 Dispatch & Operations | Point Zero Road Lines",
+    description: "Contact Point Zero Road Lines in Mississauga, ON. Direct phone (905) 291-0325, 24/7 live dispatch, email, and facility location.",
     url: "/contact",
   },
 };

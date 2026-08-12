@@ -1,8 +1,38 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Construction Material Delivery Toronto & GTA | Point Zero',
+  title: { absolute: 'Construction Material Delivery Toronto & GTA | Point Zero Road Lines' },
   description: 'Lumber, brick, roofing, drywall, steel & precast delivery to GTA job sites — Moffett-equipped for sites without a dock. Get a quote.',
+  alternates: {
+    canonical: '/services/construction-material-hauling',
+    languages: {
+      'en-CA': '/services/construction-material-hauling',
+      'en-US': '/services/construction-material-hauling',
+      'x-default': '/services/construction-material-hauling',
+    },
+  },
+  openGraph: {
+    title: 'Construction Material Delivery Toronto & GTA | Point Zero Road Lines',
+    description: 'Lumber, brick, roofing, drywall, steel & precast delivery to GTA job sites — Moffett-equipped for sites without a dock. Get a quote.',
+    url: '/services/construction-material-hauling',
+    siteName: 'Point Zero Road Lines',
+    locale: 'en_CA',
+    type: 'website',
+    images: [
+      {
+        url: 'https://pointzeroroadlines.com/images/construction-blue-hero.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Point Zero Road Lines delivering building materials on site',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Construction Material Delivery Toronto & GTA | Point Zero Road Lines',
+    description: 'Lumber, brick, roofing, drywall, steel & precast delivery to GTA job sites.',
+    images: ['https://pointzeroroadlines.com/images/construction-blue-hero.webp'],
+  },
 };
 
 const capabilities = [

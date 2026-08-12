@@ -9,6 +9,17 @@ import Fleet from '../components/Fleet';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 
+export const metadata = {
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-CA': '/',
+      'en-US': '/',
+      'x-default': '/',
+    },
+  },
+};
+
 export default function Home() {
   return (
     <>

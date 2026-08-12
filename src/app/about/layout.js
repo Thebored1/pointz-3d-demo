@@ -3,7 +3,14 @@ export const metadata = {
   // the root "%s | Point Zero Road Lines" template so it renders verbatim.
   title: { absolute: "About Point Zero Road Lines | Ontario Carrier Since 2006" },
   description: "Point Zero Road Lines has run dedicated fleet, Moffett delivery, and warehousing across Ontario since 2006. USDOT & MC registered, licensed & insured.",
-  alternates: { canonical: "/about" },
+  alternates: {
+    canonical: "/about",
+    languages: {
+      'en-CA': '/about',
+      'en-US': '/about',
+      'x-default': '/about',
+    },
+  },
   openGraph: {
     title: "About Point Zero Road Lines | Ontario Carrier Since 2006",
     description: "Point Zero Road Lines has run dedicated fleet, Moffett delivery, and warehousing across Ontario since 2006. USDOT & MC registered, licensed & insured.",

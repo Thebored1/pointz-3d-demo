@@ -1,8 +1,29 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Healthcare Linen & Textile Transport Ontario | Point Zero',
+  title: { absolute: 'Healthcare Linen & Textile Transport Ontario | Point Zero Road Lines' },
   description: 'Dedicated linen and textile transport for healthcare and hospitality across the GTA & Ontario, built around tight turnaround windows.',
+  alternates: {
+    canonical: '/services/healthcare-linen-logistics',
+    languages: {
+      'en-CA': '/services/healthcare-linen-logistics',
+      'en-US': '/services/healthcare-linen-logistics',
+      'x-default': '/services/healthcare-linen-logistics',
+    },
+  },
+  openGraph: {
+    title: 'Healthcare Linen & Textile Transport Ontario | Point Zero Road Lines',
+    description: 'Dedicated linen and textile transport for healthcare and hospitality across the GTA & Ontario, built around tight turnaround windows.',
+    url: '/services/healthcare-linen-logistics',
+    siteName: 'Point Zero Road Lines',
+    locale: 'en_CA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Healthcare Linen & Textile Transport Ontario | Point Zero Road Lines',
+    description: 'Dedicated linen and textile transport for healthcare and hospitality across Ontario.',
+  },
 };
 
 const capabilities = [

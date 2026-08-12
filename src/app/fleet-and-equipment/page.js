@@ -1,8 +1,21 @@
 import ServiceEditorialPage from '../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Fleet & Equipment | Point Zero Road Lines',
+  title: { absolute: 'Fleet & Equipment | Point Zero Road Lines' },
   description: "See the Moffett units, flatbeds, and dry vans behind Point Zero Road Lines' Ontario freight services.",
+  alternates: {
+    canonical: '/fleet-and-equipment',
+    languages: {
+      'en-CA': '/fleet-and-equipment',
+      'en-US': '/fleet-and-equipment',
+      'x-default': '/fleet-and-equipment',
+    },
+  },
+  openGraph: {
+    title: 'Fleet & Equipment | Point Zero Road Lines',
+    description: "See the Moffett units, flatbeds, and dry vans behind Point Zero Road Lines' Ontario freight services.",
+    url: '/fleet-and-equipment',
+  },
 };
 
 const fleetSpecs = [

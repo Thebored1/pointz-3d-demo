@@ -1,8 +1,21 @@
 import ServiceEditorialPage from '../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Frequently Asked Questions | Point Zero Road Lines',
+  title: { absolute: 'Frequently Asked Questions | Point Zero Road Lines' },
   description: 'Common questions about Moffett delivery, dedicated fleet services, flatbed transport, warehousing, rates, and 24/7 dispatch in Ontario.',
+  alternates: {
+    canonical: '/faq',
+    languages: {
+      'en-CA': '/faq',
+      'en-US': '/faq',
+      'x-default': '/faq',
+    },
+  },
+  openGraph: {
+    title: 'Frequently Asked Questions | Point Zero Road Lines',
+    description: 'Common questions about Moffett delivery, dedicated fleet services, flatbed transport, warehousing, rates, and 24/7 dispatch in Ontario.',
+    url: '/faq',
+  },
 };
 
 const faqItems = [

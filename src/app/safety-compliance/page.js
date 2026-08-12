@@ -1,8 +1,21 @@
 import ServiceEditorialPage from '../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Safety & Compliance | Point Zero Road Lines — Licensed & Insured',
-  description: 'Point Zero Road Lines operates under Hours of Service, MTO & HTA compliance as a USDOT/MC-registered, licensed and insured carrier. USDOT 3983391.',
+  title: { absolute: "Safety & Compliance | Point Zero Road Lines — Licensed & Insured" },
+  description: "Point Zero Road Lines operates under Hours of Service, MTO & HTA compliance as a USDOT/MC-registered, licensed and insured carrier. USDOT 3983391.",
+  alternates: {
+    canonical: "/safety-compliance",
+    languages: {
+      'en-CA': '/safety-compliance',
+      'en-US': '/safety-compliance',
+      'x-default': '/safety-compliance',
+    },
+  },
+  openGraph: {
+    title: "Safety & Compliance | Point Zero Road Lines — Licensed & Insured",
+    description: "Point Zero Road Lines operates under Hours of Service, MTO & HTA compliance as a USDOT/MC-registered, licensed and insured carrier. USDOT 3983391.",
+    url: "/safety-compliance",
+  },
 };
 
 const compliancePillars = [

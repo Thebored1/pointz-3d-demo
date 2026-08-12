@@ -1,8 +1,29 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Hot Shot & Expedited Trucking Ontario | Point Zero Road Lines',
+  title: { absolute: 'Hot Shot & Expedited Trucking Ontario | Point Zero Road Lines' },
   description: "Same-day and next-day hot shot freight across Ontario and the GTA when a shipment can't wait. Request an urgent quote.",
+  alternates: {
+    canonical: '/services/expedited-same-day-freight',
+    languages: {
+      'en-CA': '/services/expedited-same-day-freight',
+      'en-US': '/services/expedited-same-day-freight',
+      'x-default': '/services/expedited-same-day-freight',
+    },
+  },
+  openGraph: {
+    title: 'Hot Shot & Expedited Trucking Ontario | Point Zero Road Lines',
+    description: "Same-day and next-day hot shot freight across Ontario and the GTA when a shipment can't wait. Request an urgent quote.",
+    url: '/services/expedited-same-day-freight',
+    siteName: 'Point Zero Road Lines',
+    locale: 'en_CA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hot Shot & Expedited Trucking Ontario | Point Zero Road Lines',
+    description: 'Same-day and next-day hot shot freight across Ontario and the GTA.',
+  },
 };
 
 const capabilities = [

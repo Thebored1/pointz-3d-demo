@@ -3,7 +3,14 @@ export const metadata = {
   // the root "%s | Point Zero Road Lines" template so it renders verbatim.
   title: { absolute: "Get a Freight Quote — GTA & Ontario | Point Zero" },
   description: "Request a free freight quote from Point Zero Road Lines. Dedicated fleet, flatbed & Moffett delivery, and more. Quotes typically returned within 24 hours.",
-  alternates: { canonical: "/get-a-quote" },
+  alternates: {
+    canonical: "/get-a-quote",
+    languages: {
+      'en-CA': '/get-a-quote',
+      'en-US': '/get-a-quote',
+      'x-default': '/get-a-quote',
+    },
+  },
   openGraph: {
     title: "Get a Freight Quote — GTA & Ontario | Point Zero",
     description: "Request a free freight quote from Point Zero Road Lines. Dedicated fleet, flatbed & Moffett delivery, and more. Quotes typically returned within 24 hours.",

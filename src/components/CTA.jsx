@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone, Mail, MapPin } from 'lucide-react';
 import './CTA.css';
@@ -32,10 +33,10 @@ export default function CTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <a href="/get-a-quote" className="cta-btn-primary">
+            <Link href="/get-a-quote" className="cta-btn-primary">
               Request a Quote
               <ArrowRight size={18} />
-            </a>
+            </Link>
             <a href="tel:+19052910325" className="cta-btn-secondary">
               Call (905) 291-0325
             </a>

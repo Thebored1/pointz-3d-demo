@@ -137,12 +137,101 @@ export default function ServiceEditorialPage({
     num: '03',
     label: 'How it works',
     title: 'One call to delivered',
-    desc: 'Quote, dispatch, track and confirm — one desk owns your load end to end.',
     ...processSection,
+  };
+
+  const siteUrl = 'https://pointzeroroadlines.com';
+  const topLevelPages = ['faq', 'fleet-and-equipment', 'service-areas', 'safety-compliance', 'services', 'about', 'contact', 'get-a-quote', 'privacy-policy', 'terms-of-service'];
+  const isTopLevel = topLevelPages.includes(relatedKey);
+  const pageUrl = isTopLevel ? `${siteUrl}/${relatedKey === 'services' ? 'services' : relatedKey}` : `${siteUrl}/services/${relatedKey}`;
+  const pageName = `${titleLine1} ${titleAccent || ''}`.trim();
+  const isServicePage = !isTopLevel || relatedKey === 'services';
+
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      isServicePage ? {
+        '@type': 'Service',
+        '@id': `${pageUrl}#service`,
+        name: pageName,
+        description: description,
+        provider: {
+          '@id': `${siteUrl}/#organization`,
+          name: 'Point Zero Road Lines',
+        },
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'Ontario' },
+          { '@type': 'AdministrativeArea', name: 'Greater Toronto Area' },
+          { '@type': 'City', name: 'Mississauga' },
+          { '@type': 'City', name: 'Brampton' },
+          { '@type': 'City', name: 'Toronto' },
+          { '@type': 'City', name: 'Vaughan' },
+          { '@type': 'City', name: 'Caledon' },
+        ],
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'CAD',
+          availability: 'https://schema.org/InStock',
+          url: `${siteUrl}/get-a-quote`,
+        },
+      } : {
+        '@type': 'WebPage',
+        '@id': `${pageUrl}#webpage`,
+        name: pageName,
+        description: description,
+        url: pageUrl,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${pageUrl}#breadcrumb`,
+        itemListElement: !isTopLevel ? [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: siteUrl,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Services',
+            item: `${siteUrl}/services`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: pageName,
+            item: pageUrl,
+          },
+        ] : [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: siteUrl,
+          },
+          ...(relatedKey !== 'services' ? [{
+            '@type': 'ListItem',
+            position: 2,
+            name: pageName,
+            item: pageUrl,
+          }] : [{
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Services',
+            item: `${siteUrl}/services`,
+          }]),
+        ],
+      },
+    ],
   };
 
   return (
     <div className="pz-about sv-ed">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Navbar />
 
       <EditorialHero

@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -192,9 +193,9 @@ export default function AboutPage() {
             </p>
           </motion.div>
           <motion.div className="pz-cta-actions" variants={slideRight} initial="hidden" whileInView="visible" viewport={viewportOnce} custom={1}>
-            <a href="/get-a-quote" className="pz-btn pz-btn-primary">
+            <Link href="/get-a-quote" className="pz-btn pz-btn-primary">
               Request a quote <ArrowUpRight size={18} />
-            </a>
+            </Link>
             <a href="tel:+19052910325" className="pz-btn pz-btn-secondary">
               <Phone size={18} /> Call dispatch
             </a>

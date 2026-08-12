@@ -1,8 +1,29 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Cross-Dock & Warehousing Mississauga & GTA | Point Zero',
+  title: { absolute: 'Warehouse & Cross-Dock Mississauga | Point Zero Road Lines' },
   description: 'Cross-dock, warehousing, and freight consolidation in Mississauga & the GTA — one coordinated operation, not a separate storage vendor.',
+  alternates: {
+    canonical: '/services/warehouse-cross-dock-storage',
+    languages: {
+      'en-CA': '/services/warehouse-cross-dock-storage',
+      'en-US': '/services/warehouse-cross-dock-storage',
+      'x-default': '/services/warehouse-cross-dock-storage',
+    },
+  },
+  openGraph: {
+    title: 'Warehouse & Cross-Dock Mississauga | Point Zero Road Lines',
+    description: 'Cross-dock, warehousing, and freight consolidation in Mississauga & the GTA — one coordinated operation, not a separate storage vendor.',
+    url: '/services/warehouse-cross-dock-storage',
+    siteName: 'Point Zero Road Lines',
+    locale: 'en_CA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Warehouse & Cross-Dock Mississauga | Point Zero Road Lines',
+    description: 'Cross-dock, warehousing, and freight consolidation in Mississauga & the GTA.',
+  },
 };
 
 const capabilities = [

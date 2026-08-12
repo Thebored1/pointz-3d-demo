@@ -59,8 +59,9 @@ export const ROUTES = [
   { path: '/service-areas', priority: 0.8 },
   { path: '/safety-compliance', priority: 0.75 },
   { path: '/faq', priority: 0.75 },
-  { path: '/blog', priority: 0.75 },
   { path: '/contact', priority: 0.85 },
   { path: '/get-a-quote', priority: 0.9 },
+  { path: '/privacy-policy', priority: 0.3 },
+  { path: '/terms-of-service', priority: 0.3 },
 ];
 

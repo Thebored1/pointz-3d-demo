@@ -6,8 +6,24 @@ import {
   overviewGallery,
 } from '../../components/serviceEditorialData';
 
-// Metadata lives in ./layout.js (absolute title + canonical + OpenGraph) to
-// avoid a doubled "| Point Zero Road Lines" from the root title template.
+export const metadata = {
+  title: { absolute: "Trucking, Moffett Delivery & Logistics | Point Zero Road Lines" },
+  description: "Dedicated fleet, flatbed & Moffett transport, warehousing, expedited freight, and last mile delivery across the GTA & Ontario.",
+  alternates: {
+    canonical: "/services",
+    languages: {
+      'en-CA': '/services',
+      'en-US': '/services',
+      'x-default': '/services',
+    },
+  },
+  openGraph: {
+    title: "Trucking, Moffett Delivery & Logistics | Point Zero Road Lines",
+    description: "Dedicated fleet, flatbed & Moffett transport, warehousing, expedited freight, and last mile delivery across the GTA & Ontario.",
+    url: "/services",
+  },
+};
+
 export default function ServicesPage() {
   return (
     <ServiceEditorialPage

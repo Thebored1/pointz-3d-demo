@@ -1,8 +1,29 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Dedicated Fleet Trucking Ontario & GTA | Point Zero Road Lines',
+  title: { absolute: 'Dedicated Fleet Services Ontario | Point Zero Road Lines' },
   description: 'Dedicated trucks, Moffett units, and drivers assigned to your account across Ontario & the GTA — predictable capacity, planned around your schedule.',
+  alternates: {
+    canonical: '/services/dedicated-fleet-services',
+    languages: {
+      'en-CA': '/services/dedicated-fleet-services',
+      'en-US': '/services/dedicated-fleet-services',
+      'x-default': '/services/dedicated-fleet-services',
+    },
+  },
+  openGraph: {
+    title: 'Dedicated Fleet Services Ontario | Point Zero Road Lines',
+    description: 'Dedicated trucks, Moffett units, and drivers assigned to your account across Ontario & the GTA.',
+    url: '/services/dedicated-fleet-services',
+    siteName: 'Point Zero Road Lines',
+    locale: 'en_CA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dedicated Fleet Services Ontario | Point Zero Road Lines',
+    description: 'Dedicated trucks, Moffett units, and drivers assigned to your account across Ontario.',
+  },
 };
 
 const capabilities = [

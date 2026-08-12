@@ -1,8 +1,38 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Moffett & Flatbed Truck Delivery Ontario & GTA | Point Zero',
+  title: { absolute: 'Moffett & Flatbed Delivery Ontario | Point Zero Road Lines' },
   description: 'Moffett-equipped flatbed trucking across Toronto, Mississauga & the GTA. Self-unloading delivery — no dock, no forklift required. Get a free quote.',
+  alternates: {
+    canonical: '/services/flatbed-moffett-transport',
+    languages: {
+      'en-CA': '/services/flatbed-moffett-transport',
+      'en-US': '/services/flatbed-moffett-transport',
+      'x-default': '/services/flatbed-moffett-transport',
+    },
+  },
+  openGraph: {
+    title: 'Moffett & Flatbed Delivery Ontario | Point Zero Road Lines',
+    description: 'Moffett-equipped flatbed trucking across Toronto, Mississauga & the GTA. Self-unloading delivery — no dock, no forklift required. Get a free quote.',
+    url: '/services/flatbed-moffett-transport',
+    siteName: 'Point Zero Road Lines',
+    locale: 'en_CA',
+    type: 'website',
+    images: [
+      {
+        url: 'https://pointzeroroadlines.com/images/warehouse-crossdock-fleet2.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Point Zero Road Lines Moffett flatbed truck ready for delivery',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Moffett & Flatbed Delivery Ontario | Point Zero Road Lines',
+    description: 'Moffett-equipped flatbed trucking across Toronto, Mississauga & the GTA. Self-unloading delivery.',
+    images: ['https://pointzeroroadlines.com/images/warehouse-crossdock-fleet2.webp'],
+  },
 };
 
 const capabilities = [

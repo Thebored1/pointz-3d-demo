@@ -1,8 +1,29 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: '24/7 Dispatch & Weekend Freight Delivery GTA | Point Zero',
+  title: { absolute: '24/7 Dispatch & Weekend Freight Delivery GTA | Point Zero Road Lines' },
   description: 'Round-the-clock dispatch and weekend delivery across the GTA & Ontario. A live dispatcher, not a voicemail box.',
+  alternates: {
+    canonical: '/services/24-7-after-hours-weekend-dispatch',
+    languages: {
+      'en-CA': '/services/24-7-after-hours-weekend-dispatch',
+      'en-US': '/services/24-7-after-hours-weekend-dispatch',
+      'x-default': '/services/24-7-after-hours-weekend-dispatch',
+    },
+  },
+  openGraph: {
+    title: '24/7 Dispatch & Weekend Freight Delivery GTA | Point Zero Road Lines',
+    description: 'Round-the-clock dispatch and weekend delivery across the GTA & Ontario. A live dispatcher, not a voicemail box.',
+    url: '/services/24-7-after-hours-weekend-dispatch',
+    siteName: 'Point Zero Road Lines',
+    locale: 'en_CA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '24/7 Dispatch & Weekend Freight Delivery GTA | Point Zero Road Lines',
+    description: 'Round-the-clock dispatch and weekend delivery across the GTA & Ontario.',
+  },
 };
 
 const capabilities = [

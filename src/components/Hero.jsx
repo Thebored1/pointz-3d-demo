@@ -2,6 +2,7 @@
 import React from 'react';
 import { ArrowRight, ArrowDownRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import MilestoneSeal from './MilestoneSeal';
 import './Hero.css';
 
@@ -81,13 +82,13 @@ export default function Hero() {
         
         <motion.div className="hero-actions" variants={fadeUpVariants}>
           <div className="hero-cta-group" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="/get-a-quote" className="btn-track">
+            <Link href="/get-a-quote" className="btn-track">
               Get a Quote
               <ArrowRight size={16} strokeWidth={2} />
-            </a>
-            <a href="/services" className="btn-track-outline">
+            </Link>
+            <Link href="/services" className="btn-track-outline">
               View Our Services
-            </a>
+            </Link>
           </div>
         </motion.div>
 

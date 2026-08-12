@@ -1,8 +1,29 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Last Mile Delivery GTA & Ontario | Point Zero',
+  title: { absolute: 'Last Mile Delivery GTA & Ontario | Point Zero Road Lines' },
   description: 'Final-leg delivery to construction sites, retail locations, and residential addresses across the GTA & Ontario. Get a free quote.',
+  alternates: {
+    canonical: '/services/last-mile-delivery',
+    languages: {
+      'en-CA': '/services/last-mile-delivery',
+      'en-US': '/services/last-mile-delivery',
+      'x-default': '/services/last-mile-delivery',
+    },
+  },
+  openGraph: {
+    title: 'Last Mile Delivery GTA & Ontario | Point Zero Road Lines',
+    description: 'Final-leg delivery to construction sites, retail locations, and residential addresses across the GTA & Ontario. Get a free quote.',
+    url: '/services/last-mile-delivery',
+    siteName: 'Point Zero Road Lines',
+    locale: 'en_CA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Last Mile Delivery GTA & Ontario | Point Zero Road Lines',
+    description: 'Final-leg delivery to construction sites, retail locations, and residential addresses across Ontario.',
+  },
 };
 
 const capabilities = [

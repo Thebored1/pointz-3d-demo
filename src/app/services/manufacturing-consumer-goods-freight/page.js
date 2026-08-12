@@ -1,8 +1,29 @@
 import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
 
 export const metadata = {
-  title: 'Manufacturing & Retail Freight GTA | Point Zero Road Lines',
+  title: { absolute: 'Manufacturing & Retail Freight GTA | Point Zero Road Lines' },
   description: 'LTL and FTL freight for manufacturers, distributors, and retailers across the GTA & Ontario, planned around your production schedule.',
+  alternates: {
+    canonical: '/services/manufacturing-consumer-goods-freight',
+    languages: {
+      'en-CA': '/services/manufacturing-consumer-goods-freight',
+      'en-US': '/services/manufacturing-consumer-goods-freight',
+      'x-default': '/services/manufacturing-consumer-goods-freight',
+    },
+  },
+  openGraph: {
+    title: 'Manufacturing & Retail Freight GTA | Point Zero Road Lines',
+    description: 'LTL and FTL freight for manufacturers, distributors, and retailers across the GTA & Ontario, planned around your production schedule.',
+    url: '/services/manufacturing-consumer-goods-freight',
+    siteName: 'Point Zero Road Lines',
+    locale: 'en_CA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Manufacturing & Retail Freight GTA | Point Zero Road Lines',
+    description: 'LTL and FTL freight for manufacturers, distributors, and retailers across the GTA & Ontario.',
+  },
 };
 
 const capabilities = [
