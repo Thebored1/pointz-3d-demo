@@ -30,11 +30,16 @@ const locations = [
   },
   {
     label: 'Direct Contact',
-    title: '(905) 291-0325',
+    title: '(647) 680-1300',
     desc: (
-      <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
-        <Mail size={16} strokeWidth={1.5} /> info@pzrls.com
-      </p>
+      <>
+        <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
+          <Phone size={16} strokeWidth={1.5} /> (905) 291-0325
+        </p>
+        <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
+          <Mail size={16} strokeWidth={1.5} /> info@pzrls.com
+        </p>
+      </>
     ),
     icon: Phone,
     highlight: true,
@@ -158,7 +163,7 @@ export default function ContactPage() {
               {status === 'sent' ? (
                 <motion.p className="contact-form-sent" variants={fadeUp} initial="hidden" animate="visible">
                   Thanks — your message is with our team and we&rsquo;ll be in touch shortly.
-                  If it&rsquo;s urgent, call <a href="tel:+19052910325">(905) 291-0325</a> — dispatch is staffed 24/7.
+                  If it&rsquo;s urgent, call <a href="tel:+16476801300">(647) 680-1300</a> — dispatch is staffed 24/7.
                 </motion.p>
               ) : (
               <form className="contact-form" onSubmit={handleSubmit}>

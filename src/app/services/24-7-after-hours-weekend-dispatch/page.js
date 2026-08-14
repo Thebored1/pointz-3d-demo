@@ -27,7 +27,7 @@ export const metadata = {
 };
 
 const capabilities = [
-  { icon: 'Clock', title: 'Live Human Dispatch 24/7/365', desc: 'When you call (905) 291-0325 after hours, an experienced dispatcher answers — never an automated recording.' },
+  { icon: 'Clock', title: 'Live Human Dispatch 24/7/365', desc: 'When you call (647) 680-1300 after hours, an experienced dispatcher answers — never an automated recording.' },
   { icon: 'Truck', title: 'Weekend & Holiday Fleet Operations', desc: 'Full fleet service across Saturday, Sunday, and statutory holidays for continuous supply chain reliability.' },
   { icon: 'Route', title: 'Overnight Linehauls & Plant Transfers', desc: 'Move freight across GTA corridors overnight for immediate 6:00 AM dock readiness the next morning.' },
   { icon: 'Shield', title: 'Real-Time Load Rescue & Problem Solving', desc: 'Immediate rerouting, backup equipment mobilization, and rapid intervention when unexpected events occur.' },
@@ -82,7 +82,7 @@ export default function AfterHoursDispatchPage() {
       cta={{
         titleLine1: 'NEED DISPATCH OR DELIVERY',
         titleAccent: 'OUTSIDE NORMAL BUSINESS HOURS?',
-        desc: 'Call our 24/7 dispatch desk directly at (905) 291-0325 — we are on the line right now.',
+        desc: 'Call our 24/7 dispatch desk directly at (647) 680-1300 — we are on the line right now.',
       }}
     />
   );

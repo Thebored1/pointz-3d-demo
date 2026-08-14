@@ -106,9 +106,9 @@ export default function Navbar() {
           </div>
           
           <div className="nav-actions">
-            <a href="tel:+19052910325" className="nav-phone">
+            <a href="tel:+16476801300" className="nav-phone">
               <Phone size={14} className="phone-icon" />
-              <span>(905) 291-0325</span>
+              <span>(647) 680-1300</span>
             </a>
             <Link href="/get-a-quote" className="btn-primary-nav">
               Get a Quote
@@ -174,9 +174,9 @@ export default function Navbar() {
               <Link href="/faq" onClick={() => setMobileOpen(false)} className="mobile-nav-link">FAQ</Link>
               <Link href="/contact" onClick={() => setMobileOpen(false)} className="mobile-nav-link">Contact</Link>
               <div className="mobile-menu-actions">
-                <a href="tel:+19052910325" className="btn-ghost-mobile">
+                <a href="tel:+16476801300" className="btn-ghost-mobile">
                   <Phone size={18} />
-                  (905) 291-0325
+                  (647) 680-1300
                 </a>
                 <Link href="/get-a-quote" className="btn-primary-mobile" onClick={() => setMobileOpen(false)}>
                   Get a Quote

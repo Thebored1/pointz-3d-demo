@@ -1,6 +1,7 @@
 'use server';
 
 import { getSupabaseAdmin } from '../../lib/supabase';
+import { sendLeadNotification } from '../../lib/email';
 
 /**
  * Contact-form submissions land in the same public.quote_requests table as
@@ -38,9 +39,12 @@ export async function submitContact(formData) {
     console.error('[submit-contact] insert failed:', cause);
     return {
       ok: false,
-      error: 'Something went wrong sending your message. Please call (905) 291-0325 and we will take your details directly.',
+      error: 'Something went wrong sending your message. Please call (647) 680-1300 and we will take your details directly.',
     };
   }
+
+  // Best-effort notification — see submit-quote for the rationale.
+  await sendLeadNotification('contact', row);
 
   return { ok: true };
 }

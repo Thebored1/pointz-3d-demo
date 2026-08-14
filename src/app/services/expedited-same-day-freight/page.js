@@ -82,7 +82,7 @@ export default function ExpeditedSameDayFreightPage() {
       cta={{
         titleLine1: 'HAVE AN URGENT FREIGHT EMERGENCY',
         titleAccent: 'RIGHT NOW?',
-        desc: 'Call our 24/7 emergency dispatch line directly at (905) 291-0325 for immediate truck assignment.',
+        desc: 'Call our 24/7 emergency dispatch line directly at (647) 680-1300 for immediate truck assignment.',
       }}
     />
   );

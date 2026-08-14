@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Syne, Manrope, Space_Mono } from "next/font/google";
 import { SITE_URL, SITE_NAME, SITE_LEGAL_NAME, SITE_DESCRIPTION } from "@/lib/site";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 // Self-hosted, preloaded, font-display: swap. Weights limited to what the CSS
 // actually uses. Inter was dropped — it was imported but never referenced.
@@ -105,6 +106,22 @@ const localBusinessSchema = {
         "https://www.youtube.com/@PointZeroRoadlines",
         "https://www.linkedin.com/company/the-point-zero-road-lines/",
       ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: "+1-647-680-1300",
+          contactType: "dispatch",
+          areaServed: "CA",
+          availableLanguage: "en",
+        },
+        {
+          "@type": "ContactPoint",
+          telephone: "+1-905-291-0325",
+          contactType: "customer service",
+          areaServed: "CA",
+          availableLanguage: "en",
+        },
+      ],
     },
     {
       "@type": ["LocalBusiness", "LogisticsService"],
@@ -113,7 +130,7 @@ const localBusinessSchema = {
       legalName: SITE_LEGAL_NAME,
       description: SITE_DESCRIPTION,
       url: SITE_URL,
-      telephone: "+1-905-291-0325",
+      telephone: "+1-647-680-1300",
       email: "info@pzrls.com",
       priceRange: "$$",
       currenciesAccepted: "CAD, USD",
@@ -213,6 +230,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

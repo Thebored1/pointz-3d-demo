@@ -1,6 +1,7 @@
 'use server';
 
 import { getSupabaseAdmin } from '../../lib/supabase';
+import { sendLeadNotification } from '../../lib/email';
 
 const MAX = {
   name: 120,
@@ -61,9 +62,13 @@ export async function submitQuote(formData) {
     console.error('[submit-quote] insert failed:', cause);
     return {
       ok: false,
-      error: 'Something went wrong saving your request. Please call (905) 291-0325 and we will take the details directly.',
+      error: 'Something went wrong saving your request. Please call (647) 680-1300 and we will take the details directly.',
     };
   }
+
+  // Best-effort notification. The lead is already saved; a mail failure here
+  // must not turn a successful submission into an error for the visitor.
+  await sendLeadNotification('quote', row);
 
   return { ok: true };
 }
