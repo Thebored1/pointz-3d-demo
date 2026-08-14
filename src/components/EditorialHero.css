@@ -1,9 +1,106 @@
-/* Hero image sizing for the shared EditorialHero component.
+/* Styles for the shared EditorialHero component.
  *
  * These rules previously lived only in AboutPage.css, so any page that reused
- * EditorialHero without importing that stylesheet (e.g. the quote page) got an
- * unstyled image wrapper that collapsed to height:0 — a broken hero. Keeping
- * them here means the styles travel with the component to every page. */
+ * EditorialHero without importing that stylesheet (e.g. get-a-quote) rendered a
+ * broken hero: no navbar clearance (title overlapped the fixed navbar), no
+ * container max-width/gutter (text ran to the edge), unstyled badges, and an
+ * image wrapper collapsed to height:0. Keeping them here means the styles
+ * travel with the component to every page that uses it.
+ *
+ * .pz-hero-title, .pz-hero-divider and .pz-mask-container are intentionally
+ * omitted — they are already defined globally in globals.css / motion.css. */
+
+.pz-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+  width: 100%;
+}
+
+/* Top padding clears the fixed navbar so the title isn't hidden behind it. */
+.pz-hero {
+  padding: clamp(6rem, 12vw, 120px) 0 clamp(3rem, 6vw, 60px);
+  padding-top: calc(100px + clamp(3rem, 6vw, 60px));
+}
+
+.pz-hero-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.pz-badge {
+  border: 1px solid var(--border-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: inline-block;
+}
+
+.pz-badge-dark {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.pz-hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.pz-hero-desc {
+  max-width: 560px;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.pz-scroll-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.pz-scroll-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--c-blue);
+  animation: pz-bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes pz-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
 .pz-hero-img-wrapper {
   width: 100%;
   aspect-ratio: 21 / 9;
@@ -20,6 +117,13 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+@media (max-width: 1024px) {
+  .pz-hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 768px) {
