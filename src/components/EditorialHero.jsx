@@ -11,6 +11,7 @@ import {
   imageReveal,
 } from '../lib/motion';
 import './motion.css';
+import './EditorialHero.css';
 
 export default function EditorialHero({
   badge,

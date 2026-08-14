@@ -1,0 +1,31 @@
+/* Hero image sizing for the shared EditorialHero component.
+ *
+ * These rules previously lived only in AboutPage.css, so any page that reused
+ * EditorialHero without importing that stylesheet (e.g. the quote page) got an
+ * unstyled image wrapper that collapsed to height:0 — a broken hero. Keeping
+ * them here means the styles travel with the component to every page. */
+.pz-hero-img-wrapper {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  min-height: 320px;
+  max-height: 560px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.pz-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 768px) {
+  .pz-hero-img-wrapper {
+    aspect-ratio: 16 / 10;
+    min-height: 240px;
+    height: auto;
+  }
+}
