@@ -8,9 +8,16 @@ import { CONTACT_INFO, SITE_NAME } from './site';
 // truth for a lead. Email is a convenience notification, so a send failure
 // (or missing config) must never bubble up and fail the form submission.
 
-// Where lead notifications are delivered. Override with LEAD_NOTIFICATION_EMAIL
-// to route to a distribution list without touching the public-facing address.
-const NOTIFY_TO = process.env.LEAD_NOTIFICATION_EMAIL || CONTACT_INFO.email;
+// Where lead notifications are delivered. Comma-separate LEAD_NOTIFICATION_EMAIL
+// to notify several people; defaults to the public-facing inbox plus the shared
+// operations address.
+const NOTIFY_TO = (
+  process.env.LEAD_NOTIFICATION_EMAIL ||
+  `${CONTACT_INFO.email},deepak.sharma@virtualxcellence.com`
+)
+  .split(',')
+  .map((address) => address.trim())
+  .filter(Boolean);
 
 // The "from" address. Resend requires this to be on a domain you've verified
 // in the Resend dashboard. Until a real domain is verified, Resend's shared
@@ -214,7 +221,7 @@ export async function sendLeadNotification(type, row) {
   try {
     const { error } = await resend.emails.send({
       from: FROM,
-      to: [NOTIFY_TO],
+      to: NOTIFY_TO,
       // Lets the team hit "Reply" and reach the customer directly.
       replyTo: row.email || undefined,
       subject,
