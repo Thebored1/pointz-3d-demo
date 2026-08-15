@@ -89,9 +89,9 @@ export default function GetAQuotePage() {
                   Call our live 24/7 dispatch desk directly for instant lane capacity and emergency bookings.
                 </p>
                 <div className="quote-urgent-links">
-                  <a href="tel:+19052910325" className="quote-phone-btn">
+                  <a href="tel:+16476801300" className="quote-phone-btn">
                     <Phone size={16} />
-                    <span>(905) 291-0325</span>
+                    <span>(647) 680-1300</span>
                     <ArrowUpRight size={14} className="quote-phone-arrow" />
                   </a>
                   <a href="mailto:info@pzrls.com" className="quote-email-link">

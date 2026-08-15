@@ -45,7 +45,7 @@ export default function QuoteForm() {
       setError(result?.error || 'Failed to submit quote request. Please try again or call dispatch.');
     } catch (err) {
       setStatus('idle');
-      setError('An unexpected error occurred. Please call (905) 291-0325.');
+      setError('An unexpected error occurred. Please call (647) 680-1300.');
     }
   }
 
@@ -66,7 +66,7 @@ export default function QuoteForm() {
         </p>
         <div className="quote-success-urgent">
           <span>Need immediate confirmation?</span>
-          <a href="tel:+19052910325" className="quote-success-phone">Call (905) 291-0325</a>
+          <a href="tel:+16476801300" className="quote-success-phone">Call (647) 680-1300</a>
         </div>
       </motion.div>
     );

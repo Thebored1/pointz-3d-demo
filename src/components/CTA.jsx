@@ -37,8 +37,8 @@ export default function CTA() {
               Request a Quote
               <ArrowRight size={18} />
             </Link>
-            <a href="tel:+19052910325" className="cta-btn-secondary">
-              Call (905) 291-0325
+            <a href="tel:+16476801300" className="cta-btn-secondary">
+              Call (647) 680-1300
             </a>
           </motion.div>
         </div>
@@ -54,8 +54,8 @@ export default function CTA() {
             <Phone size={18} strokeWidth={1.5} />
             <div className="contact-info">
               <span className="contact-label">24/7 Dispatch</span>
-              <span className="contact-value">(905) 291-0325</span>
               <span className="contact-value">(647) 680-1300</span>
+              <span className="contact-value">(905) 291-0325</span>
             </div>
           </div>
           <div className="contact-item">
