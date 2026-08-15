@@ -62,7 +62,7 @@ export async function submitQuote(formData) {
     console.error('[submit-quote] insert failed:', cause);
     return {
       ok: false,
-      error: 'Something went wrong saving your request. Please call (647) 680-1300 and we will take the details directly.',
+      error: 'Something went wrong saving your request. Please call (905) 291-0325 and we will take the details directly.',
     };
   }
 

@@ -81,8 +81,8 @@ export default function Footer() {
           <div className="footer-contact-col">
             <h4>Mississauga HQ</h4>
             <div className="footer-contact-list">
-              <a href="tel:+16476801300" className="contact-link">(647) 680-1300</a>
               <a href="tel:+19052910325" className="contact-link">(905) 291-0325</a>
+              <a href="tel:+16476801300" className="contact-link">(647) 680-1300</a>
               <a href="mailto:info@pzrls.com" className="contact-link">info@pzrls.com</a>
               <span>1566 Bonhill Road, Mississauga, ON L5T 1C7</span>
               <span style={{ fontSize: '0.8125rem', opacity: 0.8, marginTop: '0.25rem' }}>

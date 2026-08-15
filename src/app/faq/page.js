@@ -27,7 +27,7 @@ const faqItems = [
   { icon: 'Briefcase', title: 'What industries do you specialize in?', desc: 'Healthcare and linen operations, manufacturing, consumer goods, and construction, alongside general freight for the GTA and Ontario.' },
   { icon: 'Shield', title: 'Is Point Zero Road Lines licensed and insured?', desc: 'Yes — we operate under USDOT 3983391 and MC 1492151 authority, and are licensed and insured for both domestic and cross-border freight.' },
   { icon: 'Package', title: 'Do you handle oversized or non-standard freight?', desc: 'Yes — our flatbed and Moffett-equipped fleet is built for exactly this kind of freight.' },
-  { icon: 'Timer', title: 'How quickly can I get a freight quote?', desc: 'Submit your lane and load specs through our online quote form or call dispatch at (647) 680-1300. We provide transparent quotes the same business day — usually within two hours.' },
+  { icon: 'Timer', title: 'How quickly can I get a freight quote?', desc: 'Submit your lane and load specs through our online quote form or call dispatch at (905) 291-0325. We provide transparent quotes the same business day — usually within two hours.' },
   { icon: 'Zap', title: 'How quickly can you respond to a same-day or urgent delivery request?', desc: 'Through our Expedited & Same-Day Freight service, we can often accommodate urgent GTA routes with enough lead time — call or request a quote with your timeline for a direct answer.' },
 ];
 
@@ -78,7 +78,7 @@ export default function FAQPage() {
         cta={{
           titleLine1: 'HAVE A QUESTION THAT',
           titleAccent: 'IS NOT LISTED HERE?',
-          desc: 'Reach out to our dispatch team directly at (647) 680-1300 or send an online inquiry — we are happy to assist.',
+          desc: 'Reach out to our dispatch team directly at (905) 291-0325 or send an online inquiry — we are happy to assist.',
         }}
       />
     </>

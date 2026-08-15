@@ -196,7 +196,7 @@ export default function AboutPage() {
             <Link href="/get-a-quote" className="pz-btn pz-btn-primary">
               Request a quote <ArrowUpRight size={18} />
             </Link>
-            <a href="tel:+16476801300" className="pz-btn pz-btn-secondary">
+            <a href="tel:+19052910325" className="pz-btn pz-btn-secondary">
               <Phone size={18} /> Call dispatch
             </a>
           </motion.div>

@@ -110,14 +110,14 @@ const localBusinessSchema = {
       contactPoint: [
         {
           "@type": "ContactPoint",
-          telephone: "+1-647-680-1300",
+          telephone: "+1-905-291-0325",
           contactType: "dispatch",
           areaServed: "CA",
           availableLanguage: "en",
         },
         {
           "@type": "ContactPoint",
-          telephone: "+1-905-291-0325",
+          telephone: "+1-647-680-1300",
           contactType: "customer service",
           areaServed: "CA",
           availableLanguage: "en",
@@ -131,7 +131,7 @@ const localBusinessSchema = {
       legalName: SITE_LEGAL_NAME,
       description: SITE_DESCRIPTION,
       url: SITE_URL,
-      telephone: "+1-647-680-1300",
+      telephone: "+1-905-291-0325",
       email: "info@pzrls.com",
       priceRange: "$$",
       currenciesAccepted: "CAD, USD",
