@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeUp, fadeUpSoft, viewportOnce } from '../../lib/motion';
 import { submitQuote } from '../actions/submit-quote';
+import { trackLeadFormConversion } from '../../lib/analytics';
 import { CheckCircle, AlertCircle, ArrowRight } from 'lucide-react';
 
 const SERVICES = [
@@ -33,6 +34,9 @@ export default function QuoteForm() {
       const result = await submitQuote(formData);
 
       if (result?.ok) {
+        // Fired only after the lead is actually saved, so the GA4 lead event
+        // and Ads conversion count real, followable leads.
+        trackLeadFormConversion('quote');
         setStatus('sent');
         return;
       }

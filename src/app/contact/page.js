@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { fadeUp, fadeUpSoft, slideLeft, slideRight, viewportOnce } from '../../lib/motion';
 import { submitContact } from '../actions/submit-contact';
+import { trackLeadFormConversion } from '../../lib/analytics';
 import './ContactPage.css';
 
 const locations = [
@@ -70,6 +71,7 @@ export default function ContactPage() {
     setError('');
     const result = await submitContact(formData);
     if (result.ok) {
+      trackLeadFormConversion('contact');
       setStatus('sent');
       return;
     }

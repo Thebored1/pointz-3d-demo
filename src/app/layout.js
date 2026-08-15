@@ -2,6 +2,7 @@ import "./globals.css";
 import { Syne, Manrope, Space_Mono } from "next/font/google";
 import { SITE_URL, SITE_NAME, SITE_LEGAL_NAME, SITE_DESCRIPTION } from "@/lib/site";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SiteAnalytics from "@/components/SiteAnalytics";
 
 // Self-hosted, preloaded, font-display: swap. Weights limited to what the CSS
 // actually uses. Inter was dropped — it was imported but never referenced.
@@ -231,6 +232,7 @@ export default function RootLayout({ children }) {
         />
         {children}
         <WhatsAppButton />
+        <SiteAnalytics />
       </body>
     </html>
   );
