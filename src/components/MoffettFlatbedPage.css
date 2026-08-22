@@ -133,7 +133,7 @@
 .mf-grid--tight { gap: 1rem; }
 
 .mf-card {
-  background: var(--bg-primary);
+  background: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 1.6rem;
