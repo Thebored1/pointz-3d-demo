@@ -123,6 +123,7 @@ const audienceBlocks = [
       ['Delivery on Gravel and Uneven Ground', 'Moffett forklifts can operate in suitable outdoor environments, including certain gravel and uneven-ground conditions. Site conditions should be discussed when arranging delivery.'],
       ['Material Placement at the Delivery Site', 'Where site access and operating conditions allow, our driver can unload and move eligible materials toward the required delivery area.'],
       ['Planning Delivery Access Before Your Truck Arrives', 'Providing accurate site information in advance helps us assess the delivery requirements and determine whether the Moffett can safely access the intended unloading area.'],
+      ['Coordinating Deliveries Across Project Phases', 'We can help coordinate staged or recurring material deliveries as your project progresses, subject to scheduling, availability and site access.'],
     ],
     ctaLabel: 'Planning a Construction-Site Delivery? Request a Quote',
   },
@@ -148,6 +149,7 @@ const audienceBlocks = [
       ['Palletized Freight Delivery', 'Our Moffett-equipped trucks can handle suitable palletized freight within the applicable weight and equipment requirements.'],
       ['Commercial Deliveries Without a Loading Dock', 'Where site access permits, Moffett delivery provides an alternative to relying on conventional dock unloading.'],
       ['On-Site Unloading With a Moffett Forklift', 'The forklift travels with the delivery truck, allowing our driver to unload eligible freight at the destination.'],
+      ['Oversized & Bulky Product Delivery', 'Moffett-equipped flatbeds can handle suitable oversized or bulky products that may be difficult to unload with conventional equipment, subject to weight, equipment and site conditions.'],
     ],
     ctaLabel: 'Request a Commercial Delivery Quote',
   },
@@ -168,6 +170,7 @@ const siteRequirements = [
   ['Ground Conditions', 'Moffett forklifts can operate in suitable outdoor environments, including certain gravel and uneven-ground conditions. Actual suitability depends on the site and operating conditions.'],
   ['Overhead & Site Clearance', 'Identify potential obstructions such as overhead structures, trees, power lines or other obstacles before delivery.'],
   ['Load Dimensions, Weight & Placement', 'Load dimensions, weight and the intended placement area help determine whether the delivery can be completed safely and which Moffett configuration is appropriate.'],
+  ['Placement Area Confirmation', 'Confirming the intended placement area in advance helps our team determine whether the load can be positioned where you need it, subject to access and safe operating space.'],
 ];
 
 const cityCoverage = [
@@ -183,6 +186,7 @@ const whyMoffett = [
   ['Convenient Jobsite Unloading', 'Construction sites can benefit from having unloading equipment arrive with the material rather than coordinating a separate forklift.'],
   ['Greater Placement Flexibility', 'The Moffett can provide additional flexibility when moving eligible materials from the truck toward the required delivery area.'],
   ['One Delivery Solution From Pickup to Unloading', 'Point Zero coordinates transportation and Moffett unloading as part of the delivery service, simplifying logistics for the customer.'],
+  ['Reduced On-Site Coordination', 'Bringing the unloading equipment with the delivery can reduce the need to schedule separate machinery or ground labour at the destination.'],
 ];
 
 const comparisonRows = [
@@ -478,7 +482,7 @@ export default function MoffettFlatbedPage() {
         </div>
       </section>
 
-      <Footer />
+      <Footer hideCta />
     </div>
   );
 }

@@ -5,21 +5,23 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import './Footer.css';
 
-export default function Footer() {
+export default function Footer({ hideCta = false }) {
   return (
     <footer className="footer-section">
       <div className="footer-container">
-        
-        {/* Top Tier: CTA */}
-        <div className="footer-cta">
-          <div className="footer-cta-content">
-            <h2 className="footer-cta-title">Ready to move your freight?</h2>
-            <p className="footer-cta-desc">Get a rate back the same business day.</p>
+
+        {/* Top Tier: CTA — hidden on pages that carry their own quote CTA */}
+        {!hideCta && (
+          <div className="footer-cta">
+            <div className="footer-cta-content">
+              <h2 className="footer-cta-title">Ready to move your freight?</h2>
+              <p className="footer-cta-desc">Get a rate back the same business day.</p>
+            </div>
+            <Link href="/get-a-quote" className="footer-cta-btn">
+              Get a Quote <ArrowUpRight size={20} />
+            </Link>
           </div>
-          <Link href="/get-a-quote" className="footer-cta-btn">
-            Get a Quote <ArrowUpRight size={20} />
-          </Link>
-        </div>
+        )}
 
         {/* Middle Tier: Navigation */}
         <div className="footer-main">
