@@ -22,6 +22,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import EditorialHero from './EditorialHero';
 import { fadeUp, fadeUpSoft, viewportOnce } from '../lib/motion';
+import { getRelated } from './serviceEditorialData';
 import { MOFFETT_FAQS } from './moffettFaqs';
 import '../app/about/AboutPage.css';
 import './MoffettFlatbedPage.css';
@@ -311,7 +312,7 @@ export default function MoffettFlatbedPage() {
                 <li key={x}><Check size={15} /> {x}</li>
               ))}
             </ul>
-            <p>When requesting a quote, provide as much information as possible about the load and delivery site so our team can help determine the appropriate delivery solution.</p>
+            <p>When requesting a quote, provide as much information as possible about the load and delivery site so our team can help determine the appropriate delivery solution. You can also browse our full <Link href="/fleet-and-equipment" className="mf-inline-link">fleet &amp; equipment</Link>.</p>
             <a href={TEL_HREF} className="mf-btn mf-btn--line"><Phone size={15} /> Discuss Your Delivery Requirements</a>
           </Reveal>
         </div>
@@ -409,7 +410,7 @@ export default function MoffettFlatbedPage() {
               </Reveal>
             ))}
           </div>
-          <p className="mf-note">Point Zero also serves customers throughout surrounding GTA communities, including Milton, Oakville, Burlington, Etobicoke, Concord, Markham, Richmond Hill, North York, Scarborough, Pickering, Ajax, Whitby and Oshawa.</p>
+          <p className="mf-note">Point Zero also serves customers throughout surrounding GTA communities, including Milton, Oakville, Burlington, Etobicoke, Concord, Markham, Richmond Hill, North York, Scarborough, Pickering, Ajax, Whitby and Oshawa. <Link href="/service-areas" className="mf-inline-link">See all service areas &rarr;</Link></p>
           <div className="mf-center"><Link href={QUOTE_HREF} className="mf-btn mf-btn--primary">Request a GTA Moffett Delivery Quote <ArrowUpRight size={16} /></Link></div>
         </div>
       </section>
@@ -462,6 +463,26 @@ export default function MoffettFlatbedPage() {
         <div className="pz-container">
           <SectionHead num="14" label="FAQ" title="Frequently Asked Questions About Moffett Delivery" />
           <Faq />
+        </div>
+      </section>
+
+      {/* Related services */}
+      <section className="mf-section">
+        <div className="pz-container">
+          <SectionHead num="15" label="Related services" title="You might also need"
+            desc="Explore related Point Zero freight and logistics services across the GTA and Ontario." />
+          <div className="mf-grid mf-grid-3">
+            {getRelated('flatbed-moffett-transport').map((r, i) => (
+              <Reveal key={r.href} custom={i}>
+                <Link href={r.href} className="mf-related-card">
+                  <h3>{r.title}</h3>
+                  <p>{r.desc}</p>
+                  <span className="mf-related-link">Explore <ArrowUpRight size={14} /></span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+          <div className="mf-center"><Link href="/services" className="mf-btn mf-btn--line">View all services <ArrowUpRight size={16} /></Link></div>
         </div>
       </section>
 

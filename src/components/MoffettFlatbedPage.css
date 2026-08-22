@@ -129,6 +129,7 @@
 /* ---- Card grids ---- */
 .mf-grid { display: grid; gap: 1.25rem; }
 .mf-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.mf-grid-3 { grid-template-columns: repeat(3, 1fr); }
 .mf-grid-4 { grid-template-columns: repeat(4, 1fr); }
 .mf-grid--tight { gap: 1rem; }
 
@@ -167,6 +168,57 @@
 .mf-card--lg { padding: 2rem; }
 .mf-card--lg h3 { font-size: 1.3rem; }
 .mf-card-lead { margin-bottom: 0.9rem !important; font-weight: 600; color: var(--text-main) !important; }
+
+/* ---- Inline text links ---- */
+.mf-inline-link {
+  color: var(--c-navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--c-blue);
+}
+.mf-inline-link:hover { color: var(--c-blue); }
+
+/* ---- Related service cards ---- */
+.mf-related-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.mf-related-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--c-navy);
+  box-shadow: 0 8px 22px rgba(13, 27, 42, 0.08);
+}
+.mf-related-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--text-main);
+  margin-bottom: 0.55rem;
+}
+.mf-related-card p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  flex-grow: 1;
+}
+.mf-related-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--c-blue);
+}
 
 /* ---- Check lists ---- */
 .mf-check-list { list-style: none; display: grid; gap: 0.55rem; }
@@ -391,9 +443,13 @@
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {
   .mf-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .mf-grid-3 { grid-template-columns: repeat(3, 1fr); }
   .mf-steps { grid-template-columns: repeat(2, 1fr); }
   .mf-prose-grid { grid-template-columns: 1fr; }
   .mf-final-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 780px) {
+  .mf-grid-3 { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   .mf-grid-2,
