@@ -229,7 +229,7 @@ export default function MoffettFlatbedPage() {
         heroPosition="center"
       />
 
-      {/* Intro + primary actions */}
+      {/* Intro + primary actions, combined with the "no on-site forklift" section */}
       <section className="mf-section mf-intro">
         <div className="pz-container">
           <Reveal>
@@ -240,11 +240,7 @@ export default function MoffettFlatbedPage() {
             <CtaButtons />
           </Reveal>
         </div>
-      </section>
-
-      {/* No on-site forklift */}
-      <section className="mf-section">
-        <div className="pz-container mf-prose-grid">
+        <div className="pz-container mf-prose-grid mf-intro-prose">
           <SectionHead num="01" label="The advantage" title="Moffett Delivery Without an On-Site Forklift" />
           <div className="mf-prose">
             <Reveal>

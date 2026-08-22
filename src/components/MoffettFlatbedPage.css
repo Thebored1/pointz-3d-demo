@@ -66,6 +66,10 @@
   max-width: 820px;
 }
 
+/* The "01 · advantage" block sits inside the intro section — space it from the
+   lead/CTAs above without a full section gap. */
+.mf-intro-prose { margin-top: clamp(2.5rem, 5vw, 4rem); }
+
 /* ---- Prose ---- */
 .mf-prose-grid {
   display: grid;
@@ -297,7 +301,7 @@
 .mf-table tr:last-child td { border-bottom: none; }
 
 /* ---- FAQ ---- */
-.mf-faq-list { display: flex; flex-direction: column; gap: 0.75rem; max-width: 880px; }
+.mf-faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
 .mf-faq-item {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
