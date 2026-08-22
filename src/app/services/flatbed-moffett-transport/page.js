@@ -1,98 +1,117 @@
-import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
+import MoffettFlatbedPage from '../../../components/MoffettFlatbedPage';
+import { MOFFETT_FAQS } from '../../../components/moffettFaqs';
+
+const SITE_URL = 'https://pointzeroroadlines.com';
+const PAGE_PATH = '/services/flatbed-moffett-transport';
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+
+const TITLE = 'Moffett Truck Delivery & Flatbed Service in the GTA | Point Zero Road Lines';
+const DESCRIPTION =
+  'Moffett-equipped flatbed delivery across the Greater Toronto Area — up to 5,500 lb lift capacity, 2-way & 4-way units, and onsite unloading with no dock or forklift required. Request a Moffett delivery quote.';
 
 export const metadata = {
-  title: { absolute: 'Moffett & Flatbed Delivery Ontario | Point Zero Road Lines' },
-  description: 'Moffett-equipped flatbed trucking across Toronto, Mississauga & the GTA. Self-unloading delivery — no dock, no forklift required. Get a free quote.',
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  keywords: [
+    'Moffett truck delivery',
+    'Moffett forklift delivery',
+    'flatbed Moffett service',
+    'Moffett delivery GTA',
+    'flatbed delivery Toronto',
+    'construction material delivery',
+    'truck-mounted forklift delivery',
+  ],
   alternates: {
-    canonical: '/services/flatbed-moffett-transport',
+    canonical: PAGE_PATH,
     languages: {
-      'en-CA': '/services/flatbed-moffett-transport',
-      'en-US': '/services/flatbed-moffett-transport',
-      'x-default': '/services/flatbed-moffett-transport',
+      'en-CA': PAGE_PATH,
+      'en-US': PAGE_PATH,
+      'x-default': PAGE_PATH,
     },
   },
   openGraph: {
-    title: 'Moffett & Flatbed Delivery Ontario | Point Zero Road Lines',
-    description: 'Moffett-equipped flatbed trucking across Toronto, Mississauga & the GTA. Self-unloading delivery — no dock, no forklift required. Get a free quote.',
-    url: '/services/flatbed-moffett-transport',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PAGE_PATH,
     siteName: 'Point Zero Road Lines',
     locale: 'en_CA',
     type: 'website',
     images: [
       {
-        url: 'https://pointzeroroadlines.com/images/warehouse-crossdock-fleet2.webp',
+        url: `${SITE_URL}/images/moffett-construction-unload.webp`,
         width: 1200,
         height: 630,
-        alt: 'Point Zero Road Lines Moffett flatbed truck ready for delivery',
+        alt: 'Point Zero Road Lines Moffett-equipped flatbed delivery in the GTA',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Moffett & Flatbed Delivery Ontario | Point Zero Road Lines',
-    description: 'Moffett-equipped flatbed trucking across Toronto, Mississauga & the GTA. Self-unloading delivery.',
-    images: ['https://pointzeroroadlines.com/images/warehouse-crossdock-fleet2.webp'],
+    title: TITLE,
+    description:
+      'Moffett-equipped flatbed delivery across the GTA — 5,500 lb capacity, 2-way & 4-way units, onsite unloading with no dock or forklift required.',
+    images: [`${SITE_URL}/images/moffett-construction-unload.webp`],
   },
 };
 
-const capabilities = [
-  { icon: 'Forklift', title: 'Truck-Mounted Forklift', desc: 'Moffett unit rides on the rear of the trailer and dismounts in under two minutes to unload on arrival.' },
-  { icon: 'MapPin', title: 'Rough-Terrain Capability', desc: 'Navigates unpaved ground, gravel, grass, mud, and active construction surfaces with all-wheel drive stability.' },
-  { icon: 'Package', title: 'Precise Point Placement', desc: 'Freight placed directly at the work area, storage pad, or installation point — not dumped at the curb.' },
-  { icon: 'Clock', title: 'Zero Site Delay', desc: 'Delivery proceeds immediately without waiting for a site crane, shared forklift, or ground crew.' },
-];
-
-const applications = [
-  { icon: 'CheckCircle', title: 'Lumber & Framing Packages', desc: 'Dimensional lumber, trusses, engineered wood, and plywood placed right next to framing crews.' },
-  { icon: 'CheckCircle', title: 'Drywall, Sheathing & Insulation', desc: 'Weather-protected and staged at access points ready for interior trade installation.' },
-  { icon: 'CheckCircle', title: 'Roofing Materials & Shingles', desc: 'Skids of shingles, underlayment, and metal roofing staged for immediate hoisting.' },
-  { icon: 'CheckCircle', title: 'HVAC Units & Heavy Equipment', desc: 'Commercial RTUs, chillers, and mechanical equipment unloaded smoothly.' },
-  { icon: 'CheckCircle', title: 'Brick, Block & Precast Concrete', desc: 'Heavy masonry pallets spotted directly along foundation and masonry lines.' },
-  { icon: 'CheckCircle', title: 'Structural Steel, Rebar & Pipe', desc: 'Open-deck hauling secured and placed safely on cribbing at the job site.' },
-];
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${PAGE_URL}#service`,
+      name: 'Moffett Truck Delivery & Flatbed Service',
+      serviceType: 'Moffett-equipped flatbed delivery',
+      description: DESCRIPTION,
+      url: PAGE_URL,
+      provider: {
+        '@id': `${SITE_URL}/#organization`,
+        name: 'Point Zero Road Lines',
+      },
+      areaServed: [
+        { '@type': 'AdministrativeArea', name: 'Greater Toronto Area' },
+        { '@type': 'AdministrativeArea', name: 'Ontario' },
+        { '@type': 'City', name: 'Toronto' },
+        { '@type': 'City', name: 'Mississauga' },
+        { '@type': 'City', name: 'Brampton' },
+        { '@type': 'City', name: 'Vaughan' },
+      ],
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'CAD',
+        availability: 'https://schema.org/InStock',
+        url: `${SITE_URL}/get-a-quote`,
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${PAGE_URL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/services` },
+        { '@type': 'ListItem', position: 3, name: 'Moffett Truck Delivery & Flatbed Service', item: PAGE_URL },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${PAGE_URL}#faq`,
+      mainEntity: MOFFETT_FAQS.map(([question, answer]) => ({
+        '@type': 'Question',
+        name: question,
+        acceptedAnswer: { '@type': 'Answer', text: answer },
+      })),
+    },
+  ],
+};
 
 export default function FlatbedMoffettTransportPage() {
   return (
-    <ServiceEditorialPage
-      relatedKey="flatbed-moffett-transport"
-      badge="SERVICES · FLATBED & MOFFETT"
-      badgeAlt="EST. 2006 · MISSISSAUGA HQ"
-      titleLine1="TRUCK-MOUNTED MOFFETT DELIVERY."
-      titleAccent="NO DOCK. NO FORKLIFT. NO PROBLEM."
-      description="Point Zero Road Lines pairs 36ft, 40ft, 48ft and 53ft flatbeds, step decks, and roll-tite trailers with truck-mounted Moffett forklifts that ride on the rear and unload directly at the job site, yard, or residential address. No waiting for on-site equipment, no offloading delays."
-      heroImage="/images/warehouse-crossdock-fleet2.webp"
-      heroAlt="Point Zero Road Lines Moffett flatbed truck ready for delivery"
-      stats={[
-        { value: '100%', label: 'Self-Unloading Fleet' },
-        { value: '2006', label: 'Operating Since' },
-        { value: '24/7', label: 'Live Dispatch' },
-        { value: '36-53ft', label: 'Flatbed & Step-Deck' },
-      ]}
-      primarySection={{
-        num: '01',
-        label: 'Capabilities',
-        title: 'Why Moffett-equipped flatbed transport matters',
-        desc: 'Construction sites and commercial developments need self-sufficient delivery. Our Moffetts eliminate dependency on rental machinery, site cranes, or customer labour.',
-        columns: 4,
-        items: capabilities,
-      }}
-      gallery={[
-        { src: '/images/moffett-yard-rear.webp', alt: 'Moffett-equipped flatbed in logistics yard', span: 'main' },
-        { src: '/images/moffett-unloading-forklift.webp', alt: 'Truck-mounted forklift unloading palletized freight on site' },
-        { src: '/images/moffett-construction-unload.webp', alt: 'Point Zero Moffett delivery at construction site' },
-      ]}
-      darkSection={{
-        num: '02',
-        label: 'Where it works',
-        title: 'Freight we transport and place on site',
-        desc: 'From high-density residential subdivisions to active civil infrastructure projects across Ontario and cross-border lanes.',
-        items: applications,
-      }}
-      cta={{
-        titleLine1: 'HAVE A DELIVERY SITE',
-        titleAccent: 'WITH NO UNLOADING GEAR?',
-        desc: 'Tell us the drop point, schedule, and freight specs. We will dispatch the right flatbed and Moffett combination.',
-      }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <MoffettFlatbedPage />
+    </>
   );
 }

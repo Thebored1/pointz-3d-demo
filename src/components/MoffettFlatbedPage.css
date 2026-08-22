@@ -1,0 +1,401 @@
+/* Long-form Moffett / flatbed service page. Uses the global design tokens from
+ * globals.css (--c-navy, --c-blue, --c-cream, --text-*, --font-*, etc.) and the
+ * shared .pz-container / EditorialHero styling. */
+
+.mf-page {
+  background: var(--bg-primary);
+  color: var(--text-main);
+}
+
+.mf-section {
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+}
+
+/* Alternating tinted band for visual rhythm. */
+.mf-band {
+  background: #ffffff;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ---- Section headers ---- */
+.mf-head {
+  max-width: 780px;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.mf-head-top {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.1rem;
+}
+.mf-head-num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--c-blue);
+  font-weight: 700;
+}
+.mf-head-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.mf-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.4vw, 2.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+.mf-head-desc {
+  margin-top: 1.1rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* ---- Intro ---- */
+.mf-lead {
+  font-family: var(--font-body);
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  line-height: 1.6;
+  color: var(--text-main);
+  max-width: 820px;
+}
+
+/* ---- Prose ---- */
+.mf-prose-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+}
+.mf-prose-grid .mf-head { margin-bottom: 0; }
+.mf-prose p {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: 1.1rem;
+}
+.mf-prose--wide { max-width: 900px; margin-bottom: 2rem; }
+.mf-subhead {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--text-main);
+  margin: 1.6rem 0 0.8rem;
+}
+
+/* ---- Buttons ---- */
+.mf-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.8rem;
+}
+.mf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+  cursor: pointer;
+}
+.mf-btn--primary {
+  background: var(--c-navy);
+  color: var(--c-cream);
+  border: 1px solid var(--c-navy);
+}
+.mf-btn--primary:hover { background: #12293f; transform: translateY(-2px); }
+.mf-btn--line {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+.mf-btn--line:hover { border-color: var(--c-navy); transform: translateY(-2px); }
+.mf-btn--block { width: 100%; justify-content: center; }
+.mf-center { text-align: center; margin-top: clamp(2rem, 4vw, 3rem); }
+
+/* ---- Card grids ---- */
+.mf-grid { display: grid; gap: 1.25rem; }
+.mf-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.mf-grid-4 { grid-template-columns: repeat(4, 1fr); }
+.mf-grid--tight { gap: 1rem; }
+
+.mf-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  height: 100%;
+}
+.mf-band .mf-card { background: var(--bg-primary); }
+.mf-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-blue-dim);
+  color: var(--c-navy);
+  margin-bottom: 1rem;
+}
+.mf-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  line-height: 1.3;
+  color: var(--text-main);
+  margin-bottom: 0.55rem;
+}
+.mf-card p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+.mf-card--lg { padding: 2rem; }
+.mf-card--lg h3 { font-size: 1.3rem; }
+.mf-card-lead { margin-bottom: 0.9rem !important; font-weight: 600; color: var(--text-main) !important; }
+
+/* ---- Check lists ---- */
+.mf-check-list { list-style: none; display: grid; gap: 0.55rem; }
+.mf-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.mf-check-list li svg { color: var(--c-blue); flex-shrink: 0; margin-top: 2px; }
+.mf-check-list--cols { grid-template-columns: repeat(2, 1fr); }
+
+.mf-callout {
+  margin-top: 1.75rem;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+.mf-band .mf-callout { background: var(--bg-primary); }
+.mf-callout p {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0.9rem 0;
+}
+.mf-callout .mf-check-list { margin: 1rem 0; }
+
+/* ---- Mini blocks (audience points, requirements, coverage) ---- */
+.mf-mini {
+  padding: 1.4rem 1.5rem;
+  border-left: 2px solid var(--c-blue);
+  background: #ffffff;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.mf-band .mf-mini { background: var(--bg-primary); }
+.mf-mini h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+.mf-mini p {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+.mf-note {
+  margin-top: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 820px;
+}
+
+/* ---- Process steps ---- */
+.mf-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  counter-reset: step;
+}
+.mf-step {
+  position: relative;
+  padding: 1.75rem 1.5rem 1.5rem;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+.mf-band .mf-step { background: var(--bg-primary); }
+.mf-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--c-navy);
+  color: var(--c-cream);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.mf-step h3 {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  color: var(--text-main);
+  margin-bottom: 0.55rem;
+}
+.mf-step p {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* ---- Comparison table ---- */
+.mf-table-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--border-color); }
+.mf-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+  background: #ffffff;
+}
+.mf-table th {
+  text-align: left;
+  padding: 1rem 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  background: var(--c-navy);
+  color: var(--c-cream);
+}
+.mf-table th:last-child { background: #12293f; }
+.mf-table td {
+  padding: 1rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: top;
+}
+.mf-table td:last-child { color: var(--text-main); font-weight: 500; }
+.mf-table tr:last-child td { border-bottom: none; }
+
+/* ---- FAQ ---- */
+.mf-faq-list { display: flex; flex-direction: column; gap: 0.75rem; max-width: 880px; }
+.mf-faq-item {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  overflow: hidden;
+}
+.mf-band .mf-faq-item { background: var(--bg-primary); }
+.mf-faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 1.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+.mf-faq-trigger h3 {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  color: var(--text-main);
+  margin: 0;
+}
+.mf-faq-chevron { color: var(--c-blue); flex-shrink: 0; transition: transform 0.25s ease; }
+.mf-faq-item--open .mf-faq-chevron { transform: rotate(180deg); }
+.mf-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.mf-faq-item--open .mf-faq-answer { max-height: 320px; padding: 0 1.4rem 1.25rem; }
+.mf-faq-answer p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ---- Final CTA ---- */
+.mf-final {
+  background: var(--c-navy);
+  color: var(--c-cream);
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+}
+.mf-final-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+.mf-final-badge {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-blue);
+}
+.mf-final-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0.9rem 0 1.2rem;
+  color: var(--c-cream);
+}
+.mf-final-text p {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: rgba(245, 243, 239, 0.78);
+  margin-bottom: 1rem;
+}
+.mf-final-actions { display: flex; flex-direction: column; gap: 0.85rem; }
+.mf-final-actions .mf-btn--primary {
+  background: var(--c-blue);
+  border-color: var(--c-blue);
+  color: var(--c-navy);
+}
+.mf-final-actions .mf-btn--primary:hover { background: #33c8f5; }
+.mf-final-actions .mf-btn--line {
+  color: var(--c-cream);
+  border-color: rgba(245, 243, 239, 0.28);
+}
+.mf-final-actions .mf-btn--line:hover { border-color: var(--c-cream); }
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .mf-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .mf-steps { grid-template-columns: repeat(2, 1fr); }
+  .mf-prose-grid { grid-template-columns: 1fr; }
+  .mf-final-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .mf-grid-2,
+  .mf-grid-4,
+  .mf-steps,
+  .mf-check-list--cols { grid-template-columns: 1fr; }
+}
