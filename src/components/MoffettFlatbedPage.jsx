@@ -229,24 +229,20 @@ export default function MoffettFlatbedPage() {
         heroPosition="center"
       />
 
-      {/* Intro + primary actions, combined with the "no on-site forklift" section */}
+      {/* Heading first (right after the hero), then copy, then CTAs at the bottom */}
       <section className="mf-section mf-intro">
         <div className="pz-container">
-          <Reveal>
-            <p className="mf-lead">
-              With Moffett lifting capacity up to 5,500 lbs and both 2-way and 4-way Moffett forklift
-              options, we can accommodate a range of delivery and material-placement requirements.
-            </p>
-            <CtaButtons />
-          </Reveal>
-        </div>
-        <div className="pz-container mf-prose-grid mf-intro-prose">
           <SectionHead num="01" label="The advantage" title="Moffett Delivery Without an On-Site Forklift" />
-          <div className="mf-prose">
+          <div className="mf-prose mf-prose--wide">
             <Reveal>
+              <p className="mf-lead">
+                With Moffett lifting capacity up to 5,500 lbs and both 2-way and 4-way Moffett forklift
+                options, we can accommodate a range of delivery and material-placement requirements.
+              </p>
               <p>When your delivery site does not have a forklift or loading dock, arranging separate unloading equipment can add time, cost and coordination to your project.</p>
               <p>A Moffett-equipped flatbed brings the forklift with the delivery truck. Once onsite, our driver can unload eligible materials and equipment and position them where accessible, subject to site conditions, load requirements and safe operating space.</p>
               <p>This makes Moffett delivery particularly useful for construction sites, commercial properties, equipment deliveries and locations where traditional dock delivery is not practical.</p>
+              <CtaButtons />
             </Reveal>
           </div>
         </div>

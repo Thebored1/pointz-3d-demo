@@ -58,17 +58,15 @@
 }
 
 /* ---- Intro ---- */
-.mf-lead {
+.mf-lead,
+.mf-prose .mf-lead {
   font-family: var(--font-body);
   font-size: clamp(1.15rem, 2.2vw, 1.4rem);
   line-height: 1.6;
   color: var(--text-main);
   max-width: 820px;
+  margin-bottom: 1.5rem;
 }
-
-/* The "01 · advantage" block sits inside the intro section — space it from the
-   lead/CTAs above without a full section gap. */
-.mf-intro-prose { margin-top: clamp(2.5rem, 5vw, 4rem); }
 
 /* ---- Prose ---- */
 .mf-prose-grid {
