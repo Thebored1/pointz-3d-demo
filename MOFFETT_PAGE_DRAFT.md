@@ -193,6 +193,9 @@ Where site access and operating conditions allow, our driver can unload and move
 **Planning Delivery Access Before Your Truck Arrives**
 Providing accurate site information in advance helps us assess the delivery requirements and determine whether the Moffett can safely access the intended unloading area.
 
+**Coordinating Deliveries Across Project Phases** _(added post-draft — verify)_
+We can help coordinate staged or recurring material deliveries as your project progresses, subject to scheduling, availability and site access.
+
 Planning a Construction-Site Delivery? Request a Quote
 
 ### Moffett Delivery for Equipment & Machinery
@@ -230,6 +233,9 @@ Where site access permits, Moffett delivery provides an alternative to relying o
 **On-Site Unloading With a Moffett Forklift**
 The forklift travels with the delivery truck, allowing our driver to unload eligible freight at the destination.
 
+**Oversized & Bulky Product Delivery** _(added post-draft — verify)_
+Moffett-equipped flatbeds can handle suitable oversized or bulky products that may be difficult to unload with conventional equipment, subject to weight, equipment and site conditions.
+
 Request a Commercial Delivery Quote
 
 ### How Moffett Delivery Works
@@ -265,6 +271,9 @@ Identify potential obstructions such as overhead structures, trees, power lines 
 
 **Load Dimensions, Weight & Placement**
 Load dimensions, weight and the intended placement area help determine whether the delivery can be completed safely and which Moffett configuration is appropriate.
+
+**Placement Area Confirmation** _(added post-draft — verify)_
+Confirming the intended placement area in advance helps our team determine whether the load can be positioned where you need it, subject to access and safe operating space.
 
 Not Sure if Your Site Is Suitable? Contact Our Team Before Booking.
 
@@ -306,6 +315,9 @@ The Moffett can provide additional flexibility when moving eligible materials fr
 
 **One Delivery Solution From Pickup to Unloading**
 Point Zero coordinates transportation and Moffett unloading as part of the delivery service, simplifying logistics for the customer.
+
+**Reduced On-Site Coordination** _(added post-draft — verify)_
+Bringing the unloading equipment with the delivery can reduce the need to schedule separate machinery or ground labour at the destination.
 
 See If Moffett Delivery Is Right for Your Load
 
