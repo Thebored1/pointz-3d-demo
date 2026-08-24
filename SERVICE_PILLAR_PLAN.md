@@ -71,6 +71,28 @@ Baseline every page still needs: a keyword-true H1, clear intro + CTA, the core 
 
 ---
 
+## 3a. Fact-handling rule (from the Moffett draft process — applies to every page)
+
+How claims are made is a hard rule, not a style preference. Source: the ChatGPT
+Moffett draft ("keep the claims factual and operationally precise"; the "where
+accessible / eligible / subject to site conditions" guidance; and the pre-publish
+operational review).
+
+| Fact type | Rule |
+|-----------|------|
+| **Verified** (on the service's intake fact-sheet, confirmed by Point Zero) | State it — precisely, with qualifiers. No puffery. |
+| **Per-job / can't guarantee** (placement, site suitability, exact timing) | Hedge: "where accessible", "eligible loads", "suitable", "subject to site conditions". Turn un-guaranteeable promises into true conditional statements. |
+| **Unsubstantiated superlatives** ("best", "fastest", "#1", "guaranteed") | Do not use unless substantiated. |
+| **Unknown / not on the fact-sheet** | Do NOT invent. Either omit, or phrase as "contact us to confirm". |
+| **Any operational claim** | Verified by Point Zero before go-live (the intake/fact gate). |
+
+**Operating procedure for each page:** assert only what's on that service's
+verified fact-sheet; everything conditional gets the hedge language; anything
+unknown is omitted or deferred to "contact us" — never fabricated. This is why
+no page ships before the intake/fact gate (§8) is cleared.
+
+---
+
 ## 4. Structured-data policy (revised)
 
 | Schema | Policy | Why |
@@ -187,6 +209,7 @@ On-page pages alone won't win competitive GTA searches. Run this in parallel:
 ## 13. Definition of done (per page)
 
 - [ ] Facts verified & approved by Point Zero
+- [ ] Fact-handling rule (§3a) applied — no invented claims; per-job items hedged
 - [ ] Copy is **intent-complete** for the topic (right depth, no filler), brand voice
 - [ ] Unique title/meta/OG/Twitter; Breadcrumb schema (Service/FAQ optional)
 - [ ] 2–5 contextual internal links (reciprocal, topical) + related cards
