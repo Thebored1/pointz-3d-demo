@@ -28,6 +28,21 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/services/equipment-delivery',
+        destination: '/services/equipment-machinery-delivery',
+        permanent: true,
+      },
+      {
+        source: '/services/machinery-delivery',
+        destination: '/services/equipment-machinery-delivery',
+        permanent: true,
+      },
+      {
+        source: '/services/equipment-transport',
+        destination: '/services/equipment-machinery-delivery',
+        permanent: true,
+      },
+      {
         source: '/services/dedicated-fleet',
         destination: '/services/dedicated-fleet-services',
         permanent: true,

@@ -40,6 +40,7 @@ const coreServices = pick(
 
 const specializedServices = pick(
   'construction-material-hauling',
+  'equipment-machinery-delivery',
   'last-mile-delivery',
   'manufacturing-consumer-goods-freight',
   'healthcare-linen-logistics',

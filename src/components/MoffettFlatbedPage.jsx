@@ -257,7 +257,7 @@ export default function MoffettFlatbedPage() {
               </Reveal>
             ))}
           </div>
-          <p className="mf-note">If you&rsquo;re unsure whether your material is suitable for Moffett delivery, contact our team with the load details.</p>
+          <p className="mf-note">If you&rsquo;re unsure whether your material is suitable for Moffett delivery, contact our team with the load details. For equipment and machinery specifically, see our <Link href="/services/equipment-machinery-delivery" className="mf-inline-link">equipment &amp; machinery delivery</Link>.</p>
           <CenterCta label="Check Your Load With Point Zero" />
         </div>
       </section>

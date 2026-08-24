@@ -79,11 +79,13 @@ export const overviewServices = [
   { id: '07', icon: 'Timer', title: 'Expedited & Same-Day Freight', href: '/services/expedited-same-day-freight', desc: 'Hot shot delivery when a shipment can’t wait for a standard schedule.' },
   { id: '08', icon: 'Store', title: 'Last Mile Delivery', href: '/services/last-mile-delivery', desc: 'Final-leg delivery to the exact point of need — construction sites, retail and residential.' },
   { id: '09', icon: 'Clock', title: '24/7 Dispatch & Weekend Delivery', href: '/services/24-7-after-hours-weekend-dispatch', desc: 'A live dispatcher on the line nights, weekends, and holidays — not a voicemail box.' },
+  { id: '10', icon: 'Package', title: 'Equipment & Machinery Delivery', href: '/services/equipment-machinery-delivery', desc: 'Eligible equipment and machinery delivered on flatbeds and unloaded onsite with a truck-mounted Moffett.' },
 ];
 
 // Curated cross-links for SEO and navigation. Keyed by service slug.
 export const relatedServices = {
   'flatbed-moffett-transport': ['construction-material-hauling', 'dedicated-fleet-services', 'last-mile-delivery'],
+  'equipment-machinery-delivery': ['flatbed-moffett-transport', 'dedicated-fleet-services', 'construction-material-hauling'],
   'moffett-delivery': ['construction-material-hauling', 'flatbed-moffett-transport', 'last-mile-delivery'],
   'dedicated-fleet-services': ['manufacturing-consumer-goods-freight', 'flatbed-moffett-transport', 'warehouse-cross-dock-storage'],
   'dedicated-fleet': ['manufacturing-consumer-goods-freight', 'flatbed-moffett-transport', 'warehouse-cross-dock-storage'],

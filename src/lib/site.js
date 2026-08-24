@@ -55,6 +55,7 @@ export const ROUTES = [
   { path: '/services/healthcare-linen-logistics', priority: 0.85 },
   { path: '/services/manufacturing-consumer-goods-freight', priority: 0.85 },
   { path: '/services/construction-material-hauling', priority: 0.9 },
+  { path: '/services/equipment-machinery-delivery', priority: 0.85 },
   { path: '/services/expedited-same-day-freight', priority: 0.85 },
   { path: '/services/last-mile-delivery', priority: 0.85 },
   { path: '/services/24-7-after-hours-weekend-dispatch', priority: 0.85 },
