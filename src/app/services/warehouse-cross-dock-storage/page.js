@@ -7,7 +7,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 const TITLE = 'Warehouse & Cross-Dock Mississauga | Point Zero Road Lines';
 const DESCRIPTION =
-  'Cross-docking, warehousing and freight consolidation at our Mississauga terminal (1566 Bonhill Rd) — one operation with the fleet, not a separate storage vendor. Request a quote.';
+  'Cross-docking, warehousing and freight consolidation at our Mississauga terminal — one operation with the fleet, not a separate storage vendor. Get a quote.';
 
 export const metadata = {
   title: { absolute: TITLE },

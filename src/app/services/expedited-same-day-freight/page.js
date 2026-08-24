@@ -7,7 +7,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 const TITLE = 'Hot Shot & Expedited Trucking Ontario | Point Zero Road Lines';
 const DESCRIPTION =
-  "Same-day and next-day hot shot freight across Ontario and the GTA when a shipment can't wait — direct-drive transit, 24/7 live dispatch and live GPS. Request an urgent quote.";
+  "Same-day and hot shot freight across Ontario and the GTA when a shipment can't wait — direct-drive transit, 24/7 live dispatch and live GPS. Get a quote.";
 
 export const metadata = {
   title: { absolute: TITLE },

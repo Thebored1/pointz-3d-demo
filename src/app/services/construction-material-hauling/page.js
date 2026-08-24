@@ -7,7 +7,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 const TITLE = 'Construction Material Delivery Toronto & GTA | Point Zero Road Lines';
 const DESCRIPTION =
-  'Lumber, drywall, roofing, brick, steel & precast delivered and spotted on GTA job sites — Moffett-equipped for sites with no dock or forklift. Request a delivery quote.';
+  'Lumber, drywall, roofing, brick, steel & precast delivered and spotted on GTA job sites — Moffett-equipped for sites with no dock. Request a quote.';
 
 export const metadata = {
   title: { absolute: TITLE },

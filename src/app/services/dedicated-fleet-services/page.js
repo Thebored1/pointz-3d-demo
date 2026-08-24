@@ -7,7 +7,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 const TITLE = 'Dedicated Fleet Services Ontario | Point Zero Road Lines';
 const DESCRIPTION =
-  'Company-owned trucks, Moffett units and drivers dedicated to your account across Ontario & the GTA — predictable capacity, planned around your schedule, without the overhead of owning a fleet.';
+  'Company-owned trucks, Moffett units and drivers dedicated to your account across Ontario — predictable capacity without the overhead of owning a fleet.';
 
 export const metadata = {
   title: { absolute: TITLE },

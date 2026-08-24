@@ -7,7 +7,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 const TITLE = 'Manufacturing & Retail Freight GTA | Point Zero Road Lines';
 const DESCRIPTION =
-  'FTL and scheduled LTL freight for manufacturers, distributors and CPG brands across the GTA & Ontario — JIT plant delivery, cross-dock staging and cross-border lanes, planned around production.';
+  'FTL & scheduled LTL freight for manufacturers and CPG brands across Ontario — JIT plant delivery, cross-dock staging and cross-border lanes. Get a quote.';
 
 export const metadata = {
   title: { absolute: TITLE },

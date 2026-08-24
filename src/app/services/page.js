@@ -7,7 +7,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 const TITLE = 'Trucking, Moffett Delivery & Logistics Services | Point Zero Road Lines';
 const DESCRIPTION =
-  'Dedicated fleet, flatbed & Moffett transport, warehousing & cross-dock, expedited freight, last-mile, and industry logistics across the GTA & Ontario — one company-owned carrier.';
+  'Dedicated fleet, flatbed & Moffett transport, warehousing, expedited and last-mile freight across the GTA & Ontario — one company-owned carrier since 2006.';
 
 export const metadata = {
   title: { absolute: TITLE },

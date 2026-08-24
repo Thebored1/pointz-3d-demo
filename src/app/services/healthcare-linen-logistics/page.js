@@ -7,7 +7,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 const TITLE = 'Healthcare Linen & Textile Transport Ontario | Point Zero Road Lines';
 const DESCRIPTION =
-  'Dedicated linen and textile transport for healthcare, care and hospitality across the GTA & Ontario — sanitary handling, cart & sling gear, and 24/7 scheduled exchange runs. Request a quote.';
+  'Dedicated linen and textile transport for healthcare and hospitality across Ontario — sanitary handling, cart & sling gear, 24/7 scheduled runs. Get a quote.';
 
 export const metadata = {
   title: { absolute: TITLE },

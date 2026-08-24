@@ -7,7 +7,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 const TITLE = 'Moffett Truck Delivery & Flatbed Service in the GTA | Point Zero Road Lines';
 const DESCRIPTION =
-  'Moffett-equipped flatbed delivery across the Greater Toronto Area — up to 5,500 lb lift capacity, 2-way & 4-way units, and onsite unloading with no dock or forklift required. Request a Moffett delivery quote.';
+  'Moffett-equipped flatbed delivery across the GTA — up to 5,500 lb lift, 2-way & 4-way units, and onsite unloading with no dock or forklift. Request a quote.';
 
 export const metadata = {
   title: { absolute: TITLE },

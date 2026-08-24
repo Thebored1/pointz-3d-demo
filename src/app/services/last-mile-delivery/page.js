@@ -7,7 +7,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 const TITLE = 'Last Mile Delivery GTA & Ontario | Point Zero Road Lines';
 const DESCRIPTION =
-  'Final-mile delivery to construction sites, retail locations and residential addresses across the GTA & Ontario — Moffett self-unloading and liftgate, with appointment precision. Get a quote.';
+  'Final-mile delivery to construction sites, retail and residential addresses across the GTA — Moffett self-unloading and liftgate, appointment precision.';
 
 export const metadata = {
   title: { absolute: TITLE },
