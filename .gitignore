@@ -42,3 +42,7 @@ next-env.d.ts
 
 # raw large uploads (>100MB)
 public/images/new2kimages/*.mp4
+
+# local working drafts / scratch (not for the repo)
+CONTENT_DRAFTS.md
+clean_drafts.py
