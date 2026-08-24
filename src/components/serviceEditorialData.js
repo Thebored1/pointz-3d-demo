@@ -57,7 +57,7 @@ export const defaultSteps = [
   { num: '01', icon: 'Package', title: 'Quote', desc: 'Send us your lane and load. We respond fast with a straight answer.' },
   { num: '02', icon: 'Route', title: 'Dispatch', desc: 'The right equipment and driver are assigned and routed for your job.' },
   { num: '03', icon: 'BarChart3', title: 'In Transit', desc: 'Secured, tarped and tracked — watch your truck move in real time.' },
-  { num: '04', icon: 'CheckCircle', title: 'Delivered', desc: 'Placed where you need it — dock, curbside or job site — with confirmation.' },
+  { num: '04', icon: 'CheckCircle', title: 'Delivered', desc: 'Placed where accessible — dock, curbside or job site — with confirmation.' },
 ];
 
 // Capability & authority claims matching August 2026 plan.
@@ -380,7 +380,7 @@ export function getImageSet(key) {
 
 export const overviewCapabilities = [
   { icon: 'Forklift', label: 'Moffett', value: 'Truck-mounted forklifts that travel with the load and unload without site equipment.' },
-  { icon: 'Truck', label: 'Flatbed', value: '36ft, 40ft, 48ft, 53ft, step-decks and drop-decks. Ready for oversized and overweight loads.' },
+  { icon: 'Truck', label: 'Flatbed', value: '36ft, 40ft, 48ft, 53ft, step-decks and drop-decks. Built for large and heavy freight.' },
   { icon: 'Warehouse', label: 'Cross-dock', value: 'Inbound to outbound transfers that keep freight moving instead of sitting.' },
   { icon: 'Navigation', label: 'Tracking', value: 'Live truck location, so you know where the load is without calling to ask.' },
 ];

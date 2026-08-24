@@ -49,7 +49,7 @@ const alwaysOn = bySlug['24-7-after-hours-weekend-dispatch'];
 
 const capabilities = [
   { icon: Package, title: 'Moffett', desc: 'Truck-mounted forklifts that travel with the load and unload without site equipment.' },
-  { icon: Truck, title: 'Flatbed', desc: '36ft, 40ft, 48ft, 53ft, step-decks and drop-decks — ready for oversized and overweight loads.' },
+  { icon: Truck, title: 'Flatbed', desc: '36ft, 40ft, 48ft, 53ft, step-decks and drop-decks — built for large and heavy freight.' },
   { icon: Warehouse, title: 'Cross-dock', desc: 'Inbound-to-outbound transfers that keep freight moving instead of sitting.' },
   { icon: Navigation, title: 'Tracking', desc: 'Live truck location, so you know where the load is without calling to ask.' },
 ];
