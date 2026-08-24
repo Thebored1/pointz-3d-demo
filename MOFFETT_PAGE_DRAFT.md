@@ -297,7 +297,11 @@ Point Zero also serves customers throughout surrounding GTA communities, includi
 
 Request a GTA Moffett Delivery Quote
 
-### Why Use a Moffett Flatbed for Your Delivery?
+### Why Use a Moffett Flatbed for Your Delivery?  _(REMOVED from live page)_
+
+> This section was cut in a later SEO trim (~20% overlap reduction): its points
+> restated benefits already covered by the intro, "Why Choose Point Zero" and the
+> comparison table. Kept here for reference only.
 
 A Moffett-equipped flatbed can provide advantages when standard delivery equipment or dock access is not available.
 

@@ -147,15 +147,6 @@ const cityCoverage = [
   ['Moffett Delivery in Vaughan', 'Moffett delivery solutions for construction, industrial and commercial locations throughout Vaughan and surrounding areas.'],
 ];
 
-const whyMoffett = [
-  ['No Separate Forklift Required at the Destination', 'The Moffett travels with the delivery truck, providing unloading capability for suitable loads.'],
-  ['More Flexibility for Non-Dock Deliveries', 'Suitable locations without traditional loading docks can often be served using a Moffett-equipped flatbed, subject to access and site conditions.'],
-  ['Convenient Jobsite Unloading', 'Construction sites can benefit from having unloading equipment arrive with the material rather than coordinating a separate forklift.'],
-  ['Greater Placement Flexibility', 'The Moffett can provide additional flexibility when moving eligible materials from the truck toward the required delivery area.'],
-  ['One Delivery Solution From Pickup to Unloading', 'Point Zero coordinates transportation and Moffett unloading as part of the delivery service, simplifying logistics for the customer.'],
-  ['Reduced On-Site Coordination', 'Bringing the unloading equipment with the delivery can reduce the need to schedule separate machinery or ground labour at the destination.'],
-];
-
 const comparisonRows = [
   ['May require unloading equipment at the destination', 'Moffett travels with the truck'],
   ['Often benefits from dock access', 'Can serve suitable non-dock locations'],
@@ -318,37 +309,29 @@ export default function MoffettFlatbedPage() {
         </div>
       </section>
 
-      {/* Why use a Moffett flatbed */}
+      {/* Comparison table (the "Why Use a Moffett Flatbed" section was removed as
+          it restated the benefits already covered in the intro, Why-Choose and
+          this comparison — trimming ~20% of overlap per the SEO review). */}
       <section className="mf-section mf-band">
         <div className="pz-container">
-          <SectionHead num="12" label="Benefits" title="Why Use a Moffett Flatbed for Your Delivery?"
-            desc="A Moffett-equipped flatbed can provide advantages when standard delivery equipment or dock access is not available." />
-          <MiniGrid items={whyMoffett} />
-          <CenterCta label="See If Moffett Delivery Is Right for Your Load" />
-        </div>
-      </section>
-
-      {/* Comparison table */}
-      <section className="mf-section">
-        <div className="pz-container">
-          <SectionHead num="13" label="Comparison" title="Moffett vs. Traditional Flatbed Delivery" />
+          <SectionHead num="12" label="Comparison" title="Moffett vs. Traditional Flatbed Delivery" />
           <ComparisonTable heads={['Traditional Flatbed Delivery', 'Moffett-Equipped Flatbed Delivery']} rows={comparisonRows} />
           <p className="mf-note">The right delivery method depends on the load, site conditions and placement requirements. Our team can help determine whether Moffett delivery is suitable for your shipment.</p>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="mf-section mf-band">
+      <section className="mf-section">
         <div className="pz-container">
-          <SectionHead num="14" label="FAQ" title="Frequently Asked Questions About Moffett Delivery" />
+          <SectionHead num="13" label="FAQ" title="Frequently Asked Questions About Moffett Delivery" />
           <FaqAccordion items={MOFFETT_FAQS} />
         </div>
       </section>
 
       {/* Related services */}
-      <section className="mf-section">
+      <section className="mf-section mf-band">
         <div className="pz-container">
-          <SectionHead num="15" label="Related services" title="You might also need"
+          <SectionHead num="14" label="Related services" title="You might also need"
             desc="Explore related Point Zero freight and logistics services across the GTA and Ontario." />
           <RelatedServices items={getRelated('flatbed-moffett-transport')} />
           <div className="mf-center"><Link href="/services" className="mf-btn mf-btn--line">View all services <ArrowUpRight size={16} /></Link></div>
