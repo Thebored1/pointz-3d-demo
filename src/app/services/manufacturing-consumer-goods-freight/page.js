@@ -1,89 +1,115 @@
-import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
+import ManufacturingPage from '../../../components/ManufacturingPage';
+import { MANUFACTURING_FAQS } from '../../../components/manufacturingFaqs';
+
+const SITE_URL = 'https://pointzeroroadlines.com';
+const PAGE_PATH = '/services/manufacturing-consumer-goods-freight';
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+
+const TITLE = 'Manufacturing & Retail Freight GTA | Point Zero Road Lines';
+const DESCRIPTION =
+  'FTL and scheduled LTL freight for manufacturers, distributors and CPG brands across the GTA & Ontario — JIT plant delivery, cross-dock staging and cross-border lanes, planned around production.';
 
 export const metadata = {
-  title: { absolute: 'Manufacturing & Retail Freight GTA | Point Zero Road Lines' },
-  description: 'LTL and FTL freight for manufacturers, distributors, and retailers across the GTA & Ontario, planned around your production schedule.',
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  keywords: [
+    'manufacturing freight GTA',
+    'consumer goods freight Ontario',
+    'JIT plant delivery',
+    'FTL LTL trucking Ontario',
+    'CPG distribution freight',
+    'automotive parts trucking',
+    'cross-border manufacturing freight',
+  ],
   alternates: {
-    canonical: '/services/manufacturing-consumer-goods-freight',
+    canonical: PAGE_PATH,
     languages: {
-      'en-CA': '/services/manufacturing-consumer-goods-freight',
-      'en-US': '/services/manufacturing-consumer-goods-freight',
-      'x-default': '/services/manufacturing-consumer-goods-freight',
+      'en-CA': PAGE_PATH,
+      'en-US': PAGE_PATH,
+      'x-default': PAGE_PATH,
     },
   },
   openGraph: {
-    title: 'Manufacturing & Retail Freight GTA | Point Zero Road Lines',
-    description: 'LTL and FTL freight for manufacturers, distributors, and retailers across the GTA & Ontario, planned around your production schedule.',
-    url: '/services/manufacturing-consumer-goods-freight',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PAGE_PATH,
     siteName: 'Point Zero Road Lines',
     locale: 'en_CA',
     type: 'website',
+    images: [
+      {
+        url: `${SITE_URL}/images/warehouse-crossdock-facility.webp`,
+        width: 1200,
+        height: 630,
+        alt: 'Point Zero Road Lines logistics facility serving manufacturers',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Manufacturing & Retail Freight GTA | Point Zero Road Lines',
-    description: 'LTL and FTL freight for manufacturers, distributors, and retailers across the GTA & Ontario.',
+    title: TITLE,
+    description: 'FTL and scheduled LTL freight for manufacturers, distributors and CPG brands across the GTA & Ontario.',
+    images: [`${SITE_URL}/images/warehouse-crossdock-facility.webp`],
   },
 };
 
-const capabilities = [
-  { icon: 'Factory', title: 'Just-In-Time (JIT) Plant Delivery', desc: 'Raw material replenishment, packaging, and parts delivered precisely to match production shift windows.' },
-  { icon: 'Route', title: 'Distribution Centre Linehauls', desc: 'Scheduled full-truckload transfers connecting manufacturing plants to tier-1 retail DCs across Ontario.' },
-  { icon: 'Warehouse', title: 'Mississauga Buffer Staging', desc: 'Pre-stage finished goods and overflow stock at our 1566 Bonhill facility for rapid on-demand dispatch.' },
-  { icon: 'Truck', title: 'Multi-Trailer Versatility', desc: 'Dry vans for palletized CPG freight and flatbeds for heavy machinery, structural components, and tooling.' },
-];
-
-const applications = [
-  { icon: 'CheckCircle', title: 'Automotive Parts & Assemblies', desc: 'Time-critical plant runs feeding Tier-1 and Tier-2 automotive manufacturing corridors in Ontario.' },
-  { icon: 'CheckCircle', title: 'Packaging Materials & Cartons', desc: 'High-cube dry van freight hauling corrugated cartons, film, bottles, and commercial packaging.' },
-  { icon: 'CheckCircle', title: 'Industrial Machinery & Tooling', desc: 'Open-deck and roll-tite flatbed hauling for heavy production machinery and equipment.' },
-  { icon: 'CheckCircle', title: 'Consumer Packaged Goods (CPG)', desc: 'Consistent palletized freight delivery to retail distribution hubs and fulfillment centres.' },
-  { icon: 'CheckCircle', title: 'Plastics, Resins & Metal Goods', desc: 'Safe transport of raw raw materials and finished fabrications between plants and processors.' },
-  { icon: 'CheckCircle', title: 'Cross-Border Supply Chain Lanes', desc: 'Seamless transport connecting Ontario industrial hubs to Great Lakes manufacturing corridors.' },
-];
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${PAGE_URL}#service`,
+      name: 'Manufacturing & Consumer-Goods Freight',
+      serviceType: 'Manufacturing and CPG freight (FTL/LTL)',
+      description: DESCRIPTION,
+      url: PAGE_URL,
+      provider: {
+        '@id': `${SITE_URL}/#organization`,
+        name: 'Point Zero Road Lines',
+      },
+      areaServed: [
+        { '@type': 'AdministrativeArea', name: 'Ontario' },
+        { '@type': 'AdministrativeArea', name: 'Greater Toronto Area' },
+        { '@type': 'City', name: 'Mississauga' },
+        { '@type': 'City', name: 'Brampton' },
+        { '@type': 'City', name: 'Toronto' },
+      ],
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'CAD',
+        availability: 'https://schema.org/InStock',
+        url: `${SITE_URL}/get-a-quote`,
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${PAGE_URL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/services` },
+        { '@type': 'ListItem', position: 3, name: 'Manufacturing & Consumer Goods', item: PAGE_URL },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${PAGE_URL}#faq`,
+      mainEntity: MANUFACTURING_FAQS.map(([question, answer]) => ({
+        '@type': 'Question',
+        name: question,
+        acceptedAnswer: { '@type': 'Answer', text: answer },
+      })),
+    },
+  ],
+};
 
 export default function ManufacturingConsumerGoodsFreightPage() {
   return (
-    <ServiceEditorialPage
-      relatedKey="manufacturing-consumer-goods-freight"
-      badge="SERVICES · MANUFACTURING & CPG"
-      badgeAlt="EST. 2006 · MISSISSAUGA HQ"
-      titleLine1="MANUFACTURING & CONSUMER GOODS."
-      titleAccent="CAPACITY THAT KEEPS PRODUCTION MOVING."
-      description="Ontario manufacturers and CPG brands cannot afford production halts or delayed retail distribution. Point Zero Road Lines delivers dedicated Full Truckload (FTL) and scheduled Less-Than-Truckload (LTL) capacity, raw material plant deliveries, and warehouse cross-dock support."
-      heroImage="/images/warehouse-crossdock-facility.webp"
-      heroAlt="Point Zero Road Lines modern logistics facility"
-      stats={[
-        { value: 'FTL & LTL', label: 'Flexible Capacity' },
-        { value: '2006', label: 'Operating Since' },
-        { value: '24/7', label: 'Production Dispatch' },
-        { value: 'ON & Cross-Border', label: 'Lanes Covered' },
-      ]}
-      primarySection={{
-        num: '01',
-        label: 'Capabilities',
-        title: 'Built for the rhythm of modern manufacturing',
-        desc: 'Production lines wait for no one. We provide dedicated tractors, dry vans, flatbeds, and 24/7 dispatchers who communicate in real time so your plant never stalls.',
-        columns: 4,
-        items: capabilities,
-      }}
-      gallery={[
-        { src: '/images/warehouse-crossdock-docks.webp', alt: 'Warehouse loading docks', span: 'main' },
-        { src: '/images/warehouse-crossdock-fleet1.webp', alt: 'Stationed freight trucks' },
-        { src: '/images/flatbed-construction-haul.webp', alt: 'Heavy freight transport' },
-      ]}
-      darkSection={{
-        num: '02',
-        label: 'Freight Categories',
-        title: 'Manufactured goods we transport daily',
-        desc: 'From high-volume packaging and automotive parts to heavy machinery and consumer products.',
-        items: applications,
-      }}
-      cta={{
-        titleLine1: 'NEED DEDICATED CAPACITY FOR',
-        titleAccent: 'YOUR PRODUCTION SCHEDULE?',
-        desc: 'Talk to our dispatch team about recurring plant lanes, JIT delivery, and warehouse staging options.',
-      }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <ManufacturingPage />
+    </>
   );
 }
