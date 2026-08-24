@@ -1,6 +1,11 @@
-/* Long-form Moffett / flatbed service page. Uses the global design tokens from
- * globals.css (--c-navy, --c-blue, --c-cream, --text-*, --font-*, etc.) and the
- * shared .pz-container / EditorialHero styling. */
+/* Shared design system for long-form service pillar pages (Moffett page is the
+ * reference consumer). Uses global design tokens from globals.css (--c-navy,
+ * --c-blue, --c-cream, --text-*, --font-*, etc.) and the shared .pz-container /
+ * EditorialHero styling.
+ *
+ * NOTE: the class prefix `mf-` is retained (originally "moffett-flatbed") as the
+ * stable prefix for this shared system — renaming would churn every consumer for
+ * no functional gain. Treat `mf-` here as "service pillar", not Moffett-specific. */
 
 .mf-page {
   background: var(--bg-primary);

@@ -1,14 +1,10 @@
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
 import {
   ArrowUpRight,
   Phone,
   Mail,
-  Check,
-  ChevronDown,
   Gauge,
   Move,
   Truck,
@@ -21,62 +17,32 @@ import {
 import Navbar from './Navbar';
 import Footer from './Footer';
 import EditorialHero from './EditorialHero';
-import { fadeUp, fadeUpSoft, viewportOnce } from '../lib/motion';
 import { getRelated } from './serviceEditorialData';
 import { MOFFETT_FAQS } from './moffettFaqs';
+import {
+  Reveal,
+  SectionHead,
+  CtaButtons,
+  CenterCta,
+  FeatureGrid,
+  MiniGrid,
+  CheckList,
+  StepGrid,
+  ComparisonTable,
+  FaqAccordion,
+  RelatedServices,
+  FinalCta,
+  QUOTE_HREF,
+  TEL_HREF,
+  MAIL_HREF,
+} from './servicePillar/blocks';
 import '../app/about/AboutPage.css';
-import './MoffettFlatbedPage.css';
 
 // Copy on this page is reproduced verbatim from MOFFETT_PAGE_DRAFT.md (the
 // client-approved source). Do not paraphrase section text without approval.
+// Layout is composed from the shared servicePillar block library.
 
-const QUOTE_HREF = '/get-a-quote';
-const TEL_HREF = 'tel:+16476801300';
-const MAIL_HREF = 'mailto:info@pzrls.com';
-
-function Reveal({ children, className, custom }) {
-  return (
-    <motion.div
-      className={className}
-      variants={fadeUpSoft}
-      initial="hidden"
-      whileInView="visible"
-      viewport={viewportOnce}
-      custom={custom}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-function SectionHead({ num, label, title, desc, dark }) {
-  return (
-    <div className={`mf-head${dark ? ' mf-head--dark' : ''}`}>
-      <div className="mf-head-top">
-        <span className="mf-head-num">{num}</span>
-        <span className="mf-head-label">{label}</span>
-      </div>
-      <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce}>
-        {title}
-      </motion.h2>
-      {desc ? <p className="mf-head-desc">{desc}</p> : null}
-    </div>
-  );
-}
-
-// Primary CTA button pair reused across sections.
-function CtaButtons({ secondaryLabel = 'Call Point Zero' }) {
-  return (
-    <div className="mf-cta-row">
-      <Link href={QUOTE_HREF} className="mf-btn mf-btn--primary">
-        Request a Moffett Delivery Quote <ArrowUpRight size={16} />
-      </Link>
-      <a href={TEL_HREF} className="mf-btn mf-btn--line">
-        <Phone size={15} /> {secondaryLabel}
-      </a>
-    </div>
-  );
-}
+const QUOTE_LABEL = 'Request a Moffett Delivery Quote';
 
 const whyChoose = [
   { icon: Gauge, title: 'Up to 5,500-Lb Moffett Lifting Capacity', desc: 'Our Moffett-equipped trucks offer lifting capacity of up to 5,500 lbs, subject to the specific load, equipment configuration and operating requirements.' },
@@ -198,24 +164,7 @@ const comparisonRows = [
   ['Less flexibility where unloading equipment is unavailable', 'Greater flexibility for suitable jobsites and commercial locations'],
 ];
 
-function Faq() {
-  const [open, setOpen] = useState(null);
-  return (
-    <div className="mf-faq-list">
-      {MOFFETT_FAQS.map(([q, a], i) => (
-        <div key={q} className={`mf-faq-item${open === i ? ' mf-faq-item--open' : ''}`}>
-          <button className="mf-faq-trigger" onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i}>
-            <h3>{q}</h3>
-            <ChevronDown className="mf-faq-chevron" size={20} />
-          </button>
-          <div className="mf-faq-answer">
-            <p>{a}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
+const whichFactors = ['Load weight', 'Load dimensions', 'Delivery location', 'Ground conditions', 'Available access', 'Required placement', 'Available operating space'];
 
 export default function MoffettFlatbedPage() {
   return (
@@ -247,7 +196,7 @@ export default function MoffettFlatbedPage() {
               <p>When your delivery site does not have a forklift or loading dock, arranging separate unloading equipment can add time, cost and coordination to your project.</p>
               <p>A Moffett-equipped flatbed brings the forklift with the delivery truck. Once onsite, our driver can unload eligible materials and equipment and position them where accessible, subject to site conditions, load requirements and safe operating space.</p>
               <p>This makes Moffett delivery particularly useful for construction sites, commercial properties, equipment deliveries and locations where traditional dock delivery is not practical.</p>
-              <CtaButtons />
+              <CtaButtons quoteLabel={QUOTE_LABEL} />
             </Reveal>
           </div>
         </div>
@@ -263,7 +212,7 @@ export default function MoffettFlatbedPage() {
               <h3 className="mf-subhead">Unload and Position Eligible Materials at the Delivery Site</h3>
               <p>Depending on the load and site conditions, the Moffett can be used to unload materials from the flatbed and move them toward the required delivery area.</p>
               <p>Adequate access and operating space are required for the Moffett to safely enter and maneuver at the delivery location.</p>
-              <CtaButtons />
+              <CtaButtons quoteLabel={QUOTE_LABEL} />
             </Reveal>
           </div>
         </div>
@@ -273,19 +222,8 @@ export default function MoffettFlatbedPage() {
       <section className="mf-section">
         <div className="pz-container">
           <SectionHead num="03" label="Why Point Zero" title="Why Choose Point Zero for Moffett Delivery?" />
-          <div className="mf-grid mf-grid-4">
-            {whyChoose.map((c, i) => {
-              const Icon = c.icon;
-              return (
-                <Reveal key={c.title} className="mf-card" custom={i}>
-                  <div className="mf-card-icon"><Icon size={22} strokeWidth={1.5} /></div>
-                  <h3>{c.title}</h3>
-                  <p>{c.desc}</p>
-                </Reveal>
-              );
-            })}
-          </div>
-          <div className="mf-center"><Link href={QUOTE_HREF} className="mf-btn mf-btn--primary">Talk to Our Moffett Delivery Team <ArrowUpRight size={16} /></Link></div>
+          <FeatureGrid cols={4} items={whyChoose} />
+          <CenterCta label="Talk to Our Moffett Delivery Team" />
         </div>
       </section>
 
@@ -307,11 +245,7 @@ export default function MoffettFlatbedPage() {
           <Reveal className="mf-callout">
             <h3 className="mf-subhead">Which Moffett Is Right for Your Delivery?</h3>
             <p>The appropriate equipment depends on factors such as:</p>
-            <ul className="mf-check-list mf-check-list--cols">
-              {['Load weight', 'Load dimensions', 'Delivery location', 'Ground conditions', 'Available access', 'Required placement', 'Available operating space'].map((x) => (
-                <li key={x}><Check size={15} /> {x}</li>
-              ))}
-            </ul>
+            <CheckList items={whichFactors} cols />
             <p>When requesting a quote, provide as much information as possible about the load and delivery site so our team can help determine the appropriate delivery solution. You can also browse our full <Link href="/fleet-and-equipment" className="mf-inline-link">fleet &amp; equipment</Link>.</p>
             <a href={TEL_HREF} className="mf-btn mf-btn--line"><Phone size={15} /> Discuss Your Delivery Requirements</a>
           </Reveal>
@@ -328,14 +262,12 @@ export default function MoffettFlatbedPage() {
               <Reveal key={g.title} className="mf-card mf-card--list" custom={i}>
                 <h3>{g.title}</h3>
                 <p className="mf-card-lead">{g.lead}</p>
-                <ul className="mf-check-list">
-                  {g.items.map((it) => <li key={it}><Check size={15} /> {it}</li>)}
-                </ul>
+                <CheckList items={g.items} />
               </Reveal>
             ))}
           </div>
           <p className="mf-note">If you&rsquo;re unsure whether your material is suitable for Moffett delivery, contact our team with the load details.</p>
-          <div className="mf-center"><Link href={QUOTE_HREF} className="mf-btn mf-btn--primary">Check Your Load With Point Zero <ArrowUpRight size={16} /></Link></div>
+          <CenterCta label="Check Your Load With Point Zero" />
         </div>
       </section>
 
@@ -350,15 +282,8 @@ export default function MoffettFlatbedPage() {
                 <p>{b.intro2}</p>
               </Reveal>
             </div>
-            <div className="mf-grid mf-grid-2 mf-grid--tight">
-              {b.points.map(([t, d], i) => (
-                <Reveal key={t} className="mf-mini" custom={i}>
-                  <h3>{t}</h3>
-                  <p>{d}</p>
-                </Reveal>
-              ))}
-            </div>
-            <div className="mf-center"><Link href={QUOTE_HREF} className="mf-btn mf-btn--primary">{b.ctaLabel} <ArrowUpRight size={16} /></Link></div>
+            <MiniGrid items={b.points} />
+            <CenterCta label={b.ctaLabel} />
           </div>
         </section>
       ))}
@@ -367,16 +292,8 @@ export default function MoffettFlatbedPage() {
       <section className="mf-section">
         <div className="pz-container">
           <SectionHead num="09" label="How it works" title="How Moffett Delivery Works" desc="We keep the process straightforward from quote to delivery." />
-          <div className="mf-steps">
-            {processSteps.map(([n, t, d], i) => (
-              <Reveal key={n} className="mf-step" custom={i}>
-                <span className="mf-step-num">{n}</span>
-                <h3>{t}</h3>
-                <p>{d}</p>
-              </Reveal>
-            ))}
-          </div>
-          <div className="mf-center"><Link href={QUOTE_HREF} className="mf-btn mf-btn--primary">Start Your Moffett Delivery Quote <ArrowUpRight size={16} /></Link></div>
+          <StepGrid steps={processSteps} />
+          <CenterCta label="Start Your Moffett Delivery Quote" />
         </div>
       </section>
 
@@ -385,14 +302,7 @@ export default function MoffettFlatbedPage() {
         <div className="pz-container">
           <SectionHead num="10" label="Site & access" title="Moffett Delivery Site & Access Requirements"
             desc="A successful Moffett delivery begins with understanding the delivery site. Because the Moffett must be able to safely enter and operate at the destination, customers should provide accurate information about the site when requesting a quote." />
-          <div className="mf-grid mf-grid-2 mf-grid--tight">
-            {siteRequirements.map(([t, d], i) => (
-              <Reveal key={t} className="mf-mini" custom={i}>
-                <h3>{t}</h3>
-                <p>{d}</p>
-              </Reveal>
-            ))}
-          </div>
+          <MiniGrid items={siteRequirements} />
           <p className="mf-note">Not Sure if Your Site Is Suitable? Contact Our Team Before Booking.</p>
         </div>
       </section>
@@ -402,16 +312,9 @@ export default function MoffettFlatbedPage() {
         <div className="pz-container">
           <SectionHead num="11" label="Service area" title="Moffett Delivery Across the GTA"
             desc="Point Zero provides Moffett truck delivery and flatbed Moffett service throughout the Greater Toronto Area, supporting construction companies, equipment suppliers, retailers and commercial customers." />
-          <div className="mf-grid mf-grid-2 mf-grid--tight">
-            {cityCoverage.map(([t, d], i) => (
-              <Reveal key={t} className="mf-mini" custom={i}>
-                <h3>{t}</h3>
-                <p>{d}</p>
-              </Reveal>
-            ))}
-          </div>
+          <MiniGrid items={cityCoverage} />
           <p className="mf-note">Point Zero also serves customers throughout surrounding GTA communities, including Milton, Oakville, Burlington, Etobicoke, Concord, Markham, Richmond Hill, North York, Scarborough, Pickering, Ajax, Whitby and Oshawa. <Link href="/service-areas" className="mf-inline-link">See all service areas &rarr;</Link></p>
-          <div className="mf-center"><Link href={QUOTE_HREF} className="mf-btn mf-btn--primary">Request a GTA Moffett Delivery Quote <ArrowUpRight size={16} /></Link></div>
+          <CenterCta label="Request a GTA Moffett Delivery Quote" />
         </div>
       </section>
 
@@ -420,15 +323,8 @@ export default function MoffettFlatbedPage() {
         <div className="pz-container">
           <SectionHead num="12" label="Benefits" title="Why Use a Moffett Flatbed for Your Delivery?"
             desc="A Moffett-equipped flatbed can provide advantages when standard delivery equipment or dock access is not available." />
-          <div className="mf-grid mf-grid-2 mf-grid--tight">
-            {whyMoffett.map(([t, d], i) => (
-              <Reveal key={t} className="mf-mini" custom={i}>
-                <h3>{t}</h3>
-                <p>{d}</p>
-              </Reveal>
-            ))}
-          </div>
-          <div className="mf-center"><Link href={QUOTE_HREF} className="mf-btn mf-btn--primary">See If Moffett Delivery Is Right for Your Load <ArrowUpRight size={16} /></Link></div>
+          <MiniGrid items={whyMoffett} />
+          <CenterCta label="See If Moffett Delivery Is Right for Your Load" />
         </div>
       </section>
 
@@ -436,24 +332,7 @@ export default function MoffettFlatbedPage() {
       <section className="mf-section">
         <div className="pz-container">
           <SectionHead num="13" label="Comparison" title="Moffett vs. Traditional Flatbed Delivery" />
-          <div className="mf-table-wrap">
-            <table className="mf-table">
-              <thead>
-                <tr>
-                  <th>Traditional Flatbed Delivery</th>
-                  <th>Moffett-Equipped Flatbed Delivery</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonRows.map(([a, b]) => (
-                  <tr key={a}>
-                    <td>{a}</td>
-                    <td>{b}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <ComparisonTable heads={['Traditional Flatbed Delivery', 'Moffett-Equipped Flatbed Delivery']} rows={comparisonRows} />
           <p className="mf-note">The right delivery method depends on the load, site conditions and placement requirements. Our team can help determine whether Moffett delivery is suitable for your shipment.</p>
         </div>
       </section>
@@ -462,7 +341,7 @@ export default function MoffettFlatbedPage() {
       <section className="mf-section mf-band">
         <div className="pz-container">
           <SectionHead num="14" label="FAQ" title="Frequently Asked Questions About Moffett Delivery" />
-          <Faq />
+          <FaqAccordion items={MOFFETT_FAQS} />
         </div>
       </section>
 
@@ -471,37 +350,25 @@ export default function MoffettFlatbedPage() {
         <div className="pz-container">
           <SectionHead num="15" label="Related services" title="You might also need"
             desc="Explore related Point Zero freight and logistics services across the GTA and Ontario." />
-          <div className="mf-grid mf-grid-3">
-            {getRelated('flatbed-moffett-transport').map((r, i) => (
-              <Reveal key={r.href} custom={i}>
-                <Link href={r.href} className="mf-related-card">
-                  <h3>{r.title}</h3>
-                  <p>{r.desc}</p>
-                  <span className="mf-related-link">Explore <ArrowUpRight size={14} /></span>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
+          <RelatedServices items={getRelated('flatbed-moffett-transport')} />
           <div className="mf-center"><Link href="/services" className="mf-btn mf-btn--line">View all services <ArrowUpRight size={16} /></Link></div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="mf-final">
-        <div className="pz-container mf-final-inner">
-          <div className="mf-final-text">
-            <span className="mf-final-badge">Tell Us About Your Delivery</span>
-            <h2>Request a Moffett Delivery Quote in the GTA</h2>
-            <p>Need a Moffett truck for your next delivery in the GTA?</p>
-            <p>Send Point Zero Road Lines your pickup and delivery details, along with information about the load and delivery site. Our team will review the requirements and help determine the appropriate Moffett delivery solution.</p>
-          </div>
-          <div className="mf-final-actions">
-            <Link href={QUOTE_HREF} className="mf-btn mf-btn--primary mf-btn--block">Request a Moffett Delivery Quote <ArrowUpRight size={16} /></Link>
-            <a href={TEL_HREF} className="mf-btn mf-btn--line mf-btn--block"><Phone size={15} /> Call Point Zero</a>
-            <a href={MAIL_HREF} className="mf-btn mf-btn--line mf-btn--block"><Mail size={15} /> Email Our Team</a>
-          </div>
-        </div>
-      </section>
+      <FinalCta
+        badge="Tell Us About Your Delivery"
+        title="Request a Moffett Delivery Quote in the GTA"
+        paragraphs={[
+          'Need a Moffett truck for your next delivery in the GTA?',
+          'Send Point Zero Road Lines your pickup and delivery details, along with information about the load and delivery site. Our team will review the requirements and help determine the appropriate Moffett delivery solution.',
+        ]}
+        actions={[
+          { href: QUOTE_HREF, label: 'Request a Moffett Delivery Quote', variant: 'primary', icon: <ArrowUpRight size={16} /> },
+          { href: TEL_HREF, label: 'Call Point Zero', variant: 'line', external: true, icon: <Phone size={15} /> },
+          { href: MAIL_HREF, label: 'Email Our Team', variant: 'line', external: true, icon: <Mail size={15} /> },
+        ]}
+      />
 
       <Footer hideCta />
     </div>
