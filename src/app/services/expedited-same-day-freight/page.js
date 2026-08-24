@@ -1,89 +1,113 @@
-import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
+import ExpeditedFreightPage from '../../../components/ExpeditedFreightPage';
+import { EXPEDITED_FAQS } from '../../../components/expeditedFaqs';
+
+const SITE_URL = 'https://pointzeroroadlines.com';
+const PAGE_PATH = '/services/expedited-same-day-freight';
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+
+const TITLE = 'Hot Shot & Expedited Trucking Ontario | Point Zero Road Lines';
+const DESCRIPTION =
+  "Same-day and next-day hot shot freight across Ontario and the GTA when a shipment can't wait — direct-drive transit, 24/7 live dispatch and live GPS. Request an urgent quote.";
 
 export const metadata = {
-  title: { absolute: 'Hot Shot & Expedited Trucking Ontario | Point Zero Road Lines' },
-  description: "Same-day and next-day hot shot freight across Ontario and the GTA when a shipment can't wait. Request an urgent quote.",
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  keywords: [
+    'hot shot trucking Ontario',
+    'expedited freight GTA',
+    'same-day delivery Toronto',
+    'emergency freight Ontario',
+    'direct drive trucking',
+    'urgent freight GTA',
+    'expedited cross-border freight',
+  ],
   alternates: {
-    canonical: '/services/expedited-same-day-freight',
+    canonical: PAGE_PATH,
     languages: {
-      'en-CA': '/services/expedited-same-day-freight',
-      'en-US': '/services/expedited-same-day-freight',
-      'x-default': '/services/expedited-same-day-freight',
+      'en-CA': PAGE_PATH,
+      'en-US': PAGE_PATH,
+      'x-default': PAGE_PATH,
     },
   },
   openGraph: {
-    title: 'Hot Shot & Expedited Trucking Ontario | Point Zero Road Lines',
-    description: "Same-day and next-day hot shot freight across Ontario and the GTA when a shipment can't wait. Request an urgent quote.",
-    url: '/services/expedited-same-day-freight',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PAGE_PATH,
     siteName: 'Point Zero Road Lines',
     locale: 'en_CA',
     type: 'website',
+    images: [
+      {
+        url: `${SITE_URL}/images/flatbed-highway-ad.webp`,
+        width: 1200,
+        height: 630,
+        alt: 'Point Zero Road Lines expedited freight transport on the highway',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hot Shot & Expedited Trucking Ontario | Point Zero Road Lines',
-    description: 'Same-day and next-day hot shot freight across Ontario and the GTA.',
+    title: TITLE,
+    description: "Same-day and next-day hot shot freight across Ontario and the GTA when a shipment can't wait.",
+    images: [`${SITE_URL}/images/flatbed-highway-ad.webp`],
   },
 };
 
-const capabilities = [
-  { icon: 'Timer', title: 'Direct-Drive Dedicated Transit', desc: 'Your freight is the sole cargo on the truck — zero terminal stops, zero consolidation delays, direct door-to-door transit.' },
-  { icon: 'Truck', title: 'Rapid Equipment Mobilization', desc: 'Tractors, dry vans, flatbeds, or Moffett units dispatched from our Mississauga yard within minutes of call.' },
-  { icon: 'Clock', title: '24/7 Live Emergency Dispatch', desc: 'Direct connection to experienced dispatchers nights, weekends, and holidays — never an automated answering service.' },
-  { icon: 'Navigation', title: 'Real-Time Milestones & GPS', desc: 'Live truck tracking, automatic departure alerts, and immediate digital Proof of Delivery (POD) upon touchdown.' },
-];
-
-const applications = [
-  { icon: 'CheckCircle', title: 'Plant-Down & Production Stops', desc: 'Immediate hot shot hauling of tooling, raw materials, or critical replacement parts to restart halted plants.' },
-  { icon: 'CheckCircle', title: 'Job-Site Material Shortages', desc: 'Emergency same-day delivery of trusses, steel, fasteners, or drywall preventing construction crew downtime.' },
-  { icon: 'CheckCircle', title: 'Healthcare & Hospital Surges', desc: 'Urgent linen, laundry cart, and medical supply replenishment during unforeseen healthcare demand spikes.' },
-  { icon: 'CheckCircle', title: 'Commercial Equipment Breakdowns', desc: 'Direct transit for heavy replacement motors, pumps, electrical gear, and mechanical components.' },
-  { icon: 'CheckCircle', title: 'Critical Cross-Border Hot Shots', desc: 'Expedited transport between Ontario and U.S. border points with accelerated customs coordination.' },
-  { icon: 'CheckCircle', title: 'Retail Stock-Out Prevention', desc: 'Rapid same-day transfers from central distribution hubs to retail locations for high-demand promotions.' },
-];
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${PAGE_URL}#service`,
+      name: 'Expedited & Same-Day Freight',
+      serviceType: 'Hot shot / expedited freight',
+      description: DESCRIPTION,
+      url: PAGE_URL,
+      provider: {
+        '@id': `${SITE_URL}/#organization`,
+        name: 'Point Zero Road Lines',
+      },
+      areaServed: [
+        { '@type': 'AdministrativeArea', name: 'Greater Toronto Area' },
+        { '@type': 'AdministrativeArea', name: 'Golden Horseshoe' },
+        { '@type': 'AdministrativeArea', name: 'Ontario' },
+      ],
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'CAD',
+        availability: 'https://schema.org/InStock',
+        url: `${SITE_URL}/get-a-quote`,
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${PAGE_URL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/services` },
+        { '@type': 'ListItem', position: 3, name: 'Expedited & Same-Day Freight', item: PAGE_URL },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${PAGE_URL}#faq`,
+      mainEntity: EXPEDITED_FAQS.map(([question, answer]) => ({
+        '@type': 'Question',
+        name: question,
+        acceptedAnswer: { '@type': 'Answer', text: answer },
+      })),
+    },
+  ],
+};
 
 export default function ExpeditedSameDayFreightPage() {
   return (
-    <ServiceEditorialPage
-      relatedKey="expedited-same-day-freight"
-      badge="SERVICES · EXPEDITED FREIGHT"
-      badgeAlt="EST. 2006 · MISSISSAUGA HQ"
-      titleLine1="EXPEDITED & SAME-DAY FREIGHT."
-      titleAccent="WHEN TOMORROW IS TWENTY-FOUR HOURS TOO LATE."
-      description="Production line down? Emergency job-site shortage? Urgent medical linen surge? Point Zero Road Lines provides immediate direct-drive hot shot and same-day freight transportation across the Greater Toronto Area, Golden Horseshoe, and cross-border lanes."
-      heroImage="/images/flatbed-highway-ad.webp"
-      heroAlt="Point Zero Road Lines expedited freight transport on highway"
-      stats={[
-        { value: 'Immediate', label: 'Dispatch Response' },
-        { value: 'Direct', label: 'Door-to-Door Transit' },
-        { value: '24/7', label: 'Live Emergency Line' },
-        { value: 'Live GPS', label: 'Continuous Tracking' },
-      ]}
-      primarySection={{
-        num: '01',
-        label: 'Capabilities',
-        title: 'Built for high-stakes, time-critical logistics',
-        desc: 'When minutes mean thousands of dollars in downtime, you need a carrier with immediate wheels rolling and proactive communication from wheels-up to drop-off.',
-        columns: 4,
-        items: capabilities,
-      }}
-      gallery={[
-        { src: '/images/dedicated-fleet-highway.webp', alt: 'Expedited transport truck on highway', span: 'main' },
-        { src: '/images/warehouse-crossdock-fleet2.webp', alt: 'Fast yard staging' },
-        { src: '/images/warehouse-crossdock-docks.webp', alt: 'Immediate dock transfers' },
-      ]}
-      darkSection={{
-        num: '02',
-        label: 'Emergency Scenarios',
-        title: 'When shippers call Point Zero hot shot',
-        desc: 'From industrial machinery emergencies to healthcare surges across Ontario.',
-        items: applications,
-      }}
-      cta={{
-        titleLine1: 'HAVE AN URGENT FREIGHT EMERGENCY',
-        titleAccent: 'RIGHT NOW?',
-        desc: 'Call our 24/7 emergency dispatch line directly at (647) 680-1300 for immediate truck assignment.',
-      }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <ExpeditedFreightPage />
+    </>
   );
 }
