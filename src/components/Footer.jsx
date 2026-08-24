@@ -15,7 +15,7 @@ export default function Footer({ hideCta = false }) {
           <div className="footer-cta">
             <div className="footer-cta-content">
               <h2 className="footer-cta-title">Ready to move your freight?</h2>
-              <p className="footer-cta-desc">Get a rate back the same business day.</p>
+              <p className="footer-cta-desc">Fast quotes — often the same business day.</p>
             </div>
             <Link href="/get-a-quote" className="footer-cta-btn">
               Get a Quote <ArrowUpRight size={20} />
