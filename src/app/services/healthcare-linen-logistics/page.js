@@ -1,89 +1,115 @@
-import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
+import HealthcareLinenPage from '../../../components/HealthcareLinenPage';
+import { HEALTHCARE_FAQS } from '../../../components/healthcareFaqs';
+
+const SITE_URL = 'https://pointzeroroadlines.com';
+const PAGE_PATH = '/services/healthcare-linen-logistics';
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+
+const TITLE = 'Healthcare Linen & Textile Transport Ontario | Point Zero Road Lines';
+const DESCRIPTION =
+  'Dedicated linen and textile transport for healthcare, care and hospitality across the GTA & Ontario — sanitary handling, cart & sling gear, and 24/7 scheduled exchange runs. Request a quote.';
 
 export const metadata = {
-  title: { absolute: 'Healthcare Linen & Textile Transport Ontario | Point Zero Road Lines' },
-  description: 'Dedicated linen and textile transport for healthcare and hospitality across the GTA & Ontario, built around tight turnaround windows.',
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  keywords: [
+    'healthcare linen transport Ontario',
+    'medical linen delivery GTA',
+    'commercial laundry transport',
+    'hospital linen logistics',
+    'linen cart transport',
+    'hospitality linen delivery',
+    'textile transport Ontario',
+  ],
   alternates: {
-    canonical: '/services/healthcare-linen-logistics',
+    canonical: PAGE_PATH,
     languages: {
-      'en-CA': '/services/healthcare-linen-logistics',
-      'en-US': '/services/healthcare-linen-logistics',
-      'x-default': '/services/healthcare-linen-logistics',
+      'en-CA': PAGE_PATH,
+      'en-US': PAGE_PATH,
+      'x-default': PAGE_PATH,
     },
   },
   openGraph: {
-    title: 'Healthcare Linen & Textile Transport Ontario | Point Zero Road Lines',
-    description: 'Dedicated linen and textile transport for healthcare and hospitality across the GTA & Ontario, built around tight turnaround windows.',
-    url: '/services/healthcare-linen-logistics',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PAGE_PATH,
     siteName: 'Point Zero Road Lines',
     locale: 'en_CA',
     type: 'website',
+    images: [
+      {
+        url: `${SITE_URL}/images/dedicated-fleet-blue.webp`,
+        width: 1200,
+        height: 630,
+        alt: 'Point Zero Road Lines specialized healthcare textile fleet',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Healthcare Linen & Textile Transport Ontario | Point Zero Road Lines',
-    description: 'Dedicated linen and textile transport for healthcare and hospitality across Ontario.',
+    title: TITLE,
+    description: 'Dedicated linen and textile transport for healthcare, care and hospitality across the GTA & Ontario.',
+    images: [`${SITE_URL}/images/dedicated-fleet-blue.webp`],
   },
 };
 
-const capabilities = [
-  { icon: 'HeartPulse', title: 'Scheduled Turnaround Windows', desc: 'Strict adherence to daily morning and evening delivery cycles between laundry processing plants and facilities.' },
-  { icon: 'Shield', title: 'Sanitary Handling Protocols', desc: 'Clean, enclosed transport trailers and strict cart handling procedures preventing cross-contamination.' },
-  { icon: 'Package', title: 'Rolling Cart & Sling Gear', desc: 'Trailers equipped with e-track systems, heavy-duty load bars, and secure strapping for rolling laundry cages.' },
-  { icon: 'Clock', title: '24/7 & Weekend Exchange Runs', desc: 'Continuous facility coverage seven days a week, including early morning and holiday delivery schedules.' },
-];
-
-const applications = [
-  { icon: 'CheckCircle', title: 'Hospital & Acute Care Loops', desc: 'Scheduled clean and soiled linen exchanges serving medical institutions across Ontario.' },
-  { icon: 'CheckCircle', title: 'Long-Term Care & Senior Living', desc: 'Dependable, timed deliveries ensuring resident bedding and care textiles are always stocked.' },
-  { icon: 'CheckCircle', title: 'Commercial Laundry Processing', desc: 'High-volume inter-facility hauling between processing plants and regional distribution hubs.' },
-  { icon: 'CheckCircle', title: 'Hospitality & Luxury Hotels', desc: 'Bulk hotel textile rotations and scheduled guest linen replenishment across the Greater Toronto Area.' },
-  { icon: 'CheckCircle', title: 'Industrial Workwear & Uniforms', desc: 'Scheduled pickup and drop routes for specialized manufacturing and trade garment processors.' },
-  { icon: 'CheckCircle', title: 'Emergency Expedited Linen Drops', desc: 'Immediate hot shot runs when hospital or facility surges exceed planned linen inventory.' },
-];
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${PAGE_URL}#service`,
+      name: 'Healthcare Linen & Textile Logistics',
+      serviceType: 'Linen and textile transport',
+      description: DESCRIPTION,
+      url: PAGE_URL,
+      provider: {
+        '@id': `${SITE_URL}/#organization`,
+        name: 'Point Zero Road Lines',
+      },
+      areaServed: [
+        { '@type': 'AdministrativeArea', name: 'Ontario' },
+        { '@type': 'AdministrativeArea', name: 'Greater Toronto Area' },
+        { '@type': 'City', name: 'Toronto' },
+        { '@type': 'City', name: 'Mississauga' },
+        { '@type': 'City', name: 'Brampton' },
+      ],
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'CAD',
+        availability: 'https://schema.org/InStock',
+        url: `${SITE_URL}/get-a-quote`,
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${PAGE_URL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/services` },
+        { '@type': 'ListItem', position: 3, name: 'Healthcare Linen Logistics', item: PAGE_URL },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${PAGE_URL}#faq`,
+      mainEntity: HEALTHCARE_FAQS.map(([question, answer]) => ({
+        '@type': 'Question',
+        name: question,
+        acceptedAnswer: { '@type': 'Answer', text: answer },
+      })),
+    },
+  ],
+};
 
 export default function HealthcareLinenLogisticsPage() {
   return (
-    <ServiceEditorialPage
-      relatedKey="healthcare-linen-logistics"
-      badge="SERVICES · HEALTHCARE LINEN"
-      badgeAlt="EST. 2006 · MISSISSAUGA HQ"
-      titleLine1="HEALTHCARE LINEN & TEXTILE LOGISTICS."
-      titleAccent="BUILT ON TIME-CRITICAL PRECISION."
-      description="Hospitals, long-term care facilities, hospitality providers, and commercial laundries run on strict turnaround cycles. Point Zero Road Lines provides dedicated cart and sling transport, strict sanitary protocols, and tight schedule adherence so clean textiles are never delayed."
-      heroImage="/images/dedicated-fleet-blue.webp"
-      heroAlt="Point Zero Road Lines specialized healthcare textile fleet"
-      stats={[
-        { value: '100%', label: 'On-Time Schedule' },
-        { value: 'Sanitary', label: 'Clean Transport Specs' },
-        { value: '24/7', label: 'Dispatch & Weekend Runs' },
-        { value: 'Dedicated', label: 'Cart Transport Gear' },
-      ]}
-      primarySection={{
-        num: '01',
-        label: 'Capabilities',
-        title: 'Engineered for commercial laundry & healthcare operations',
-        desc: 'When healthcare providers and processors need predictable exchange schedules, Point Zero provides dedicated drivers, purpose-equipped trailers, and 24/7 dispatch oversight.',
-        columns: 4,
-        items: capabilities,
-      }}
-      gallery={[
-        { src: '/images/dedicated-fleet-terminal.webp', alt: 'Point Zero dedicated fleet terminal', span: 'main' },
-        { src: '/images/warehouse-crossdock-staging.webp', alt: 'Clean staging area for textile carts' },
-        { src: '/images/home-fleet-manager.webp', alt: 'Fleet manager overseeing logistics' },
-      ]}
-      darkSection={{
-        num: '02',
-        label: 'Sectors Served',
-        title: 'Textile and linen operations we support',
-        desc: 'From daily hospital rotations to commercial processing facilities across Ontario.',
-        items: applications,
-      }}
-      cta={{
-        titleLine1: 'NEED A DEPENDABLE CARRIER FOR',
-        titleAccent: 'HEALTHCARE LINEN RUNS?',
-        desc: 'Contact our logistics team to discuss exchange schedules, cart counts, and dedicated fleet capacity.',
-      }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <HealthcareLinenPage />
+    </>
   );
 }

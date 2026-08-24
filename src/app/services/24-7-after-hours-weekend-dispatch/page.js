@@ -1,89 +1,115 @@
-import ServiceEditorialPage from '../../../components/ServiceEditorialPage';
+import AfterHoursDispatchPage from '../../../components/AfterHoursDispatchPage';
+import { AFTER_HOURS_FAQS } from '../../../components/afterHoursFaqs';
+
+const SITE_URL = 'https://pointzeroroadlines.com';
+const PAGE_PATH = '/services/24-7-after-hours-weekend-dispatch';
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+
+const TITLE = '24/7 Dispatch & Weekend Freight Delivery GTA | Point Zero Road Lines';
+const DESCRIPTION =
+  'Round-the-clock live dispatch and weekend delivery across the GTA & Ontario — a real dispatcher, not a voicemail box. Overnight linehauls, holiday runs and after-hours load rescue.';
 
 export const metadata = {
-  title: { absolute: '24/7 Dispatch & Weekend Freight Delivery GTA | Point Zero Road Lines' },
-  description: 'Round-the-clock dispatch and weekend delivery across the GTA & Ontario. A live dispatcher, not a voicemail box.',
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  keywords: [
+    '24/7 dispatch trucking',
+    'weekend freight delivery GTA',
+    'after hours trucking Ontario',
+    'overnight linehaul GTA',
+    'holiday freight delivery',
+    'night delivery Toronto',
+    'live dispatch trucking',
+  ],
   alternates: {
-    canonical: '/services/24-7-after-hours-weekend-dispatch',
+    canonical: PAGE_PATH,
     languages: {
-      'en-CA': '/services/24-7-after-hours-weekend-dispatch',
-      'en-US': '/services/24-7-after-hours-weekend-dispatch',
-      'x-default': '/services/24-7-after-hours-weekend-dispatch',
+      'en-CA': PAGE_PATH,
+      'en-US': PAGE_PATH,
+      'x-default': PAGE_PATH,
     },
   },
   openGraph: {
-    title: '24/7 Dispatch & Weekend Freight Delivery GTA | Point Zero Road Lines',
-    description: 'Round-the-clock dispatch and weekend delivery across the GTA & Ontario. A live dispatcher, not a voicemail box.',
-    url: '/services/24-7-after-hours-weekend-dispatch',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PAGE_PATH,
     siteName: 'Point Zero Road Lines',
     locale: 'en_CA',
     type: 'website',
+    images: [
+      {
+        url: `${SITE_URL}/images/dedicated-fleet-highway.webp`,
+        width: 1200,
+        height: 630,
+        alt: 'Point Zero Road Lines transport truck operating at night',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '24/7 Dispatch & Weekend Freight Delivery GTA | Point Zero Road Lines',
-    description: 'Round-the-clock dispatch and weekend delivery across the GTA & Ontario.',
+    title: TITLE,
+    description: 'Round-the-clock live dispatch and weekend delivery across the GTA & Ontario — a real dispatcher, not a voicemail box.',
+    images: [`${SITE_URL}/images/dedicated-fleet-highway.webp`],
   },
 };
 
-const capabilities = [
-  { icon: 'Clock', title: 'Live Human Dispatch 24/7/365', desc: 'When you call (647) 680-1300 after hours, an experienced dispatcher answers — never an automated recording.' },
-  { icon: 'Truck', title: 'Weekend & Holiday Fleet Operations', desc: 'Full fleet service across Saturday, Sunday, and statutory holidays for continuous supply chain reliability.' },
-  { icon: 'Route', title: 'Overnight Linehauls & Plant Transfers', desc: 'Move freight across GTA corridors overnight for immediate 6:00 AM dock readiness the next morning.' },
-  { icon: 'Shield', title: 'Real-Time Load Rescue & Problem Solving', desc: 'Immediate rerouting, backup equipment mobilization, and rapid intervention when unexpected events occur.' },
-];
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${PAGE_URL}#service`,
+      name: '24/7 Dispatch & Weekend Delivery',
+      serviceType: 'After-hours and weekend freight dispatch',
+      description: DESCRIPTION,
+      url: PAGE_URL,
+      provider: {
+        '@id': `${SITE_URL}/#organization`,
+        name: 'Point Zero Road Lines',
+      },
+      areaServed: [
+        { '@type': 'AdministrativeArea', name: 'Greater Toronto Area' },
+        { '@type': 'AdministrativeArea', name: 'Ontario' },
+        { '@type': 'City', name: 'Mississauga' },
+        { '@type': 'City', name: 'Toronto' },
+        { '@type': 'City', name: 'Brampton' },
+      ],
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'CAD',
+        availability: 'https://schema.org/InStock',
+        url: `${SITE_URL}/get-a-quote`,
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${PAGE_URL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/services` },
+        { '@type': 'ListItem', position: 3, name: '24/7 Dispatch & Weekend Delivery', item: PAGE_URL },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${PAGE_URL}#faq`,
+      mainEntity: AFTER_HOURS_FAQS.map(([question, answer]) => ({
+        '@type': 'Question',
+        name: question,
+        acceptedAnswer: { '@type': 'Answer', text: answer },
+      })),
+    },
+  ],
+};
 
-const applications = [
-  { icon: 'CheckCircle', title: 'Continuous 3-Shift Manufacturing', desc: 'Plant replenishment for automotive, packaging, and industrial facilities running 24/7 production.' },
-  { icon: 'CheckCircle', title: 'Weekend Job-Site Deliveries', desc: 'Deliveries staged Saturday and Sunday mornings when city traffic is light and access roads are open.' },
-  { icon: 'CheckCircle', title: 'Hospital Weekend Linen Cycles', desc: 'Regular Saturday and Sunday laundry cart rotations for healthcare and acute care facilities.' },
-  { icon: 'CheckCircle', title: 'Retail Restocking Before Opening', desc: 'Night and early morning mall deliveries completed before customers and foot traffic arrive.' },
-  { icon: 'CheckCircle', title: 'Emergency Plant Breakdown Hauling', desc: 'Midnight hot shots for replacement tooling, electrical components, and heavy mechanicals.' },
-  { icon: 'CheckCircle', title: 'Sunday Cross-Dock Pre-Staging', desc: 'Inbound trailers unloaded and staged Sunday afternoon for rapid Monday morning dispatch.' },
-];
-
-export default function AfterHoursDispatchPage() {
+export default function AfterHoursWeekendDispatchPage() {
   return (
-    <ServiceEditorialPage
-      relatedKey="24-7-after-hours-weekend-dispatch"
-      badge="SERVICES · 24/7 DISPATCH"
-      badgeAlt="EST. 2006 · MISSISSAUGA HQ"
-      titleLine1="24/7 LIVE DISPATCH & WEEKEND DELIVERY."
-      titleAccent="BECAUSE FREIGHT DOES NOT STOP AT 5 PM."
-      description="Your manufacturing lines run three shifts, construction pours happen at dawn on Saturday, and healthcare linens cycle over long weekends. Point Zero Road Lines provides around-the-clock live dispatch, overnight linehauls, and full weekend delivery operations."
-      heroImage="/images/dedicated-fleet-highway.webp"
-      heroAlt="Point Zero Road Lines transport truck operating at night"
-      stats={[
-        { value: '24/7/365', label: 'Live Human Dispatch' },
-        { value: '100%', label: 'Live Human Answer' },
-        { value: 'Weekend', label: 'Full Fleet Operations' },
-        { value: 'Overnight', label: 'Linehaul Coverage' },
-      ]}
-      primarySection={{
-        num: '01',
-        label: 'Capabilities',
-        title: 'Real 24/7 capability, not just an on-call phone',
-        desc: 'Our dispatch and maintenance teams operate continuously out of our Mississauga terminal, giving shippers immediate answers and equipment mobilization whenever duty calls.',
-        columns: 4,
-        items: capabilities,
-      }}
-      gallery={[
-        { src: '/images/home-fleet-manager.webp', alt: 'Fleet manager coordinating dispatch', span: 'main' },
-        { src: '/images/home-driver-cabin.webp', alt: 'Professional driver behind the wheel' },
-        { src: '/images/dedicated-fleet-rows.webp', alt: 'Point Zero transport fleet' },
-      ]}
-      darkSection={{
-        num: '02',
-        label: 'After-Hours Scenarios',
-        title: 'Operations running on our 24/7 clock',
-        desc: 'From overnight inter-plant transfers to weekend construction drops and holiday hospital runs.',
-        items: applications,
-      }}
-      cta={{
-        titleLine1: 'NEED DISPATCH OR DELIVERY',
-        titleAccent: 'OUTSIDE NORMAL BUSINESS HOURS?',
-        desc: 'Call our 24/7 dispatch desk directly at (647) 680-1300 — we are on the line right now.',
-      }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <AfterHoursDispatchPage />
+    </>
   );
 }
