@@ -1,0 +1,86 @@
+/* Mobile-only. Hidden by default so nothing leaks into the desktop layout —
+   the media query below is the only place these become visible. */
+.mcta-bar,
+.mcta-spacer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mcta-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* Under the mobile menu (99) and navbar (100): opening the menu covers this
+       bar, and the menu carries its own call/quote actions. Above page content. */
+    z-index: 90;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 -6px 24px rgba(13, 27, 42, 0.18);
+
+    /* Keeps the buttons clear of the iOS home indicator. */
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    font-family: var(--font-body);
+  }
+
+  .mcta-call,
+  .mcta-quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    /* Comfortably past the 44px minimum tap target. */
+    min-height: 58px;
+    padding: 0 0.75rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    transition: background 0.2s var(--ease-in-out);
+  }
+
+  .mcta-call {
+    background: var(--c-navy);
+    color: #fff;
+  }
+
+  .mcta-quote {
+    background: var(--accent);
+    /* Navy on cyan, not white — white on #00b9f2 fails contrast at this size. */
+    color: var(--c-navy);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .mcta-call:active {
+    background: #16304a;
+  }
+
+  .mcta-quote:active {
+    background: #00a3d4;
+  }
+
+  .mcta-call:focus-visible,
+  .mcta-quote:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: -3px;
+  }
+
+  /* Reserve the bar's footprint at the end of the page, plus a little air so
+     the last line of the footer doesn't sit flush against the bar's top border. */
+  .mcta-spacer {
+    display: block;
+    height: calc(58px + 1px + 0.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Lift the WhatsApp launcher clear of the bar. Scoped by sibling selector so
+     it only applies on pages that actually render the bar — both are direct
+     children of <body>, with the bar first. */
+  .mcta-bar ~ .whatsapp-fab {
+    bottom: calc(58px + env(safe-area-inset-bottom, 0px) + 1rem);
+  }
+}

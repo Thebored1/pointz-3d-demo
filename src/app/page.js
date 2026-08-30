@@ -8,6 +8,7 @@ import About from '../components/About';
 import Fleet from '../components/Fleet';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
+import MobileCtaBar from '../components/MobileCtaBar';
 
 export const metadata = {
   alternates: {
@@ -33,6 +34,7 @@ export default function Home() {
         <CTA />
       </SplitLayout>
       <Footer />
+      <MobileCtaBar />
     </>
   );
 }
