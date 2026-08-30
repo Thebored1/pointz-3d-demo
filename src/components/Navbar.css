@@ -85,13 +85,27 @@
   font-family: var(--font-mono);
   font-size: 0.9375rem;
   letter-spacing: 0.05em;
-  color: var(--text-main);
-  transition: color 0.3s ease;
-  padding: 0.5rem;
+  color: var(--c-navy);
+  /* Outline rather than filled: this sits on a light floating nav, where two
+     solid pills would fight the airiness. Height and radius match
+     .btn-primary-nav so the pair reads as one unit — the same navy-for-call,
+     cyan-for-quote split the mobile bar uses. */
+  height: 48px;
+  padding: 0 1.25rem;
+  border: 2px solid rgba(13, 27, 42, 0.2);
+  border-radius: 100px;
+  transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-phone:hover {
-  color: var(--c-blue);
+  color: var(--c-navy);
+  background: var(--c-navy);
+  border-color: var(--c-navy);
+}
+
+.nav-phone:hover,
+.nav-phone:hover .phone-icon {
+  color: #fff;
 }
 
 .phone-icon {
@@ -100,13 +114,15 @@
 
 /* Matching the home page .btn-track style */
 .btn-primary-nav {
-  background: var(--c-charcoal);
-  color: var(--c-cream);
+  background: var(--accent);
+  /* Navy on cyan, not cream — light text on #00b9f2 fails contrast. */
+  color: var(--c-navy);
   border: none;
   padding: 0 1.5rem;
   height: 48px;
   font-family: var(--font-body);
-  font-weight: 500;
+  /* Heavier than the nav links: this is the primary conversion action. */
+  font-weight: 700;
   font-size: 0.9375rem;
   display: flex;
   align-items: center;
@@ -118,7 +134,7 @@
 }
 
 .btn-primary-nav:hover {
-  background: var(--c-black);
+  background: #00a3d4;
 }
 
 .mobile-toggle {
