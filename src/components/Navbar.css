@@ -474,55 +474,65 @@ button.mobile-nav-dropdown-trigger:hover,
 
 
 /* ---- CTA dock -------------------------------------------------------------
-   A compact second row tucked under the nav pill, for the 769-1200px band
-   where the pill has dropped .nav-actions. Deliberately small and right
-   aligned under the pill: it reads as part of the navbar rather than a
-   separate fixture, which a full-width bar at this size does not. */
+   A second, smaller bar below the nav pill for the 769-1200px band, where the
+   pill has dropped .nav-actions. It borrows the pill's own vocabulary — same
+   width, same 100px radius, same translucent blur and shadow — so it reads as
+   part of the navbar rather than a fixture parked underneath it. */
 .nav-cta-dock {
   display: none;
   pointer-events: auto;
+  align-items: center;
+  gap: 0.5rem;
   width: 100%;
   max-width: 1200px;
   margin-top: 0.5rem;
-  padding: 0 0.5rem;
-  justify-content: flex-end;
-  gap: 0.5rem;
+  /* Shorter than the pill above: a secondary row, not a peer. */
+  padding: 0.3rem 0.4rem 0.3rem 1.1rem;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(10, 10, 10, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .nav-cta-chip {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  height: 40px;
-  padding: 0 1rem;
+  height: 36px;
+  padding: 0 0.9rem;
   border-radius: 100px;
   font-family: var(--font-body);
   font-size: 0.875rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.01em;
   white-space: nowrap;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 4px 16px rgba(13, 27, 42, 0.1);
   transition: background 0.3s var(--ease-out-expo), color 0.3s var(--ease-out-expo);
 }
 
+/* Phone sits flat on the bar, like the nav links do on the pill. */
 .nav-cta-phone {
-  background: rgba(255, 255, 255, 0.95);
+  background: transparent;
   color: var(--c-navy);
-  border: 1px solid rgba(13, 27, 42, 0.12);
   font-family: var(--font-mono);
   letter-spacing: 0.03em;
+  padding-left: 0;
 }
 
 .nav-cta-phone:hover {
-  background: var(--c-navy);
-  color: #fff;
+  color: var(--c-blue);
 }
 
+.nav-cta-phone .lucide {
+  color: var(--c-blue);
+}
+
+/* Quote is the one filled element, mirroring .btn-primary-nav on the pill. */
 .nav-cta-quote {
   background: var(--accent);
   /* Navy on cyan — light text on #00b9f2 fails contrast. */
   color: var(--c-navy);
+  font-weight: 700;
 }
 
 .nav-cta-quote:hover {
