@@ -125,19 +125,6 @@ export default function Navbar() {
           </button>
         </motion.div>
 
-        {/* Secondary row under the nav pill. Only rendered between 769px and
-            1200px, where the pill has dropped its phone and quote button but a
-            full-width bottom bar would read as an oversized mobile control. */}
-        <div className="nav-cta-dock">
-          <a href="tel:+16476801300" className="nav-cta-chip nav-cta-phone">
-            <Phone size={15} strokeWidth={2.25} />
-            <span>(647) 680-1300</span>
-          </a>
-          <Link href="/get-a-quote" className="nav-cta-chip nav-cta-quote">
-            <span>Get a Quote</span>
-            <ArrowRight size={15} strokeWidth={2.25} />
-          </Link>
-        </div>
       </motion.nav>
 
       <AnimatePresence>

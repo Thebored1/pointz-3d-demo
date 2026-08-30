@@ -5,10 +5,7 @@
   right: 0;
   z-index: 100;
   display: flex;
-  /* Column so the CTA dock can stack beneath the pill. With the dock hidden
-     this behaves exactly as the previous centred row did. */
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   padding: 1.5rem clamp(1rem, 4vw, 2rem);
   pointer-events: none;
   transition: padding 0.5s var(--ease-out-expo);
@@ -20,9 +17,6 @@
 
 .nav-container {
   pointer-events: auto;
-  /* Sits above .nav-cta-dock, whose top edge slides underneath it. */
-  position: relative;
-  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -438,8 +432,10 @@ button.mobile-nav-dropdown-trigger:hover,
 }
 
 @media (max-width: 1200px) {
-  .nav-links,
-  .nav-actions {
+  /* Only the links collapse into the hamburger. The phone and quote stay in the
+     pill — there is plenty of room once the links are gone — so no separate row
+     is needed. */
+  .nav-links {
     display: none;
   }
 
@@ -447,11 +443,16 @@ button.mobile-nav-dropdown-trigger:hover,
     display: none;
   }
 
-  .mobile-toggle {
-    display: flex;
+  /* Logo hard left; phone, quote and hamburger group on the right. */
+  .nav-brand {
+    margin-right: auto;
   }
 
-  /* In framer motion we hardcoded styles, but this overrides base */
+  .mobile-toggle {
+    display: flex;
+    margin-left: 1.25rem;
+  }
+
   .navbar .nav-container {
     padding: 0.75rem 1rem 0.75rem 1.5rem !important;
   }
@@ -461,94 +462,10 @@ button.mobile-nav-dropdown-trigger:hover,
   .navbar {
     padding: 1rem;
   }
-}
 
-
-/* ---- CTA dock -------------------------------------------------------------
-   A drawer that slides out from under the nav pill for the 769-1200px band,
-   where the pill has dropped .nav-actions.
-
-   It is one unit with the pill, not a separate bar: a negative margin slides
-   its top edge underneath, matching top padding pushes the contents back into
-   view, and only the bottom corners are rounded. The fill is a shade darker
-   than the pill so the seam reads as depth rather than a border.
-
-   Inset from the pill's edges because the pill is a 100px capsule — its bottom
-   is only flat between the end caps, so a full-width drawer would poke out
-   past the curve at both corners. */
-.nav-cta-dock {
-  display: none;
-  pointer-events: auto;
-  align-items: center;
-  gap: 0.25rem;
-  width: calc(100% - 4.5rem);
-  max-width: calc(1200px - 4.5rem);
-  margin-top: -26px;
-  padding: calc(26px + 0.4rem) 1.1rem 0.55rem;
-  border-radius: 0 0 26px 26px;
-  background: rgba(238, 235, 229, 0.97);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 8px 18px rgba(13, 27, 42, 0.07);
-}
-
-.nav-cta-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  height: 32px;
-  padding: 0 0.85rem;
-  border-radius: 100px;
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-  transition: background 0.3s var(--ease-out-expo), color 0.3s var(--ease-out-expo);
-}
-
-/* Flat on the drawer, the way nav links sit flat on the pill. */
-.nav-cta-phone {
-  background: transparent;
-  color: var(--c-navy);
-  font-family: var(--font-mono);
-  letter-spacing: 0.03em;
-  padding-left: 0.15rem;
-}
-
-.nav-cta-phone:hover {
-  color: var(--c-blue);
-}
-
-.nav-cta-phone .lucide {
-  color: var(--c-blue);
-}
-
-/* The one filled element, mirroring .btn-primary-nav on the pill. */
-.nav-cta-quote {
-  background: var(--accent);
-  /* Navy on cyan — light text on #00b9f2 fails contrast. */
-  color: var(--c-navy);
-  font-weight: 700;
-}
-
-.nav-cta-quote:hover {
-  background: #00a3d4;
-}
-
-.nav-cta-chip:focus-visible {
-  outline: 2px solid var(--c-navy);
-  outline-offset: 2px;
-}
-
-@media (max-width: 1200px) {
-  .nav-cta-dock {
-    display: flex;
-  }
-}
-
-/* Phones get the full-width bottom bar instead (MobileCtaBar). */
-@media (max-width: 768px) {
-  .nav-cta-dock {
+  .nav-actions {
     display: none;
   }
 }
+
+
