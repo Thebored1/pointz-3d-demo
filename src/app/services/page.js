@@ -1,7 +1,7 @@
 import ServicesHubPage from '../../components/ServicesHubPage';
 import { overviewServices } from '../../components/serviceEditorialData';
+import { SITE_URL } from '@/lib/site';
 
-const SITE_URL = 'https://pointzeroroadlines.com';
 const PAGE_PATH = '/services';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 

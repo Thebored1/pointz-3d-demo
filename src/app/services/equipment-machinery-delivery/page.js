@@ -1,7 +1,7 @@
 import EquipmentMachineryPage from '../../../components/EquipmentMachineryPage';
 import { EQUIPMENT_FAQS } from '../../../components/equipmentFaqs';
+import { SITE_URL } from '@/lib/site';
 
-const SITE_URL = 'https://pointzeroroadlines.com';
 const PAGE_PATH = '/services/equipment-machinery-delivery';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 

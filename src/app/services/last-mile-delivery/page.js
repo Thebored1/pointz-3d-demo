@@ -1,7 +1,7 @@
 import LastMilePage from '../../../components/LastMilePage';
 import { LAST_MILE_FAQS } from '../../../components/lastMileFaqs';
+import { SITE_URL } from '@/lib/site';
 
-const SITE_URL = 'https://pointzeroroadlines.com';
 const PAGE_PATH = '/services/last-mile-delivery';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 

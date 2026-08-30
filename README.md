@@ -28,7 +28,7 @@ Then open http://localhost:3000.
 
 | Variable | Purpose |
 | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Canonical origin used for OpenGraph URLs, `sitemap.xml` and `robots.txt`. Defaults to `https://pointzlogistics.ca`. |
+| `NEXT_PUBLIC_SITE_URL` | Canonical origin used for OpenGraph URLs, `sitemap.xml` and `robots.txt`. Defaults to `https://pointzeroroadlines.com`. |
 
 ## Structure
 

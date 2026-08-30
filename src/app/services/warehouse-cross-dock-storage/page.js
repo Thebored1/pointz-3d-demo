@@ -1,7 +1,7 @@
 import WarehouseCrossDockPage from '../../../components/WarehouseCrossDockPage';
 import { WAREHOUSE_FAQS } from '../../../components/warehouseFaqs';
+import { SITE_URL } from '@/lib/site';
 
-const SITE_URL = 'https://pointzeroroadlines.com';
 const PAGE_PATH = '/services/warehouse-cross-dock-storage';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 

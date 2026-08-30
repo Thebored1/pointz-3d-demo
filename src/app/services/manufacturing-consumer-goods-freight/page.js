@@ -1,7 +1,7 @@
 import ManufacturingPage from '../../../components/ManufacturingPage';
 import { MANUFACTURING_FAQS } from '../../../components/manufacturingFaqs';
+import { SITE_URL } from '@/lib/site';
 
-const SITE_URL = 'https://pointzeroroadlines.com';
 const PAGE_PATH = '/services/manufacturing-consumer-goods-freight';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 

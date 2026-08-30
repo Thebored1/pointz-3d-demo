@@ -1,7 +1,7 @@
 import ExpeditedFreightPage from '../../../components/ExpeditedFreightPage';
 import { EXPEDITED_FAQS } from '../../../components/expeditedFaqs';
+import { SITE_URL } from '@/lib/site';
 
-const SITE_URL = 'https://pointzeroroadlines.com';
 const PAGE_PATH = '/services/expedited-same-day-freight';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 

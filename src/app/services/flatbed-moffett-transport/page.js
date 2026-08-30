@@ -1,7 +1,7 @@
 import MoffettFlatbedPage from '../../../components/MoffettFlatbedPage';
 import { MOFFETT_FAQS } from '../../../components/moffettFaqs';
+import { SITE_URL } from '@/lib/site';
 
-const SITE_URL = 'https://pointzeroroadlines.com';
 const PAGE_PATH = '/services/flatbed-moffett-transport';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 

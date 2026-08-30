@@ -1,7 +1,7 @@
 import ConstructionMaterialPage from '../../../components/ConstructionMaterialPage';
 import { CONSTRUCTION_FAQS } from '../../../components/constructionFaqs';
+import { SITE_URL } from '@/lib/site';
 
-const SITE_URL = 'https://pointzeroroadlines.com';
 const PAGE_PATH = '/services/construction-material-hauling';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 

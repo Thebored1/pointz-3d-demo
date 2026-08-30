@@ -1,7 +1,7 @@
 import DedicatedFleetPage from '../../../components/DedicatedFleetPage';
 import { DEDICATED_FLEET_FAQS } from '../../../components/dedicatedFleetFaqs';
+import { SITE_URL } from '@/lib/site';
 
-const SITE_URL = 'https://pointzeroroadlines.com';
 const PAGE_PATH = '/services/dedicated-fleet-services';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 

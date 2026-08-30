@@ -1,7 +1,7 @@
 import HealthcareLinenPage from '../../../components/HealthcareLinenPage';
 import { HEALTHCARE_FAQS } from '../../../components/healthcareFaqs';
+import { SITE_URL } from '@/lib/site';
 
-const SITE_URL = 'https://pointzeroroadlines.com';
 const PAGE_PATH = '/services/healthcare-linen-logistics';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 

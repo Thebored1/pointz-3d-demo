@@ -1,8 +1,10 @@
 // Admin auth for /admin — stateless HMAC-signed session cookie, no new deps.
 // Node's crypto only; never import this file from a client component.
 //
-// Credentials default to admin / admin (demo requirement). Override in env:
-//   ADMIN_USERNAME / ADMIN_PASSWORD
+// Credentials come from ADMIN_USERNAME / ADMIN_PASSWORD. They fall back to
+// admin / admin so a local checkout runs without setup, but that fallback is
+// refused in production — shipping it would leave every lead's name, phone and
+// email readable by anyone who finds /admin.
 // The session is signed with ADMIN_SESSION_SECRET, or a hash derived from
 // SUPABASE_SERVICE_ROLE_KEY when it is not set.
 
@@ -13,8 +15,22 @@ import { redirect } from 'next/navigation';
 const SESSION_COOKIE = 'pz_admin_session';
 const SESSION_TTL_MS = 24 * 60 * 60 * 1000;
 
-export const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin';
+// Resolved per call rather than at import, so the production check runs where
+// it can be reported instead of crashing the module graph on load.
+function adminCredentials() {
+  const username = process.env.ADMIN_USERNAME;
+  const password = process.env.ADMIN_PASSWORD;
+  if (username && password) return { username, password };
+
+  // Same posture as sessionSecret() below: refuse to fall back in production.
+  if (process.env.NODE_ENV === 'production') {
+    throw new Error(
+      'ADMIN_USERNAME and ADMIN_PASSWORD must both be set in production; refusing to fall back to the admin/admin default',
+    );
+  }
+
+  return { username: username || 'admin', password: password || 'admin' };
+}
 
 function sessionSecret() {
   if (process.env.ADMIN_SESSION_SECRET) return process.env.ADMIN_SESSION_SECRET;
@@ -35,7 +51,12 @@ function safeEqual(provided, expected) {
 }
 
 export function checkAdminCredentials(username, password) {
-  return safeEqual(username, ADMIN_USERNAME) && safeEqual(password, ADMIN_PASSWORD);
+  const expected = adminCredentials();
+  // Both comparisons always run — && would short-circuit on a wrong username
+  // and return faster than a wrong password, which is a timing signal.
+  const userOk = safeEqual(username, expected.username);
+  const passOk = safeEqual(password, expected.password);
+  return userOk && passOk;
 }
 
 function sign(payload) {

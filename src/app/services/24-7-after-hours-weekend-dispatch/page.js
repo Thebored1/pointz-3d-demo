@@ -1,7 +1,7 @@
 import AfterHoursDispatchPage from '../../../components/AfterHoursDispatchPage';
 import { AFTER_HOURS_FAQS } from '../../../components/afterHoursFaqs';
+import { SITE_URL } from '@/lib/site';
 
-const SITE_URL = 'https://pointzeroroadlines.com';
 const PAGE_PATH = '/services/24-7-after-hours-weekend-dispatch';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
