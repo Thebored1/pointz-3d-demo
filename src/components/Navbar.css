@@ -20,6 +20,9 @@
 
 .nav-container {
   pointer-events: auto;
+  /* Sits above .nav-cta-dock, whose top edge slides underneath it. */
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -474,49 +477,54 @@ button.mobile-nav-dropdown-trigger:hover,
 
 
 /* ---- CTA dock -------------------------------------------------------------
-   A second, smaller bar below the nav pill for the 769-1200px band, where the
-   pill has dropped .nav-actions. It borrows the pill's own vocabulary — same
-   width, same 100px radius, same translucent blur and shadow — so it reads as
-   part of the navbar rather than a fixture parked underneath it. */
+   A drawer that slides out from under the nav pill for the 769-1200px band,
+   where the pill has dropped .nav-actions.
+
+   It is one unit with the pill, not a separate bar: a negative margin slides
+   its top edge underneath, matching top padding pushes the contents back into
+   view, and only the bottom corners are rounded. The fill is a shade darker
+   than the pill so the seam reads as depth rather than a border.
+
+   Inset from the pill's edges because the pill is a 100px capsule — its bottom
+   is only flat between the end caps, so a full-width drawer would poke out
+   past the curve at both corners. */
 .nav-cta-dock {
   display: none;
   pointer-events: auto;
   align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 0.5rem;
-  /* Shorter than the pill above: a secondary row, not a peer. */
-  padding: 0.3rem 0.4rem 0.3rem 1.1rem;
-  border-radius: 100px;
-  background: rgba(255, 255, 255, 0.95);
+  gap: 0.25rem;
+  width: calc(100% - 4.5rem);
+  max-width: calc(1200px - 4.5rem);
+  margin-top: -26px;
+  padding: calc(26px + 0.4rem) 1.1rem 0.55rem;
+  border-radius: 0 0 26px 26px;
+  background: rgba(238, 235, 229, 0.97);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(10, 10, 10, 0.06);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 18px rgba(13, 27, 42, 0.07);
 }
 
 .nav-cta-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  height: 36px;
-  padding: 0 0.9rem;
+  gap: 0.4rem;
+  height: 32px;
+  padding: 0 0.85rem;
   border-radius: 100px;
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   white-space: nowrap;
   transition: background 0.3s var(--ease-out-expo), color 0.3s var(--ease-out-expo);
 }
 
-/* Phone sits flat on the bar, like the nav links do on the pill. */
+/* Flat on the drawer, the way nav links sit flat on the pill. */
 .nav-cta-phone {
   background: transparent;
   color: var(--c-navy);
   font-family: var(--font-mono);
   letter-spacing: 0.03em;
-  padding-left: 0;
+  padding-left: 0.15rem;
 }
 
 .nav-cta-phone:hover {
@@ -527,7 +535,7 @@ button.mobile-nav-dropdown-trigger:hover,
   color: var(--c-blue);
 }
 
-/* Quote is the one filled element, mirroring .btn-primary-nav on the pill. */
+/* The one filled element, mirroring .btn-primary-nav on the pill. */
 .nav-cta-quote {
   background: var(--accent);
   /* Navy on cyan — light text on #00b9f2 fails contrast. */
