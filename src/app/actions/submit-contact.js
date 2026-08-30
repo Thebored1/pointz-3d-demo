@@ -2,6 +2,7 @@
 
 import { getSupabaseAdmin } from '../../lib/supabase';
 import { sendLeadNotification } from '../../lib/email';
+import { enforceRateLimit } from '../../lib/rate-limit';
 
 /**
  * Contact-form submissions land in the same public.quote_requests table as
@@ -23,6 +24,10 @@ export async function submitContact(formData) {
     return { ok: false, error: 'Please enter a valid phone number.' };
   }
   if (!message) return { ok: false, error: 'Please enter a message.' };
+
+  // Validated first, then limited — see submit-quote for the rationale.
+  const limit = await enforceRateLimit('contact');
+  if (!limit.ok) return limit;
 
   const row = {
     name,

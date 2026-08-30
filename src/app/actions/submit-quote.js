@@ -2,6 +2,7 @@
 
 import { getSupabaseAdmin } from '../../lib/supabase';
 import { sendLeadNotification } from '../../lib/email';
+import { enforceRateLimit } from '../../lib/rate-limit';
 
 const MAX = {
   name: 120,
@@ -52,6 +53,12 @@ export async function submitQuote(formData) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(row.email)) {
     return { ok: false, error: 'Please enter a valid email address.' };
   }
+
+  // Limit only well-formed submissions. Checking earlier would spend a slot
+  // on a customer who simply mistyped their email, and would put a database
+  // round trip in front of junk traffic the checks above reject for free.
+  const limit = await enforceRateLimit('quote');
+  if (!limit.ok) return limit;
 
   try {
     const { error } = await getSupabaseAdmin().from('quote_requests').insert(row);
