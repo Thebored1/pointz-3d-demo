@@ -1,14 +1,12 @@
-/* Shown wherever the navbar has dropped its phone and quote button — that
-   happens at 1200px, not 768px, so tablets and small laptops get the bar too.
-   The breakpoint below is deliberately the same 1200px used in Navbar.css:
-   the header actions and this bar are mutually exclusive, with no gap where
-   neither is on screen and no width where both are. */
+/* Phones only. Above this the full-bleed bar reads as an oversized mobile
+   control, so 769-1200px is covered by the compact dock under the navbar
+   instead (see .nav-cta-dock in Navbar.css). */
 .mcta-bar,
 .mcta-spacer {
   display: none;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
   .mcta-bar {
     display: grid;
     grid-template-columns: 1fr 1fr;
