@@ -197,7 +197,7 @@ export default function ConstructionMaterialPage() {
             desc="A dedicated carrier built around getting materials to the point of installation — not just to the curb." />
           <MiniGrid items={whyChoose} />
           <div className="mf-note">
-            Need dedicated capacity for an ongoing build? Explore our <Link href="/services/dedicated-fleet-services" className="mf-inline-link">dedicated fleet services</Link>, or browse our full <Link href="/fleet-and-equipment" className="mf-inline-link">fleet &amp; equipment</Link>.
+            Need dedicated capacity for an ongoing build? Explore our <Link href="/services/dedicated-fleet-services" className="mf-inline-link">dedicated fleet services</Link>, or browse our full <Link href="/fleet-and-equipment" className="mf-inline-link">fleet &amp; equipment</Link>. For drywall, insulation and timber that must stay dry in transit, see our <Link href="/services/roll-tite-curtain-side-trailers" className="mf-inline-link">roll-tite &amp; curtain-side trailers</Link>.
           </div>
           <CenterCta label="See If We're the Right Fit for Your Project" />
         </div>

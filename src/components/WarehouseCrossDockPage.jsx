@@ -121,7 +121,7 @@ export default function WarehouseCrossDockPage() {
           <SectionHead num="03" label="Services offered" title="How Shippers Use Our Warehouse"
             desc="From high-speed cross-docking to emergency load rework and pre-staged deliveries." />
           <MiniGrid items={services} />
-          <p className="mf-note">Staging <Link href="/services/construction-material-hauling" className="mf-inline-link">construction materials</Link> or <Link href="/services/healthcare-linen-logistics" className="mf-inline-link">healthcare linen</Link>? We can hold and turn those loads too.</p>
+          <p className="mf-note">Staging <Link href="/services/construction-material-hauling" className="mf-inline-link">construction materials</Link> or <Link href="/services/healthcare-linen-logistics" className="mf-inline-link">healthcare linen</Link>? We can hold and turn those loads too. Consolidating smaller shipments? See our <Link href="/services/less-than-truckload-ltl" className="mf-inline-link">LTL freight</Link>.</p>
           <CenterCta label="Ask About Dock Space & Rates" />
         </div>
       </section>

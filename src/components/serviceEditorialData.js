@@ -88,18 +88,18 @@ export const overviewServices = [
 
 // Curated cross-links for SEO and navigation. Keyed by service slug.
 export const relatedServices = {
-  'flatbed-moffett-transport': ['construction-material-hauling', 'dedicated-fleet-services', 'last-mile-delivery'],
+  'flatbed-moffett-transport': ['construction-material-hauling', 'dedicated-fleet-services', 'last-mile-delivery', 'roll-tite-curtain-side-trailers'],
   'equipment-machinery-delivery': ['flatbed-moffett-transport', 'dedicated-fleet-services', 'construction-material-hauling'],
   'moffett-delivery': ['construction-material-hauling', 'flatbed-moffett-transport', 'last-mile-delivery'],
-  'dedicated-fleet-services': ['manufacturing-consumer-goods-freight', 'flatbed-moffett-transport', 'warehouse-cross-dock-storage'],
+  'dedicated-fleet-services': ['manufacturing-consumer-goods-freight', 'flatbed-moffett-transport', 'warehouse-cross-dock-storage', 'dry-van-transportation'],
   'dedicated-fleet': ['manufacturing-consumer-goods-freight', 'flatbed-moffett-transport', 'warehouse-cross-dock-storage'],
-  'warehouse-cross-dock-storage': ['dedicated-fleet-services', 'last-mile-delivery', 'manufacturing-consumer-goods-freight'],
+  'warehouse-cross-dock-storage': ['dedicated-fleet-services', 'last-mile-delivery', 'manufacturing-consumer-goods-freight', 'less-than-truckload-ltl'],
   'warehouse-cross-dock': ['dedicated-fleet-services', 'last-mile-delivery', 'manufacturing-consumer-goods-freight'],
   'healthcare-linen-logistics': ['dedicated-fleet-services', 'expedited-same-day-freight', '24-7-after-hours-weekend-dispatch'],
   'healthcare-logistics': ['dedicated-fleet-services', 'expedited-same-day-freight', '24-7-after-hours-weekend-dispatch'],
-  'manufacturing-consumer-goods-freight': ['dedicated-fleet-services', 'warehouse-cross-dock-storage', 'flatbed-moffett-transport'],
+  'manufacturing-consumer-goods-freight': ['dedicated-fleet-services', 'warehouse-cross-dock-storage', 'flatbed-moffett-transport', 'full-truckload-ftl'],
   'manufacturing-consumer-goods': ['dedicated-fleet-services', 'warehouse-cross-dock-storage', 'flatbed-moffett-transport'],
-  'construction-material-hauling': ['flatbed-moffett-transport', 'dedicated-fleet-services', 'last-mile-delivery'],
+  'construction-material-hauling': ['flatbed-moffett-transport', 'dedicated-fleet-services', 'last-mile-delivery', 'roll-tite-curtain-side-trailers'],
   'construction-material-delivery': ['flatbed-moffett-transport', 'dedicated-fleet-services', 'last-mile-delivery'],
   'expedited-same-day-freight': ['dedicated-fleet-services', 'healthcare-linen-logistics', '24-7-after-hours-weekend-dispatch'],
   'expedited-same-day': ['dedicated-fleet-services', 'healthcare-linen-logistics', '24-7-after-hours-weekend-dispatch'],

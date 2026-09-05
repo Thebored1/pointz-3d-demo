@@ -121,7 +121,7 @@ export default function DedicatedFleetPage() {
           <SectionHead num="03" label="Industries served" title="Who Relies on a Point Zero Dedicated Fleet"
             desc="From daily medical-linen exchanges to manufacturing lines and distributor yards across Ontario." />
           <MiniGrid items={industries} />
-          <p className="mf-note">Related programs: <Link href="/services/manufacturing-consumer-goods-freight" className="mf-inline-link">manufacturing &amp; consumer goods</Link>, <Link href="/services/healthcare-linen-logistics" className="mf-inline-link">healthcare linen logistics</Link>, and <Link href="/services/construction-material-hauling" className="mf-inline-link">construction material delivery</Link>.</p>
+          <p className="mf-note">Related programs: <Link href="/services/manufacturing-consumer-goods-freight" className="mf-inline-link">manufacturing &amp; consumer goods</Link>, <Link href="/services/healthcare-linen-logistics" className="mf-inline-link">healthcare linen logistics</Link>, and <Link href="/services/construction-material-hauling" className="mf-inline-link">construction material delivery</Link>. Need a specific deck or mode? See <Link href="/services/dry-van-transportation" className="mf-inline-link">dry van</Link> and <Link href="/services/full-truckload-ftl" className="mf-inline-link">full truckload</Link>.</p>
           <CenterCta label="Build a Program for Your Industry" />
         </div>
       </section>

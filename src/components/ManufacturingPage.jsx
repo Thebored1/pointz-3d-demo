@@ -112,7 +112,7 @@ export default function ManufacturingPage() {
           <SectionHead num="03" label="Freight categories" title="Manufactured Goods We Transport"
             desc="From high-volume packaging and automotive parts to heavy machinery and consumer products." />
           <MiniGrid items={freightCategories} />
-          <p className="mf-note">Need staging between legs? See our <Link href="/services/warehouse-cross-dock-storage" className="mf-inline-link">warehouse &amp; cross-dock</Link>, or heavy machinery on <Link href="/services/flatbed-moffett-transport" className="mf-inline-link">flatbed &amp; Moffett</Link>.</p>
+          <p className="mf-note">Need staging between legs? See our <Link href="/services/warehouse-cross-dock-storage" className="mf-inline-link">warehouse &amp; cross-dock</Link>, or heavy machinery on <Link href="/services/flatbed-moffett-transport" className="mf-inline-link">flatbed &amp; Moffett</Link>. Match the mode to the load with <Link href="/services/full-truckload-ftl" className="mf-inline-link">full truckload</Link>, <Link href="/services/less-than-truckload-ltl" className="mf-inline-link">LTL</Link> or <Link href="/services/dry-van-transportation" className="mf-inline-link">dry van</Link>.</p>
           <CenterCta label="Discuss Your Freight Categories" />
         </div>
       </section>
