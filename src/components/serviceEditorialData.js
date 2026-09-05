@@ -80,6 +80,10 @@ export const overviewServices = [
   { id: '08', icon: 'Store', title: 'Last Mile Delivery', href: '/services/last-mile-delivery', desc: 'Final-leg delivery to the exact point of need — construction sites, retail and residential.' },
   { id: '09', icon: 'Clock', title: '24/7 Dispatch & Weekend Delivery', href: '/services/24-7-after-hours-weekend-dispatch', desc: 'A live dispatcher on the line nights, weekends, and holidays — not a voicemail box.' },
   { id: '10', icon: 'Package', title: 'Equipment & Machinery Delivery', href: '/services/equipment-machinery-delivery', desc: 'Eligible equipment and machinery delivered on flatbeds and unloaded onsite with a truck-mounted Moffett.' },
+  { id: '11', icon: 'Truck', title: 'Dry Van Transportation', href: '/services/dry-van-transportation', desc: 'Enclosed, weather-protected trailers for palletized and packaged freight — FTL or scheduled LTL.' },
+  { id: '12', icon: 'Layers', title: 'Roll-Tite & Curtain-Side', href: '/services/roll-tite-curtain-side-trailers', desc: 'Side and overhead loading with weather-tight protection for building materials and industrial freight.' },
+  { id: '13', icon: 'Route', title: 'Full Truckload (FTL)', href: '/services/full-truckload-ftl', desc: 'A dedicated trailer carrying your shipment point-to-point on flatbed, dry van or Moffett.' },
+  { id: '14', icon: 'Package', title: 'Less-Than-Truckload (LTL)', href: '/services/less-than-truckload-ltl', desc: 'Partial loads consolidated through our Mississauga cross-dock on scheduled lanes.' },
 ];
 
 // Curated cross-links for SEO and navigation. Keyed by service slug.
@@ -104,6 +108,9 @@ export const relatedServices = {
   '24-7-after-hours-weekend-dispatch': ['expedited-same-day-freight', 'dedicated-fleet-services', 'healthcare-linen-logistics'],
   'flatbed-transportation': ['flatbed-moffett-transport', 'construction-material-hauling', 'dedicated-fleet-services'],
   'dry-van-transportation': ['manufacturing-consumer-goods-freight', 'dedicated-fleet-services', 'warehouse-cross-dock-storage'],
+  'roll-tite-curtain-side-trailers': ['flatbed-moffett-transport', 'construction-material-hauling', 'dedicated-fleet-services'],
+  'full-truckload-ftl': ['dedicated-fleet-services', 'manufacturing-consumer-goods-freight', 'warehouse-cross-dock-storage'],
+  'less-than-truckload-ltl': ['warehouse-cross-dock-storage', 'manufacturing-consumer-goods-freight', 'dedicated-fleet-services'],
   'building-material-distribution': ['construction-material-hauling', 'flatbed-moffett-transport', 'warehouse-cross-dock-storage'],
   'cross-border-freight': ['flatbed-moffett-transport', 'dedicated-fleet-services', 'expedited-same-day-freight'],
 };

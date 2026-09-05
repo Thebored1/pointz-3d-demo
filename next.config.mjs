@@ -53,11 +53,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/services/dry-van-transportation',
-        destination: '/services/dedicated-fleet-services',
-        permanent: true,
-      },
-      {
         source: '/services/warehouse-cross-dock',
         destination: '/services/warehouse-cross-dock-storage',
         permanent: true,

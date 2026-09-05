@@ -46,6 +46,13 @@ const specializedServices = pick(
   'healthcare-linen-logistics',
 );
 
+const equipmentModes = pick(
+  'dry-van-transportation',
+  'roll-tite-curtain-side-trailers',
+  'full-truckload-ftl',
+  'less-than-truckload-ltl',
+);
+
 const alwaysOn = bySlug['24-7-after-hours-weekend-dispatch'];
 
 const capabilities = [
@@ -114,11 +121,20 @@ export default function ServicesHubPage() {
         </div>
       </section>
 
+      {/* Equipment & modes */}
+      <section className="mf-section mf-band">
+        <div className="pz-container">
+          <SectionHead num="04" label="Equipment & modes" title="Trailers & Shipping Modes"
+            desc="Match the freight to the right deck and mode — enclosed dry van, weather-tight roll-tite, or full and less-than-truckload capacity." />
+          <RelatedServices items={equipmentModes} />
+        </div>
+      </section>
+
       {/* Always-on capability */}
       {alwaysOn ? (
-        <section className="mf-section mf-band">
+        <section className="mf-section">
           <div className="pz-container">
-            <SectionHead num="04" label="Around the clock" title="Coverage That Doesn't Stop at 5 PM" />
+            <SectionHead num="05" label="Around the clock" title="Coverage That Doesn't Stop at 5 PM" />
             <Reveal className="mf-callout">
               <h3 className="mf-subhead">{alwaysOn.title}</h3>
               <p>{alwaysOn.desc} Overnight linehauls, weekend job-site drops and holiday runs are standard — with a live dispatcher on the line whenever you call.</p>
@@ -129,9 +145,9 @@ export default function ServicesHubPage() {
       ) : null}
 
       {/* Fleet & equipment at a glance */}
-      <section className="mf-section">
+      <section className="mf-section mf-band">
         <div className="pz-container">
-          <SectionHead num="05" label="Capabilities" title="Fleet & Equipment at a Glance"
+          <SectionHead num="06" label="Capabilities" title="Fleet & Equipment at a Glance"
             desc="Modern tractors, flatbeds and step-decks, roll-tite trailers, dry vans and truck-mounted Moffett units." />
           <FeatureGrid cols={4} items={capabilities} />
           <div className="mf-center"><Link href="/fleet-and-equipment" className="mf-btn mf-btn--line">See the full fleet &amp; equipment <ArrowUpRight size={16} /></Link></div>
@@ -139,9 +155,9 @@ export default function ServicesHubPage() {
       </section>
 
       {/* Why Point Zero */}
-      <section className="mf-section mf-band">
+      <section className="mf-section">
         <div className="pz-container">
-          <SectionHead num="06" label="Why Point Zero" title="One Operation Behind Every Service"
+          <SectionHead num="07" label="Why Point Zero" title="One Operation Behind Every Service"
             desc="An established, company-owned GTA carrier running fleet, warehouse and dispatch under one roof." />
           <MiniGrid items={whyPointZero} />
           <p className="mf-note">Serving the GTA and Ontario since 2006. <Link href="/service-areas" className="mf-inline-link">See all service areas &rarr;</Link></p>

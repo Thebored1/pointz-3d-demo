@@ -59,6 +59,11 @@ export const ROUTES = [
   { path: '/services/expedited-same-day-freight', priority: 0.85 },
   { path: '/services/last-mile-delivery', priority: 0.85 },
   { path: '/services/24-7-after-hours-weekend-dispatch', priority: 0.85 },
+  // Equipment & mode sub-pillars
+  { path: '/services/dry-van-transportation', priority: 0.8 },
+  { path: '/services/roll-tite-curtain-side-trailers', priority: 0.8 },
+  { path: '/services/full-truckload-ftl', priority: 0.8 },
+  { path: '/services/less-than-truckload-ltl', priority: 0.8 },
   // Supporting Core Pages
   { path: '/fleet-and-equipment', priority: 0.8 },
   { path: '/service-areas', priority: 0.8 },
