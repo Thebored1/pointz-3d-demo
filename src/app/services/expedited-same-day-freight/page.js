@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site';
 const PAGE_PATH = '/services/expedited-same-day-freight';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
-const TITLE = 'Hot Shot & Expedited Trucking Ontario | Point Zero Road Lines';
+const TITLE = 'Hot Shot & Expedited Trucking Ontario | Point Zero';
 const DESCRIPTION =
   "Same-day and hot shot freight across Ontario and the GTA when a shipment can't wait — direct-drive transit, 24/7 live dispatch and live GPS. Get a quote.";
 
@@ -25,11 +25,6 @@ export const metadata = {
   ],
   alternates: {
     canonical: PAGE_PATH,
-    languages: {
-      'en-CA': PAGE_PATH,
-      'en-US': PAGE_PATH,
-      'x-default': PAGE_PATH,
-    },
   },
   openGraph: {
     title: TITLE,

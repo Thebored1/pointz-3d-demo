@@ -25,7 +25,6 @@ export async function generateMetadata({ params }) {
     keywords: c.keywords,
     alternates: {
       canonical: path,
-      languages: { 'en-CA': path, 'en-US': path, 'x-default': path },
     },
     openGraph: {
       type: 'website',

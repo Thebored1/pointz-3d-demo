@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site';
 const PAGE_PATH = '/services/roll-tite-curtain-side-trailers';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
-const TITLE = 'Roll-Tite & Curtain-Side Trailer Transport GTA | Point Zero Road Lines';
+const TITLE = 'Roll-Tite & Curtain-Side Trailer Transport | Point Zero';
 const DESCRIPTION =
   'Roll-tite & curtain-side trailer transport across the GTA & Ontario — side and overhead loading with weather-tight protection for building materials. Get a quote.';
 
@@ -15,11 +15,6 @@ export const metadata = {
   keywords: ['roll-tite trailer','curtain-side trailer','roll tite transport Ontario','curtain side trucking GTA','weather-protected flatbed','side-loading trailer'],
   alternates: {
     canonical: PAGE_PATH,
-    languages: {
-      'en-CA': PAGE_PATH,
-      'en-US': PAGE_PATH,
-      'x-default': PAGE_PATH,
-    },
   },
   openGraph: {
     title: TITLE,

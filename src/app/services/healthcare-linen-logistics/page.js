@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site';
 const PAGE_PATH = '/services/healthcare-linen-logistics';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
-const TITLE = 'Healthcare Linen & Textile Transport Ontario | Point Zero Road Lines';
+const TITLE = 'Healthcare Linen & Textile Transport | Point Zero';
 const DESCRIPTION =
   'Dedicated linen and textile transport for healthcare and hospitality across Ontario — sanitary handling, cart & sling gear, 24/7 scheduled runs. Get a quote.';
 
@@ -23,11 +23,6 @@ export const metadata = {
   ],
   alternates: {
     canonical: PAGE_PATH,
-    languages: {
-      'en-CA': PAGE_PATH,
-      'en-US': PAGE_PATH,
-      'x-default': PAGE_PATH,
-    },
   },
   openGraph: {
     title: TITLE,

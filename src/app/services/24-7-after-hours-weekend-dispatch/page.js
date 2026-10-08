@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site';
 const PAGE_PATH = '/services/24-7-after-hours-weekend-dispatch';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
-const TITLE = '24/7 Dispatch & Weekend Freight Delivery GTA | Point Zero Road Lines';
+const TITLE = '24/7 Dispatch & Weekend Freight Delivery | Point Zero';
 const DESCRIPTION =
   'Round-the-clock live dispatch and weekend delivery across the GTA & Ontario — a real dispatcher, overnight linehauls, holiday runs and after-hours rescue.';
 
@@ -23,11 +23,6 @@ export const metadata = {
   ],
   alternates: {
     canonical: PAGE_PATH,
-    languages: {
-      'en-CA': PAGE_PATH,
-      'en-US': PAGE_PATH,
-      'x-default': PAGE_PATH,
-    },
   },
   openGraph: {
     title: TITLE,

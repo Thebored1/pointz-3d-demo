@@ -45,10 +45,10 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      <motion.div 
+      <motion.div
         className="hero-content"
         variants={containerVariants}
-        initial="hidden"
+        initial="visible"
         animate="visible"
       >
         <div className="hero-label-row">

@@ -5,13 +5,9 @@ export const metadata = {
   description: "Request a free freight quote from Point Zero Road Lines. Dedicated fleet, flatbed & Moffett delivery, and more. Quotes typically returned within 24 hours.",
   alternates: {
     canonical: "/get-a-quote",
-    languages: {
-      'en-CA': '/get-a-quote',
-      'en-US': '/get-a-quote',
-      'x-default': '/get-a-quote',
-    },
   },
   openGraph: {
+    images: [{ url: '/images/fleet-lineup.webp', width: 1200, height: 630, alt: 'Point Zero Road Lines fleet' }],
     title: "Get a Freight Quote — GTA & Ontario | Point Zero",
     description: "Request a free freight quote from Point Zero Road Lines. Dedicated fleet, flatbed & Moffett delivery, and more. Quotes typically returned within 24 hours.",
     url: "/get-a-quote",

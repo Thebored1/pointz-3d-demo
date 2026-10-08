@@ -5,13 +5,9 @@ export const metadata = {
   description: "Point Zero Road Lines has run dedicated fleet, Moffett delivery, and warehousing across Ontario since 2006. USDOT & MC registered, licensed & insured.",
   alternates: {
     canonical: "/about",
-    languages: {
-      'en-CA': '/about',
-      'en-US': '/about',
-      'x-default': '/about',
-    },
   },
   openGraph: {
+    images: [{ url: '/images/about-hero.webp', width: 1200, height: 630, alt: 'Point Zero Road Lines fleet' }],
     title: "About Point Zero Road Lines | Ontario Carrier Since 2006",
     description: "Point Zero Road Lines has run dedicated fleet, Moffett delivery, and warehousing across Ontario since 2006. USDOT & MC registered, licensed & insured.",
     url: "/about",

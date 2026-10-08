@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site';
 const PAGE_PATH = '/services/construction-material-hauling';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
-const TITLE = 'Construction Material Delivery Toronto & GTA | Point Zero Road Lines';
+const TITLE = 'Construction Material Delivery Toronto & GTA | Point Zero';
 const DESCRIPTION =
   'Lumber, drywall, roofing, brick, steel & precast delivered and spotted on GTA job sites — Moffett-equipped for sites with no dock. Request a quote.';
 
@@ -20,14 +20,12 @@ export const metadata = {
     'lumber delivery GTA',
     'flatbed construction hauling',
     'construction site delivery Ontario',
+    'building material transport',
+    'construction material transport',
+    'onsite material transportation',
   ],
   alternates: {
     canonical: PAGE_PATH,
-    languages: {
-      'en-CA': PAGE_PATH,
-      'en-US': PAGE_PATH,
-      'x-default': PAGE_PATH,
-    },
   },
   openGraph: {
     title: TITLE,

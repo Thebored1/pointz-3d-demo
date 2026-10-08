@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site';
 const PAGE_PATH = '/services/less-than-truckload-ltl';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
-const TITLE = 'Less-Than-Truckload (LTL) Freight Ontario | Point Zero Road Lines';
+const TITLE = 'Less-Than-Truckload (LTL) Freight Ontario | Point Zero';
 const DESCRIPTION =
   'Less-than-truckload (LTL) freight across the GTA & Ontario — partial loads consolidated through our Mississauga cross-dock on scheduled lanes. Get a quote.';
 
@@ -15,11 +15,6 @@ export const metadata = {
   keywords: ['less-than-truckload','LTL freight Ontario','LTL shipping GTA','LTL carrier Toronto','freight consolidation','scheduled LTL'],
   alternates: {
     canonical: PAGE_PATH,
-    languages: {
-      'en-CA': PAGE_PATH,
-      'en-US': PAGE_PATH,
-      'x-default': PAGE_PATH,
-    },
   },
   openGraph: {
     title: TITLE,

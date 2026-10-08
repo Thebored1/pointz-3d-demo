@@ -15,11 +15,6 @@ export const metadata = {
   keywords: ['dry van transportation','dry van trucking Ontario','enclosed trailer freight GTA','dry van carrier Toronto','FTL LTL dry van','cross-border dry van'],
   alternates: {
     canonical: PAGE_PATH,
-    languages: {
-      'en-CA': PAGE_PATH,
-      'en-US': PAGE_PATH,
-      'x-default': PAGE_PATH,
-    },
   },
   openGraph: {
     title: TITLE,

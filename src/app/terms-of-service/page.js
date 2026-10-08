@@ -9,13 +9,9 @@ export const metadata = {
   description: `Standard carrier terms of service and transportation conditions for ${SITE_NAME}.`,
   alternates: {
     canonical: '/terms-of-service',
-    languages: {
-      'en-CA': '/terms-of-service',
-      'en-US': '/terms-of-service',
-      'x-default': '/terms-of-service',
-    },
   },
   openGraph: {
+    images: [{ url: '/images/fleet-lineup.webp', width: 1200, height: 630, alt: 'Point Zero Road Lines' }],
     title: `Terms of Service | ${SITE_NAME}`,
     description: `Standard carrier terms of service and transportation conditions for ${SITE_NAME}.`,
     url: '/terms-of-service',

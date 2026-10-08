@@ -124,6 +124,42 @@ h1, h2, h3, h4, h5, h6,
   overflow-x: hidden;
 }
 
+/* Right-hand fixed canvas panel (desktop). Hidden on mobile via the query
+   below. These were inline styles on the element; moved here so the mobile
+   layout can be decided entirely in CSS (no hydration layout flip -> no CLS). */
+.video-right {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  z-index: -1;
+  background: #0f0f0f;
+}
+.video-right-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-right-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 15, 15, 0.1);
+}
+
+/* Mobile: single column, no canvas panel. The DOM is unchanged from desktop,
+   so there is no layout shift when JavaScript runs. */
+@media (max-width: 1199px) {
+  .content-left {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 72px;
+  }
+  .video-right {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .page-wrapper {
     padding: 2rem var(--page-gutter) 3rem;

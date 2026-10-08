@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site';
 const PAGE_PATH = '/services';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
-const TITLE = 'Trucking, Moffett Delivery & Logistics Services | Point Zero Road Lines';
+const TITLE = 'Trucking, Moffett & Logistics Services | Point Zero';
 const DESCRIPTION =
   'Dedicated fleet, flatbed & Moffett transport, warehousing, expedited and last-mile freight across the GTA & Ontario — one company-owned carrier since 2006.';
 
@@ -23,11 +23,6 @@ export const metadata = {
   ],
   alternates: {
     canonical: PAGE_PATH,
-    languages: {
-      'en-CA': PAGE_PATH,
-      'en-US': PAGE_PATH,
-      'x-default': PAGE_PATH,
-    },
   },
   openGraph: {
     title: TITLE,

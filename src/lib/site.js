@@ -71,6 +71,7 @@ export const ROUTES = [
   // Supporting Core Pages
   { path: '/fleet-and-equipment', priority: 0.8, image: '/images/fleet-lineup.webp' },
   { path: '/service-areas', priority: 0.8, image: '/images/dedicated-fleet-highway.webp' },
+  { path: '/careers', priority: 0.7, image: '/images/home-driver-cabin.webp' },
   { path: '/safety-compliance', priority: 0.75, image: '/images/home-driver-cabin.webp' },
   { path: '/faq', priority: 0.75, image: '/images/fleet-lineup.webp' },
   { path: '/contact', priority: 0.85 },

@@ -6,7 +6,6 @@ export const metadata = {
     'Plain-language guides to how freight moves — Moffett & flatbed delivery, trailer types, LTL vs FTL, cross-docking and load securement in Ontario.',
   alternates: {
     canonical: '/resources',
-    languages: { 'en-CA': '/resources', 'en-US': '/resources', 'x-default': '/resources' },
   },
   openGraph: {
     type: 'website',

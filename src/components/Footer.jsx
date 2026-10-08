@@ -3,7 +3,12 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
+import { overviewServices } from './serviceEditorialData';
 import './Footer.css';
+
+// Every service page linked from the footer, so all 15 get a global inbound
+// link (the audit flagged 8 service pages with only 2–6 links in).
+const FOOTER_SERVICES = overviewServices.map((s) => ({ href: s.href, label: s.title }));
 
 export default function Footer({ hideCta = false }) {
   return (
@@ -58,12 +63,9 @@ export default function Footer({ hideCta = false }) {
             <div className="link-group">
               <h4>Services</h4>
               <ul>
-                <li><Link href="/services/flatbed-moffett-transport">Flatbed &amp; Moffett Transport</Link></li>
-                <li><Link href="/services/dedicated-fleet-services">Dedicated Fleet Services</Link></li>
-                <li><Link href="/services/warehouse-cross-dock-storage">Warehouse &amp; Cross-Dock</Link></li>
-                <li><Link href="/services/construction-material-hauling">Construction Material Hauling</Link></li>
-                <li><Link href="/services/expedited-same-day-freight">Expedited &amp; Same-Day Freight</Link></li>
-                <li><Link href="/services/healthcare-linen-logistics">Healthcare Linen Logistics</Link></li>
+                {FOOTER_SERVICES.map((s) => (
+                  <li key={s.href}><Link href={s.href}>{s.label}</Link></li>
+                ))}
                 <li><Link href="/services">All Services</Link></li>
               </ul>
             </div>
@@ -74,6 +76,7 @@ export default function Footer({ hideCta = false }) {
                 <li><Link href="/fleet-and-equipment">Fleet &amp; Equipment</Link></li>
                 <li><Link href="/service-areas">Service Areas</Link></li>
                 <li><Link href="/resources">Resources &amp; Guides</Link></li>
+                <li><Link href="/careers">Careers</Link></li>
                 <li><Link href="/safety-compliance">Safety &amp; Compliance</Link></li>
                 <li><Link href="/faq">FAQ</Link></li>
                 <li><Link href="/contact">Contact</Link></li>

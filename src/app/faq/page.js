@@ -5,13 +5,9 @@ export const metadata = {
   description: 'Common questions about Moffett delivery, dedicated fleet services, flatbed transport, warehousing, rates, and 24/7 dispatch in Ontario.',
   alternates: {
     canonical: '/faq',
-    languages: {
-      'en-CA': '/faq',
-      'en-US': '/faq',
-      'x-default': '/faq',
-    },
   },
   openGraph: {
+    images: [{ url: '/images/fleet-lineup.webp', width: 1200, height: 630, alt: 'Point Zero Road Lines fleet' }],
     title: 'Frequently Asked Questions | Point Zero Road Lines',
     description: 'Common questions about Moffett delivery, dedicated fleet services, flatbed transport, warehousing, rates, and 24/7 dispatch in Ontario.',
     url: '/faq',

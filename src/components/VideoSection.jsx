@@ -22,12 +22,12 @@ export default function VideoSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <video 
-            src="/point-zero-promo.mp4" 
+          <video
+            src="/point-zero-promo.mp4"
             poster="/images/about-fleet-yard.webp"
             controls
             playsInline
-            preload="metadata"
+            preload="none"
             className="promo-video"
           >
             <source src="/point-zero-promo.mp4" type="video/mp4" />

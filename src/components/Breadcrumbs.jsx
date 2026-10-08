@@ -15,6 +15,7 @@ const STATIC_LABELS = {
   services: 'Services',
   'service-areas': 'Service Areas',
   resources: 'Resources',
+  careers: 'Careers',
   about: 'About',
   contact: 'Contact',
   faq: 'FAQ',

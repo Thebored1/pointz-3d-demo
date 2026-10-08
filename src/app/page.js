@@ -13,11 +13,6 @@ import MobileCtaBar from '../components/MobileCtaBar';
 export const metadata = {
   alternates: {
     canonical: '/',
-    languages: {
-      'en-CA': '/',
-      'en-US': '/',
-      'x-default': '/',
-    },
   },
 };
 

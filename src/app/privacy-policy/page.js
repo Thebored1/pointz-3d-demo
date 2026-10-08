@@ -9,13 +9,9 @@ export const metadata = {
   description: `Privacy policy and data handling practices for ${SITE_NAME}. Learn how we protect your information.`,
   alternates: {
     canonical: '/privacy-policy',
-    languages: {
-      'en-CA': '/privacy-policy',
-      'en-US': '/privacy-policy',
-      'x-default': '/privacy-policy',
-    },
   },
   openGraph: {
+    images: [{ url: '/images/fleet-lineup.webp', width: 1200, height: 630, alt: 'Point Zero Road Lines' }],
     title: `Privacy Policy | ${SITE_NAME}`,
     description: `Privacy policy and data handling practices for ${SITE_NAME}. Learn how we protect your information.`,
     url: '/privacy-policy',

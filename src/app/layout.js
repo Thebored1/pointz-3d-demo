@@ -32,11 +32,6 @@ export const metadata = {
   applicationName: SITE_NAME,
   alternates: {
     canonical: '/',
-    languages: {
-      'en-CA': '/',
-      'en-US': '/',
-      'x-default': '/',
-    },
   },
   formatDetection: {
     email: false,
@@ -179,6 +174,14 @@ const localBusinessSchema = {
       url: SITE_URL,
       telephone: "+1-647-680-1300",
       email: "info@pzrls.com",
+      // Photos — required for the local rich result.
+      image: [
+        `${SITE_URL}/images/fleet-lineup.webp`,
+        `${SITE_URL}/images/about-fleet-yard.webp`,
+        `${SITE_URL}/images/warehouse-crossdock-facility.webp`,
+      ],
+      hasMap:
+        "https://www.google.com/maps/search/?api=1&query=1566%20Bonhill%20Road%2C%20Mississauga%2C%20ON%20L5T%201C7",
       priceRange: "$$",
       currenciesAccepted: "CAD, USD",
       paymentAccepted: "Invoice, Credit Card, Direct Deposit, Electronic Transfer",

@@ -46,7 +46,7 @@ export default function EditorialHero({
     <section className={sectionClass}>
       <div className={containerClass}>
         <Breadcrumbs />
-        <motion.div variants={heroContainer} initial="hidden" animate="visible">
+        <motion.div variants={heroContainer} initial="visible" animate="visible">
           <motion.div className={topClass} variants={fadeUp}>
             <span className={badgeClass}>{badge}</span>
             {badgeAlt ? <span className={badgeClass}>{badgeAlt}</span> : null}

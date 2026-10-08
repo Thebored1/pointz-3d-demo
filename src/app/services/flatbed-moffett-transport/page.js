@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site';
 const PAGE_PATH = '/services/flatbed-moffett-transport';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
-const TITLE = 'Moffett Truck Delivery & Flatbed Service in the GTA | Point Zero Road Lines';
+const TITLE = 'Moffett & Flatbed Delivery in Toronto & GTA | Point Zero';
 const DESCRIPTION =
   'Moffett-equipped flatbed delivery across the GTA — up to 5,500 lb lift, 2-way & 4-way units, and onsite unloading with no dock or forklift. Request a quote.';
 
@@ -26,11 +26,6 @@ export const metadata = {
   ],
   alternates: {
     canonical: PAGE_PATH,
-    languages: {
-      'en-CA': PAGE_PATH,
-      'en-US': PAGE_PATH,
-      'x-default': PAGE_PATH,
-    },
   },
   openGraph: {
     title: TITLE,

@@ -10,21 +10,26 @@ const LOAD_CONCURRENCY = 8;
 const frameSrc = index =>
   `/assets/frames/frame_${index.toString().padStart(4, '0')}.webp`;
 
+// The DOM structure is identical on mobile and desktop and the split is decided
+// entirely in CSS (@media 1200px). That avoids the layout "flip" the old
+// client-side branch caused on hydration, which reflowed the whole page and
+// jumped the footer (desktop CLS ~1.0). `isDesktop` here only gates the canvas
+// scroll animation — it never changes the rendered markup.
 export default function SplitLayout({ children }) {
-  const [isMobile, setIsMobile] = useState(null);
+  const [isDesktop, setIsDesktop] = useState(false);
   const canvasRef = useRef(null);
   const imagesRef = useRef([]);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1200);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    const check = () => setIsDesktop(window.innerWidth >= 1200);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
   }, []);
 
-  // Preload frames, first one first, in bounded batches
+  // Preload frames, first one first, in bounded batches (desktop only).
   useEffect(() => {
-    if (isMobile) return;
+    if (!isDesktop) return;
 
     let cancelled = false;
     const images = new Array(FRAME_COUNT);
@@ -66,11 +71,11 @@ export default function SplitLayout({ children }) {
     return () => {
       cancelled = true;
     };
-  }, [isMobile]);
+  }, [isDesktop]);
 
   useEffect(() => {
-    if (isMobile) return;
-    
+    if (!isDesktop) return;
+
     let targetFrame = 1;
     let currentFrame = 1;
     let drawnFrame = -1;
@@ -124,42 +129,26 @@ export default function SplitLayout({ children }) {
       window.removeEventListener('scroll', handleScroll);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [isMobile]);
-
-  if (isMobile === null) {
-    return <div className="mobile-layout"><Navbar /><div className="mobile-content">{children}</div></div>;
-  }
-
-  if (isMobile) {
-    return (
-      <div className="mobile-layout">
-        <Navbar />
-        <div className="mobile-content">
-          {children}
-        </div>
-      </div>
-    );
-  }
+  }, [isDesktop]);
 
   return (
     <div className="split-layout-container">
       <Navbar />
-      
-      {/* Left side: Scrollable Content */}
+
+      {/* Left side: scrollable content (full width on mobile via CSS) */}
       <div className="content-left">
-        {/* Content goes here */}
         {children}
       </div>
 
-      {/* Right side: Fixed Video */}
-      <div className="video-right" style={{ position: 'fixed', right: 0, top: 0, width: '50vw', height: '100vh', zIndex: -1, background: '#0f0f0f' }}>
-        <canvas 
+      {/* Right side: fixed canvas animation (hidden on mobile via CSS) */}
+      <div className="video-right">
+        <canvas
           ref={canvasRef}
           width={1920}
           height={1080}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+          className="video-right-canvas"
         />
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(15,15,15,0.1)' }}></div>
+        <div className="video-right-overlay" />
       </div>
     </div>
   );

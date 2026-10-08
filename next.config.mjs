@@ -134,24 +134,22 @@ const nextConfig = {
       },
 
       // Removed pages (old site) -> Closest relevant canonical route
+      // Old blog paths point at the new resources hub (not the homepage, which
+      // Google treated as a soft 404).
       {
         source: '/blog',
-        destination: '/',
+        destination: '/resources',
         permanent: true,
       },
       {
         source: '/blog/:path*',
-        destination: '/',
+        destination: '/resources',
         permanent: true,
       },
+      // /careers is a real page now; only the singular legacy /career redirects.
       {
         source: '/career',
-        destination: '/about',
-        permanent: true,
-      },
-      {
-        source: '/careers',
-        destination: '/about',
+        destination: '/careers',
         permanent: true,
       },
       {
@@ -166,6 +164,12 @@ const nextConfig = {
       },
       {
         source: '/services/warehouse-and-storage',
+        destination: '/services/warehouse-cross-dock-storage',
+        permanent: true,
+      },
+      {
+        // Legacy singular "/service/..." path still ranking (position 7.4) → 404 fix
+        source: '/service/warehouse-and-storage',
         destination: '/services/warehouse-cross-dock-storage',
         permanent: true,
       },

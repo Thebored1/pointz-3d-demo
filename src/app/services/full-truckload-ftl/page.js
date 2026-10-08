@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site';
 const PAGE_PATH = '/services/full-truckload-ftl';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
-const TITLE = 'Full Truckload (FTL) Shipping Ontario | Point Zero Road Lines';
+const TITLE = 'Full Truckload (FTL) Shipping Ontario | Point Zero';
 const DESCRIPTION =
   'Full-truckload (FTL) freight across the GTA, Ontario & cross-border — a dedicated trailer point-to-point on flatbed, dry van or Moffett. Request a quote.';
 
@@ -15,11 +15,6 @@ export const metadata = {
   keywords: ['full truckload','FTL shipping Ontario','full truckload carrier GTA','FTL trucking Toronto','dedicated truckload','cross-border FTL'],
   alternates: {
     canonical: PAGE_PATH,
-    languages: {
-      'en-CA': PAGE_PATH,
-      'en-US': PAGE_PATH,
-      'x-default': PAGE_PATH,
-    },
   },
   openGraph: {
     title: TITLE,
