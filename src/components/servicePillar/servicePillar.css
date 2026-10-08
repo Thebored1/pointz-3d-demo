@@ -462,3 +462,45 @@
   .mf-steps,
   .mf-check-list--cols { grid-template-columns: 1fr; }
 }
+
+/* Service-area chip links under the Related services grid — direct links from
+   each service page to the city service-area pages (internal-linking). */
+.mf-area-links {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+.mf-area-links-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-gray);
+  margin-bottom: 1rem;
+}
+.mf-area-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.mf-area-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--c-charcoal);
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.mf-area-chip:hover {
+  border-color: var(--c-blue);
+  color: var(--c-blue);
+}
+.mf-area-chip-all {
+  border-color: var(--border-strong);
+  font-weight: 600;
+}

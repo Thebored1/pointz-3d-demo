@@ -385,7 +385,16 @@ export function getGuide(slug) {
 // Ordered list for the hub and related rails.
 export const GUIDE_LIST = GUIDE_SLUGS.map((slug) => GUIDES[slug]);
 
-// Related guides for an article: the others, capped.
+// Related guides for an article: the `limit` guides that follow this one in the
+// list, wrapping around. Picking the *next* ones (rather than always the first
+// few) spreads internal links evenly so every guide gets inbound links from
+// siblings, not just the first three.
 export function getRelatedGuides(slug, limit = 3) {
-  return GUIDE_LIST.filter((g) => g.slug !== slug).slice(0, limit);
+  const i = GUIDE_SLUGS.indexOf(slug);
+  if (i === -1) return GUIDE_LIST.slice(0, limit);
+  const out = [];
+  for (let step = 1; step <= limit && step < GUIDE_SLUGS.length; step += 1) {
+    out.push(GUIDE_LIST[(i + step) % GUIDE_SLUGS.length]);
+  }
+  return out;
 }

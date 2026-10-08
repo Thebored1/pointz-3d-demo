@@ -4,7 +4,13 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Check, ChevronDown, Phone } from 'lucide-react';
 import { fadeUp, fadeUpSoft, viewportOnce } from '../../lib/motion';
+import { CITIES } from '../../lib/cities';
 import './servicePillar.css';
+
+const AREA_LINKS = Object.values(CITIES).map((c) => ({
+  slug: c.slug,
+  label: c.slug === 'ontario' ? 'Ontario' : c.name,
+}));
 
 /*
  * Reusable building blocks for long-form service pillar pages. Compose them per
@@ -190,17 +196,34 @@ export function FaqAccordion({ items }) {
 /* Related-service link cards. items: [{ title, href, desc }, ...]. */
 export function RelatedServices({ items }) {
   return (
-    <div className="mf-grid mf-grid-3">
-      {items.map((r, i) => (
-        <Reveal key={r.href} custom={i}>
-          <Link href={r.href} className="mf-related-card">
-            <h3>{r.title}</h3>
-            <p>{r.desc}</p>
-            <span className="mf-related-link">Explore <ArrowUpRight size={14} /></span>
-          </Link>
-        </Reveal>
-      ))}
-    </div>
+    <>
+      <div className="mf-grid mf-grid-3">
+        {items.map((r, i) => (
+          <Reveal key={r.href} custom={i}>
+            <Link href={r.href} className="mf-related-card">
+              <h3>{r.title}</h3>
+              <p>{r.desc}</p>
+              <span className="mf-related-link">Explore <ArrowUpRight size={14} /></span>
+            </Link>
+          </Reveal>
+        ))}
+      </div>
+      <Reveal>
+        <div className="mf-area-links">
+          <span className="mf-area-links-label">Serving across the GTA &amp; Ontario</span>
+          <div className="mf-area-chips">
+            {AREA_LINKS.map((a) => (
+              <Link key={a.slug} href={`/service-areas/${a.slug}`} className="mf-area-chip">
+                {a.label}
+              </Link>
+            ))}
+            <Link href="/service-areas" className="mf-area-chip mf-area-chip-all">
+              All service areas <ArrowUpRight size={13} />
+            </Link>
+          </div>
+        </div>
+      </Reveal>
+    </>
   );
 }
 
