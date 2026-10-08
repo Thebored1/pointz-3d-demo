@@ -45,7 +45,7 @@ export default async function Image({ params }) {
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'space-between', color: '#6b6b6b', fontSize: '24px' }}>
-          <div style={{ display: 'flex' }}>pointzeroroadlines.com/resources</div>
+          <div style={{ display: 'flex' }}>www.pointzeroroadlines.com/resources</div>
           <div style={{ display: 'flex' }}>USDOT 3983391 · MC 1492151</div>
         </div>
       </div>

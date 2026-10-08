@@ -8,6 +8,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import EditorialHero from './EditorialHero';
 import { ServiceIcon, defaultSteps, defaultTrustBadges, getRelated, getImageSet } from './serviceEditorialData';
+import { SITE_URL } from '../lib/site';
 import {
   fadeUp,
   fadeUpSoft,
@@ -146,7 +147,7 @@ export default function ServiceEditorialPage({
     ...processSection,
   };
 
-  const siteUrl = 'https://pointzeroroadlines.com';
+  const siteUrl = SITE_URL;
   const topLevelPages = ['faq', 'fleet-and-equipment', 'service-areas', 'safety-compliance', 'services', 'about', 'contact', 'get-a-quote', 'privacy-policy', 'terms-of-service'];
   const isTopLevel = topLevelPages.includes(relatedKey);
   const pageUrl = isTopLevel ? `${siteUrl}/${relatedKey === 'services' ? 'services' : relatedKey}` : `${siteUrl}/services/${relatedKey}`;

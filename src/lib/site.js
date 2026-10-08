@@ -1,5 +1,7 @@
 // Single source of truth for site-wide SEO and contact values.
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://pointzeroroadlines.com';
+// Canonical host is www (the bare domain 301-redirects to www in production), so
+// the default matches what actually serves. Override via NEXT_PUBLIC_SITE_URL.
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.pointzeroroadlines.com';
 
 export const SITE_NAME = 'Point Zero Road Lines';
 export const SITE_LEGAL_NAME = 'Point Zero Road Lines';
