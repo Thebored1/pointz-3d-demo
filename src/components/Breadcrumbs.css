@@ -1,0 +1,37 @@
+/* Breadcrumb trail styling. Lives with the component so it applies everywhere
+   Breadcrumbs is used (hero sections AND the resources pages, which don't load
+   EditorialHero.css). Muted mono styling to match .pz-badge. */
+.pz-breadcrumbs {
+  margin-bottom: 1.5rem;
+}
+.pz-breadcrumbs-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.04em;
+}
+.pz-breadcrumbs-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.pz-breadcrumbs-item a {
+  color: var(--c-gray);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.pz-breadcrumbs-item a:hover {
+  color: var(--c-blue);
+}
+.pz-breadcrumbs-item [aria-current="page"] {
+  color: var(--c-black);
+}
+.pz-breadcrumbs-sep {
+  color: var(--c-silver);
+}

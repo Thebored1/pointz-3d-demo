@@ -5,6 +5,17 @@
   color: var(--c-black);
 }
 
+/* .pz-container is defined in EditorialHero.css / AboutPage.css, which the
+   resources pages don't load — without this they'd render full-bleed with no
+   side gutter on mobile. Declared before .rsc-body so the 760px reading column
+   (same specificity, later rule) still wins for the article body. */
+.pz-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+  width: 100%;
+}
+
 /* Header clears the fixed navbar, like the hero sections. */
 .rsc-head {
   padding: calc(100px + clamp(2rem, 5vw, 48px)) 0 clamp(1.5rem, 3vw, 32px);
@@ -187,6 +198,41 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+}
+
+/* .pz-btn* buttons are defined in AboutPage.css, which the resources pages don't
+   load — declare them here so the CTA buttons are styled. Matches the site. */
+.rsc .pz-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 1.5rem;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-small);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s var(--ease-out-expo);
+}
+.rsc .pz-btn-primary {
+  background: var(--c-blue);
+  color: var(--c-navy);
+}
+.rsc .pz-btn-primary:hover {
+  background: #fff;
+}
+.rsc .pz-btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+.rsc .pz-btn-secondary:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* ---- More guides rail ---- */

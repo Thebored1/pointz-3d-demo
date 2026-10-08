@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { overviewServices } from './serviceEditorialData';
 import { CITIES } from '@/lib/cities';
 import { GUIDES } from '@/lib/guides';
+import './Breadcrumbs.css';
 
 // Visible breadcrumb trail. Rendered once inside EditorialHero so every service,
 // service-area and city page gets a trail with no per-page wiring. The matching
