@@ -18,4 +18,5 @@ export const MOFFETT_FAQS = [
   ['Do you provide Moffett delivery throughout the GTA?', 'Yes. Point Zero provides Moffett-equipped flatbed delivery throughout the GTA, including Toronto, Mississauga, Brampton, Vaughan and surrounding communities.'],
   ['What information do you need for a Moffett delivery quote?', 'We recommend providing the pickup and delivery locations, material type, approximate weight, dimensions, delivery date and any information about site access or required placement.'],
   ['Do you provide Moffett delivery for residential customers?', 'Yes, where the load, delivery location and site conditions are suitable for Moffett unloading.'],
+  ['Is Moffett delivery the same as a flatbed with a forklift?', 'Essentially, yes. A Moffett is a truck-mounted forklift — sometimes called a piggyback forklift, or described as a “flatbed with a forklift” or “flatbed with a Moffett.” It rides on the truck and unloads the freight on arrival, so no dock or separate forklift is needed at the destination.'],
 ];

@@ -9,4 +9,5 @@ export const EXPEDITED_FAQS = [
   ['Do you handle cross-border expedited freight?', 'Yes — expedited lanes between Ontario and U.S. border points with customs coordination. Timing is subject to border processing.'],
   ['What areas do you cover for same-day freight?', 'The Greater Toronto Area, the Golden Horseshoe and cross-border lanes.'],
   ['How do I book an urgent shipment right now?', 'Call our 24/7 dispatch line at (647) 680-1300 for immediate truck assignment, or send an urgent quote request.'],
+  ['Do you offer hot shot (hotshot) trucking in Ontario?', 'Yes. Hot shot trucking — also spelled hotshot — is our expedited, direct-drive service for urgent loads across the GTA, the Golden Horseshoe and wider Ontario, with 24/7 dispatch and same-day freight options.'],
 ];

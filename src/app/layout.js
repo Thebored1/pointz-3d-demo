@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Syne, Manrope, Space_Mono } from "next/font/google";
-import { SITE_URL, SITE_NAME, SITE_LEGAL_NAME, SITE_DESCRIPTION } from "@/lib/site";
+import { SITE_URL, SITE_NAME, SITE_LEGAL_NAME, SITE_DESCRIPTION, SITE_TAGLINE, CONTACT_INFO } from "@/lib/site";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SiteAnalytics from "@/components/SiteAnalytics";
 
@@ -12,6 +12,15 @@ const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"], style
 
 // Home title tag matching Section 3: "Moffett & Flatbed Delivery Ontario | Point Zero Road Lines"
 const HOME_TITLE = `Moffett & Flatbed Delivery Ontario | ${SITE_NAME}`;
+
+// Next 16 keeps viewport separate from metadata. themeColor paints the mobile
+// browser chrome to match the site's near-black surface (--c-black).
+export const viewport = {
+  themeColor: '#0a0a0a',
+  colorScheme: 'dark',
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -44,6 +53,18 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  // Search-engine ownership verification. Tags are emitted only when the
+  // corresponding env var is set (undefined keys are dropped by Next), so no
+  // tokens are committed. Set in the hosting env to verify GSC / Bing / Yandex:
+  //   NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION, NEXT_PUBLIC_BING_SITE_VERIFICATION,
+  //   NEXT_PUBLIC_YANDEX_VERIFICATION
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
+    other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+      : undefined,
   },
   openGraph: {
     type: "website",
@@ -86,9 +107,34 @@ const localBusinessSchema = {
       "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
       legalName: SITE_LEGAL_NAME,
+      description: SITE_DESCRIPTION,
+      slogan: SITE_TAGLINE,
       url: SITE_URL,
-      logo: `${SITE_URL}/assets/logo.webp`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo.webp`,
+        width: 1349,
+        height: 157,
+      },
+      image: `${SITE_URL}/images/fleet-lineup.webp`,
+      telephone: CONTACT_INFO.phoneRaw,
+      email: CONTACT_INFO.email,
       foundingDate: "2006",
+      foundingLocation: {
+        "@type": "Place",
+        name: "Mississauga, Ontario, Canada",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: CONTACT_INFO.city,
+          addressRegion: CONTACT_INFO.province,
+          addressCountry: CONTACT_INFO.country,
+        },
+      },
+      knowsLanguage: ["en"],
+      areaServed: [
+        { "@type": "AdministrativeArea", name: "Greater Toronto Area" },
+        { "@type": "AdministrativeArea", name: "Ontario" },
+      ],
       identifier: [
         {
           "@type": "PropertyValue",

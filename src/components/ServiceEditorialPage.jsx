@@ -129,10 +129,16 @@ export default function ServiceEditorialPage({
   faqSection,
   cta,
   relatedKey,
+  // Optional overrides. Used by non-service pages (e.g. /service-areas/<city>)
+  // that need their own JSON-LD, related rail and imagery without relying on the
+  // service-slug lookups below. All additive — existing callers pass none.
+  schema,
+  related: relatedOverride,
+  imageKey,
 }) {
   const trustBadges = darkSection?.badges ?? defaultTrustBadges;
-  const related = relatedKey ? getRelated(relatedKey) : [];
-  const imageSet = getImageSet(relatedKey);
+  const related = relatedOverride ?? (relatedKey ? getRelated(relatedKey) : []);
+  const imageSet = getImageSet(imageKey ?? relatedKey);
   const process = {
     num: '03',
     label: 'How it works',
@@ -230,7 +236,7 @@ export default function ServiceEditorialPage({
     <div className="pz-about sv-ed">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema ?? serviceSchema) }}
       />
       <Navbar />
 

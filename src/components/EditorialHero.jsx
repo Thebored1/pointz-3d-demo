@@ -10,6 +10,7 @@ import {
   lineReveal,
   imageReveal,
 } from '../lib/motion';
+import Breadcrumbs from './Breadcrumbs';
 import './motion.css';
 import './EditorialHero.css';
 
@@ -44,6 +45,7 @@ export default function EditorialHero({
   return (
     <section className={sectionClass}>
       <div className={containerClass}>
+        <Breadcrumbs />
         <motion.div variants={heroContainer} initial="hidden" animate="visible">
           <motion.div className={topClass} variants={fadeUp}>
             <span className={badgeClass}>{badge}</span>

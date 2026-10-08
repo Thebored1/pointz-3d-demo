@@ -1,0 +1,70 @@
+/* Custom 404. Navbar is fixed, so clear it with top padding like the hero. */
+.pz-404 {
+  padding: calc(100px + clamp(3rem, 6vw, 60px)) 0 clamp(3rem, 6vw, 80px);
+  min-height: 70vh;
+}
+.pz-404-inner {
+  display: flex;
+  flex-direction: column;
+}
+.pz-404-code {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.1em;
+  color: var(--c-blue);
+}
+.pz-404 h1 {
+  margin: 0.5rem 0 1rem;
+}
+.pz-404-lead {
+  max-width: 60ch;
+  color: var(--c-gray);
+  line-height: 1.6;
+}
+.pz-404-lead a {
+  color: var(--c-blue);
+  text-decoration: none;
+}
+.pz-404-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2rem 0 3rem;
+}
+.pz-404-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+}
+.pz-404-cols h2 {
+  font-size: var(--fs-small);
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-gray);
+  margin-bottom: 1rem;
+}
+.pz-404-cols ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.pz-404-cols a {
+  color: var(--c-black);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.pz-404-cols a:hover {
+  color: var(--c-blue);
+}
+
+@media (max-width: 640px) {
+  .pz-404-cols {
+    grid-template-columns: 1fr;
+  }
+}

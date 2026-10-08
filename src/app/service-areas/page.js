@@ -1,7 +1,17 @@
 import ServiceEditorialPage from '../../components/ServiceEditorialPage';
+import { CITIES } from '@/lib/cities';
 
 // Metadata lives in ./layout.js (absolute title + canonical + OpenGraph) to
 // avoid a doubled "| Point Zero Road Lines" from the root title template.
+
+// Crawlable links to each dedicated city page (data-driven from /lib/cities.js).
+const cityLinks = Object.values(CITIES).map((c) => ({
+  icon: 'MapPin',
+  title: c.slug === 'ontario' ? 'Ontario (province-wide)' : `${c.name}, ON`,
+  desc: c.region,
+  href: `/service-areas/${c.slug}`,
+}));
+
 const serviceRegions = [
   { icon: 'MapPin', title: 'Greater Toronto Area (GTA)', desc: 'Mississauga (HQ), Brampton, Bolton, Toronto, Vaughan, Markham, Oakville, Burlington, Milton, Caledon, and Richmond Hill. Daily Moffett delivery, dedicated fleet loops, and cross-docking.' },
   { icon: 'Route', title: 'Golden Horseshoe & SW Ontario', desc: 'Hamilton, Kitchener-Waterloo, Cambridge, Guelph, Brantford, London, and Windsor. Manufacturing JIT supply, automotive corridors, and building supplies.' },
@@ -39,9 +49,9 @@ export default function ServiceAreasPage() {
         num: '01',
         label: 'Primary Coverage',
         title: 'Where we operate daily',
-        desc: 'Our fleet moves freight throughout the most vital manufacturing, commercial, and construction corridors across Ontario and the Great Lakes region.',
+        desc: 'Our fleet moves freight across Ontario and the Great Lakes region. Tap a city below for its local corridors, industrial zones and FAQs.',
         columns: 4,
-        items: serviceRegions,
+        items: [...serviceRegions, ...cityLinks],
       }}
       gallery={[
         { src: '/images/fleet-hero.webp', alt: 'Fleet ready for regional dispatch', span: 'main' },

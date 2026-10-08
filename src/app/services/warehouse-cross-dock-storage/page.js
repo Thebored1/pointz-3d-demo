@@ -20,6 +20,7 @@ export const metadata = {
     'pallet storage Mississauga',
     'LTL to FTL consolidation',
     'GTA distribution terminal',
+    'cross dock services Ontario',
   ],
   alternates: {
     canonical: PAGE_PATH,

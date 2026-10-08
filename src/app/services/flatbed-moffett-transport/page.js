@@ -20,6 +20,9 @@ export const metadata = {
     'flatbed delivery Toronto',
     'construction material delivery',
     'truck-mounted forklift delivery',
+    'flatbed with Moffett',
+    'Moffett delivery near me',
+    'flatbed transport Ontario',
   ],
   alternates: {
     canonical: PAGE_PATH,

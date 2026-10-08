@@ -73,6 +73,7 @@ export default function Footer({ hideCta = false }) {
                 <li><Link href="/about">About Us</Link></li>
                 <li><Link href="/fleet-and-equipment">Fleet &amp; Equipment</Link></li>
                 <li><Link href="/service-areas">Service Areas</Link></li>
+                <li><Link href="/resources">Resources &amp; Guides</Link></li>
                 <li><Link href="/safety-compliance">Safety &amp; Compliance</Link></li>
                 <li><Link href="/faq">FAQ</Link></li>
                 <li><Link href="/contact">Contact</Link></li>

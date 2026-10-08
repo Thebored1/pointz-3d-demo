@@ -11,4 +11,5 @@ export const WAREHOUSE_FAQS = [
   ['Can freight move straight from your dock onto local delivery?', 'Because our fleet and warehouse share the same Mississauga terminal, cross-docked freight can transition onto local routes, including Moffett flatbed job-site drops.'],
   ['Is the facility secure and accessible?', 'The terminal offers monitored storage and dock access. Contact us for current space availability and access hours.'],
   ['Do you stage construction materials or healthcare linen?', 'Yes. Materials can be staged indoors for early job-site drops, and we can support linen cart staging and turnaround, subject to scheduling and space.'],
+  ['Do you offer cross-dock services in Ontario?', 'Yes. Our cross-dock services run from our centrally located Mississauga terminal, serving the GTA and wider Ontario with trailer-to-trailer transfers, LTL consolidation and staging — with direct access to the 401, 403, 407 and 410 corridors.'],
 ];

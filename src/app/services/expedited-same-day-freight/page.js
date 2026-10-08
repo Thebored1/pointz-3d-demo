@@ -20,6 +20,8 @@ export const metadata = {
     'direct drive trucking',
     'urgent freight GTA',
     'expedited cross-border freight',
+    'hotshot trucking Ontario',
+    'same day freight service',
   ],
   alternates: {
     canonical: PAGE_PATH,
