@@ -2,6 +2,7 @@ import { execFileSync } from 'node:child_process';
 import { SITE_URL, ROUTES } from '@/lib/site';
 import { CITIES } from '@/lib/cities';
 import { GUIDE_LIST } from '@/lib/guides';
+import { LANDING_PAGES } from '@/lib/landingPages';
 
 // Last commit date (ISO) that touched a file, or null. Runs at build time when
 // the sitemap is prerendered; git history is available there. Falls back to null
@@ -50,7 +51,15 @@ export default function sitemap() {
     })),
   ];
 
-  return [...ROUTES, ...cityRoutes, ...guideRoutes].map(({ path, priority, lastModified, changeFrequency, image }) => {
+  // Service+city landing pages (content in /lib/landingPages.js).
+  const landingRoutes = Object.values(LANDING_PAGES).map((d) => ({
+    path: `/${d.slug}`,
+    priority: 0.85,
+    changeFrequency: 'monthly',
+    image: d.ogImage,
+  }));
+
+  return [...ROUTES, ...cityRoutes, ...guideRoutes, ...landingRoutes].map(({ path, priority, lastModified, changeFrequency, image }) => {
     let resolvedDate = lastModified
       ? new Date(lastModified)
       : gitLastModified(sourceFileFor(path)) || buildDate;

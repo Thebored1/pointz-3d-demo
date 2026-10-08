@@ -84,6 +84,8 @@ export default function ResourceArticle({ guide }) {
             <span className="rsc-cat">{guide.category}</span>
             <span className="rsc-dot">·</span>
             <span>{guide.readTime}</span>
+            <span className="rsc-dot">·</span>
+            <span>By the Point Zero operations team</span>
           </div>
           <h1 className="rsc-title">{guide.title}</h1>
           <p className="rsc-dek">{guide.dek}</p>
