@@ -78,7 +78,7 @@ export default function ServicesHubPage() {
         badge="SERVICES · OVERVIEW"
         badgeAlt="EST. 2006 · MISSISSAUGA HQ"
         titleLine1="SPECIALIZED FREIGHT SERVICES,"
-        titleAccent="BUILT AROUND YOUR OPERATION."
+        titleAccent="ACROSS THE GTA & ONTARIO."
         description="Point Zero Road Lines provides dedicated transportation, specialized flatbed and Moffett delivery, warehousing and logistics across the Greater Toronto Area and Ontario. Every service is backed by company-owned equipment, professional drivers and 24/7 live dispatch."
         scrollLabel="SCROLL THE SERVICES"
         heroImage="/images/fleet-lineup.webp"

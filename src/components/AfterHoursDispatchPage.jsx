@@ -60,7 +60,7 @@ export default function AfterHoursDispatchPage() {
       <EditorialHero
         badge="SERVICES · 24/7 DISPATCH"
         badgeAlt="EST. 2006 · MISSISSAUGA HQ"
-        titleLine1="24/7 LIVE DISPATCH & WEEKEND DELIVERY,"
+        titleLine1="24/7 DISPATCH & WEEKEND DELIVERY IN THE GTA,"
         titleAccent="BECAUSE FREIGHT DOESN'T STOP AT 5 PM."
         description="Your manufacturing lines run three shifts, construction pours happen at dawn on Saturday, and healthcare linens cycle over long weekends. Point Zero Road Lines provides around-the-clock live dispatch, overnight linehauls and full weekend delivery operations."
         scrollLabel="SCROLL FOR DETAILS"

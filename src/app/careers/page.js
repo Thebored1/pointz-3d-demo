@@ -81,8 +81,8 @@ export default function CareersPage() {
     <ServiceEditorialPage
       badge="CAREERS"
       badgeAlt="DRIVER & OPERATIONS JOBS"
-      titleLine1="DRIVE WITH"
-      titleAccent="POINT ZERO."
+      titleLine1="DRIVE WITH POINT ZERO —"
+      titleAccent="GTA DRIVER & OPERATOR JOBS."
       description="We've run dedicated fleet, flatbed and Moffett work across the GTA since 2006 — and we're always looking for drivers and operators who take the job seriously. Company drivers, owner-operators and operations staff, all dispatched from our Mississauga terminal."
       imageKey="safety-compliance"
       schema={schema}

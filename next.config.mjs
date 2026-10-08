@@ -48,11 +48,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/services/cross-border-freight',
-        destination: '/services/dedicated-fleet-services',
-        permanent: true,
-      },
-      {
         source: '/services/warehouse-cross-dock',
         destination: '/services/warehouse-cross-dock-storage',
         permanent: true,

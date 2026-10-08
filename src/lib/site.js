@@ -68,6 +68,7 @@ export const ROUTES = [
   { path: '/services/roll-tite-curtain-side-trailers', priority: 0.8, image: '/images/flatbed-blue-transport.webp' },
   { path: '/services/full-truckload-ftl', priority: 0.8, image: '/images/dedicated-fleet-highway.webp' },
   { path: '/services/less-than-truckload-ltl', priority: 0.8, image: '/images/warehouse-crossdock-docks.webp' },
+  { path: '/services/cross-border-freight', priority: 0.85, image: '/images/dedicated-fleet-highway.webp' },
   // Supporting Core Pages
   { path: '/fleet-and-equipment', priority: 0.8, image: '/images/fleet-lineup.webp' },
   { path: '/service-areas', priority: 0.8, image: '/images/dedicated-fleet-highway.webp' },

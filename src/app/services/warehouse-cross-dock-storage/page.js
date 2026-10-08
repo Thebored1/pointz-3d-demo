@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site';
 const PAGE_PATH = '/services/warehouse-cross-dock-storage';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
-const TITLE = 'Warehouse & Cross-Dock Mississauga | Point Zero Road Lines';
+const TITLE = 'Cross-Docking & Warehouse in Mississauga | Point Zero';
 const DESCRIPTION =
   'Cross-docking, warehousing and freight consolidation at our Mississauga terminal — one operation with the fleet, not a separate storage vendor. Get a quote.';
 

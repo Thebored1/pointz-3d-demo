@@ -69,7 +69,7 @@ export default function ExpeditedFreightPage() {
       <EditorialHero
         badge="SERVICES · EXPEDITED FREIGHT"
         badgeAlt="EST. 2006 · MISSISSAUGA HQ"
-        titleLine1="EXPEDITED & SAME-DAY FREIGHT,"
+        titleLine1="EXPEDITED & SAME-DAY FREIGHT IN THE GTA,"
         titleAccent="WHEN TOMORROW IS TOO LATE."
         description="Production line down? Emergency job-site shortage? Urgent medical-linen surge? Point Zero Road Lines provides immediate direct-drive hot shot and same-day freight across the Greater Toronto Area, the Golden Horseshoe and cross-border lanes."
         scrollLabel="SCROLL FOR DETAILS"

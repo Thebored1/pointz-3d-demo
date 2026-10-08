@@ -165,8 +165,8 @@ export default function MoffettFlatbedPage() {
       <EditorialHero
         badge="SERVICES · MOFFETT & FLATBED"
         badgeAlt="EST. 2006 · MISSISSAUGA HQ"
-        titleLine1="MOFFETT TRUCK DELIVERY &"
-        titleAccent="FLATBED SERVICE IN THE GTA."
+        titleLine1="MOFFETT & FLATBED DELIVERY"
+        titleAccent="IN TORONTO & THE GTA."
         description="Point Zero Road Lines provides Moffett-equipped flatbed delivery throughout the Greater Toronto Area (GTA) for construction materials, equipment, machinery, palletized freight and other eligible loads. Our Moffett-equipped trucks provide onsite unloading capability, making them a practical solution for delivery locations where conventional loading docks or unloading equipment may not be available."
         scrollLabel="SCROLL FOR DETAILS"
         heroImage="/images/moffett-construction-unload.webp"

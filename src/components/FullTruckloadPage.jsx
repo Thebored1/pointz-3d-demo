@@ -72,8 +72,8 @@ export default function FullTruckloadPage() {
       <EditorialHero
         badge="SERVICES · FULL TRUCKLOAD"
         badgeAlt="EST. 2006 · MISSISSAUGA HQ"
-        titleLine1="ONE TRUCK, ONE SHIPMENT,"
-        titleAccent="STRAIGHT TO THE DESTINATION."
+        titleLine1="FULL-TRUCKLOAD (FTL) FREIGHT,"
+        titleAccent="POINT-TO-POINT ACROSS ONTARIO."
         description="Point Zero Road Lines runs full-truckload (FTL) freight across the GTA, Ontario and cross-border lanes — a dedicated trailer carrying your shipment point-to-point on flatbed, step-deck, dry van or Moffett equipment, backed by 24/7 dispatch."
         scrollLabel="SCROLL FOR DETAILS"
         heroImage="/images/dedicated-fleet-highway.webp"

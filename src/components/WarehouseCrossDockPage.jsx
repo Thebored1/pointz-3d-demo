@@ -78,8 +78,8 @@ export default function WarehouseCrossDockPage() {
       <EditorialHero
         badge="SERVICES · WAREHOUSE & CROSS-DOCK"
         badgeAlt="1566 BONHILL RD · MISSISSAUGA HQ"
-        titleLine1="WAREHOUSE & CROSS-DOCK"
-        titleAccent="IN THE HEART OF MISSISSAUGA."
+        titleLine1="CROSS-DOCKING & WAREHOUSE"
+        titleAccent="IN MISSISSAUGA, ON THE 401/410."
         description="Located at 1566 Bonhill Road, Mississauga, Point Zero Road Lines provides secure warehousing, cross-docking, freight consolidation and short- or long-term pallet storage. Operating under the same roof as our trucking fleet, we reduce transfer friction and help keep freight moving."
         scrollLabel="SCROLL FOR DETAILS"
         heroImage="/images/warehouse-crossdock-docks.webp"
@@ -94,8 +94,9 @@ export default function WarehouseCrossDockPage() {
           <div className="mf-prose mf-prose--wide">
             <Reveal>
               <p className="mf-lead">
-                Storage and transport under one operation — so freight moves between the dock and the
-                road without a separate vendor, an extra hand-off, or added dwell time.
+                Cross-docking and warehousing in Mississauga, with storage and transport under one
+                operation — so freight moves between the dock and the road without a separate
+                vendor, an extra hand-off, or added dwell time.
               </p>
               <p>Our Mississauga terminal at 1566 Bonhill Road sits with direct access to Highways 401, 410 and 407, making it a practical staging and cross-dock hub for the GTA. Because our <Link href="/services/dedicated-fleet-services" className="mf-inline-link">fleet</Link> and warehouse run together, cross-docked freight can transition straight onto local routes.</p>
               <p>From high-speed trailer-to-trailer transfers to overflow storage, freight consolidation and emergency load rework, we help shippers and carriers keep product moving through the Greater Toronto Area.</p>

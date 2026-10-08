@@ -73,7 +73,7 @@ export default function LtlFreightPage() {
       <EditorialHero
         badge="SERVICES · LESS-THAN-TRUCKLOAD"
         badgeAlt="EST. 2006 · MISSISSAUGA HQ"
-        titleLine1="PARTIAL LOADS,"
+        titleLine1="LTL FREIGHT ACROSS ONTARIO,"
         titleAccent="CONSOLIDATED AND SCHEDULED."
         description="Point Zero Road Lines moves less-than-truckload (LTL) freight across the GTA and Ontario — partial loads consolidated through our Mississauga cross-dock on scheduled lanes, so you pay for the space you use and freight still moves on time."
         scrollLabel="SCROLL FOR DETAILS"

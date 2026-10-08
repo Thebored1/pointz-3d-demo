@@ -73,7 +73,7 @@ export default function EquipmentMachineryPage() {
         badge="SERVICES · EQUIPMENT & MACHINERY"
         badgeAlt="EST. 2006 · MISSISSAUGA HQ"
         titleLine1="EQUIPMENT & MACHINERY DELIVERY,"
-        titleAccent="FLATBED TRANSPORT + MOFFETT UNLOADING."
+        titleAccent="FLATBED + MOFFETT, GTA & ONTARIO."
         description="Point Zero Road Lines delivers eligible equipment and machinery across the Greater Toronto Area on flatbeds with truck-mounted Moffett forklifts — so suitable loads can be unloaded onsite, even where there’s no loading dock or forklift."
         scrollLabel="SCROLL FOR DETAILS"
         heroImage="/images/moffett-unloading-forklift.webp"

@@ -84,6 +84,7 @@ export const overviewServices = [
   { id: '12', icon: 'Layers', title: 'Roll-Tite & Curtain-Side', href: '/services/roll-tite-curtain-side-trailers', desc: 'Side and overhead loading with weather-tight protection for building materials and industrial freight.' },
   { id: '13', icon: 'Route', title: 'Full Truckload (FTL)', href: '/services/full-truckload-ftl', desc: 'A dedicated trailer carrying your shipment point-to-point on flatbed, dry van or Moffett.' },
   { id: '14', icon: 'Package', title: 'Less-Than-Truckload (LTL)', href: '/services/less-than-truckload-ltl', desc: 'Partial loads consolidated through our Mississauga cross-dock on scheduled lanes.' },
+  { id: '15', icon: 'Globe', title: 'Cross-Border Freight', href: '/services/cross-border-freight', desc: 'FTL, flatbed, Moffett and dedicated lanes from Ontario into the U.S. under USDOT / MC authority.' },
 ];
 
 // Curated cross-links for SEO and navigation. Keyed by service slug.

@@ -73,7 +73,7 @@ export default function DryVanPage() {
       <EditorialHero
         badge="SERVICES · DRY VAN"
         badgeAlt="EST. 2006 · MISSISSAUGA HQ"
-        titleLine1="ENCLOSED DRY VAN FREIGHT,"
+        titleLine1="ENCLOSED DRY VAN FREIGHT IN THE GTA,"
         titleAccent="PROTECTED FROM DOCK TO DOOR."
         description="Point Zero Road Lines moves palletized and packaged freight in company-owned dry vans across the GTA, Ontario and cross-border lanes — full-truckload or scheduled LTL, weather-protected and backed by 24/7 dispatch."
         scrollLabel="SCROLL FOR DETAILS"

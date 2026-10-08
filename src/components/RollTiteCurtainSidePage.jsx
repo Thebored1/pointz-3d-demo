@@ -72,8 +72,8 @@ export default function RollTiteCurtainSidePage() {
       <EditorialHero
         badge="SERVICES · ROLL-TITE / CURTAIN-SIDE"
         badgeAlt="EST. 2006 · MISSISSAUGA HQ"
-        titleLine1="SIDE-LOADING ACCESS,"
-        titleAccent="WEATHER-TIGHT PROTECTION."
+        titleLine1="ROLL-TITE & CURTAIN-SIDE TRANSPORT,"
+        titleAccent="SIDE-LOADING, WEATHER-TIGHT, GTA-WIDE."
         description="Point Zero Road Lines runs roll-tite and curtain-side trailers across the GTA and Ontario — the side and overhead loading of a flatbed with weather protection closer to an enclosed van. Ideal for building materials and palletized industrial freight."
         scrollLabel="SCROLL FOR DETAILS"
         heroImage="/images/flatbed-blue-transport.webp"

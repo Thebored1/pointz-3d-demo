@@ -36,7 +36,7 @@ export default function GetAQuotePage() {
         badge="FREIGHT ESTIMATES"
         badgeAlt="EST. 2006 • 24/7 DISPATCH"
         titleLine1="GET A FREIGHT QUOTE."
-        titleAccent="DIRECT, TRANSPARENT RATES."
+        titleAccent="FAST GTA & ONTARIO RATES."
         description="Tell us your lane, freight type, and schedule. Our Mississauga dispatch team provides direct, transparent rates across Ontario with zero hidden fees and no spot-broker runarounds."
         scrollLabel="SCROLL TO QUOTE FORM"
         heroImage="/images/fleet-lineup.webp"

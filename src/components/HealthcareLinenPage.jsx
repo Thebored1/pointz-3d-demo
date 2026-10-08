@@ -68,7 +68,7 @@ export default function HealthcareLinenPage() {
         badge="SERVICES · HEALTHCARE LINEN"
         badgeAlt="EST. 2006 · MISSISSAUGA HQ"
         titleLine1="HEALTHCARE LINEN & TEXTILE LOGISTICS,"
-        titleAccent="BUILT ON TIME-CRITICAL PRECISION."
+        titleAccent="ACROSS ONTARIO, ON TIME."
         description="Hospitals, long-term care facilities, hospitality providers and commercial laundries run on strict turnaround cycles. Point Zero Road Lines provides dedicated cart and sling transport, sanitary handling protocols and tight schedule adherence so clean textiles are never delayed."
         scrollLabel="SCROLL FOR DETAILS"
         heroImage="/images/dedicated-fleet-blue.webp"

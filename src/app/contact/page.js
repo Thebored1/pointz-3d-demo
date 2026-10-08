@@ -92,8 +92,8 @@ export default function ContactPage() {
           titleClass="contact-hero-title"
           badge="CONTACT US"
           badgeAlt="24/7 SUPPORT"
-          titleLine1="TALK TO"
-          titleAccent="DISPATCH."
+          titleLine1="TALK TO OUR MISSISSAUGA"
+          titleAccent="DISPATCH DESK — 24/7, GTA-WIDE."
           showImage={false}
         />
 

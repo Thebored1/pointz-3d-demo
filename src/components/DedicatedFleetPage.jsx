@@ -78,7 +78,7 @@ export default function DedicatedFleetPage() {
       <EditorialHero
         badge="SERVICES · DEDICATED FLEET"
         badgeAlt="EST. 2006 · MISSISSAUGA HQ"
-        titleLine1="YOUR DEDICATED FLEET,"
+        titleLine1="YOUR DEDICATED GTA FLEET,"
         titleAccent="WITHOUT THE OVERHEAD OF OWNING ONE."
         description="Point Zero Road Lines assigns company-owned tractors, trailers, Moffett units and professional drivers directly to your business. Gain predictable capacity, fixed scheduling and custom brand representation — without the capital expenditure, maintenance or driver-recruiting burden."
         scrollLabel="SCROLL FOR DETAILS"

@@ -37,7 +37,7 @@ export default function FleetAndEquipmentPage() {
       badge="FLEET & EQUIPMENT"
       badgeAlt="COMPANY-OWNED · EST. 2006"
       titleLine1="COMPANY-OWNED EQUIPMENT."
-      titleAccent="BUILT FOR SPECIALIZED LOGISTICS."
+      titleAccent="FOR GTA & ONTARIO FREIGHT."
       description="At Point Zero Road Lines, equipment reliability matters. Our fleet of modern tractors, flatbeds, dry vans, and truck-mounted Moffett forklifts is company-owned and maintained to strict safety and mechanical standards at our Mississauga facility."
       heroImage="/images/fleet-lineup.webp"
       heroAlt="Point Zero Road Lines fleet lined up"

@@ -70,7 +70,7 @@ export default function ManufacturingPage() {
         badge="SERVICES · MANUFACTURING & CPG"
         badgeAlt="EST. 2006 · MISSISSAUGA HQ"
         titleLine1="MANUFACTURING & CONSUMER-GOODS FREIGHT,"
-        titleAccent="CAPACITY THAT KEEPS PRODUCTION MOVING."
+        titleAccent="KEEPING ONTARIO PRODUCTION MOVING."
         description="Ontario manufacturers and CPG brands can't afford production halts or delayed retail distribution. Point Zero Road Lines provides dedicated full-truckload (FTL) and scheduled less-than-truckload (LTL) capacity, raw-material plant deliveries and warehouse cross-dock support."
         scrollLabel="SCROLL FOR DETAILS"
         heroImage="/images/warehouse-crossdock-facility.webp"

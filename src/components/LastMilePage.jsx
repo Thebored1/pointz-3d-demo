@@ -68,7 +68,7 @@ export default function LastMilePage() {
       <EditorialHero
         badge="SERVICES · LAST MILE"
         badgeAlt="EST. 2006 · MISSISSAUGA HQ"
-        titleLine1="LAST-MILE FREIGHT DELIVERY,"
+        titleLine1="LAST-MILE DELIVERY ACROSS THE GTA,"
         titleAccent="THE HARDEST LEG, HANDLED."
         description="The final mile is where most supply-chain breakdowns happen — tight residential streets, narrow job-site access, no unloading equipment and strict appointment windows. Point Zero Road Lines runs Moffett-equipped flatbeds, straight trucks and liftgates built to master it."
         scrollLabel="SCROLL FOR DETAILS"
