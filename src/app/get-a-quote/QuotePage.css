@@ -9,6 +9,224 @@
   flex-direction: column;
 }
 
+/* --------------------------------------------------------------------------
+   Banner hero with the quote form placed directly inside (above the fold)
+   -------------------------------------------------------------------------- */
+.quote-hero {
+  position: relative;
+  isolation: isolate;
+  flex: 1;
+  /* clears the floating nav pill (bottom ≈ 98px on tablet/desktop) */
+  padding: clamp(7.75rem, 10vw, 8.5rem) 0 clamp(3rem, 6vw, 5rem);
+  overflow: hidden;
+}
+
+.quote-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.quote-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    115deg,
+    rgba(10, 16, 26, 0.95) 0%,
+    rgba(10, 16, 26, 0.9) 40%,
+    rgba(10, 16, 26, 0.68) 100%
+  );
+}
+
+.quote-hero-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+  width: 100%;
+  box-sizing: border-box;
+  display: grid;
+  /* form gets the wider share so its two-up inputs stay usable at 1024–1280 */
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  /* auto first row so the tall form can't stretch it and open a gap
+     between the headline and the trust points */
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    'head form'
+    'support form';
+  column-gap: clamp(2rem, 4vw, 4rem);
+  row-gap: clamp(2rem, 4vw, 3rem);
+  align-items: start;
+}
+
+/* Left column — copy on the dark banner */
+.quote-hero-head {
+  grid-area: head;
+  color: #ffffff;
+  padding-top: 0.5rem;
+}
+
+.quote-hero-support {
+  grid-area: support;
+  color: #ffffff;
+}
+
+.quote-hero-form {
+  grid-area: form;
+}
+
+.quote-hero-crumbs {
+  margin-bottom: 1.5rem;
+}
+
+.quote-hero-crumbs .pz-breadcrumbs,
+.quote-hero-crumbs .pz-breadcrumbs a,
+.quote-hero-crumbs .pz-breadcrumbs span {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.quote-hero-crumbs .pz-breadcrumbs a:hover {
+  color: #00b9f2;
+}
+
+.quote-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.quote-hero-badge {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.quote-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin: 0 0 1.25rem;
+  color: #ffffff;
+}
+
+.quote-hero-accent {
+  color: #00b9f2;
+  font-style: italic;
+}
+
+.quote-hero-desc {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.2vw, 1.0625rem);
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.65;
+  max-width: 48ch;
+  margin: 0;
+}
+
+.quote-hero-trust {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 1.75rem;
+}
+
+.quote-hero-trust-item {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.quote-hero-trust-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: rgba(0, 185, 242, 0.14);
+  color: #00b9f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-hero-trust-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.quote-hero-trust-text strong {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.quote-hero-trust-text span {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+}
+
+.quote-hero-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quote-hero-contact-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.quote-hero-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quote-hero-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.quote-hero-email:hover {
+  color: #00b9f2;
+}
+
+/* Right column — the form as a white card inside the banner */
+.quote-hero-form {
+  background: var(--c-white);
+  border-radius: var(--radius-sm);
+  padding: clamp(1.75rem, 3vw, 2.75rem);
+  box-shadow: 0 24px 60px rgba(5, 10, 20, 0.35);
+  border: 1px solid var(--border-color);
+}
+
 .quote-main-section {
   padding: 0 0 clamp(4rem, 8vw, 8rem);
   flex: 1;
@@ -428,6 +646,29 @@
   }
 }
 
+/* Stack the banner only once side-by-side gets too cramped (keeps iPad
+   landscape at 1024px two-column). Order: headline → form → trust points. */
+@media (max-width: 960px) {
+  .quote-hero-inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-template-areas:
+      'head'
+      'form'
+      'support';
+    row-gap: 2rem;
+  }
+
+  .quote-hero-desc {
+    max-width: 60ch;
+    margin-bottom: 0;
+  }
+
+  .quote-hero-trust {
+    margin-bottom: 1.75rem;
+  }
+}
+
 @media (max-width: 640px) {
   .quote-info-col,
   .quote-form-col {
@@ -446,5 +687,51 @@
   .quote-urgent-links {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .quote-hero-form {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .quote-hero-contact-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Pull the first form field into the first screen on phones */
+  /* nav pill bottom ≈ 84px on phones */
+  .quote-hero {
+    padding-top: 6.5rem;
+  }
+
+  .quote-hero-inner {
+    row-gap: 1.5rem;
+  }
+
+  .quote-hero-crumbs,
+  .quote-hero-badges {
+    margin-bottom: 1rem;
+  }
+
+  .quote-hero-badge-alt {
+    display: none;
+  }
+
+  .quote-hero-title {
+    font-size: clamp(1.6rem, 7.5vw, 2rem);
+    margin-bottom: 0.85rem;
+  }
+
+  .quote-hero-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .quote-hero-form .quote-form-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .quote-hero-form .quote-form-sub {
+    display: none;
   }
 }

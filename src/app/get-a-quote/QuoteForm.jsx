@@ -75,7 +75,7 @@ export default function QuoteForm() {
   return (
     <div className="quote-form-wrapper">
       <div className="quote-form-header">
-        <span className="quote-col-label">02 / LOAD DETAILS</span>
+        <span className="quote-col-label">LOAD DETAILS</span>
         <h2 className="quote-form-title">Request Freight Estimate</h2>
         <p className="quote-form-sub">
           Fill in the details below and our operations team will evaluate lane availability and equipment specifications.
@@ -131,11 +131,11 @@ export default function QuoteForm() {
         <div className="quote-form-row">
           <div className="quote-input-group">
             <label htmlFor="q-freight">Freight Type / Commodity</label>
-            <input id="q-freight" name="freight_type" type="text" className="quote-input" placeholder="e.g. Palletized, lumber, machinery" />
+            <input id="q-freight" name="freight_type" type="text" className="quote-input" placeholder="e.g. Pallets, lumber" />
           </div>
           <div className="quote-input-group">
             <label htmlFor="q-timeline">Required Date / Timeline</label>
-            <input id="q-timeline" name="timeline" type="text" className="quote-input" placeholder="e.g. Same-day, next week, recurring" />
+            <input id="q-timeline" name="timeline" type="text" className="quote-input" placeholder="e.g. Same-day, recurring" />
           </div>
         </div>
 

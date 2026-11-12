@@ -1,10 +1,11 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import EditorialHero from '../../components/EditorialHero';
-import { motion } from 'framer-motion';
-import { fadeUp, slideLeft, slideRight, viewportOnce } from '../../lib/motion';
+import Breadcrumbs from '../../components/Breadcrumbs';
+import { fadeUp, slideRight } from '../../lib/motion';
 import { Phone, Mail, Clock, ShieldCheck, Truck, ArrowUpRight } from 'lucide-react';
 import QuoteForm from './QuoteForm';
 import './QuotePage.css';
@@ -32,90 +33,97 @@ export default function GetAQuotePage() {
     <div className="quote-page-root">
       <Navbar />
 
-      <EditorialHero
-        badge="FREIGHT ESTIMATES"
-        badgeAlt="EST. 2006 • 24/7 DISPATCH"
-        titleLine1="GET A FREIGHT QUOTE."
-        titleAccent="FAST GTA & ONTARIO RATES."
-        description="Tell us your lane, freight type, and schedule. Our Mississauga dispatch team provides direct, transparent rates across Ontario with zero hidden fees and no spot-broker runarounds."
-        scrollLabel="SCROLL TO QUOTE FORM"
-        heroImage="/images/fleet-lineup.webp"
-        heroAlt="Point Zero Road Lines fleet lineup in Ontario"
-        heroPosition="center"
-      />
+      {/* Banner section with the quote form placed directly inside, above the fold */}
+      <section className="quote-hero">
+        <div className="quote-hero-bg" aria-hidden="true">
+          <Image
+            src="/images/fleet-lineup.webp"
+            alt=""
+            fill
+            sizes="100vw"
+            priority
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
+        </div>
+        <div className="quote-hero-overlay" aria-hidden="true" />
 
-      <main className="quote-main-section">
-        <div className="quote-container">
-          <div className="quote-editorial-layout">
-            
-            {/* Left Column: Direct Info & Highlights */}
-            <motion.aside
-              className="quote-info-col"
-              variants={slideLeft}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewportOnce}
-            >
-              <div className="quote-info-header">
-                <span className="quote-col-label">01 / DIRECT DISPATCH</span>
-                <h2 className="quote-info-title">Fast answers from experienced dispatchers.</h2>
-                <p className="quote-info-desc">
-                  Whether you need a dedicated Moffett for site deliveries or recurring van capacity, we tailor equipment and routing directly to your timeline.
-                </p>
+        <div className="quote-hero-inner">
+          {/* Headline block — stays at the top of the banner */}
+          <motion.div
+            className="quote-hero-head"
+            variants={fadeUp}
+            initial="visible"
+            animate="visible"
+          >
+            <div className="quote-hero-crumbs">
+              <Breadcrumbs />
+            </div>
+
+            <div className="quote-hero-badges">
+              <span className="quote-hero-badge">FREIGHT ESTIMATES</span>
+              <span className="quote-hero-badge quote-hero-badge-alt">EST. 2006 • 24/7 DISPATCH</span>
+            </div>
+
+            <h1 className="quote-hero-title">
+              Get a Freight Quote.{' '}
+              <span className="quote-hero-accent">Fast GTA &amp; Ontario Rates.</span>
+            </h1>
+
+            <p className="quote-hero-desc">
+              Tell us your lane, freight type, and schedule. Our Mississauga dispatch team
+              provides direct, transparent rates across Ontario with zero hidden fees and no
+              spot-broker runarounds.
+            </p>
+          </motion.div>
+
+          {/* The quote form, placed directly in the banner (right on desktop,
+              immediately below the headline on mobile) */}
+          <motion.section
+            className="quote-hero-form"
+            variants={slideRight}
+            initial="visible"
+            animate="visible"
+          >
+            <QuoteForm />
+          </motion.section>
+
+          {/* Trust points + direct contact — below the headline on desktop,
+              below the form on mobile */}
+          <div className="quote-hero-support">
+            <ul className="quote-hero-trust">
+              {quoteHighlights.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <li key={idx} className="quote-hero-trust-item">
+                    <span className="quote-hero-trust-icon">
+                      <Icon size={18} />
+                    </span>
+                    <span className="quote-hero-trust-text">
+                      <strong>{item.title}</strong>
+                      <span>{item.desc}</span>
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <div className="quote-hero-contact">
+              <span className="quote-hero-contact-label">Time-sensitive or hot-shot dispatch?</span>
+              <div className="quote-hero-contact-links">
+                <a href="tel:+16476801300" className="quote-phone-btn">
+                  <Phone size={16} />
+                  <span>(647) 680-1300</span>
+                  <ArrowUpRight size={14} className="quote-phone-arrow" />
+                </a>
+                <a href="mailto:info@pzrls.com" className="quote-hero-email">
+                  <Mail size={15} />
+                  <span>info@pzrls.com</span>
+                </a>
               </div>
-
-              <div className="quote-highlights-list">
-                {quoteHighlights.map((item, idx) => {
-                  const Icon = item.icon;
-                  return (
-                    <div key={idx} className="quote-highlight-card">
-                      <div className="quote-highlight-icon">
-                        <Icon size={20} />
-                      </div>
-                      <div className="quote-highlight-content">
-                        <h3 className="quote-highlight-title">{item.title}</h3>
-                        <p className="quote-highlight-desc">{item.desc}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Direct Urgent Contact Box */}
-              <div className="quote-urgent-box">
-                <span className="quote-urgent-badge">TIME SENSITIVE?</span>
-                <h3 className="quote-urgent-title">Need immediate or hot-shot dispatch?</h3>
-                <p className="quote-urgent-desc">
-                  Call our live 24/7 dispatch desk directly for instant lane capacity and emergency bookings.
-                </p>
-                <div className="quote-urgent-links">
-                  <a href="tel:+16476801300" className="quote-phone-btn">
-                    <Phone size={16} />
-                    <span>(647) 680-1300</span>
-                    <ArrowUpRight size={14} className="quote-phone-arrow" />
-                  </a>
-                  <a href="mailto:info@pzrls.com" className="quote-email-link">
-                    <Mail size={15} />
-                    <span>info@pzrls.com</span>
-                  </a>
-                </div>
-              </div>
-            </motion.aside>
-
-            {/* Right Column: Interactive Responsive Form */}
-            <motion.section
-              className="quote-form-col"
-              variants={slideRight}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewportOnce}
-            >
-              <QuoteForm />
-            </motion.section>
-
+            </div>
           </div>
         </div>
-      </main>
+      </section>
 
       <Footer />
     </div>

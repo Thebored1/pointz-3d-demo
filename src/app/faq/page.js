@@ -1,4 +1,8 @@
 import ServiceEditorialPage from '../../components/ServiceEditorialPage';
+import { SITE_URL } from '../../lib/site';
+
+const FAQ_DESCRIPTION =
+  'Common questions about Moffett delivery, dedicated fleet services, flatbed transport, warehousing, rates, and 24/7 dispatch in Ontario.';
 
 export const metadata = {
   title: { absolute: 'Frequently Asked Questions | Point Zero Road Lines' },
@@ -15,27 +19,61 @@ export const metadata = {
 };
 
 const faqItems = [
-  { icon: 'Forklift', title: 'What is Moffett delivery and how does it work?', desc: 'A Moffett is an all-wheel-drive forklift that mounts to the rear of our flatbed trailers. When the truck arrives at your delivery point, the driver dismounts the Moffett in under two minutes and unloads your cargo directly to the job site, driveway, or work area — no loading dock or site crane required.' },
-  { icon: 'MapPin', title: 'What areas in Ontario and North America do you serve?', desc: 'Our core service area covers the Greater Toronto Area (Mississauga, Brampton, Bolton, Toronto, Vaughan, Markham, Oakville, Burlington, Milton, Caledon, Richmond Hill) and across Ontario (Hamilton, Kitchener-Waterloo, London, Ottawa). We also operate registered cross-border lanes into the U.S. under USDOT 3983391 and MC 1492151.' },
-  { icon: 'Shield', title: 'How does dedicated fleet service work?', desc: 'We assign dedicated company-owned tractors, flatbeds, dry vans, or Moffett units along with professional drivers exclusively to your account. You get the reliable capacity and custom scheduling of a private fleet without the capital expenditure, maintenance, or driver hiring overhead.' },
-  { icon: 'Clock', title: 'Do you offer after-hours and weekend delivery?', desc: 'Yes. Our live dispatch operates 24/7/365, and our fleet delivers freight on Saturdays, Sundays, and overnight shifts to keep continuous manufacturing lines and early morning construction sites on schedule.' },
-  { icon: 'Warehouse', title: 'Where is your warehouse located and what services are offered?', desc: 'Our central facility is at 1566 Bonhill Road, Mississauga. We offer rapid trailer-to-trailer cross-docking, short and long-term pallet storage, freight consolidation, and integrated local fleet dispatch under one roof.' },
-  { icon: 'Briefcase', title: 'What industries do you specialize in?', desc: 'Healthcare and linen operations, manufacturing, consumer goods, and construction, alongside general freight for the GTA and Ontario.' },
-  { icon: 'Shield', title: 'Is Point Zero Road Lines licensed and insured?', desc: 'Yes — we operate under USDOT 3983391 and MC 1492151 authority, and are licensed and insured for both domestic and cross-border freight.' },
-  { icon: 'Package', title: 'Do you handle oversized or non-standard freight?', desc: 'Yes — our flatbed and Moffett-equipped fleet is built for exactly this kind of freight.' },
-  { icon: 'Timer', title: 'How quickly can I get a freight quote?', desc: 'Submit your lane and load specs through our online quote form or call dispatch at (647) 680-1300. We aim to provide transparent quotes quickly, often the same business day.' },
-  { icon: 'Zap', title: 'How quickly can you respond to a same-day or urgent delivery request?', desc: 'Through our Expedited & Same-Day Freight service, we can often accommodate urgent GTA routes with enough lead time — call or request a quote with your timeline for a direct answer.' },
+  { icon: 'Forklift', title: 'What is Moffett delivery and how does it work?', desc: 'A Moffett is an all-wheel-drive forklift that mounts to the rear of our flatbed trailers. When the truck arrives at your delivery point, the driver dismounts the Moffett and unloads your cargo directly to the job site, driveway, or work area without requiring a loading dock or site crane.' },
+  { icon: 'MapPin', title: 'What areas in Ontario and North America do you serve?', desc: 'Our core service area covers the Greater Toronto Area, including Mississauga, Brampton, Bolton, Toronto, Vaughan, Markham, Oakville, Burlington, Milton, Caledon, and Richmond Hill. We also serve Hamilton, Kitchener-Waterloo, London, Ottawa, and registered cross-border freight lanes into the United States.' },
+  { icon: 'Shield', title: 'How does dedicated fleet service work?', desc: 'We assign dedicated company-owned tractors, flatbeds, dry vans, or Moffett units along with professional drivers exclusively to your account. You get reliable capacity and custom scheduling without the capital expenditure, maintenance, or driver hiring overhead of operating a private fleet.' },
+  { icon: 'Clock', title: 'Do you offer after-hours and weekend delivery?', desc: 'Yes. Our live dispatch operates 24/7/365, and our fleet delivers freight on Saturdays, Sundays, and overnight shifts to support manufacturing operations and construction schedules.' },
+  { icon: 'Warehouse', title: 'Where is your warehouse located and what services are offered?', desc: 'Our central facility is located at 1566 Bonhill Road, Mississauga, Ontario. We offer trailer-to-trailer cross-docking, short and long-term pallet storage, freight consolidation, and integrated local fleet dispatch.' },
+  { icon: 'Briefcase', title: 'What industries do you specialize in?', desc: 'Point Zero Road Lines specializes in healthcare and linen operations, manufacturing, consumer goods, construction, and general freight transportation across the Greater Toronto Area and Ontario.' },
+  { icon: 'Shield', title: 'Is Point Zero Road Lines licensed and insured?', desc: 'Yes. Point Zero Road Lines operates under USDOT 3983391 and MC 1492151 authority and is licensed and insured for domestic and cross-border freight transportation.' },
+  { icon: 'Package', title: 'Do you handle oversized or non-standard freight?', desc: 'Yes. Our flatbed and Moffett-equipped fleet is designed to handle oversized, non-standard, and specialized freight transportation requirements.' },
+  { icon: 'Timer', title: 'How quickly can I get a freight quote?', desc: 'Submit your lane and load specifications through our online quote form or call dispatch at (647) 680-1300. We aim to provide transparent quotes quickly, often on the same business day.' },
+  { icon: 'Zap', title: 'How quickly can you respond to a same-day or urgent delivery request?', desc: 'Through our Expedited and Same-Day Freight service, we can often accommodate urgent Greater Toronto Area delivery requests with sufficient lead time. Contact our dispatch team or request a quote with your delivery timeline.' },
 ];
 
 export default function FAQPage() {
+  const pageUrl = `${SITE_URL}/faq`;
   const faqSchema = {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map((item) => ({
-      '@type': 'Question',
-      name: item.title,
-      acceptedAnswer: { '@type': 'Answer', text: item.desc },
-    })),
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: 'Frequently Asked Questions | Point Zero Road Lines',
+        description: FAQ_DESCRIPTION,
+        inLanguage: 'en-CA',
+        isPartOf: { '@id': `${SITE_URL}/#website` },
+        about: { '@id': `${SITE_URL}/#organization` },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
+        primaryImageOfPage: {
+          '@type': 'ImageObject',
+          url: `${SITE_URL}/images/fleet-lineup.webp`,
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'FAQ', item: pageUrl },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': `${pageUrl}#faq`,
+        url: pageUrl,
+        inLanguage: 'en-CA',
+        isPartOf: { '@id': `${pageUrl}#webpage` },
+        publisher: { '@id': `${SITE_URL}/#organization` },
+        mainEntity: faqItems.map((item, i) => ({
+          '@type': 'Question',
+          '@id': `${pageUrl}#faq-q${i + 1}`,
+          name: item.title,
+          acceptedAnswer: { '@type': 'Answer', text: item.desc },
+        })),
+      },
+    ],
   };
 
   return (
