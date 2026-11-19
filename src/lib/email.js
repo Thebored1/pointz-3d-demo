@@ -254,3 +254,66 @@ export function renderLeadEmail(type, row) {
     text: toText(type, title, row),
   };
 }
+
+// Who gets the Supabase keep-alive reports (weekly reminder + failure alerts).
+const KEEPALIVE_TO = (
+  process.env.KEEPALIVE_NOTIFY_EMAIL || 'nitesh.sharma@virtualxcellence.com'
+)
+  .split(',')
+  .map((address) => address.trim())
+  .filter(Boolean);
+
+// Status email from the daily keep-alive cron. `kind` is 'weekly' (the day a
+// free Supabase project would otherwise hit its 7-day inactivity pause — a
+// prompt to check manually) or 'failure' (the keep-alive read itself failed).
+export async function sendKeepAliveReport({ kind, ok, error, at }) {
+  const resend = getClient();
+  if (!resend) return { ok: false, skipped: true };
+
+  const ref = (process.env.SUPABASE_URL || '').match(/https?:\/\/([^.]+)\./)?.[1];
+  const dashboard = ref
+    ? `https://supabase.com/dashboard/project/${ref}`
+    : 'https://supabase.com/dashboard/projects';
+
+  const subject =
+    kind === 'failure'
+      ? `[Action needed] Supabase keep-alive FAILED — ${SITE_NAME}`
+      : `Weekly Supabase check — ${SITE_NAME} (keep-alive ${ok ? 'OK' : 'FAILED'})`;
+
+  const status = ok ? 'Keep-alive read succeeded' : `Keep-alive read FAILED: ${error}`;
+  const intro =
+    kind === 'failure'
+      ? 'Today’s automatic keep-alive could not reach the database. If this keeps failing, Supabase may pause the project after 7 days without activity — please check now.'
+      : 'This is the 7th day — the point a free Supabase project would be paused for inactivity. The site pings the database daily, but please confirm by hand.';
+
+  const steps = [
+    'Open the Supabase dashboard and confirm the project status is Active (not Paused).',
+    'If it shows Paused, click Restore project.',
+    'Optional: open Table Editor → quote_requests to confirm recent leads are saving.',
+  ];
+
+  const html = `<div style="font:15px/1.55 ${C.font};color:${C.ink};max-width:560px">
+  <h2 style="font:700 18px/1.3 ${C.font};color:${C.navy};margin:0 0 12px">${esc(subject)}</h2>
+  <p style="margin:0 0 12px">${esc(intro)}</p>
+  <p style="margin:0 0 12px;padding:10px 14px;border-radius:8px;background:${ok ? C.cyanTint : '#fdecec'};color:${ok ? C.navy : '#b42318'};font-weight:600">${esc(status)}<br><span style="font-weight:400;color:${C.gray};font-size:13px">Checked ${esc(at)}</span></p>
+  <ol style="margin:0 0 16px;padding-left:20px">${steps.map((s) => `<li>${esc(s)}</li>`).join('')}</ol>
+  ${button('Open Supabase dashboard', dashboard, { solid: true })}
+</div>`;
+
+  const text = [subject, '', intro, '', `${status} (checked ${at})`, '', ...steps.map((s, i) => `${i + 1}. ${s}`), '', dashboard].join('\n');
+
+  try {
+    const { error: sendError } = await resend.emails.send({
+      from: FROM,
+      to: KEEPALIVE_TO,
+      subject,
+      html,
+      text,
+    });
+    if (sendError) throw new Error(sendError.message || 'Resend returned an error');
+    return { ok: true };
+  } catch (cause) {
+    console.error('[email] keep-alive report failed:', cause);
+    return { ok: false, error: String(cause?.message || cause) };
+  }
+}
