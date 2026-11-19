@@ -255,7 +255,7 @@ export function renderLeadEmail(type, row) {
   };
 }
 
-// Who gets the Supabase keep-alive reports (weekly reminder + failure alerts).
+// Who gets Supabase health alerts from the daily keep-alive cron.
 const KEEPALIVE_TO = (
   process.env.KEEPALIVE_NOTIFY_EMAIL || 'nitesh.sharma@virtualxcellence.com'
 )
@@ -263,10 +263,9 @@ const KEEPALIVE_TO = (
   .map((address) => address.trim())
   .filter(Boolean);
 
-// Status email from the daily keep-alive cron. `kind` is 'weekly' (the day a
-// free Supabase project would otherwise hit its 7-day inactivity pause — a
-// prompt to check manually) or 'failure' (the keep-alive read itself failed).
-export async function sendKeepAliveReport({ kind, ok, error, at }) {
+// Sent only when the daily keep-alive read fails (Supabase paused, down,
+// erroring or timing out) — or as a labelled sample via ?report=test.
+export async function sendKeepAliveReport({ ok, error, at }) {
   const resend = getClient();
   if (!resend) return { ok: false, skipped: true };
 
@@ -275,21 +274,17 @@ export async function sendKeepAliveReport({ kind, ok, error, at }) {
     ? `https://supabase.com/dashboard/project/${ref}`
     : 'https://supabase.com/dashboard/projects';
 
-  const subject =
-    kind === 'failure'
-      ? `[Action needed] Supabase keep-alive FAILED — ${SITE_NAME}`
-      : `Weekly Supabase check — ${SITE_NAME} (keep-alive ${ok ? 'OK' : 'FAILED'})`;
-
-  const status = ok ? 'Keep-alive read succeeded' : `Keep-alive read FAILED: ${error}`;
-  const intro =
-    kind === 'failure'
-      ? 'Today’s automatic keep-alive could not reach the database. If this keeps failing, Supabase may pause the project after 7 days without activity — please check now.'
-      : 'This is the 7th day — the point a free Supabase project would be paused for inactivity. The site pings the database daily, but please confirm by hand.';
-
+  const subject = ok
+    ? `[Test] Supabase health alert — ${SITE_NAME}`
+    : `[Action needed] Supabase is not responding — ${SITE_NAME}`;
+  const intro = ok
+    ? 'This is a test of the Supabase health alert. Supabase is healthy; no action needed.'
+    : 'The daily health check could not read from the database. Quote and contact forms may not be saving leads until this is fixed.';
+  const status = `${ok ? 'Status: healthy' : 'Error'}: ${error}`;
   const steps = [
-    'Open the Supabase dashboard and confirm the project status is Active (not Paused).',
+    'Open the Supabase dashboard and check the project status.',
     'If it shows Paused, click Restore project.',
-    'Optional: open Table Editor → quote_requests to confirm recent leads are saving.',
+    'If it shows Active, check Logs for errors and confirm the SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY values in Vercel are still valid.',
   ];
 
   const html = `<div style="font:15px/1.55 ${C.font};color:${C.ink};max-width:560px">
@@ -313,7 +308,7 @@ export async function sendKeepAliveReport({ kind, ok, error, at }) {
     if (sendError) throw new Error(sendError.message || 'Resend returned an error');
     return { ok: true };
   } catch (cause) {
-    console.error('[email] keep-alive report failed:', cause);
+    console.error('[email] keep-alive alert failed:', cause);
     return { ok: false, error: String(cause?.message || cause) };
   }
 }

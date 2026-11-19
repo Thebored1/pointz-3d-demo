@@ -5,18 +5,17 @@ import { sendKeepAliveReport } from '@/lib/email';
 // free-tier projects after a week with no activity; one tiny read a day keeps
 // the database awake even when no forms are submitted.
 //
-// Every 7th day (the day the project would otherwise be paused) it also emails
-// a reminder to check Supabase by hand; any failed read is emailed right away.
+// The read doubles as a health check: if Supabase is paused, down, erroring or
+// hangs past 10s, an alert email goes out. Healthy days send nothing.
 export const dynamic = 'force-dynamic';
-
-const DAY_MS = 24 * 60 * 60 * 1000;
 
 async function ping() {
   try {
     const { error } = await getSupabaseAdmin()
       .from('quote_requests')
       .select('id')
-      .limit(1);
+      .limit(1)
+      .abortSignal(AbortSignal.timeout(10_000));
     return error ? { ok: false, error: error.message } : { ok: true };
   } catch (err) {
     return { ok: false, error: err.message };
@@ -31,21 +30,20 @@ export async function GET(request) {
     return Response.json({ ok: false, error: 'Unauthorized' }, { status: 401 });
   }
 
-  const now = new Date();
-  const at = now.toISOString();
+  const at = new Date().toISOString();
   const result = await ping();
   if (!result.ok) console.error('[keep-alive] Supabase query failed:', result.error);
 
-  // Fixed 7-day cycle on UTC day numbers, so it fires on the same weekday
-  // regardless of deploys. `?report=weekly` forces it (still needs the secret).
-  const weeklyDay = Math.floor(now.getTime() / DAY_MS) % 7 === 0;
-  const forced = request.nextUrl.searchParams.get('report') === 'weekly';
-
+  // Email only when something is wrong. `?report=test` sends a sample alert
+  // (still requires the cron secret) to confirm email delivery works.
+  const forced = request.nextUrl.searchParams.get('report') === 'test';
   let email = null;
-  if (!result.ok) {
-    email = await sendKeepAliveReport({ kind: 'failure', ok: false, error: result.error, at });
-  } else if (weeklyDay || forced) {
-    email = await sendKeepAliveReport({ kind: 'weekly', ok: true, at });
+  if (!result.ok || forced) {
+    email = await sendKeepAliveReport({
+      ok: result.ok,
+      error: result.ok ? 'Test alert — Supabase is actually healthy.' : result.error,
+      at,
+    });
   }
 
   return Response.json(
